@@ -12,7 +12,7 @@
                 <div class="container">
                     <div class="slider-left slider-right">
                         <div class="slide-text animated bounceInRight">
-                            <h3 class="bounceInDown">new collection</h3>
+                            <h3 class="bounceInDown">{{$msg}}</h3>
                             <h1>Men’s Fashion 2016</h1>
                             <span>Starting at $65.00. Don’t miss out!</span>
                         </div>

@@ -9,7 +9,7 @@
                     <h2>Register</h2>
                     <ul class="text-left">
                         <li><a href="index.html">Home </a></li>
-                        <li><span> // </span>Register</li>
+                        <li><span> // </span>Register// {{$msg}} </li>
                     </ul>
                 </div>
             </div>
@@ -29,13 +29,12 @@
                     <div class="login-text">
                         <div class="custom-input">
                             <p>If you have an account with us, Please log in!</p>
-                            <form action="mail.php" method="post">
+                            <form action="{{route('f.loginPost')}}" method="post">
                                 <input type="text" name="email" placeholder="Email" />
                                 <input type="password" name="password" placeholder="Password" />
                                 <a class="forget" href="#">Forget your password?</a>
-                                <div class="submit-text">
-                                    <a href="my-account.html">login</a>
-                                </div>
+                                @csrf
+                                <input type="submit" value="Login"  />
                             </form>
                         </div>
                     </div>
@@ -50,7 +49,7 @@
                         <form action="{{route('f.registerPost')}}" method="POST">
                             <input type="text" name="name" placeholder="Name here.." />
                             <input type="text" name="email" placeholder="Email Address.." />
-                            <input type="text" name="number" placeholder="Phone Number.." />
+                            <input type="text" name="mobile" placeholder="Phone Number.." />
                             <input type="text" name="address" placeholder="Address.." />
                             <input type="password" name="password" placeholder="Confirm Password" />
                             {{-- <label class="first-child">

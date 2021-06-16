@@ -22,5 +22,7 @@ Route::get('/home', [HomeController::class, 'home'])->name('f.home');
 
 Route::get('/register', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
 Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.registerPost');
+Route::post('/loginpost', [HomeController::class, 'loginPost'])->name('f.loginPost');
+
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');
