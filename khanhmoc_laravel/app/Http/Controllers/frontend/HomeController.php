@@ -28,13 +28,17 @@ class HomeController extends Controller
      * get page home
      * author: khanhmoc
      *
-     * return object product 
+     * return object more type product
      */
     public function home()
     {
         $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
+        $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
+        $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->paginate(12);
         $data = [
             'feature_products' => $feature_products,
+            'new_arrivals' => $new_arrivals,
+            'best_seller_products' => $best_seller_products,
             'msg' => '',
         ];
         return view('frontend.system.home', $data);
