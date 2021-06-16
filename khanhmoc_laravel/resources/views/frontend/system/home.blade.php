@@ -102,7 +102,11 @@
                                     <div class="pro-type">
                                         <span>new</span>
                                     </div>
-                                    <a href="#"><img src="img/products/1.jpg" alt="Product Title" /></a>
+                                    <a href=""><img src="frontend/img/product/<?php foreach ($item->ProductImgs as $key) {
+                                        echo($key->url);
+                                    }?>" alt="<?php foreach ($item->ProductImgs as $key) {
+                                        echo($key->alt);
+                                    }?>" /></a>
                                     <div class="actions-btn">
                                         <a href="#"><i class="mdi mdi-cart"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
@@ -111,7 +115,7 @@
                                 </div>
                                 <div class="product-dsc">
                                     <p><a href="#">{{$item->name}}</a></p>
-                                    <span>$65.20</span>
+                                    <span>{{number_format($item->price)}}</span>
                                 </div>
                             </div>
                         </div>
@@ -155,8 +159,11 @@
                                             <div class="pro-type">
                                                 <span>new</span>
                                             </div>
-                                            <a href="#"><img src="img/products/5.jpg" alt="Product Title" /></a>
-                                            <div class="actions-btn">
+                                            <a href=""><img src="frontend/img/product/<?php foreach ($item->ProductImgs as $key) {
+                                                echo($key->url);
+                                            }?>" alt="<?php foreach ($item->ProductImgs as $key) {
+                                                echo($key->alt);
+                                            }?>" /></a>                                            <div class="actions-btn">
                                                 <a href="#"><i class="mdi mdi-cart"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
                                                 <a href="#"><i class="mdi mdi-heart"></i></a>
@@ -164,7 +171,7 @@
                                         </div>
                                         <div class="product-dsc">
                                             <p><a href="#">{{$item->name}}</a></p>
-                                            <span>$165.20</span>
+                                            <span>{{number_format($item->price)}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +200,11 @@
                                             <div class="pro-type">
                                                 <span>new</span>
                                             </div>
-                                            <a href="#"><img src="img/products/5.jpg" alt="Product Title" /></a>
+                                            <a href=""><img src="frontend/img/product/<?php foreach ($item->ProductImgs as $key) {
+                                                echo($key->url);
+                                            }?>" alt="<?php foreach ($item->ProductImgs as $key) {
+                                                echo($key->alt);
+                                            }?>" /></a>
                                             <div class="actions-btn">
                                                 <a href="#"><i class="mdi mdi-cart"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
@@ -202,7 +213,7 @@
                                         </div>
                                         <div class="product-dsc">
                                             <p><a href="#">{{$item->name}}</a></p>
-                                            <span>$165.20</span>
+                                            <span>{{number_format($item->price)}}</span>
                                         </div>
                                     </div>
                                 </div>

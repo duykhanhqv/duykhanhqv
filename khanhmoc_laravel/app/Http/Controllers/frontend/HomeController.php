@@ -33,6 +33,7 @@ class HomeController extends Controller
     public function home()
     {
         $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
+        // dd($feature_products);
         $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
         $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->paginate(12);
         $data = [

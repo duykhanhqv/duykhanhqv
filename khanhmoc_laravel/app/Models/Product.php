@@ -11,4 +11,8 @@ class Product extends Model
     protected $table = 'fs_product';
     public $timestamps = false;
     protected $primaryKey = 'id';
+    public function ProductImgs()
+    {
+        return $this->hasMany('App\Models\ProductImg');
+    }
 }
