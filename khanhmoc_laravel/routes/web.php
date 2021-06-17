@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,6 @@ Route::get('/register', [HomeController::class, 'formLoginRegister'])->name('f.f
 Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.registerPost');
 Route::post('/loginpost', [HomeController::class, 'loginPost'])->name('f.loginPost');
 Route::get('/list_product={category_id}', [HomeController::class, 'listtingProducts'])->name('f.listProduct');
+Route::get('/detail_product={product_id}', [ProductController::class, 'detailProduct'])->name('f.detailProduct');
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');
