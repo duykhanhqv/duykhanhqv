@@ -73,7 +73,6 @@ class HomeController extends Controller
      */
     public function loginPost(Request $request)
     {
-
         $arr = [
             'email' => $request->email,
             'password' => $request->password

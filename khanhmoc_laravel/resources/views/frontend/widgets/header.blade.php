@@ -65,14 +65,15 @@
                                             <h5>{{$item->name}}</h5>
                                             <ul>
                                                 @foreach ($item->Categorys as $item2)
+
                                                 <li><a href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a></li>
+
                                                 @endforeach
                                                 
                                             </ul>
                                             @endforeach
                                         </li>
                                         @endforeach
-
                                         <li class="banner"><a href="shop.html"><img src="img/maga2.png" alt="" /></a>
                                         </li>
                                     </ul>
