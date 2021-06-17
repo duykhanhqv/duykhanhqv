@@ -65,7 +65,7 @@
                                             <h5>{{$item->name}}</h5>
                                             <ul>
                                                 @foreach ($item->Categorys as $item2)
-                                                <li><a href="#">{{$item2->name}}</a></li>
+                                                <li><a href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a></li>
                                                 @endforeach
                                                 
                                             </ul>
