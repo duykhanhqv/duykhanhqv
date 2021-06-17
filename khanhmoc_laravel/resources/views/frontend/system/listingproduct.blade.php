@@ -71,7 +71,7 @@
 													<i class="mdi mdi-star-half"></i>
 													<i class="mdi mdi-star-outline"></i>
 												</div>
-												<span>$65.20</span>
+												<span>{{number_format($item->price)}}</span>
 											</div>
 										</div>
 									</div>
@@ -174,7 +174,7 @@
 												<div class="quick-right">
 													<div class="list-text">
 														<h3>{{($item->name)}}</h3>
-														<span>Summer men’s fashion</span>
+														<span></span>
 														<div class="ratting floatright">
 															<p>( 27 Rating )</p>
 															<i class="mdi mdi-star"></i>
@@ -183,46 +183,8 @@
 															<i class="mdi mdi-star-half"></i>
 															<i class="mdi mdi-star-outline"></i>
 														</div>
-														<h5><del>$79.30</del> $69.30</h5>
-														<p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humour, or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum, you neede be sure there isn't anything embarrassing hidden in the middle of text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-														<div class="all-choose">
-															<div class="s-shoose">
-																<h5>Color</h5>
-																<div class="color-select clearfix">
-																	<span></span>
-																	<span class="outline"></span>
-																	<span></span>
-																	<span></span>
-																</div>
-															</div>
-															<div class="s-shoose">
-																<h5>size</h5>
-																<div class="size-drop">
-																	<div class="btn-group">
-																		<button type="button" class="btn">XL</button>
-																		<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																			<span class=""><i class="mdi mdi-chevron-down"></i></span>
-																		</button>
-																		<ul class="dropdown-menu">
-																			<li><a href="#">Xl</a></li>
-																			<li><a href="#">SL</a></li>
-																			<li><a href="#">S</a></li>
-																			<li><a href="#">L</a></li>
-																		</ul>
-																	</div>
-																</div>
-															</div>
-															<div class="s-shoose">
-																<h5>qty</h5>
-																<form action="#" method="POST">
-																	<div class="plus-minus">
-																		<a class="dec qtybutton">-</a>
-																		<input type="text" value="02" name="qtybutton" class="plus-minus-box">
-																		<a class="inc qtybutton">+</a>
-																	</div>
-																</form>
-															</div>
-														</div>
+														<h5><del>$79.30</del>{{number_format($item->price)}}</h5>
+														{{$item->desc}}
 														<div class="list-btn">
 															<a href="#">add to cart</a>
 															<a href="#">wishlist</a>

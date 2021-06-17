@@ -15,4 +15,8 @@ class Product extends Model
     {
         return $this->hasMany('App\Models\ProductImg');
     }
+    public function Category()
+    {
+        return $this->hasOne('App\Models\Category');
+    }
 }
