@@ -30,86 +30,25 @@
 								</div>
 								<div class="categories left-right-p">
 									<ul id="accordion" class="panel-group clearfix">
+										@foreach ($departments as $item)
 										<li class="panel">
-											<div data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">
+											<div data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{$item->id}}">
 												<div class="medium-a">
-													Women
+													{{$item->name}}
 												</div>
 											</div>
-											<div class="panel-collapse collapse in" id="collapse1">
+											<div class="paypal-dsc panel-collapse collapse" id="collapse{{$item->id}}">
 												<div class="normal-a">
-													<a href="#">Men Bag</a>
-													<a href="#">Shoes</a>
-													<a href="#">Watch</a>
-													<a href="#">T-shirt</a>
-													<a href="#">shirt</a>
+													@foreach ($item->Categorys as $item2)
+													<a href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a>
+													@endforeach
+													
 												</div>
 											</div>
-										</li>
-										<li class="panel">
-											<div data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">
-												<div class="medium-a">
-													Fashion
-												</div>
-											</div>
-											<div class="paypal-dsc panel-collapse collapse" id="collapse2">
-												<div class="normal-a">
-													<a href="#">Men Bag</a>
-													<a href="#">Shoes</a>
-													<a href="#">Watch</a>
-													<a href="#">T-shirt</a>
-													<a href="#">shirt</a>
-												</div>
-											</div>
-										</li>
-										<li class="panel">
-											<div data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">
-												<div class="medium-a">
-													Accessories
-												</div>
-											</div>
-											<div class="paypal-dsc panel-collapse collapse" id="collapse3">
-												<div class="normal-a">
-													<a href="#">Men Bag</a>
-													<a href="#">Shoes</a>
-													<a href="#">Watch</a>
-													<a href="#">T-shirt</a>
-													<a href="#">shirt</a>
-												</div>
-											</div>
-										</li>
-										<li class="panel">
-											<div data-toggle="collapse" data-parent="#accordion" data-target="#collapse4">
-												<div class="medium-a">
-													Top Brands
-												</div>
-											</div>
-											<div class="paypal-dsc panel-collapse collapse" id="collapse4">
-												<div class="normal-a">
-													<a href="#">Men Bag</a>
-													<a href="#">Shoes</a>
-													<a href="#">Watch</a>
-													<a href="#">T-shirt</a>
-													<a href="#">shirt</a>
-												</div>
-											</div>
-										</li>
-										<li class="panel">
-											<div data-toggle="collapse" data-parent="#accordion" data-target="#collapse5">
-												<div class="medium-a">
-													Jewelry
-												</div>
-											</div>
-											<div class="paypal-dsc panel-collapse collapse" id="collapse5">
-												<div class="normal-a">
-													<a href="#">Men Bag</a>
-													<a href="#">Shoes</a>
-													<a href="#">Watch</a>
-													<a href="#">T-shirt</a>
-													<a href="#">shirt</a>
-												</div>
-											</div>
-										</li>
+										</li>	
+										@endforeach
+										
+										
 									</ul>
 								</div>
 							</div>
@@ -122,67 +61,6 @@
 										<label><span>You range</span> <input type="text" id="amount" readonly /></label>
 										<div id="slider-range"></div>
 									</form>
-								</div>
-							</div>
-							<div class="s-side-text">
-								<div class="sidebar-title clearfix">
-									<h4 class="floatleft">size</h4>
-									<h5 class="floatright"><a href="#">All</a></h5>
-								</div>
-								<div class="size-select clearfix">
-									<a href="#">m</a>
-									<a href="#">s</a>
-									<a href="#">l</a>
-									<a href="#">sl</a>
-									<a href="#">xl</a>
-								</div>
-							</div>
-							<div class="s-side-text">
-								<div class="sidebar-title clearfix">
-									<h4 class="floatleft">color</h4>
-									<h5 class="floatright"><a href="#">All</a></h5>
-								</div>
-								<div class="color-select clearfix">
-									<span></span>
-									<span></span>
-									<span class="outline"></span>
-									<span></span>
-									<span></span>
-									<span></span>
-									<span></span>
-								</div>
-							</div>
-							<div class="s-side-text">
-								<div class="sidebar-title clearfix">
-									<h4 class="floatleft">brands</h4>
-									<h5 class="floatright"><a href="#">All</a></h5>
-								</div>
-								<div class="brands-select clearfix">
-									<ul>
-										<li>
-											<a href="#">Offset</a>
-											<a href="#">Ecko Untid</a>
-											<a href="#">Addidas</a>
-											<a href="#">Custo</a>
-											<a href="#">Guccies</a>
-										</li>
-										<li>
-											<a href="#">Unlimited</a>
-											<a href="#">Shoes</a>
-											<a href="#">Watch</a>
-											<a href="#">Color Full</a>
-											<a href="#">Best choice</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="s-side-text">
-								<div class="banner clearfix">
-									<a href="#"><img src="img/products/banner.jpg" alt="" /></a>
-									<div class="banner-text">
-										<h2>best</h2> <br />
-										<h2 class="banner-brand">brand</h2>
-									</div>
 								</div>
 							</div>
 						</div>

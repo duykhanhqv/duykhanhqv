@@ -25,11 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         /**
-<<<<<<< HEAD
-         * Bootstrap any application services.
-=======
          * load department and category the first.
->>>>>>> 1fdbc1b0192375189f11fe01bc159d3073df6c4d
          *
          * 
          */

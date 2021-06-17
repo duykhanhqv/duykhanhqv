@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Department;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -95,9 +96,11 @@ class HomeController extends Controller
     public function listtingProducts($category_id)
     {
         $list_products = Product::where('fs_product.category_id', $category_id)->paginate(12);
+        $departments = Department::get();
         $data = [
             'msg' => 'login error',
-            'list_products' => $list_products
+            'list_products' => $list_products,
+            'departments' => $departments,
         ];
         return view('frontend.system.listingproduct', $data);
     }
