@@ -57,32 +57,22 @@
                                     <ul class="magamenu">
                                         <li class="banner"><a href="shop.html"><img src="img/maga1.png" alt="" /></a>
                                         </li>
+                                        @foreach ($list_departments->chunk(1)  as $chuck)
                                         <li>
-                                            <h5>men’s wear</h5>
+                                            @foreach ($chuck as $item)
+                                                
+                                            
+                                            <h5>{{$item->name}}</h5>
                                             <ul>
-                                                <li><a href="#">Shirts & Top</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shemwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Sweaters</a></li>
-                                                <li><a href="#">Jacket</a></li>
-                                                <li><a href="#">Men Watch</a></li>
+                                                @foreach ($item->Categorys as $item2)
+                                                <li><a href="#">{{$item2->name}}</a></li>
+                                                @endforeach
+                                                
                                             </ul>
+                                            @endforeach
                                         </li>
-                                        <li>
-                                            <h5>women’s wear</h5>
-                                            <ul>
-                                                <li><a href="#">Shirts & Tops</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shemwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Sweaters</a></li>
-                                                <li><a href="#">Jacket</a></li>
-                                                <li><a href="#">Women Watch</a></li>
-                                            </ul>
-                                        </li>
+                                        @endforeach
+
                                         <li class="banner"><a href="shop.html"><img src="img/maga2.png" alt="" /></a>
                                         </li>
                                     </ul>
