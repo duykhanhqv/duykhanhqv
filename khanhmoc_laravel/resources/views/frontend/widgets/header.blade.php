@@ -13,17 +13,18 @@
                             <li>
                                 <a href="#"><i class="mdi mdi-account"></i></a>
                                 <ul>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="login.html">Registar</a></li>
-                                    <li><a href="my-account.html">My account</a></li>
+                                    <li><a href="{{route('f.formLoginRegister')}}">Login</a></li>
+                                    <li><a href="{{route('f.formLoginRegister')}}">Registar</a></li>
+                                    <li><a href="my-account.html">@if (Auth::check())
+                                        {{Auth::user()->name}}
+                                    @endif</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#"><i class="mdi mdi-settings"></i></a>
                                 <ul>
                                     <li><a href="my-account.html">My account</a></li>
-                                    <li><a href="cart.html">My cart</a></li>
-                                    <li><a href="wishlist.html">My wishlist</a></li>
+                                    <li><a href="{{route('f.cart')}}">My cart</a></li>
                                     <li><a href="checkout.html">Check out</a></li>
                                 </ul>
                             </li>

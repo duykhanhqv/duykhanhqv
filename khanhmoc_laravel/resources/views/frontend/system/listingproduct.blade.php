@@ -100,7 +100,7 @@
                                                     echo($key->alt);
                                                 }?>" /></a>
 													<div class="actions-btn">
-														<a href="#"><i class="mdi mdi-cart"></i></a>
+														<a href="{{route('f.addProductToCart',[$item->id])}}"><i class="mdi mdi-cart"></i></a>
 														<a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
 														<a href="#"><i class="mdi mdi-heart"></i></a>
 													</div>
@@ -171,6 +171,9 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="pagnation-ul">
+										<ul>
+											{{-- {{ $list_products->from() }} --}}
+										</ul>
 										<ul class="clearfix">
 											<li><a href="#"><i class="mdi mdi-menu-left"></i></a></li>
 											<li><a href="#">1</a></li>

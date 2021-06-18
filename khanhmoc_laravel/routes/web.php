@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\ProductController;
@@ -26,5 +27,8 @@ Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.r
 Route::post('/loginpost', [HomeController::class, 'loginPost'])->name('f.loginPost');
 Route::get('/list_product={category_id}', [HomeController::class, 'listtingProducts'])->name('f.listProduct');
 Route::get('/detail_product={product_id}', [ProductController::class, 'detailProduct'])->name('f.detailProduct');
+Route::get('/cart', [CartController::class, 'getCart'])->name('f.cart');
+Route::get('/add_product_to_cart={product_id}', [CartController::class, 'addProductToCart'])->name('f.addProductToCart');
+
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');
