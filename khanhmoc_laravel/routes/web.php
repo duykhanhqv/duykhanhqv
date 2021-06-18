@@ -16,19 +16,22 @@ use App\Http\Controllers\frontend\ProductController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/q', function () {
     return view('welcome');
 });
 
-Route::get('/home', [HomeController::class, 'home'])->name('f.home');
-
-Route::get('/register', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
-Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.registerPost');
+Route::group(['middleware' => 'checklogin'], function () {
+    Route::get('/list_product={category_id}', [HomeController::class, 'listtingProducts'])->name('f.listProduct');
+    Route::get('/detail_product={product_id}', [ProductController::class, 'detailProduct'])->name('f.detailProduct');
+    Route::get('/cart', [CartController::class, 'getCart'])->name('f.cart');
+    Route::get('/add_product_to_cart={product_id}', [CartController::class, 'addProductToCart'])->name('f.addProductToCart');
+});
 Route::post('/loginpost', [HomeController::class, 'loginPost'])->name('f.loginPost');
-Route::get('/list_product={category_id}', [HomeController::class, 'listtingProducts'])->name('f.listProduct');
-Route::get('/detail_product={product_id}', [ProductController::class, 'detailProduct'])->name('f.detailProduct');
-Route::get('/cart', [CartController::class, 'getCart'])->name('f.cart');
-Route::get('/add_product_to_cart={product_id}', [CartController::class, 'addProductToCart'])->name('f.addProductToCart');
+Route::get('/home', [HomeController::class, 'home'])->name('f.home');
+Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.registerPost');
+Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
+
+
 
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');

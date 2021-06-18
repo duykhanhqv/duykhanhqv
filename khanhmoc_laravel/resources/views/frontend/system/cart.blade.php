@@ -35,7 +35,7 @@
 								</thead>
 								<tbody>
                                     <?php 
-                                    $total =0;
+                                    $sub_total =0;
                                     
                                     ?>
                                     @foreach ($carts as $item)
@@ -68,7 +68,7 @@
                                     <?php 
                                     $temp=0;
                                     $temp=$item['qty_order']*$item['price'];
-                                    $total =$total+$temp;
+                                    $sub_total =$sub_total+$temp;
                                     ?>
                                     @endforeach
 								</tbody>
@@ -103,21 +103,25 @@
 									<tbody>
 										<tr>
 											<th>Cart Subtotal</th>
-											<td>$155.00</td>
+											<td>{{number_format($sub_total)}}</td>
 										</tr>
 										<tr>
 											<th>Shipping and Handing</th>
-											<td>$15.00</td>
+											<td>0</td>
 										</tr>
 										<tr>
-											<th>Vat</th>
-											<td></td>
+											<th>including Vat</th>
+											<td>{{number_format($sub_total/10)}}</td>
 										</tr>
 									</tbody>
 									<tfoot>
 										<tr>
 											<th class="tfoot-padd">Order total</th>
-											<td class="tfoot-padd">{{number_format($total)}}</td>
+                                            <?php
+                                            $vat=$sub_total/10;
+                                            $order_total=$vat+$sub_total;
+                                            ?>
+											<td class="tfoot-padd">{{number_format($order_total)}}</td>
 										</tr>
 									</tfoot>
 								</table>
@@ -125,48 +129,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row margin-top">
-					<div class="col-xs-12">
-						<div class="padding60">
-							<div class="row">
-								<div class="col-xs-12 col-sm-6 col-md-4">
-									<div class="single-cart-form">
-										<div class="log-title">
-											<h3><strong>calculate shipping</strong></h3>
-										</div>
-										<div class="cart-form-text custom-input">
-											<p>Enter your coupon code if you have one!</p>
-											<form action="mail.php" method="post">
-												<input type="text" name="country" placeholder="Country" />
-												<div class="submit-text">
-													<button type="submit" >get a quote</button>
-												</div>
-											</form>
-										</div>
-									</div>	
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-4">
-									<div class="single-cart-form">
-										<div class="cart-form-text post-state custom-input">
-											<form action="mail.php" method="post">
-												<input type="text" name="state" placeholder="Region / State" />
-											</form>
-										</div>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-4">
-									<div class="single-cart-form">
-										<div class="cart-form-text post-state custom-input">
-											<form action="mail.php" method="post">
-												<input type="text" name="subject" placeholder="Post Code" />
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</section>
 		<!-- cart content section end -->

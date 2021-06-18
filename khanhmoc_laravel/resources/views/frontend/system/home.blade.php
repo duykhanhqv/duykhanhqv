@@ -108,7 +108,7 @@
                                         echo($key->alt);
                                     }?>" /></a>
                                     <div class="actions-btn">
-                                        <a href="#"><i class="mdi mdi-cart"></i></a>
+                                        <a href="{{route('f.addProductToCart',[$item->id])}}"><i class="mdi mdi-cart"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
                                         <a href="#"><i class="mdi mdi-heart"></i></a>
                                     </div>
@@ -164,7 +164,7 @@
                                             }?>" alt="<?php foreach ($item->ProductImgs as $key) {
                                                 echo($key->alt);
                                             }?>" /></a>                                            <div class="actions-btn">
-                                                <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                <a href="{{route('f.addProductToCart',[$item->id])}}"><i class="mdi mdi-cart"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
                                                 <a href="#"><i class="mdi mdi-heart"></i></a>
                                             </div>
@@ -206,7 +206,7 @@
                                                 echo($key->alt);
                                             }?>" /></a>
                                             <div class="actions-btn">
-                                                <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                <a href="{{route('f.addProductToCart',[$item->id])}}"><i class="mdi mdi-cart"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
                                                 <a href="#"><i class="mdi mdi-heart"></i></a>
                                             </div>
@@ -461,7 +461,7 @@
                                                         <h5><del>$79.30</del>{{number_format($item->price)}}</h5>
                                                         {{$item->desc}}
                                                         <div class="list-btn">
-                                                            <a href="#">add to cart</a>
+                                                            <a href="{{route('f.addProductToCart',[$item->id])}}">add to cart</a>
                                                             <a href="#">wishlist</a>
                                                             <a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
                                                         </div>
