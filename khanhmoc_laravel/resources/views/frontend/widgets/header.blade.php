@@ -25,7 +25,7 @@
                                 <ul>
                                     <li><a href="my-account.html">My account</a></li>
                                     <li><a href="{{route('f.cart')}}">My cart</a></li>
-                                    <li><a href="checkout.html">Check out</a></li>
+                                    <li><a href="{{route('f.checkOut')}}">Checkout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-sm-2">
                 <div class="logo">
-                    <a href="{{route('f.home')}}"><img src="img/logo2.png" alt="Sellshop" /></a>
+                    <a href="{{route('f.home')}}"><img src="frontend/img/logo2.png" alt="Sellshop" /></a>
                 </div>
             </div>
             <div class="col-sm-8">
@@ -56,7 +56,7 @@
                                 </li>
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="magamenu">
-                                        <li class="banner"><a href="shop.html"><img src="img/maga1.png" alt="" /></a>
+                                        <li class="banner">
                                         </li>
                                         @foreach ($list_departments->chunk(1)  as $chuck)
                                         <li>
@@ -75,7 +75,7 @@
                                             @endforeach
                                         </li>
                                         @endforeach
-                                        <li class="banner"><a href="shop.html"><img src="img/maga2.png" alt="" /></a>
+                                        <li class="banner">
                                         </li>
                                     </ul>
                                 </li>
@@ -178,7 +178,7 @@
                     <div class="cartdrop">
                         <div class="sin-itme clearfix">
                             <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/1.png" alt="" /></a>
+                            <a class="cart-img" href="cart.html"><img src="frontend/img/cart/1.png" alt="" /></a>
                             <div class="menu-cart-text">
                                 <a href="#">
                                     <h5>men’s black t-shirt</h5>
@@ -190,7 +190,7 @@
                         </div>
                         <div class="sin-itme clearfix">
                             <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/2.png" alt="" /></a>
+                            <a class="cart-img" href="cart.html"><img src="frontend/img/cart/2.png" alt="" /></a>
                             <div class="menu-cart-text">
                                 <a href="#">
                                     <h5>men’s black t-shirt</h5>

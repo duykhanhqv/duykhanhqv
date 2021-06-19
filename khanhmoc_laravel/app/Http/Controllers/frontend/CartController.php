@@ -19,7 +19,7 @@ class CartController extends Controller
     {
         $carts = session('cart');
         $data = [
-            'msg' => '',
+            'msg' => 'Khánh mốc',
             'carts' => $carts,
         ];
         return view('frontend.system.cart', $data);
@@ -57,5 +57,13 @@ class CartController extends Controller
         }
         session(['cart' => $giohang]);
         return redirect('/home');
+    }
+    public function updateQtyDown(Request $request)
+    {
+        dd($request);
+    }
+    public function update(Request $request)
+    {
+        dd($request);
     }
 }

@@ -10,6 +10,7 @@
 							<ul class="text-left">
 								<li><a href="index.html">Home </a></li>
 								<li><span> // </span>Cart</li>
+								<li><span> // </span><script>toastr.success(msg)</script></li>
 							</ul>
 						</div>
 					</div>
@@ -34,10 +35,16 @@
 									</tr>
 								</thead>
 								<tbody>
+									<form action="{{route('f.update')}}" method="post" enctype="multipart/form-data">
+										@csrf
                                     <?php 
                                     $sub_total =0;
-                                    
+                                    if($carts==null){
+										echo 'Cart null';
+									}
+									else{
                                     ?>
+									
                                     @foreach ($carts as $item)
 									<tr>
 										<td class="td-img text-left">
@@ -47,30 +54,32 @@
                                                 echo $key->alt;
                                             }?>" /></a>
 											<div class="items-dsc">
-												<h5><a href="#">{{$item['name']}}</a></h5>
+												<h5><a href="{{route('f.detailProduct',[$item['id']])}}">{{$item['name']}}</a></h5>
 											</div>
 										</td>
 										<td>{{number_format($item['price'])}}</td>
 										<td>
-											<form action="#" method="POST">
 												<div class="plus-minus">
-													<a class="dec qtybutton">-</a>
-													<input type="text" value="{{number_format($item['qty_order'])}}" name="qtybutton" class="plus-minus-box">
-													<a class="inc qtybutton">+</a>
+													{{-- <a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a> --}}
+													<input type="text" value="{{number_format($item['qty_order'])}}" name="qty_order" id="qty_order" class="plus-minus-box">
+													{{-- <a class="inc qtybutton">+</a> --}}
 												</div>
-											</form>
 										</td>
 										<td>
 											<strong>{{number_format($item['qty_order']*$item['price'])}}</strong>
 										</td>
 										<td><i class="mdi mdi-close" title="Remove this product"></i></td>
 									</tr>
+									
                                     <?php 
                                     $temp=0;
                                     $temp=$item['qty_order']*$item['price'];
                                     $sub_total =$sub_total+$temp;
                                     ?>
                                     @endforeach
+									<?php }?>
+									<input type="submit" value="UPdate">
+								</form>
 								</tbody>
 							</table>
 						</div>

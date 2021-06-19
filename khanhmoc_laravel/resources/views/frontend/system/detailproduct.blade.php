@@ -93,7 +93,7 @@
                             <h5><del></del> {{number_format($product_detail->price)}}</h5>
                             {{$product_detail->desc}}
                             <div class="list-btn">
-                                <a href="#">add to cart</a>
+                                <a href="{{route('f.addProductToCart',[$product_detail->id])}}">add to cart</a>
                                 <a href="#">wishlist</a>
                                 <a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
                             </div>

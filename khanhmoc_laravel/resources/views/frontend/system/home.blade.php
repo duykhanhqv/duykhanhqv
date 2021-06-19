@@ -5,8 +5,8 @@
     <div id="wrapper">
         <div class="slider-wrapper">
             <div id="mainSlider" class="nivoSlider">
-                <img src="img/slider/home1/1.jpg" alt="main slider" title="#htmlcaption" />
-                <img src="img/slider/home1/2.jpg" alt="main slider" title="#htmlcaption2" />
+                <img src="frontend/img/slider/home1/1.jpg" alt="main slider" title="#htmlcaption" />
+                <img src="frontend/img/slider/home1/2.jpg" alt="main slider" title="#htmlcaption2" />
             </div>
             <div id="htmlcaption" class="nivo-html-caption slider-caption">
                 <div class="container">
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="single-colect banner collect-one">
-                    <a href="#"><img src="img/collect/1.jpg" alt="" /></a>
+                    <a href="#"><img src="frontend/img/collect/1.jpg" alt="" /></a>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -62,12 +62,12 @@
                     <a href="#">Shop Now <i class="mdi mdi-arrow-right"></i></a>
                 </div>
                 <div class="collect-img banner margin single-colect">
-                    <a href="#"><img src="img/collect/2.jpg" alt="" /></a>
+                    <a href="#"><img src="frontend/img/collect/2.jpg" alt="" /></a>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="collect-img banner single-colect">
-                    <a href="#"><img src="img/collect/3.jpg" alt="" /></a>
+                    <a href="#"><img src="frontend/img/collect/3.jpg" alt="" /></a>
                     <h2>New Collection</h2>
                 </div>
                 <div class="colect-text ">
@@ -114,7 +114,7 @@
                                     </div>
                                 </div>
                                 <div class="product-dsc">
-                                    <p><a href="#">{{$item->name}}</a></p>
+                                    <p><a href="{{route('f.detailProduct',[$item->id])}}">{{$item->name}}</a></p>
                                     <span>{{number_format($item->price)}}</span>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
                                             </div>
                                         </div>
                                         <div class="product-dsc">
-                                            <p><a href="#">{{$item->name}}</a></p>
+                                            <p><a href="{{route('f.detailProduct',[$item->id])}}">{{$item->name}}</a></p>
                                             <span>{{number_format($item->price)}}</span>
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@
                                             </div>
                                         </div>
                                         <div class="product-dsc">
-                                            <p><a href="#">{{$item->name}}</a></p>
+                                            <p><a href="{{route('f.detailProduct',[$item->id])}}">{{$item->name}}</a></p>
                                             <span>{{number_format($item->price)}}</span>
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="l-blog-text">
-                                <div class="banner"><a href="single-blog.html"><img src="img/blog/1.jpg" alt="" /></a></div>
+                                <div class="banner"><a href="single-blog.html"><img src="frontend/img/blog/1.jpg" alt="" /></a></div>
                                 <div class="s-blog-text">
                                     <h4><a href="single-blog.html">Fashion style fine arts drawing</a></h4>
                                     <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
@@ -296,7 +296,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="l-blog-text">
-                                <div class="banner"><a href="single-blog.html"><img src="img/blog/2.jpg" alt="" /></a></div>
+                                <div class="banner"><a href="single-blog.html"><img src="frontend/img/blog/2.jpg" alt="" /></a></div>
                                 <div class="s-blog-text">
                                     <h4><a href="single-blog.html">women’s Fashion style 2016</a></h4>
                                     <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
@@ -310,7 +310,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="l-blog-text">
-                                <div class="banner"><a href="single-blog.html"><img src="img/blog/3.jpg" alt="" /></a></div>
+                                <div class="banner"><a href="single-blog.html"><img src="frontend/img/blog/3.jpg" alt="" /></a></div>
                                 <div class="s-blog-text">
                                     <h4><a href="single-blog.html">women’s winter Fashion style</a></h4>
                                     <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
@@ -328,7 +328,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="l-blog-text">
-                                <div class="banner"><a href="single-blog.html"><img src="img/blog/3.jpg" alt="" /></a></div>
+                                <div class="banner"><a href="single-blog.html"><img src="frontend/img/blog/3.jpg" alt="" /></a></div>
                                 <div class="s-blog-text">
                                     <h4><a href="single-blog.html">women’s winter Fashion style</a></h4>
                                     <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
@@ -342,7 +342,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="l-blog-text">
-                                <div class="banner"><a href="single-blog.html"><img src="img/blog/1.jpg" alt="" /></a></div>
+                                <div class="banner"><a href="single-blog.html"><img src="frontend/img/blog/1.jpg" alt="" /></a></div>
                                 <div class="s-blog-text">
                                     <h4><a href="single-blog.html">Fashion style fine arts drawing</a></h4>
                                     <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
@@ -356,7 +356,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="l-blog-text">
-                                <div class="banner"><a href="single-blog.html"><img src="img/blog/2.jpg" alt="" /></a></div>
+                                <div class="banner"><a href="single-blog.html"><img src="frontend/img/blog/2.jpg" alt="" /></a></div>
                                 <div class="s-blog-text">
                                     <h4><a href="single-blog.html">women’s Fashion style 2016</a></h4>
                                     <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
@@ -420,13 +420,13 @@
                                                                     <div class="pro-type">
                                                                         <span>-15%</span>
                                                                     </div>
-                                                                    <a class="simpleLens-image" data-lens-image="img/products/z3.jpg" href="#"><img src="img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                    <a class="simpleLens-image" data-lens-image="frontend/img/products/z3.jpg" href="#"><img src="frontend/img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
                                                                 </div>
                                                                 <div class="simpleLens-container tab-pane fade in" id="q-sin-4">
                                                                     <div class="pro-type">
                                                                         <span>new</span>
                                                                     </div>
-                                                                    <a class="simpleLens-image" data-lens-image="img/products/z4.jpg" href="#"><img src="img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                    <a class="simpleLens-image" data-lens-image="frontend/img/products/z4.jpg" href="#"><img src="frontend/img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -438,9 +438,9 @@
                                                             ?>" alt="<?php foreach($item->ProductImgs as $key)
                                                                 echo $key->alt;
                                                             ?>" /> </a></li>
-                                                            <li class="active"><a data-toggle="tab" href="#q-sin-2"> <img src="img/products/s2.jpg" alt="small image" /> </a></li>
-                                                            <li><a data-toggle="tab" href="#q-sin-3"> <img src="img/products/s3.jpg" alt="small image" /> </a></li>
-                                                            <li><a data-toggle="tab" href="#q-sin-4"> <img src="img/products/s4.jpg" alt="small image" /> </a></li>
+                                                            <li class="active"><a data-toggle="tab" href="#q-sin-2"> <img src="frontend/img/products/s2.jpg" alt="small image" /> </a></li>
+                                                            <li><a data-toggle="tab" href="#q-sin-3"> <img src="frontend/img/products/s3.jpg" alt="small image" /> </a></li>
+                                                            <li><a data-toggle="tab" href="#q-sin-4"> <img src="frontend/img/products/s4.jpg" alt="small image" /> </a></li>
                                                         </ul>
                                                     </div>
                                                 </div>						
@@ -461,7 +461,7 @@
                                                         <h5><del>$79.30</del>{{number_format($item->price)}}</h5>
                                                         {{$item->desc}}
                                                         <div class="list-btn">
-                                                            <a href="{{route('f.addProductToCart',[$item->id])}}">add to cart</a>
+                                                            <a class="add_to_cart" href="{{route('f.addProductToCart',[$item->id])}}">add to cart</a>
                                                             <a href="#">wishlist</a>
                                                             <a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
                                                         </div>
