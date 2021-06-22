@@ -30,13 +30,12 @@ class AppServiceProvider extends ServiceProvider
          * 
          */
         $list_departments = Department::select('fs_department.id', 'fs_department.name')->where('fs_department.active', '1')->get();
-        view()->share('list_departments', $list_departments);
+        // $cart = session('cart');
+        // dd($cart);
+        $data = [
+            'list_departments' => $list_departments,
+            // 'cart' => $cart
+        ];
+        view()->share($data);
     }
-    // public function register()
-    // {
-    //     $this->app->bind(
-    //         \Auth0\Login\Contract\Auth0UserRepository::class,
-    //         \Auth0\Login\Repository\Auth0UserRepository::class
-    //     );
-    // }
 }

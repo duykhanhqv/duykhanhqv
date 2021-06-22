@@ -95,17 +95,14 @@
 
                             <div class="all-choose">
                                 <br>
-                                <form action="{{route('f.addManyProductsToCart')}}" method="POST">
+                                <form action="{{route('f.addManyProductsToCart')}}" method="POST" id="">
                                     <div class="s-shoose">
                                         <h5>qty</h5>
-
                                         <div class="plus-minus">
                                             <a class="dec qtybutton">-</a>
                                             <input type="text" value="01" name="product[{{$product_detail->id}}]"  class="plus-minus-box">
                                             <a class="inc qtybutton">+</a>
                                         </div>
-
-
                                     </div>
                                     <div class="s-shoose">
                                         <div class="plus-minus">

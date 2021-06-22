@@ -16,8 +16,8 @@
                                     <li><a href="{{route('f.formLoginRegister')}}">Login</a></li>
                                     <li><a href="{{route('f.formLoginRegister')}}">Registar</a></li>
                                     <li><a href="my-account.html">@if (Auth::check())
-                                        {{Auth::user()->name}}
-                                    @endif</a></li>
+                                            {{Auth::user()->name}}
+                                            @endif</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -58,19 +58,21 @@
                                     <ul class="magamenu">
                                         <li class="banner">
                                         </li>
-                                        @foreach ($list_departments->chunk(1)  as $chuck)
+                                        @foreach ($list_departments->chunk(1) as $chuck)
                                         <li>
                                             @foreach ($chuck as $item)
-                                                
-                                            
+
+
                                             <h5>{{$item->name}}</h5>
                                             <ul>
                                                 @foreach ($item->Categorys as $item2)
 
-                                                <li><a href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a></li>
+                                                <li><a
+                                                        href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a>
+                                                </li>
 
                                                 @endforeach
-                                                
+
                                             </ul>
                                             @endforeach
                                         </li>
@@ -173,35 +175,47 @@
                 <div class="cart-itmes">
                     <a class="cart-itme-a" href="cart.html">
                         <i class="mdi mdi-cart"></i>
-                        02 items : <strong>$86.00</strong>
+                        <?php $sub_total = 0; 
+                        $count=count($cart);
+                        $sub_total = 0;
+                        if($cart==null){
+                        }else{
+                        foreach($cart as $item){
+                            $sub_total=$item['price']*$item['qty_order'];
+                            }
+                        }
+                        ?>
+                        {{$count}} items : <strong>{{number_format($sub_total)}}</strong>
                     </a>
                     <div class="cartdrop">
+                        <?php 
+                        $sub_total = 0;
+                        if($cart==null){ ?>
+                        <?php
+                        }
+                        else{
+                        ?>
+                        @foreach ($cart as $item)
                         <div class="sin-itme clearfix">
                             <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="frontend/img/cart/1.png" alt="" /></a>
+                            <a class="cart-img" href="cart.html"><img src="frontend/img/product/<?php foreach($item['product_img'] as $key){
+                                echo $key->url;
+                            }?>" alt="<?php foreach($item['product_img'] as $key){
+                                                echo $key->alt;
+                                            }?>" /></a>
                             <div class="menu-cart-text">
                                 <a href="#">
-                                    <h5>men’s black t-shirt</h5>
+                                    <h5>{{$item['name']}}</h5>
                                 </a>
-                                <span>Color : Black</span>
-                                <span>Size : SL</span>
-                                <strong>$122.00</strong>
+                                <span>quantity: {{$item['qty_order']}}</span>
+                                <strong>{{number_format($item['price']*$item['qty_order'])}}</strong>
                             </div>
                         </div>
-                        <div class="sin-itme clearfix">
-                            <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="frontend/img/cart/2.png" alt="" /></a>
-                            <div class="menu-cart-text">
-                                <a href="#">
-                                    <h5>men’s black t-shirt</h5>
-                                </a>
-                                <span>Color : Black</span>
-                                <span>Size : SL</span>
-                                <strong>$132.00</strong>
-                            </div>
-                        </div>
+                        <?php $sub_total=$item['price']*$item['qty_order'] ?>
+                        @endforeach
+                        <?php }?>
                         <div class="total">
-                            <span>total <strong>= $306.00</strong></span>
+                            <span>total :<strong>{{number_format($sub_total)}}</strong></span>
                         </div>
                         <a class="goto" href="cart.html">go to cart</a>
                         <a class="out-menu" href="checkout.html">Check out</a>

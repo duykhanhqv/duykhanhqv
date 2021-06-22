@@ -4,7 +4,8 @@
     <title>Home Version One || Sellshop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -37,9 +38,19 @@
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
     <!-- modernizr js -->
     <script src="{{asset('frontend/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="{{asset('frontend/js/vendor/jquery-1.12.3.min.js')}}"></script>
 
+        <!-- meanmenu js -->
+        <script src="{{asset('frontend/js/jquery.meanmenu.js')}}"></script>
+    <!-- nivo.slider JS -->
+    <script src="{{asset('frontend/js/jquery.nivo.slider.pack.js')}}"></script>
+    <!-- simpleLens JS -->
+    <script src="{{asset('frontend/js/jquery.simpleLens.min.js')}}"></script>
+    <!-- jquery-ui js -->
+    <script src="{{asset('frontend/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('frontend/js/cart.js')}}"></script>
 
 
 
@@ -47,7 +58,6 @@
     {{-- Add toast message --}}
 
    
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
    <link rel="stylesheet" type="text/css" 
     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

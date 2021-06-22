@@ -20,7 +20,7 @@ class CartController extends Controller
         $cart = session('cart');
         $data = [
             'msg' => 'Khánh mốc',
-            'carts' => $cart,
+            'cart' => $cart,
         ];
         return view('frontend.system.cart', $data);
     }
@@ -141,5 +141,50 @@ class CartController extends Controller
             'msg' => 'Khánh mốc',
             'carts' => $cart,
         ]);
+    }
+    /**
+     * add product to cart use Ajax
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function addProductToCartAjax(Request $request)
+    {
+        $product = Product::where(['id' => $request->id])->first();
+        if (!$product)
+            return view('frontend.system.home');
+        if (!Auth::check()) {
+            $data = [
+                'msg' => 'You need to login before making a purchase'
+            ];
+            return response()->json($data, 200);
+        }
+        $cart = session('cart');
+        if ($product->qty < $cart[$product->id]['qty_order']++) {
+            $data = [
+                'msg' => 'Sản phẩm hết hàng',
+                'status' => 'danger',
+            ];
+            return response()->json($data, 200);
+        } else {
+            if (isset($cart[$product->id])) {
+                $cart[$product->id]['qty_order']++;
+            } else {
+                $cart[$product->id] = [
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'price' => $product->price,
+                    'qty_order' => 1,
+                    'product_img' => $product->ProductImgs
+                ];
+            }
+            session(['cart' => $cart]);
+            $data = [
+                'msg' => 'Thêm thành công',
+                'status' => 'success',
+                'cart' => $cart,
+            ];
+            return response()->json($data, 200);
+        }
     }
 }

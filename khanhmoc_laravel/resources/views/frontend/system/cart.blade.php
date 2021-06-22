@@ -41,13 +41,12 @@
 						<tbody>
 							<?php 
                                     $sub_total =0;
-                                    if($carts==null){
+                                    if($cart==null){
 										echo 'Cart null';
 									}
 									else{
                                     ?>
-
-							@foreach ($carts as $item)
+							@foreach ($cart as $item)
 							<form action="{{route('f.updateCart')}}" method="post" enctype="multipart/form-data">
 							<tr>
 								<td class="td-img text-left">

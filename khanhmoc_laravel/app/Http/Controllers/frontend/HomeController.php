@@ -20,8 +20,10 @@ class HomeController extends Controller
      */
     public function formLoginRegister()
     {
+        $cart = session('cart');
         $data = [
-            'msg' => ''
+            'msg' => '',
+            'cart' => $cart,
         ];
         return view('frontend.system.register', $data);
     }
@@ -33,6 +35,7 @@ class HomeController extends Controller
      */
     public function home()
     {
+        $cart = session('cart');
         $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
         // dd($feature_products);
         $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
@@ -42,6 +45,7 @@ class HomeController extends Controller
             'new_arrivals' => $new_arrivals,
             'best_seller_products' => $best_seller_products,
             'msg' => '',
+            'cart' => $cart,
         ];
         return view('frontend.system.home', $data);
     }
@@ -95,12 +99,15 @@ class HomeController extends Controller
      */
     public function listtingProducts($category_id)
     {
+        $cart = session('cart');
         $list_products = Product::where('fs_product.category_id', $category_id)->paginate(12);
         $departments = Department::get();
         $data = [
             'msg' => 'login error',
             'list_products' => $list_products,
             'departments' => $departments,
+            'cart' => $cart,
+
         ];
         return view('frontend.system.listingproduct', $data);
     }

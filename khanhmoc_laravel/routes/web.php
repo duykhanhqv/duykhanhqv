@@ -37,5 +37,7 @@ Route::post('/update', [CartController::class, 'updateCart'])->name('f.updateCar
 Route::get('/checkout', [OrderController::class, 'getCheckOut'])->name('f.checkOut');
 Route::post('/create_bill', [OrderController::class, 'createBill'])->name('f.createBill');
 Route::post('/add_many_products', [CartController::class, 'addManyProductsToCart'])->name('f.addManyProductsToCart');
+Route::post('/add_to_cart_ajax', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
+// Route::get('/add_to_cart_ajax={product_id}', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');
