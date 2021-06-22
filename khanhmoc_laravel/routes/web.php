@@ -36,6 +36,6 @@ Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.form
 Route::post('/update', [CartController::class, 'update'])->name('f.update');
 Route::get('/checkout', [OrderController::class, 'getCheckOut'])->name('f.checkOut');
 Route::post('/create_bill', [OrderController::class, 'createBill'])->name('f.createBill');
-
+Route::post('/add_many_products', [CartController::class, 'addManyProductsToCart'])->name('f.addManyProductsToCart');
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');

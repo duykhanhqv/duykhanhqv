@@ -92,10 +92,31 @@
                             </div>
                             <h5><del></del> {{number_format($product_detail->price)}}</h5>
                             {{$product_detail->desc}}
+
+                            <div class="all-choose">
+                                <br>
+                                <form action="{{route('f.addManyProductsToCart')}}" method="POST">
+                                    <div class="s-shoose">
+                                        <h5>qty</h5>
+
+                                        <div class="plus-minus">
+                                            <a class="dec qtybutton">-</a>
+                                            <input type="text" value="01" name="product[{{$product_detail->id}}]"  class="plus-minus-box">
+                                            <a class="inc qtybutton">+</a>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="s-shoose">
+                                        <div class="plus-minus">
+                                           @csrf
+                                                <input type="submit" value="add to cart">
+                                          
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="list-btn">
-                                <a href="{{route('f.addProductToCart',[$product_detail->id])}}">add to cart</a>
-                                <a href="#">wishlist</a>
-                                <a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
                             </div>
                             <div class="share-tag clearfix">
                                 <ul class="blog-share floatleft">
@@ -365,13 +386,11 @@
                                                                 <span>sell</span>
                                                             </div>
                                                             <a class="simpleLens-image"
-                                                                data-lens-image="img/products/z2.jpg" href="#"><img
-                                                                    src="frontend/img/product/<?php foreach ($product_detail->ProductImgs as $key) {
+                                                                data-lens-image="img/products/z2.jpg" href="#"><img src="frontend/img/product/<?php foreach ($product_detail->ProductImgs as $key) {
                                                                         echo($key->url);
                                                                     }?>" alt="frontend/img/product/<?php foreach ($product_detail->ProductImgs as $key) {
                                             echo($key->alt);
-                                        }?>"
-                                                                    class="simpleLens-big-image"></a>
+                                        }?>" class="simpleLens-big-image"></a>
                                                         </div>
                                                         <div class="simpleLens-container tab-pane fade in" id="q-sin-3">
                                                             <div class="pro-type">
