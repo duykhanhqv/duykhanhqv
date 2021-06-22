@@ -61,7 +61,7 @@
 										<td>
 												<div class="plus-minus">
 													{{-- <a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a> --}}
-													<input type="text" value="{{number_format($item['qty_order'])}}" name="qty_order" id="qty_order" class="plus-minus-box">
+													<input type="text" value="{{number_format($item['qty_order'])}}" name="product[{{$item['id']}}]" id="qty_order" class="plus-minus-box">
 													{{-- <a class="inc qtybutton">+</a> --}}
 												</div>
 										</td>

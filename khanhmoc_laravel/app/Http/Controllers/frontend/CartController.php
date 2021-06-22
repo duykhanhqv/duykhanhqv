@@ -34,7 +34,7 @@ class CartController extends Controller
     public function addProductToCart($id)
     {
         $product = Product::where(['id' => $id])->first();
-        // dd($product);
+        // dd($product->id);
         if (!$product)
             return view('frontend.system.home');
         // dd(!Auth::check());
@@ -45,16 +45,25 @@ class CartController extends Controller
             return view('frontend.system.register', $data);
         }
         $cart = session('cart');
-        if (isset($giohang[$product->id])) {
-            $cart[$product->id]['qty_order']++;
+        // dd($product->qty);
+        if (isset($cart[$product->id])) {
+            if ($product->qty >= ($cart[$product->id]['qty_order'] + 1)) {
+                $cart[$product->id]['qty_order']++;
+            } else {
+                return view('frontend.system.register', ['msg' => 'Sold product']);
+            }
         } else {
-            $cart[$product->id] = [
-                'id' => $product->id,
-                'name' => $product->name,
-                'price' => $product->price,
-                'qty_order' => 1,
-                'product_img' => $product->ProductImgs
-            ];
+            if ($product->qty >= 1) {
+                $cart[$product->id] = [
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'price' => $product->price,
+                    'qty_order' => 1,
+                    'product_img' => $product->ProductImgs
+                ];
+            } else {
+                return view('frontend.system.register', ['msg' => 'Sold product']);
+            }
         }
         session(['cart' => $cart]);
         return redirect('/home');
@@ -73,15 +82,24 @@ class CartController extends Controller
             }
             $cart = session('cart');
             if (isset($cart[$product->id])) {
-                $cart[$product->id]['qty_order'] = $cart[$product->id]['qty_order'] + $qty;
+                if ($product->qty >= ($cart[$product->id]['qty_order'] + $qty)) {
+                    $cart[$product->id]['qty_order']++;
+                } else {
+                    return view('frontend.system.register', ['msg' => 'Sold product']);
+                }
             } else {
-                $cart[$product->id] = [
-                    'id' => $product->id,
-                    'name' => $product->name,
-                    'price' => $product->price,
-                    'qty_order' => $qty,
-                    'product_img' => $product->ProductImgs
-                ];
+                if ($product->qty >= $qty) {
+
+                    $cart[$product->id] = [
+                        'id' => $product->id,
+                        'name' => $product->name,
+                        'price' => $product->price,
+                        'qty_order' => $qty,
+                        'product_img' => $product->ProductImgs
+                    ];
+                } else {
+                    return view('frontend.system.register', ['msg' => 'Sold product']);
+                }
             }
             session(['cart' => $cart]);
         }
