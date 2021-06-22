@@ -33,7 +33,7 @@ Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.r
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
 // Route::post('/update_qty_up={product_id}', [CartController::class, 'updateQtyUp'])->name('f.updateQtyUp');
 // Route::get('/update_qty_down={product_id}', [CartController::class, 'updateQtyDown'])->name('f.updateQtyDown');
-Route::post('/update', [CartController::class, 'update'])->name('f.update');
+Route::post('/update', [CartController::class, 'updateCart'])->name('f.updateCart');
 Route::get('/checkout', [OrderController::class, 'getCheckOut'])->name('f.checkOut');
 Route::post('/create_bill', [OrderController::class, 'createBill'])->name('f.createBill');
 Route::post('/add_many_products', [CartController::class, 'addManyProductsToCart'])->name('f.addManyProductsToCart');

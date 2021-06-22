@@ -18,7 +18,6 @@ class CartController extends Controller
     public function getCart()
     {
         $cart = session('cart');
-        dd($cart);
         $data = [
             'msg' => 'Khánh mốc',
             'carts' => $cart,
@@ -34,10 +33,8 @@ class CartController extends Controller
     public function addProductToCart($id)
     {
         $product = Product::where(['id' => $id])->first();
-        // dd($product->id);
         if (!$product)
             return view('frontend.system.home');
-        // dd(!Auth::check());
         if (!Auth::check()) {
             $data = [
                 'msg' => 'You need to login before making a purchase'
@@ -45,7 +42,6 @@ class CartController extends Controller
             return view('frontend.system.register', $data);
         }
         $cart = session('cart');
-        // dd($product->qty);
         if (isset($cart[$product->id])) {
             if ($product->qty >= ($cart[$product->id]['qty_order'] + 1)) {
                 $cart[$product->id]['qty_order']++;
@@ -68,6 +64,12 @@ class CartController extends Controller
         session(['cart' => $cart]);
         return redirect('/home');
     }
+    /**
+     * add many product to cart
+     * author: khanhmoc
+     *
+     * 
+     */
     public function addManyProductsToCart(Request $request)
     {
         foreach ($request->product as $id => $qty) {
@@ -104,5 +106,40 @@ class CartController extends Controller
             session(['cart' => $cart]);
         }
         return redirect('/home');
+    }
+    /**
+     * add product update cart
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function updateCart(Request $request)
+    {
+        foreach ($request->product as $id => $qty) {
+            $product = Product::where(['id' => $id])->first();
+            if (!$product)
+                return view('frontend.system.home');
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            }
+            $cart = session('cart');
+            if (isset($cart[$product->id])) {
+                if ($qty <= 0) {
+                    unset($cart[$product->id]);
+                } else {
+                    $cart[$product->id]['qty_order'] = $qty;
+                }
+            } else {
+                return view('frontend.system.register', ['msg' => 'No have product in cart']);
+            }
+            session(['cart' => $cart]);
+        }
+        return view('frontend.system.cart', [
+            'msg' => 'Khánh mốc',
+            'carts' => $cart,
+        ]);
     }
 }
