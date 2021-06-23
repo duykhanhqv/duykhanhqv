@@ -11,9 +11,7 @@
 						<li><a href="index.html">Home </a></li>
 						<li><span> // </span>Cart</li>
 						<li><span> // </span>
-							<script>
-								toastr.success(msg)
-							</script>
+								{{$msg}}
 						</li>
 					</ul>
 				</div>
@@ -63,17 +61,16 @@
 								<td>{{number_format($item['price'])}}</td>
 								<td>
 									<div class="plus-minus">
-										{{-- <a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec
-										qtybutton">-</a> --}}
+										<a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a>
 										<input type="text" value="{{number_format($item['qty_order'])}}"
 											name="product[{{$item['id']}}]" id="qty_order" class="plus-minus-box">
-										{{-- <a class="inc qtybutton">+</a> --}}
+										<a href="{{route('f.updateQtyUp',[$item['id']])}}" class="inc qtybutton">+</a>
 									</div>
 								</td>
 								<td>
 									<strong>{{number_format($item['qty_order']*$item['price'])}}</strong>
 								</td>
-								<td><i class="mdi mdi-close" title="Remove this product"></i></td>
+								<td><a href="{{route('f.remoteProductInCart',[$item['id']])}}"><i class="mdi mdi-close" title="Remove this product"></i></a></td>
 							</tr>
 							<?php 
                                     $temp=0;

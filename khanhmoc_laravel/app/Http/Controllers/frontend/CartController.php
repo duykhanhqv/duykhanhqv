@@ -139,7 +139,7 @@ class CartController extends Controller
         }
         return view('frontend.system.cart', [
             'msg' => 'Khánh mốc',
-            'carts' => $cart,
+            'cart' => $cart,
         ]);
     }
     /**
@@ -155,19 +155,29 @@ class CartController extends Controller
             return view('frontend.system.home');
         if (!Auth::check()) {
             $data = [
-                'msg' => 'You need to login before making a purchase'
+                'msg' => 'You need to login before making a purchase',
+                'status' => 'danger'
             ];
             return response()->json($data, 200);
         }
         $cart = session('cart');
-        if ($product->qty < $cart[$product->id]['qty_order']++) {
+        if ($product->qty < 1) {
             $data = [
                 'msg' => 'Sản phẩm hết hàng',
                 'status' => 'danger',
             ];
             return response()->json($data, 200);
-        } else {
+        } else {;
             if (isset($cart[$product->id])) {
+                $temp = $cart[$product->id]['qty_order'];
+                $temp++;
+                if ($product->qty < $temp) {
+                    $data = [
+                        'msg' => 'Sould Product',
+                        'status' => 'danger'
+                    ];
+                    return response()->json($data, 200);
+                }
                 $cart[$product->id]['qty_order']++;
             } else {
                 $cart[$product->id] = [
@@ -184,7 +194,119 @@ class CartController extends Controller
                 'status' => 'success',
                 'cart' => $cart,
             ];
+
             return response()->json($data, 200);
+        }
+    }
+    /**
+     * remove product in cart
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function removeProductInCart($product_id)
+    {
+        $product = Product::where(['id' => $product_id])->first();
+        if (!$product) {
+            return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
+        } else {
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            } else {
+                $cart = session('cart');
+                if (!isset($cart[$product->id])) {
+                    $data = [
+                        'msg' => 'No have Product in your cart'
+                    ];
+                    return back($data);
+                } else {
+                    unset($cart[$product->id]);
+                    session(['cart' => $cart]);
+                    $data = [
+                        'msg' => 'Remove product susses',
+                        'cart' => $cart,
+                    ];
+                    return back();
+                }
+            }
+        }
+    }
+    /**
+     * up product in cart
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function updateQtyUp($product_id)
+    {
+        $product = Product::where(['id' => $product_id])->first();
+        if (!$product) {
+            return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
+        } else {
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            } else {
+                $cart = session('cart');
+                if (!isset($cart[$product->id])) {
+                    $data = [
+                        'msg' => 'No have Product in your cart'
+                    ];
+                    return back($data);
+                } else {
+                    $cart[$product->id]['qty_order']++;
+                    session(['cart' => $cart]);
+                    $data = [
+                        'msg' => 'Up product susses',
+                        'cart' => $cart,
+                    ];
+                    return back();
+                }
+            }
+        }
+    }
+    /**
+     * down product in cart
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function updateQtyDown($product_id)
+    {
+        $product = Product::where(['id' => $product_id])->first();
+        if (!$product) {
+            return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
+        } else {
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            } else {
+                $cart = session('cart');
+                if (!isset($cart[$product->id])) {
+                    $data = [
+                        'msg' => 'No have Product in your cart'
+                    ];
+                    return view('frontend.system.cart', $data);
+                } else {
+                    $cart[$product->id]['qty_order']--;
+                    if ($cart[$product->id]['qty_order'] <= 0) {
+                        unset($cart[$product->id]);
+                    }
+                    session(['cart' => $cart]);
+                    $data = [
+                        'msg' => 'down product susses',
+                        'cart' => $cart,
+                    ];
+                    return back();
+                }
+            }
         }
     }
 }

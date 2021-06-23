@@ -175,11 +175,12 @@
                 <div class="cart-itmes">
                     <a class="cart-itme-a" href="cart.html">
                         <i class="mdi mdi-cart"></i>
-                        <?php $sub_total = 0; 
-                        $count=count($cart);
-                        $sub_total = 0;
+                        <?php 
+                        $count=0;
+                        $sub_total = 0; 
                         if($cart==null){
                         }else{
+                        $count=count($cart);
                         foreach($cart as $item){
                             $sub_total=$item['price']*$item['qty_order'];
                             }
@@ -187,7 +188,7 @@
                         ?>
                         {{$count}} items : <strong>{{number_format($sub_total)}}</strong>
                     </a>
-                    <div class="cartdrop">
+                    <div class="cartdrop" id="cart-mini">
                         <?php 
                         $sub_total = 0;
                         if($cart==null){ ?>

@@ -31,13 +31,13 @@ Route::post('/loginpost', [HomeController::class, 'loginPost'])->name('f.loginPo
 Route::get('/home', [HomeController::class, 'home'])->name('f.home');
 Route::post('/registerpost', [HomeController::class, 'registerpost'])->name('f.registerPost');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
-// Route::post('/update_qty_up={product_id}', [CartController::class, 'updateQtyUp'])->name('f.updateQtyUp');
-// Route::get('/update_qty_down={product_id}', [CartController::class, 'updateQtyDown'])->name('f.updateQtyDown');
+Route::get('/update_qty_up={product_id}', [CartController::class, 'updateQtyUp'])->name('f.updateQtyUp');
+Route::get('/update_qty_down={product_id}', [CartController::class, 'updateQtyDown'])->name('f.updateQtyDown');
 Route::post('/update', [CartController::class, 'updateCart'])->name('f.updateCart');
 Route::get('/checkout', [OrderController::class, 'getCheckOut'])->name('f.checkOut');
 Route::post('/create_bill', [OrderController::class, 'createBill'])->name('f.createBill');
 Route::post('/add_many_products', [CartController::class, 'addManyProductsToCart'])->name('f.addManyProductsToCart');
 Route::post('/add_to_cart_ajax', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
 // Route::get('/add_to_cart_ajax={product_id}', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
-
+Route::get('/delete_product={product_id}', [CartController::class, 'removeProductInCart'])->name('f.remoteProductInCart');
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');
