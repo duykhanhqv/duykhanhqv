@@ -60,10 +60,14 @@
 								<td>{{number_format($item['price'])}}</td>
 								<td>
 									<div class="plus-minus">
-										<a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a>
+										{{-- <a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a> --}}
+										<a data-href="{{route('f.downProductInCartAjax')}}"  data-id={{$item['id']}} class="downProductInCart">-</a>
+
 										<input type="text" value="{{number_format($item['qty_order'])}}"
 											name="product[{{$item['id']}}]" id="qty_order" class="plus-minus-box">
-										<a href="{{route('f.updateQtyUp',[$item['id']])}}" class="inc qtybutton">+</a>
+										{{-- <a href="{{route('f.updateQtyUp',[$item['id']])}}" class="inc qtybutton">+</a> --}}
+										<a data-href="{{route('f.upProductInCartAjax')}}"  data-id={{$item['id']}} class="upProductInCart">+</a>
+
 									</div>
 								</td>
 								<td>
@@ -79,7 +83,7 @@
                                     ?>
 							@endforeach
 							@csrf
-							<input type="submit" value="Update">
+							{{-- <input type="submit" value="Update"> --}}
 						</form>
 							<?php }?>
 						</tbody>

@@ -333,9 +333,15 @@ class CartController extends Controller
             } else {
                 $cart = session('cart');
                 if (!isset($cart[$product->id])) {
+                    $datarender = [
+                        'cart' => $cart,
+                    ];
+                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
                     $data = [
-                        'msg' => 'No have Product in your cart',
-                        'status' => 'error',
+                        'msg' => 'No have product in cart',
+                        'cart' => $cart,
+                        'htmlcart' => $returnHTMLCart,
+                        'status' => 'danger',
                     ];
                     return response()->json($data, 200);
                 } else {
@@ -347,6 +353,118 @@ class CartController extends Controller
                     $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
                     $data = [
                         'msg' => 'Remove product susses',
+                        'cart' => $cart,
+                        'htmlcart' => $returnHTMLCart,
+                        'status' => 'success',
+                    ];
+                    return response()->json($data, 200);
+                }
+            }
+        }
+    }
+    /**
+     * up product in cart use ajax
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function upProductInCartAjax(Request $request)
+    {
+        $product = Product::where(['id' => $request->id])->first();
+        if (!$product) {
+            return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
+        } else {
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            } else {
+                $cart = session('cart');
+                if (!isset($cart[$product->id])) {
+                    $datarender = [
+                        'cart' => $cart,
+                    ];
+                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $data = [
+                        'msg' => 'No have Product in your cart',
+                        'cart' => $cart,
+                        'htmlcart' => $returnHTMLCart,
+                        'status' => 'danger',
+                    ];
+                    return response()->json($data, 200);
+                } else {
+                    $cart[$product->id]['qty_order']++;
+                    session(['cart' => $cart]);
+                    $datarender = [
+                        'cart' => $cart,
+                    ];
+                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $data = [
+                        'msg' => 'Up product success',
+                        'cart' => $cart,
+                        'htmlcart' => $returnHTMLCart,
+                        'status' => 'success',
+                    ];
+                    return response()->json($data, 200);
+                }
+            }
+        }
+    }
+    /**
+     * down product in cart use ajax
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function downProductInCartAjax(Request $request)
+    {
+        $product = Product::where(['id' => $request->id])->first();
+        if (!$product) {
+            return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
+        } else {
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            } else {
+                $cart = session('cart');
+                if (!isset($cart[$product->id])) {
+                    $datarender = [
+                        'cart' => $cart,
+                    ];
+                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $data = [
+                        'msg' => 'No have Product in your cart',
+                        'cart' => $cart,
+                        'htmlcart' => $returnHTMLCart,
+                        'status' => 'danger',
+                    ];
+                    return response()->json($data, 200);
+                } else {
+                    $cart[$product->id]['qty_order']--;
+                    if ($cart[$product->id]['qty_order'] <= 0) {
+                        unset($cart[$product->id]);
+                        $datarender = [
+                            'cart' => $cart,
+                        ];
+                        $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                        $data = [
+                            'msg' => 'Remove product success',
+                            'cart' => $cart,
+                            'htmlcart' => $returnHTMLCart,
+                            'status' => 'danger',
+                        ];
+                        return response()->json($data, 200);
+                    }
+                    session(['cart' => $cart]);
+                    $datarender = [
+                        'cart' => $cart,
+                    ];
+                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $data = [
+                        'msg' => 'down product success',
                         'cart' => $cart,
                         'htmlcart' => $returnHTMLCart,
                         'status' => 'success',

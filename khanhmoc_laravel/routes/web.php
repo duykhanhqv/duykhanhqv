@@ -41,5 +41,7 @@ Route::post('/add_to_cart_ajax', [CartController::class, 'addProductToCartAjax']
 // Route::get('/add_to_cart_ajax={product_id}', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
 Route::get('/delete_product={product_id}', [CartController::class, 'removeProductInCart'])->name('f.remoteProductInCart');
 Route::post('/delete_product_in_cart_ajax', [CartController::class, 'removeProductInCartAjax'])->name('f.removeProductInCartAjax');
+Route::post('/up_product_in_cart_ajax', [CartController::class, 'upProductInCartAjax'])->name('f.upProductInCartAjax');
+Route::post('/down_product_in_cart_ajax', [CartController::class, 'downProductInCartAjax'])->name('f.downProductInCartAjax');
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');

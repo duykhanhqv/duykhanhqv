@@ -1,4 +1,24 @@
-<section class="pages cart-page section-padding" id="cart">
+<!-- pages-title-start -->
+<div class="pages-title section-padding" id="cart">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="pages-title-text text-center">
+					<h2>Cart</h2>
+					<ul class="text-left">
+						<li><a href="index.html">Home </a></li>
+						<li><span> // </span>Cart</li>
+						<li><span> // </span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- pages-title-end -->
+<!-- cart content section start -->
+<section class="pages cart-page section-padding">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -38,15 +58,20 @@
 								<td>{{number_format($item['price'])}}</td>
 								<td>
 									<div class="plus-minus">
-										<a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a>
+										{{-- <a href="{{route('f.updateQtyDown',[$item['id']])}}" class="dec qtybutton">-</a> --}}
+										<a data-href="{{route('f.downProductInCartAjax')}}"  data-id={{$item['id']}} class="downProductInCart">-</a>
+
 										<input type="text" value="{{number_format($item['qty_order'])}}"
 											name="product[{{$item['id']}}]" id="qty_order" class="plus-minus-box">
-										<a href="{{route('f.updateQtyUp',[$item['id']])}}" class="inc qtybutton">+</a>
+										{{-- <a href="{{route('f.updateQtyUp',[$item['id']])}}" class="inc qtybutton">+</a> --}}
+										<a data-href="{{route('f.upProductInCartAjax')}}"  data-id={{$item['id']}} class="upProductInCart">+</a>
+
 									</div>
 								</td>
 								<td>
 									<strong>{{number_format($item['qty_order']*$item['price'])}}</strong>
 								</td>
+								{{-- <td><a href="{{route('f.remoteProductInCart',[$item['id']])}}"><i class="mdi mdi-close" title="Remove this product"></i></a></td> --}}
 								<td><a class="remoteProductInCart" data-href="{{route('f.removeProductInCartAjax')}}" data-id={{$item['id']}}><i class="mdi mdi-close" title="Remove this product"></i></a></td>
 							</tr>
 							<?php 
@@ -56,7 +81,7 @@
                                     ?>
 							@endforeach
 							@csrf
-							<input type="submit" value="Update">
+							{{-- <input type="submit" value="Update"> --}}
 						</form>
 							<?php }?>
 						</tbody>
@@ -120,3 +145,4 @@
 
 	</div>
 </section>
+<!-- cart content section end -->
