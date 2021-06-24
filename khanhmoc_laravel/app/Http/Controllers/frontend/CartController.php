@@ -190,12 +190,11 @@ class CartController extends Controller
             }
             session(['cart' => $cart]);
             $datarender = [
-                'msg' => '',
                 'cart' => $cart,
             ];
             $returnHTML = view('frontend.ajax.minicart', $datarender)->render();
             $data = [
-                'msg' => 'Thêm thành công',
+                'msg' => 'Add success',
                 'status' => 'success',
                 'cart' => $cart,
                 'html' => $returnHTML,
@@ -310,6 +309,49 @@ class CartController extends Controller
                         'cart' => $cart,
                     ];
                     return back();
+                }
+            }
+        }
+    }
+    /**
+     * remove product in cart
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function removeProductInCartAjax(Request $request)
+    {
+        $product = Product::where(['id' => $request->id])->first();
+        if (!$product) {
+            return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
+        } else {
+            if (!Auth::check()) {
+                $data = [
+                    'msg' => 'You need to login before making a purchase'
+                ];
+                return view('frontend.system.register', $data);
+            } else {
+                $cart = session('cart');
+                if (!isset($cart[$product->id])) {
+                    $data = [
+                        'msg' => 'No have Product in your cart',
+                        'status' => 'error',
+                    ];
+                    return response()->json($data, 200);
+                } else {
+                    unset($cart[$product->id]);
+                    session(['cart' => $cart]);
+                    $datarender = [
+                        'cart' => $cart,
+                    ];
+                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $data = [
+                        'msg' => 'Remove product susses',
+                        'cart' => $cart,
+                        'htmlcart' => $returnHTMLCart,
+                        'status' => 'success',
+                    ];
+                    return response()->json($data, 200);
                 }
             }
         }

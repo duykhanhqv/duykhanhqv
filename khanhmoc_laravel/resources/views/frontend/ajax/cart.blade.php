@@ -1,26 +1,4 @@
-@extends('frontend.master')
-@section('content')
-<!-- pages-title-start -->
-<div class="pages-title section-padding" id="cart">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="pages-title-text text-center">
-					<h2>Cart</h2>
-					<ul class="text-left">
-						<li><a href="index.html">Home </a></li>
-						<li><span> // </span>Cart</li>
-						<li><span> // </span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- pages-title-end -->
-<!-- cart content section start -->
-<section class="pages cart-page section-padding">
+<section class="pages cart-page section-padding" id="cart">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -69,8 +47,7 @@
 								<td>
 									<strong>{{number_format($item['qty_order']*$item['price'])}}</strong>
 								</td>
-								{{-- <td><a href="{{route('f.remoteProductInCart',[$item['id']])}}"><i class="mdi mdi-close" title="Remove this product"></i></a></td> --}}
-								<td><a class="remoteProductInCart" data-href="{{route('f.removeProductInCartAjax')}}" data-id={{$item['id']}}><i class="mdi mdi-close" title="Remove this product"></i></a></td>
+								<td><a href="{{route('f.remoteProductInCart',[$item['id']])}}"><i class="mdi mdi-close" title="Remove this product"></i></a></td>
 							</tr>
 							<?php 
                                     $temp=0;
@@ -143,5 +120,3 @@
 
 	</div>
 </section>
-<!-- cart content section end -->
-@endsection

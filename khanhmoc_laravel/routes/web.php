@@ -40,4 +40,6 @@ Route::post('/add_many_products', [CartController::class, 'addManyProductsToCart
 Route::post('/add_to_cart_ajax', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
 // Route::get('/add_to_cart_ajax={product_id}', [CartController::class, 'addProductToCartAjax'])->name('f.addProductToCartAjax');
 Route::get('/delete_product={product_id}', [CartController::class, 'removeProductInCart'])->name('f.remoteProductInCart');
+Route::post('/delete_product_in_cart_ajax', [CartController::class, 'removeProductInCartAjax'])->name('f.removeProductInCartAjax');
+
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');
