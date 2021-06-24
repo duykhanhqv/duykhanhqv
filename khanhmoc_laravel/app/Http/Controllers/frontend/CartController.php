@@ -189,12 +189,17 @@ class CartController extends Controller
                 ];
             }
             session(['cart' => $cart]);
+            $datarender = [
+                'msg' => '',
+                'cart' => $cart,
+            ];
+            $returnHTML = view('frontend.ajax.minicart', $datarender)->render();
             $data = [
                 'msg' => 'Thêm thành công',
                 'status' => 'success',
                 'cart' => $cart,
+                'html' => $returnHTML,
             ];
-
             return response()->json($data, 200);
         }
     }
