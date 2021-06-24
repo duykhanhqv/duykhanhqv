@@ -47,7 +47,7 @@
 								<td>
 									<strong>{{number_format($item['qty_order']*$item['price'])}}</strong>
 								</td>
-								<td><a href="{{route('f.remoteProductInCart',[$item['id']])}}"><i class="mdi mdi-close" title="Remove this product"></i></a></td>
+								<td><a class="remoteProductInCart" data-href="{{route('f.removeProductInCartAjax')}}" data-id={{$item['id']}}><i class="mdi mdi-close" title="Remove this product"></i></a></td>
 							</tr>
 							<?php 
                                     $temp=0;

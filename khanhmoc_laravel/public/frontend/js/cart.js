@@ -28,12 +28,12 @@ $(function () {
             })
     })
     /**
-     * js get event remote and push data to controler
+     * js get event remove and push data to controler
      * author: khanhmoc
      *
      * 
      */
-    $('.remoteProductInCart').click(function () {
+     $(document).on("click", ".remoteProductInCart", function () {
         var _that = $(this);
         var url = _that.data('href');
         var id = _that.data('id');
