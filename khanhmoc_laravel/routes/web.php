@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\OrderController;
 use App\Http\Controllers\frontend\ProductController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/q', function () {
 });
 
 Route::group(['middleware' => 'checklogin'], function () {
-    Route::get('/list_product={category_id}', [HomeController::class, 'listtingProducts'])->name('f.listProduct');
+    Route::get('/list_product={category_id}', [ProductController::class, 'listtingProducts'])->name('f.listProduct');
     Route::get('/detail_product={product_id}', [ProductController::class, 'detailProduct'])->name('f.detailProduct');
     Route::get('/cart', [CartController::class, 'getCart'])->name('f.cart');
     Route::get('/add_product_to_cart={product_id}', [CartController::class, 'addProductToCart'])->name('f.addProductToCart');
@@ -43,5 +44,8 @@ Route::get('/delete_product={product_id}', [CartController::class, 'removeProduc
 Route::post('/delete_product_in_cart_ajax', [CartController::class, 'removeProductInCartAjax'])->name('f.removeProductInCartAjax');
 Route::post('/up_product_in_cart_ajax', [CartController::class, 'upProductInCartAjax'])->name('f.upProductInCartAjax');
 Route::post('/down_product_in_cart_ajax', [CartController::class, 'downProductInCartAjax'])->name('f.downProductInCartAjax');
+Route::post('/listting_product_ajax', [ProductController::class, 'listtingProductsAjax'])->name('f.listtingProductsAjax');
+Route::post('/products_list_ajax', [ProductController::class, 'productsListAjax'])->name('f.productsListAjax');
+Route::post('/products_gird_ajax', [ProductController::class, 'productsGirdAjax'])->name('f.productsGirdAjax');
 
 // Route::get('/cart', [CartController::class, 'cart'])->name('f.cart');

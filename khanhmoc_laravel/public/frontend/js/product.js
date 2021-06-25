@@ -5,33 +5,15 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-    /**
-     * js get event add and push data to controler
-     * author: khanhmoc
-     *
-     * 
-     */
+
 $(function () {
-    $(document).on("click", ".addToCart",function () {
-        var _that = $(this);
-        var url = _that.data('href');
-        var id = _that.data('id');
-        $.post(url, { id: id })
-            .done(function (data) {
-                if (data.status == 'success') {
-                    toastr.success(data.msg);
-                    $('#cart-mini').html(data.html);
-                } else
-                    toastr.warning(data.msg);
-            })
-    })
-    /**
-     * js get event remove and push data to controler
+        /**
+     * js get event switch to page and push data to controler
      * author: khanhmoc
      *
      * 
      */
-     $(document).on("click", ".remoteProductInCart", function () {
+        $(document).on("click", ".listProductAjax", function () {
         var _that = $(this);
         var url = _that.data('href');
         var id = _that.data('id');
@@ -39,19 +21,37 @@ $(function () {
             .done(function (data) {
                 if (data.status == 'success') {
                     toastr.success(data.msg);
-                    $('#cart').html(data.htmlcart);
+                    $('#page-load').html(data.htmllisting);
                 } else
                     toastr.warning(data.msg);
-                    $('#cart').html(data.htmlcart);
             })
     })
      /**
-     * js get event up and push data to controler
+     * js get event switch list product and push data to controler
      * author: khanhmoc
      *
      * 
      */
-         $(document).on("click", ".upProductInCart", function () {
+      $(document).on("click", ".productsListAjax", function () {
+        var _that = $(this);
+        var url = _that.data('href');
+        var id = _that.data('id');
+        $.post(url, { id: id })
+            .done(function (data) {
+                if (data.status == 'success') {
+                    toastr.success(data.msg);
+                    $('#grid').html(data.htmllist);
+                } else
+                    toastr.warning(data.msg);
+            })
+    })
+         /**
+     * js get event switch gird product and push data to controler
+     * author: khanhmoc
+     *
+     * 
+     */
+          $(document).on("click", ".productsGirdAjax", function () {
             var _that = $(this);
             var url = _that.data('href');
             var id = _that.data('id');
@@ -59,32 +59,13 @@ $(function () {
                 .done(function (data) {
                     if (data.status == 'success') {
                         toastr.success(data.msg);
-                        $('#cart').html(data.htmlcart);
+                        $('#list').html(data.htmlgird);
                     } else
                         toastr.warning(data.msg);
-                        $('#cart').html(data.htmlcart);
                 })
         })
-     /**
-     * js get event down and push data to controler
-     * author: khanhmoc
-     *
-     * 
-     */
-      $(document).on("click", ".downProductInCart", function () {
-        var _that = $(this);
-        var url = _that.data('href');
-        var id = _that.data('id');
-        $.post(url, { id: id })
-            .done(function (data) {
-                if (data.status == 'success') {
-                    toastr.success(data.msg);
-                    $('#cart').html(data.htmlcart);
-                } else
-                    toastr.warning(data.msg);
-                    $('#cart').html(data.htmlcart);
-            })
-    })
+
+
 
 
 })

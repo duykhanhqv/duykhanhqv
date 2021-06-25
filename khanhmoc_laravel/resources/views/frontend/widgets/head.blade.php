@@ -50,6 +50,8 @@
     <script src="{{asset('frontend/js/jquery.simpleLens.min.js')}}"></script>
     <!-- jquery-ui js -->
     <script src="{{asset('frontend/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('frontend/js/product.js')}}"></script>
+
     <script src="{{asset('frontend/js/cart.js')}}"></script>
 
 

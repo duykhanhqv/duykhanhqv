@@ -189,10 +189,10 @@ class CartController extends Controller
                 ];
             }
             session(['cart' => $cart]);
-            $datarender = [
+            $data_render = [
                 'cart' => $cart,
             ];
-            $returnHTML = view('frontend.ajax.minicart', $datarender)->render();
+            $returnHTML = view('frontend.ajax.minicart', $data_render)->render();
             $data = [
                 'msg' => 'Add success',
                 'status' => 'success',
@@ -333,28 +333,28 @@ class CartController extends Controller
             } else {
                 $cart = session('cart');
                 if (!isset($cart[$product->id])) {
-                    $datarender = [
+                    $data_render = [
                         'cart' => $cart,
                     ];
-                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                     $data = [
                         'msg' => 'No have product in cart',
                         'cart' => $cart,
-                        'htmlcart' => $returnHTMLCart,
+                        'htmlcart' => $return_HTML_Cart,
                         'status' => 'danger',
                     ];
                     return response()->json($data, 200);
                 } else {
                     unset($cart[$product->id]);
                     session(['cart' => $cart]);
-                    $datarender = [
+                    $data_render = [
                         'cart' => $cart,
                     ];
-                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                     $data = [
                         'msg' => 'Remove product susses',
                         'cart' => $cart,
-                        'htmlcart' => $returnHTMLCart,
+                        'htmlcart' => $return_HTML_Cart,
                         'status' => 'success',
                     ];
                     return response()->json($data, 200);
@@ -382,28 +382,28 @@ class CartController extends Controller
             } else {
                 $cart = session('cart');
                 if (!isset($cart[$product->id])) {
-                    $datarender = [
+                    $data_render = [
                         'cart' => $cart,
                     ];
-                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                     $data = [
                         'msg' => 'No have Product in your cart',
                         'cart' => $cart,
-                        'htmlcart' => $returnHTMLCart,
+                        'htmlcart' => $return_HTML_Cart,
                         'status' => 'danger',
                     ];
                     return response()->json($data, 200);
                 } else {
                     $cart[$product->id]['qty_order']++;
                     session(['cart' => $cart]);
-                    $datarender = [
+                    $data_render = [
                         'cart' => $cart,
                     ];
-                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                     $data = [
                         'msg' => 'Up product success',
                         'cart' => $cart,
-                        'htmlcart' => $returnHTMLCart,
+                        'htmlcart' => $return_HTML_Cart,
                         'status' => 'success',
                     ];
                     return response()->json($data, 200);
@@ -431,14 +431,14 @@ class CartController extends Controller
             } else {
                 $cart = session('cart');
                 if (!isset($cart[$product->id])) {
-                    $datarender = [
+                    $data_render = [
                         'cart' => $cart,
                     ];
-                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                     $data = [
                         'msg' => 'No have Product in your cart',
                         'cart' => $cart,
-                        'htmlcart' => $returnHTMLCart,
+                        'htmlcart' => $return_HTML_Cart,
                         'status' => 'danger',
                     ];
                     return response()->json($data, 200);
@@ -446,27 +446,27 @@ class CartController extends Controller
                     $cart[$product->id]['qty_order']--;
                     if ($cart[$product->id]['qty_order'] <= 0) {
                         unset($cart[$product->id]);
-                        $datarender = [
+                        $data_render = [
                             'cart' => $cart,
                         ];
-                        $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                        $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                         $data = [
                             'msg' => 'Remove product success',
                             'cart' => $cart,
-                            'htmlcart' => $returnHTMLCart,
+                            'htmlcart' => $return_HTML_Cart,
                             'status' => 'danger',
                         ];
                         return response()->json($data, 200);
                     }
                     session(['cart' => $cart]);
-                    $datarender = [
+                    $data_render = [
                         'cart' => $cart,
                     ];
-                    $returnHTMLCart = view('frontend.ajax.cart', $datarender)->render();
+                    $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
                     $data = [
                         'msg' => 'down product success',
                         'cart' => $cart,
-                        'htmlcart' => $returnHTMLCart,
+                        'htmlcart' => $return_HTML_Cart,
                         'status' => 'success',
                     ];
                     return response()->json($data, 200);

@@ -91,24 +91,5 @@ class HomeController extends Controller
             return view('frontend.system.register', $data);
         }
     }
-    /**
-     * login
-     * author: khanhmoc
-     *
-     *
-     */
-    public function listtingProducts($category_id)
-    {
-        $cart = session('cart');
-        $list_products = Product::where('fs_product.category_id', $category_id)->paginate(12);
-        $departments = Department::get();
-        $data = [
-            'msg' => 'login error',
-            'list_products' => $list_products,
-            'departments' => $departments,
-            'cart' => $cart,
 
-        ];
-        return view('frontend.system.listingproduct', $data);
-    }
 }

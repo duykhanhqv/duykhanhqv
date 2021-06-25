@@ -1,5 +1,3 @@
-@extends('frontend.master')
-@section('content')
         <!-- pages-title-start -->
 		<div class="pages-title section-padding">
 			<div class="container">
@@ -264,4 +262,3 @@
 				</div>
 				@endforeach
 				<!-- quick view end -->
-@endsection

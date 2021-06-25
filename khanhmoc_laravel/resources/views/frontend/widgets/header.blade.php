@@ -61,46 +61,44 @@
                                         @foreach ($list_departments->chunk(1) as $chuck)
                                         <li>
                                             @foreach ($chuck as $item)
-
-
                                             <h5>{{$item->name}}</h5>
                                             <ul>
                                                 @foreach ($item->Categorys as $item2)
-
-                                                <li><a
+                                                {{-- <li><a
                                                         href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a>
-                                                </li>
-
-                                                @endforeach
-
-                                            </ul>
-                                            @endforeach
+                                        </li> --}}
+                                        <li><a class="listProductAjax" data-href="{{route('f.listtingProductsAjax')}}"
+                                                data-id="{{$item2->id}}">{{$item2->name}}</a>
                                         </li>
                                         @endforeach
-                                        <li class="banner">
-                                        </li>
                                     </ul>
+                                    @endforeach
                                 </li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="product-grid.html">Product Grid View</a></li>
-                                        <li><a href="product-list.html">Product List View</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="error-404.html">404 page</a></li>
-                                    </ul>
+                                @endforeach
+                                <li class="banner">
                                 </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-style-1.html">Blog Style One</a></li>
-                                        <li><a href="blog-style-2.html">Blog Style Two</a></li>
-                                        <li><a href="single-blog.html">Single Blog</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="product-grid.html">Product Grid View</a></li>
+                                    <li><a href="product-list.html">Product List View</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="error-404.html">404 page</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="blog.html">Blog</a>
+                                <ul class="dropdown">
+                                    <li><a href="blog-style-1.html">Blog Style One</a></li>
+                                    <li><a href="blog-style-2.html">Blog Style Two</a></li>
+                                    <li><a href="single-blog.html">Single Blog</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
