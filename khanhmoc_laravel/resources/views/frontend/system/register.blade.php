@@ -29,7 +29,7 @@
                     <div class="login-text">
                         <div class="custom-input">
                             <p>If you have an account with us, Please log in!</p>
-                            <form action="{{route('f.loginPost')}}" method="post">
+                            <form action="{{route('f.postLogin')}}" method="post">
                                 <input type="text" name="email" placeholder="Email" />
                                 <input type="password" name="password" placeholder="Password" />
                                 <a class="forget" href="#">Forget your password?</a>
@@ -46,12 +46,14 @@
                         <h3><strong>new customers</strong></h3>
                     </div>
                     <div class="custom-input">
-                        <form action="{{route('f.registerPost')}}" method="POST">
+                        <form action="{{route('f.postRegister')}}" method="POST">
                             <input type="text" name="name" placeholder="Name here.." />
                             <input type="text" name="email" placeholder="Email Address.." />
                             <input type="text" name="mobile" placeholder="Phone Number.." />
                             <input type="text" name="address" placeholder="Address.." />
-                            <input type="password" name="password" placeholder="Confirm Password" />
+                            <input type="password" name="password" placeholder="Password" />
+                            <input type="password" name="password_confirm" placeholder="Password Confirm" />
+
                             {{-- <label class="first-child">
                                 <input type="radio" name="rememberme" value="forever">
                                 Sign up for our newsletter!

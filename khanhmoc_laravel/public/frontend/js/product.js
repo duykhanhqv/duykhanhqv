@@ -7,13 +7,13 @@ $.ajaxSetup({
 });
 
 $(function () {
-        /**
-     * js get event switch to page and push data to controler
-     * author: khanhmoc
-     *
-     * 
-     */
-        $(document).on("click", ".listProductAjax", function () {
+    /**
+ * js get event switch to page and push data to controler
+ * author: khanhmoc
+ *
+ * 
+ */
+    $(document).on("click", ".listProductAjax", function () {
         var _that = $(this);
         var url = _that.data('href');
         var id = _that.data('id');
@@ -26,13 +26,13 @@ $(function () {
                     toastr.warning(data.msg);
             })
     })
-     /**
-     * js get event switch list product and push data to controler
-     * author: khanhmoc
-     *
-     * 
-     */
-      $(document).on("click", ".productsListAjax", function () {
+    /**
+    * js get event switch list product and push data to controler
+    * author: khanhmoc
+    *
+    * 
+    */
+    $(document).on("click", ".productsListAjax", function () {
         var _that = $(this);
         var url = _that.data('href');
         var id = _that.data('id');
@@ -45,25 +45,44 @@ $(function () {
                     toastr.warning(data.msg);
             })
     })
-         /**
-     * js get event switch gird product and push data to controler
-     * author: khanhmoc
-     *
-     * 
-     */
-          $(document).on("click", ".productsGirdAjax", function () {
-            var _that = $(this);
-            var url = _that.data('href');
-            var id = _that.data('id');
-            $.post(url, { id: id })
-                .done(function (data) {
-                    if (data.status == 'success') {
-                        toastr.success(data.msg);
-                        $('#list').html(data.htmlgird);
-                    } else
-                        toastr.warning(data.msg);
-                })
-        })
+    /**
+* js get event switch gird product and push data to controler
+* author: khanhmoc
+*
+* 
+*/
+    $(document).on("click", ".productsGirdAjax", function () {
+        var _that = $(this);
+        var url = _that.data('href');
+        var id = _that.data('id');
+        $.post(url, { id: id })
+            .done(function (data) {
+                if (data.status == 'success') {
+                    toastr.success(data.msg);
+                    $('#list').html(data.htmlgird);
+                } else
+                    toastr.warning(data.msg);
+            })
+    })
+    /**
+  * js get event quickview product and push data to controler
+  * author: khanhmoc
+  *
+  * 
+  */
+    $(document).on("click", ".productsQuickView", function () {
+        var _that = $(this);
+        var url = _that.data('href');
+        var id = _that.data('id');
+        $.post(url, { id: id })
+            .done(function (data) {
+                if (data.status == 'success') {
+                    toastr.success(data.msg);
+                    $('#quick-view').html(data.returnHTML);
+                } else
+                    toastr.warning(data.msg);
+            })
+    })
 
 
 

@@ -115,4 +115,26 @@ class ProductController extends Controller
         ];
         return response()->json($data, 200);
     }
+    /**
+     * quick view product
+     * author: khanhmoc
+     *
+     *
+     */
+    public function productsQuickView(Request $request)
+    {
+        $cart = session('cart');
+        $product_detail = Product::where('id', $request->id)->first();
+        // dd($product_detail->id);
+        $data_render = [
+            'product_detail' => $product_detail
+        ];
+        $return_HTML = view('frontend.ajax.quickview', $data_render)->render();
+        $data = [
+            'returnHTML' => $return_HTML,
+            'msg' => 'success',
+            'status' => 'success'
+        ];
+        return response()->json($data, 200);
+    }
 }

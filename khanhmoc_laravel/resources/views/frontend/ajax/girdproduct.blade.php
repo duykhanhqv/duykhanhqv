@@ -12,7 +12,8 @@
                 echo($key->alt);
             }?>" /></a>
                 <div class="actions-btn">
-                    <a href="{{route('f.addProductToCart',[$item->id])}}"><i class="mdi mdi-cart"></i></a>
+                    <a class="addToCart" data-href="{{ route('f.addProductToCartAjax') }}"
+														data-id="{{($item->id)}}"><i class="mdi mdi-cart"></i></a>
                     <a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
                     <a href="#"><i class="mdi mdi-heart"></i></a>
                 </div>

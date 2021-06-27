@@ -37,7 +37,6 @@ class HomeController extends Controller
     {
         $cart = session('cart');
         $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
-        // dd($feature_products);
         $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
         $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->paginate(12);
         $data = [
@@ -50,46 +49,44 @@ class HomeController extends Controller
         return view('frontend.system.home', $data);
     }
     /**
-     * create user
+     * register user custummer buy product
      * author: khanhmoc
      *
-     * return object product 
+     * 
      */
-    public function registerPost(Request $request)
+    public function postRegister(Request $request)
     {
-        $item = User::create();
-        $item->name = $request->name;
-        $item->email = $request->email;
-        $item->address = $request->address;
-        $item->password = bcrypt('$request->password');
-        $item->mobile = $request->mobile;
-        $item->created_at = now();
-        if ($item->save()) {
-            return view('frontend.system.register', ['msg' => 'Successful Registration']);
-        } else {
-            return view('frontend.system.register');
+        $input = $request->all();
+        if ($input['password'] === $input['password_confirm']) {
+            $input['password'] = bcrypt($input['password']);
+            $item = User::create();
+            $item->name = $input['name'];
+            $item->email = $input['email'];
+            $item->address = $input['address'];
+            $item->password = $input['password'];
+            $item->mobile = $input['mobile'];
+            $item->created_at = now();
+            if ($item->save()) {
+                return view('f.formLoginRegister');
+            }
         }
+        return view('f.formLoginRegister');
     }
     /**
-     * login
+     * custummer login buy product
      * author: khanhmoc
      *
-     *
+     * 
      */
-    public function loginPost(Request $request)
+    public function postLogin(Request $request)
     {
-        $arr = [
+        $credentials = [
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
         ];
-        if (Auth::attempt($arr)) {
-            return redirect()->route('f.home');
-        } else {
-            $data = [
-                'msg' => 'login error',
-            ];
-            return view('frontend.system.register', $data);
+        if (Auth::attempt($credentials)) {
+            return view('f.home');
         }
+        return view('f.loginRegister');
     }
-
 }
