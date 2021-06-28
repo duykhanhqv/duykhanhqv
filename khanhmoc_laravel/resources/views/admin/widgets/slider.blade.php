@@ -9,7 +9,7 @@
                     <div class="page-sidebar-menu">
                         <ul class="accordion-menu">
                             <li class="active-page">
-                                <a href="index.html">
+                                <a href="{{route('s.admin')}}">
                                     <i class="menu-icon icon-home4"></i><span>Dashboard</span>
                                 </a>
                             </li>
@@ -17,6 +17,15 @@
                                 <a href="email.html">
                                     <i class="menu-icon icon-inbox"></i><span>Email</span>
                                 </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="menu-icon icon-layers"></i><span>Product</span><i class="accordion-icon fa fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{route('products.index')}}">List Product</a></li>
+                                    <li><a href="{{route('products.create')}}">Add new Product</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">

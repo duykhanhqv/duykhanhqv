@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\OrderController;
 use App\Http\Controllers\frontend\ProductController;
+use App\Http\Controllers\system\AdminProductController;
 use App\Http\Controllers\system\SystemController;
 use App\Models\Product;
 
@@ -47,6 +48,7 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/products_quick_view', [ProductController::class, 'productsQuickView'])->name('f.productsQuickView');
     //admin system
     Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
+    Route::resource('/products', AdminProductController::class);
 });
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
