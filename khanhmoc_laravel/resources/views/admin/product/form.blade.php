@@ -23,6 +23,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-Price" class="col-sm-2 control-label">Price</label>
+                                <textarea name="editor" class="ckeditor" id="editor"></textarea>
+        <script>
+            CKEDITOR.config.filebrowserImageUploadUrl = '{!! route('uploadPhoto').'?_token='.csrf_token() !!}';
+        </script>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="input-Price" class="col-sm-2 control-label">Price</label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" id="price" name="price" placeholder="Price">
                                 </div>
@@ -34,8 +42,15 @@
                             <div class="form-group">
                                 <label for="input-Description" class="col-sm-2 control-label">Description</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="desc" placeholder="Description"
+                                    <input type="textarea" class="form-control" id="desc" placeholder="Description"
                                         name="desc">
+                                        <script>
+                                            CKEDITOR.replace( 'desc', {
+                                                filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
+                                        
+                                            } );
+                                            </script>
+                                            @include('ckfinder::setup')
                                 </div>
                             </div>
                             <div class="form-group">
