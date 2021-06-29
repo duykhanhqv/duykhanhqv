@@ -20,7 +20,7 @@
                                     <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Name Product">
                                 </div>
-                            </div>
+                            {{-- </div>
                             <div class="form-group">
                                 <label for="input-Price" class="col-sm-2 control-label">Price</label>
                                 <textarea name="editor" class="ckeditor" id="editor"></textarea>
@@ -28,7 +28,7 @@
             CKEDITOR.config.filebrowserImageUploadUrl = '{!! route('uploadPhoto').'?_token='.csrf_token() !!}';
         </script>
 
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label for="input-Price" class="col-sm-2 control-label">Price</label>
                                 <div class="col-sm-5">
@@ -47,7 +47,6 @@
                                         <script>
                                             CKEDITOR.replace( 'desc', {
                                                 filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
-                                        
                                             } );
                                             </script>
                                             @include('ckfinder::setup')
@@ -80,11 +79,8 @@
                             <div class="form-group">
                                 <label for="input-Note" class="col-sm-2 control-label">IMG</label>
                                 <div class="col-sm-10">
-                                    <img width="100" src="" />
-                                    <input type="hidden" name="pro_image" id="pro_image"
-                                        value="" class="form-control">
-                                    <button class="btn btn-primary" onclick="" type="button">Please
-                                        choose IMG</button>
+                                    <input class="cke_dialog_ui_input_text" id="cke_105_textInput" type="text" aria-labelledby="cke_106_label" aria-required="true">
+                                    <a id="cke_30" class="cke_button cke_button__image cke_button_off" href="javascript:void('Hình ảnh')" title="Hình ảnh" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_30_label" aria-describedby="cke_30_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(35,event);" onfocus="return CKEDITOR.tools.callFunction(36,event);" onclick="CKEDITOR.tools.callFunction(37,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url('http://localhost:8000/ckeditor/plugins/icons.png?t=L4KA');background-position:0 -360px;background-size:auto;">&nbsp;</span><span id="cke_30_label" class="cke_button_label cke_button__image_label" aria-hidden="false">Hình ảnh</span><span id="cke_30_description" class="cke_button_label" aria-hidden="false"></span></a>
                                 </div>
                             </div>
                             @csrf

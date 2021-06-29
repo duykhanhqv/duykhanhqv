@@ -52,6 +52,24 @@ class AdminProductController extends Controller
     {
         //
         dd($request->all());
+        $item = Product::create();
+        $item->category_id = $request->category;
+        $item->name = $request->name;
+        $item->price = $request->price;
+        $item->desc = $request->desc;
+        $item->detail = $request->detail;
+        $item->created_at = now();
+        $item->qty = $request->qty;
+        $item->note = $request->note;
+        $item->sold = 0;
+        $item->view = 0;
+        $item->active = 1;
+        $item->status = 1;
+        if ($item->save()) {
+            return redirect()->route('products.index');
+        } else {
+            return back();
+        }
     }
 
     /**
