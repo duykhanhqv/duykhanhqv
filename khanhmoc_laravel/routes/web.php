@@ -59,3 +59,6 @@ Route::get('/loginadmin', [SystemController::class, 'login'])->name('s.login');
 Route::post('/loginadminpost', [SystemController::class, 'postLogin'])->name('s.loginpost');
 Route::get('/registeradmin', [SystemController::class, 'register'])->name('s.register');
 Route::post('/registeradminpost', [SystemController::class, 'postRegister'])->name('s.registerpost');
+Route::get('/test', function () {
+    return view('admin.test');
+});
