@@ -48,6 +48,7 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/products_quick_view', [ProductController::class, 'productsQuickView'])->name('f.productsQuickView');
     //admin system
     Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
+
     Route::resource('/products', AdminProductController::class);
 });
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');

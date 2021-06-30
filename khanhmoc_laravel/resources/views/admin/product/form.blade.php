@@ -4,6 +4,11 @@
 <div class="page-inner">
     <div class="page-title">
         <h3 class="breadcrumb-header">Form Elements</h3>
+        @if (session('msg'))
+        <div class="col-12 alert alert-{{session('status')}}">
+            {{session('msg')}}
+        </div>
+        @endif
     </div>
     <div id="main-wrapper">
         <div class="row">
@@ -13,66 +18,74 @@
                         <h4 class="panel-title">Form Elements</h4>
                     </div>
                     <div class="panel-body">
-                        <form action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{$action}}" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="input-Name" class="col-sm-2 control-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Name Product">
-                                </div>
+                              <label for="">Name</label>
+                              <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Name Product" value="{{$item->name??old('name')}}">
+                              <small id="helpId" class="text-muted">Help text</small>
                             </div>
                             <div class="form-group">
-                                <label for="input-Price" class="col-sm-2 control-label">Price</label>
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="price" name="price" placeholder="Price">
-                                </div>
-                                <label for="input-Qty" class="col-sm-1 control-label">Qty</label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Qty">
-                                </div>
+                              <label for="">Price</label>
+                              <input type="number" class="form-control" id="price" name="price" placeholder="price" value="{{$item->price??old('price')}}">
+                              <small id="helpId" class="text-muted">Help text</small>
                             </div>
                             <div class="form-group">
-                                <label for="input-Description" class="col-sm-2 control-label">Description</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="desc" placeholder="Description"
-                                        name="desc">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input-Detail" class="col-sm-2 control-label">Detail</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="detail" placeholder="Detail"
-                                        name="detail">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input-Note" class="col-sm-2 control-label">Note</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="note" placeholder="Note" name="note">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input Category" class="col-sm-6 control-label"> Category </label>
-                                <div class="col-sm-6">
-                                    <select id="category" name="category" class="form-control">
-                                        <option>Choose</option>
-                                        @foreach ($categorys as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input-Note" class="col-sm-2 control-label">IMG</label>
-                                <div class="col-sm-10">
-                                    <img width="100" src="" />
-                                    <input type="hidden" name="pro_image" id="pro_image"
-                                        value="" class="form-control">
-                                    <button class="btn btn-primary" onclick="" type="button">Please
-                                        choose IMG</button>
-                                </div>
-                            </div>
+                                <label for="">Qty</label>
+                                <input type="number" class="form-control" id="qty" name="qty" placeholder="Qty" value="{{$item->qty??old('qty')}}">
+                                <small id="helpId" class="text-muted">Help text</small>
+                              </div>
+                              <div class="form-group">
+                                <label for="">IMG</label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                      <a id="lfm" data-input="url" data-preview="holder" class="btn btn-primary">
+                                        <i class="fa fa-picture-o"></i> Choose
+                                      </a>
+                                    </span>
+                                    <input id="url" class="form-control" type="text" name="url" value="<?php foreach ($item->ProductImgs as $key) {
+                                      echo $key->url;
+                                    }
+                                     ?>">
+                                     <img src="<?php foreach ($item->ProductImgs as $key) {
+                                      echo $key->url;
+                                    }
+                                     ?>" alt="<?php foreach ($item->ProductImgs as $key) {
+                                      echo $key->alt;
+                                    }
+                                     ?>">
+                                  </div>
+                                  <img id="holder" style="margin-top:15px;max-height:100px;">
+                              </div>
+                              <div class="form-group">
+                                <label for="">Description</label>
+                                <textarea class="form-control" name="desc" id="desc" rows="3" value="{{$item->desc??old('desc')}}"></textarea>
+                              </div>
+                              <div class="form-group">
+                                <label for="">Detail</label>
+                                <input type="text" name="detail" id="detail" class="form-control" placeholder="Detail" aria-describedby="Detail" value="{{$item->detail??old('detail')}}">
+                                <small id="helpId" class="text-muted">Help text</small>
+                              </div>
+                              <div class="form-group">
+                                <label for="">Note</label>
+                                <input type="text" name="note" id="note" class="form-control" value="{{$item->note??old('note')}}" placeholder="Note" aria-describedby="Detail">
+                                <small id="helpId" class="text-muted">Help text</small>
+                              </div>
+                              <div class="form-group">
+                                <label for="">Category</label>
+                                <select class="form-control" name="category_id" id="category_id">
+                                  <option>Choose</option>
+                                  @foreach ($categorys as $items)
+                                  <option value="{{$items->id}}" @if(isset($item) && $item->id_category=$items->id) selected @endif>{{$items->name}}</option>
+                                  @endforeach
+                                  
+                                </select>
+                              </div>
+                           {{-- ///////////////// --}}
+                            
+
                             @csrf
+                            @method($method)
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -88,4 +101,47 @@
         <p>Made with <i class="fa fa-heart"></i> by skcats</p>
     </div>
 </div><!-- /Page Inner -->
+
+                            <!-- markup -->
+                           
+
+                            <!-- summernote config -->
+                            
+                            <script>
+                            $(document).ready(function(){
+
+                                // Define function to open filemanager window
+                                var lfm = function(options, cb) {
+                                var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+                                window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
+                                window.SetUrl = cb;
+                                };
+
+                                // Define LFM summernote button
+                                var LFMButton = function(context) {
+                                var ui = $.summernote.ui;
+                                var button = ui.button({
+                                    contents: '<i class="note-icon-picture"></i> ',
+                                    tooltip: 'Insert image with filemanager',
+                                    click: function() {
+
+                                    lfm({type: 'image', prefix: '/laravel-filemanager'}, function(lfmItems, path) {
+                                        lfmItems.forEach(function (lfmItem) {
+                                        context.invoke('insertImage', lfmItem.url);
+                                        });
+                                    });
+
+                                    }
+                                });
+                                return button.render();
+                                };
+
+                                // Initialize summernote with LFM button in the popover button group
+                                // Please note that you can add this button to any other button group you'd like
+                                $('#desc').summernote({
+                                
+                                })
+                                $('#lfm').filemanager('image');
+                            });
+                            </script>
 @endsection

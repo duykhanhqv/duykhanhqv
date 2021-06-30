@@ -10,7 +10,11 @@
             <div class="col-md-12">
                 <div class="panel panel-white">
                     <div class="panel-heading clearfix">
-                        <h4 class="panel-title">Basic example</h4>
+                        @if (session('msg'))
+                        <div class="col-12 alert alert-{{session('status')}}">
+                            {{session('msg')}}
+                        </div>
+                        @endif
                     </div>
                     <div class="panel-body">
                         <button type="button" class="btn btn-success m-b-sm" data-toggle="modal"
@@ -44,9 +48,9 @@
                                         <td>{{$item->qty}}</td>
                                         <td><button type="button" class="btn btn-default btn-rounded">Sold</button></td>
                                         <td>
-                                            <a href="../icon/pencil-square-o"><i class="fa fa-edit"
+                                            <a href="{{route('products.edit',[$item->id])}}"><i class="fa fa-edit"
                                                     aria-hidden="true"></i></a>
-                                            <a href="../icon/times"><i class="fa fa-remove" aria-hidden="true"></i></a>
+                                            <a href="{{route('products.destroy',[$item->id])}}" onclick="return confirm('Dou you want delete product ?')"><i class="fa fa-remove" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

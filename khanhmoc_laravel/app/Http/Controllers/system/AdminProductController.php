@@ -5,6 +5,7 @@ namespace App\Http\Controllers\system;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImg;
 use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
@@ -38,6 +39,9 @@ class AdminProductController extends Controller
         //
         $data = [
             'categorys' => Category::where('active', 1)->get(),
+            'action' => route('products.store'),
+            'method' => 'POST'
+
         ];
         return view('admin.product.form', $data);
     }
@@ -51,7 +55,34 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->all());
+        // dd($request->all());
+        $item = Product::create();
+        $item->category_id = $request->category_id;
+        $item->name = $request->name;
+        $item->price = $request->price;
+        $item->desc = $request->desc;
+        $item->detail = $request->detail;
+        $item->created_at = now();
+        $item->updated_at = now();
+        $item->qty = $request->qty;
+        $item->note = $request->note;
+        $item->view = 0;
+        $item->active = 1;
+        $item->status = 1;
+        if ($item->save()) {
+            $item2 = ProductImg::create();
+            $item2->product_id = $item->id;
+            $item2->url = $request->url;
+            $item2->alt = $request->name;
+            $item2->order = 1;
+            $item2->active = 1;
+            if ($item2->save()) {
+                return redirect()->route('products.index')->with(['msg' => 'Add success', 'status' => 'success']);
+            }
+            # code...
+        } else {
+            return redirect()->route('products.index')->with(['msg' => 'Add error', 'status' => 'danger']);
+        }
     }
 
     /**
@@ -74,6 +105,17 @@ class AdminProductController extends Controller
     public function edit($id)
     {
         //
+        $item = Product::where('id', $id)->first();
+        if (!$item)
+            return redirect()->route('products.index')->with(['msg' => 'None product in list', 'status' => 'danger']);
+        $data = [
+            'action' => route('products.update', $id),
+            'categorys' => Category::where('active', '1')->get(),
+            'item' => $item,
+            'method' => 'PUT',
+
+        ];
+        return view('admin.product.form', $data);
     }
 
     /**
@@ -86,6 +128,33 @@ class AdminProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $item = Product::where('id', $id)->first();
+        if (!$item) {
+            return redirect()->route('products.index')->with(['msg' => 'No have product', 'status' => 'danger']);
+        }
+        $item->category_id = $request->category_id;
+        $item->name = $request->name;
+        $item->price = $request->price;
+        $item->desc = $request->desc;
+        $item->detail = $request->detail;
+        $item->updated_at = now();
+        $item->qty = $request->qty;
+        $item->note = $request->note;
+        $item->view = 0;
+        $item->active = 1;
+        $item->status = 1;
+        if ($item->save()) {
+            $item2 = ProductImg::where('product_id', $id)->first();
+            $item2->url = $request->url;
+            $item2->alt = $request->name;
+            $item2->order = 1;
+            $item2->active = 1;
+            if ($item2->save()) {
+                return redirect()->route('products.index')->with(['msg' => 'Update success', 'status' => 'success']);
+            }
+        } else {
+            return redirect()->route('products.index')->with(['msg' => 'Update error', 'status' => 'danger']);
+        }
     }
 
     /**
