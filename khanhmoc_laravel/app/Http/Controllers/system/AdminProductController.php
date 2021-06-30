@@ -22,7 +22,7 @@ class AdminProductController extends Controller
          * author: khanhmoc
          * 
          */
-        $products = Product::where('status', '1')->orderBy('id', 'DESC')->paginate(10);
+        $products = Product::where('status', '1')->where('active',1)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'products' => $products
         ];
@@ -169,6 +169,15 @@ class AdminProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Product::where('id', $id)->first();
+        if (!$item)
+            return redirect()->route('products.index')->with(['msg' => 'None product in list', 'status' => 'danger']);
+        $item->active = 0;
+
+        if ($item->save()) {
+            return redirect()->route('products.index')->with(['msg' => 'Update success', 'status' => 'success']);
+        } else {
+            return redirect()->route('products.index')->with(['msg' => 'Update error', 'status' => 'danger']);
+        }
     }
 }

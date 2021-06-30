@@ -50,7 +50,15 @@
                                         <td>
                                             <a href="{{route('products.edit',[$item->id])}}"><i class="fa fa-edit"
                                                     aria-hidden="true"></i></a>
-                                            <a href="{{route('products.destroy',[$item->id])}}" onclick="return confirm('Dou you want delete product ?')"><i class="fa fa-remove" aria-hidden="true"></i></a>
+                                            <form action="{{route('products.destroy',[$item->id])}}" method="POST">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <a href=""
+                                                        onclick="return confirm('Dou you want delete product ?')">
+                                                <button type="submit">
+                                                    <i
+                                                            class="fa fa-remove" aria-hidden="true"></i></button></a>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
