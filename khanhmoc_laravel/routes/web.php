@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\OrderController;
 use App\Http\Controllers\frontend\ProductController;
+use App\Http\Controllers\system\AdminCategoryController;
+use App\Http\Controllers\system\AdminDepartmentController;
 use App\Http\Controllers\system\AdminProductController;
 use App\Http\Controllers\system\SystemController;
 use App\Models\Product;
@@ -50,6 +52,8 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
 
     Route::resource('/products', AdminProductController::class);
+    Route::resource('/categorys', AdminCategoryController::class);
+    Route::resource('/departments', AdminDepartmentController::class);
 });
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');

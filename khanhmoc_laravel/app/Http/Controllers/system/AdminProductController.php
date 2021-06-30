@@ -22,7 +22,7 @@ class AdminProductController extends Controller
          * author: khanhmoc
          * 
          */
-        $products = Product::where('status', '1')->where('active',1)->orderBy('id', 'DESC')->paginate(10);
+        $products = Product::where('active', 1)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'products' => $products
         ];
@@ -59,20 +59,17 @@ class AdminProductController extends Controller
         // dd($request->all());
         $item = Product::create();
         $item->category_id = $request->category_id;
-
         $item->name = $request->name;
         $item->price = $request->price;
         $item->desc = $request->desc;
         $item->detail = $request->detail;
         $item->created_at = now();
-
         $item->updated_at = now();
         $item->qty = $request->qty;
         $item->note = $request->note;
-
         $item->view = 0;
         $item->active = 1;
-        $item->status = 1;
+        $item->status = $request->status;
         if ($item->save()) {
             $item2 = ProductImg::create();
             $item2->product_id = $item->id;
@@ -109,7 +106,7 @@ class AdminProductController extends Controller
     public function edit($id)
     {
         //
-        $item = Product::where('id', $id)->first();
+        $item = Product::where('id', $id)->where('active', 1)->first();
         if (!$item)
             return redirect()->route('products.index')->with(['msg' => 'None product in list', 'status' => 'danger']);
         $data = [
@@ -132,7 +129,7 @@ class AdminProductController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $item = Product::where('id', $id)->first();
+        $item = Product::where('id', $id)->where('active', 1)->first();
         if (!$item) {
             return redirect()->route('products.index')->with(['msg' => 'No have product', 'status' => 'danger']);
         }
@@ -146,7 +143,7 @@ class AdminProductController extends Controller
         $item->note = $request->note;
         $item->view = 0;
         $item->active = 1;
-        $item->status = 1;
+        $item->status = $request->status;
         if ($item->save()) {
             $item2 = ProductImg::where('product_id', $id)->first();
             $item2->url = $request->url;
@@ -169,15 +166,14 @@ class AdminProductController extends Controller
      */
     public function destroy($id)
     {
-        $item = Product::where('id', $id)->first();
+        $item = Product::where('id', $id)->where('active', 1)->first();
         if (!$item)
             return redirect()->route('products.index')->with(['msg' => 'None product in list', 'status' => 'danger']);
         $item->active = 0;
-
         if ($item->save()) {
-            return redirect()->route('products.index')->with(['msg' => 'Update success', 'status' => 'success']);
+            return redirect()->route('products.index')->with(['msg' => 'Destroy success', 'status' => 'success']);
         } else {
-            return redirect()->route('products.index')->with(['msg' => 'Update error', 'status' => 'danger']);
+            return redirect()->route('products.index')->with(['msg' => 'Destroy error', 'status' => 'danger']);
         }
     }
 }
