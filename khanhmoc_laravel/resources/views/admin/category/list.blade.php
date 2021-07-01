@@ -3,7 +3,7 @@
 <!-- Page Inner -->
 <div class="page-inner">
     <div class="page-title">
-        <h3 class="breadcrumb-header">Data Tables</h3>
+        <h3 class="breadcrumb-header">List Categories</h3>
     </div>
     <div id="main-wrapper">
         <div class="row">
@@ -17,8 +17,7 @@
                         @endif
                     </div>
                     <div class="panel-body">
-                        <a href="{{route('categorys.create')}}" class="btn btn-success m-b-sm"> Add new Product</a>
-
+                        <a href="{{route('categorys.create')}}" class="btn btn-success m-b-sm"> Add new Category</a>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead class="thead-light">

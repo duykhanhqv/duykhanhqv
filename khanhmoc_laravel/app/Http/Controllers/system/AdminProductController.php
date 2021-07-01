@@ -55,8 +55,35 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         //
-
-        // dd($request->all());
+        $request->validate([
+            'name' => ['required', 'min:5', 'max:255'],
+            'category_id' => ['required', 'numeric'],
+            'price' => ['required', 'numeric', 'min:0'],
+            'desc' => ['required'],
+            'detail' => ['required'],
+            'qty' => ['required', 'numeric'],
+            'note' => ['required'],
+            'status' => ['required', 'numeric'],
+            'url' => ['required']
+        ], [
+            'name.required' => 'Name department already exists',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'status.required' => 'Status already exists',
+            'status.numeric' => 'Status not Invalid ',
+            'category_id.numeric' => 'Category not Invalid',
+            'category_id.required' => 'you must choose a category',
+            'price.numeric' => 'Price not Invalid',
+            'price.required' => 'Price already exists',
+            'price.min' => 'Price than 0',
+            'desc.required' => 'Description  already exists',
+            'detail.required' => 'Detail already exists',
+            'qty.required' => 'Quantity  already exists',
+            'qty.numeric' => 'Quantity not Valid',
+            'note.required' => 'Note  already exists',
+            'url.required' =>'Image  already exists'
+        ]);
+        
         $item = Product::create();
         $item->category_id = $request->category_id;
         $item->name = $request->name;

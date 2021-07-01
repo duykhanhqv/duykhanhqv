@@ -3,7 +3,7 @@
 <!-- Page Inner -->
 <div class="page-inner">
     <div class="page-title">
-        <h3 class="breadcrumb-header">Form Elements</h3>
+        <h3 class="breadcrumb-header">Form Category</h3>
         @if (session('msg'))
         <div class="col-12 alert alert-{{session('status')}}">
             {{session('msg')}}
@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="panel panel-white">
                     <div class="panel-heading clearfix">
-                        <h4 class="panel-title">Form Elements</h4>
+                        <h4 class="panel-title">Form Category</h4>
                     </div>
                     <div class="panel-body">
                         <form action="{{$action}}" method="post" enctype="multipart/form-data">
@@ -23,7 +23,11 @@
                                 <label for="">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name Category"
                                     value="{{$item->name??old('name')}}">
-                                <small id="helpId" class="text-muted">Help text</small>
+                                    @error('name')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                             </div>
                             <div class="form-group">
                                 <div class="col-md-5">
@@ -47,6 +51,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @error('status')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
@@ -55,11 +64,15 @@
                                     <select class="form-control" name="department_id" id="department_id">
                                         <option>Choose</option>
                                         @foreach ($departments as $items)
-                                        <option value="{{$items->id}}" @if(isset($item) && $item->
-                                            id_department=$items->id) selected
+                                        <option value="{{$items->id}}" @if(isset($item) && $item->id_department=$items->id) selected
                                             @endif>{{$items->name}}</option>
                                         @endforeach
                                     </select>
+                                    @error('department_id')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             @csrf

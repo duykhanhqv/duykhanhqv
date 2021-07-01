@@ -47,6 +47,16 @@ class AdminDepartmentController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => ['required', 'min:5', 'max:255'],
+            'status' => ['required', 'numeric']
+
+        ], [
+            'name.required' => 'Name department already exists',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'status.required' => 'Status already exists',
+        ]);
         $item = Department::create();
         $item->name = $request->name;
         $item->created_at = now();
@@ -81,6 +91,7 @@ class AdminDepartmentController extends Controller
     public function edit($id)
     {
         //
+
         $item = Department::where('id', $id)->where('active', 1)->first();
         if (!$item)
             return redirect()->route('departments.index')->with(['msg' => 'None Department in list', 'status' => 'danger']);
@@ -103,10 +114,21 @@ class AdminDepartmentController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $item = Department::where('id', $id)->where('active', 1)->first();
         if (!$item) {
             return redirect()->route('departments.index')->with(['msg' => 'No has Department', 'status' => 'danger']);
         }
+        $request->validate([
+            'name' => ['required', 'min:5', 'max:255'],
+            'status' => ['required', 'numeric']
+        ], [
+            'name.required' => 'Name department already exists',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'status.required' => 'Status already exists',
+            'status.numeric' => 'Status not Invalid '
+        ]);
         $item->name = $request->name;
         $item->active = 1;
         $item->status = $request->status;

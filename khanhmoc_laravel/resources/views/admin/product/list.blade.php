@@ -3,7 +3,7 @@
 <!-- Page Inner -->
 <div class="page-inner">
     <div class="page-title">
-        <h3 class="breadcrumb-header">Data Tables</h3>
+        <h3 class="breadcrumb-header">List Product</h3>
     </div>
     <div id="main-wrapper">
         <div class="row">
@@ -17,8 +17,7 @@
                         @endif
                     </div>
                     <div class="panel-body">
-                        <a href="{{route('products.create')}}" class="btn btn-success m-b-sm" > Add new Product</a>
-                        
+                        <a href="{{route('products.create')}}" class="btn btn-success m-b-sm"> Add new Product</a>
                         <div class="table-responsive">
                             <table class="table table-bordered" style="width: 100%; cellspacing: 0;">
                                 <thead>
@@ -57,20 +56,20 @@
                                             </button>
                                             @endif</td>
                                         <td>
-                                            <a type="button" href="{{route('products.edit',[$item->id])}}" class="btn  btn-rounded btn-social-outline-facebook">
+                                            <a type="button" href="{{route('products.edit',[$item->id])}}"
+                                                class="btn  btn-rounded btn-social-outline-facebook">
                                                 <i class="fa fa-edit" style="font-size:30px"></i>
                                             </a>
                                             <form action="{{route('products.destroy',[$item->id])}}" method="POST">
-                                            @csrf
-                                            {{ method_field('DELETE') }}
-                                            <a type="button"href="" class="btn  btn-rounded btn-social-outline-facebook"
-                                                >
-                                                <button type="submit" onclick="return confirm('Bạn Có muón xoá hay không ?')">
-                                                <i class="	fa fa-trash" style="font-size:25px"></i></button>
-                                            </a>
-                                        </form>
-    
-    
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <a type="button" href=""
+                                                    class="btn  btn-rounded btn-social-outline-facebook">
+                                                    <button type="submit"
+                                                        onclick="return confirm('Bạn Có muón xoá hay không ?')">
+                                                        <i class="	fa fa-trash" style="font-size:25px"></i></button>
+                                                </a>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach

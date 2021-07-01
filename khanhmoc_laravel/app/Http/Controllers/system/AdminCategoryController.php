@@ -49,6 +49,21 @@ class AdminCategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => ['required', 'min:5', 'max:255'],
+            'status' => ['required', 'numeric'],
+            'department_id' => ['required', 'numeric']
+
+        ], [
+            'name.required' => 'Name department already exists',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'status.required' => 'Status already exists',
+            'status.numeric' => 'Status not Invalid ',
+            'department_id.numeric' => 'Department not Invalid',
+            'department_id.required' => 'you must choose a department'
+        ]);
+        // dd($request->all());
         $item = Category::create();
         $item->department_id = $request->department_id;
         $item->name = $request->name;
@@ -57,7 +72,7 @@ class AdminCategoryController extends Controller
         $item->active = 1;
         $item->status = $request->status;
         if ($item->save()) {
-            return redirect()->route('category.index')->with(['msg' => 'Add success', 'status' => 'success']);
+            return redirect()->route('categorys.index')->with(['msg' => 'Add success', 'status' => 'success']);
             # code...
         } else {
             return redirect()->route('categorys.index')->with(['msg' => 'Add error', 'status' => 'danger']);
@@ -111,6 +126,20 @@ class AdminCategoryController extends Controller
         if (!$item) {
             return redirect()->route('category.index')->with(['msg' => 'No has Category', 'status' => 'danger']);
         }
+        $request->validate([
+            'name' => ['required', 'min:5', 'max:255'],
+            'status' => ['required', 'numeric'],
+            'department_id' => ['required', 'numeric']
+
+        ], [
+            'name.required' => 'Name department already exists',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'status.required' => 'Status already exists',
+            'status.numeric' => 'Status not Invalid ',
+            'department_id.numeric' => 'Department not Invalid',
+            'department_id.required' => 'you must choose a department'
+        ]);
         $item->department_id = $request->department_id;
         $item->name = $request->name;
         $item->active = 1;

@@ -3,7 +3,7 @@
 <!-- Page Inner -->
 <div class="page-inner">
   <div class="page-title">
-    <h3 class="breadcrumb-header">Form Elements</h3>
+    <h3 class="breadcrumb-header">Form Product</h3>
     @if (session('msg'))
     <div class="col-12 alert alert-{{session('status')}}">
       {{session('msg')}}
@@ -15,55 +15,71 @@
       <div class="col-md-12">
         <div class="panel panel-white">
           <div class="panel-heading clearfix">
-            <h4 class="panel-title">Form Elements</h4>
+            <h4 class="panel-title">Form Product</h4>
           </div>
+
           <div class="panel-body">
             <form action="{{$action}}" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Name Product"
                   value="{{$item->name??old('name')}}">
-                <small id="helpId" class="text-muted">Help text</small>
+                @error('name')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="">Price</label>
                 <input type="number" class="form-control" id="price" name="price" placeholder="price"
                   value="{{$item->price??old('price')}}">
-                <small id="helpId" class="text-muted">Help text</small>
+                @error('price')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
-              
+
               <div class="form-group">
                 <div class="col-md-6">
-                  <div class="form-group" >
+                  <div class="form-group">
                     <label for="">Qty</label>
                     <input type="number" class="form-control" class="col-md-5" id="qty" name="qty" placeholder="Qty"
                       value="{{$item->qty??old('qty')}}">
-                    <small id="helpId" class="text-muted">Help text</small>
-                  </div>
-                  </div>
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label>Trạng thái</label>
-                        <div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="status"
-                                        id="membershipRadios1" @if(isset($item) && $item->status!=1)
-                                    checked @endif value="0" checked=""> Ẩn <i
-                                        class="input-helper"></i></label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="status"
-                                        id="membershipRadios2" @if(isset($item) && $item->status==1)
-                                    checked @endif value="1"> Hiện <i class="input-helper"></i></label>
-                            </div>
-                        </div>
+                    @error('qty')
+                    <div class="text-danger">
+                      {{$message}}
                     </div>
+                    @enderror </div>
                 </div>
-            </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label>Trạng thái</label>
+                    <div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="status" id="membershipRadios1"
+                            @if(isset($item) && $item->status!=1)
+                          checked @endif value="0" checked=""> Ẩn <i class="input-helper"></i></label>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="status" id="membershipRadios2"
+                            @if(isset($item) && $item->status==1)
+                          checked @endif value="1"> Hiện <i class="input-helper"></i></label>
+                      </div>
+                    </div>
+                    @error('status')
+                    <div class="text-danger">
+                      {{$message}}
+                    </div>
+                    @enderror
+                  </div>
+                </div>
+              </div>
               <div class="form-group" class="col-sm-12">
                 <label for="">IMG</label>
                 <div class="input-group">
@@ -75,29 +91,46 @@
                   <input id="url" class="form-control" type="text" name="url" value="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
                                       echo($key->url);
                                   }}?>">
-                  <img src="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
+                  <img width="100px" height="100px" src="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
                                       echo($key->url);
                                   }}?>" alt="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
                                       echo($key->alt);
                                   }}?>">
                 </div>
+                @error('url')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="">Description</label>
-                <textarea class="form-control" name="desc" id="desc" rows="7"
-                  value="{{$item->desc??old('desc')}}"></textarea>
+                <textarea class="form-control" name="desc" id="desc" rows="7" value=""></textarea>
+                @error('desc')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="">Detail</label>
                 <input type="text" name="detail" id="detail" class="form-control" placeholder="Detail"
                   aria-describedby="Detail" value="{{$item->detail??old('detail')}}">
-                <small id="helpId" class="text-muted">Help text</small>
+                @error('detail')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="">Note</label>
                 <input type="text" name="note" id="note" class="form-control" value="{{$item->note??old('note')}}"
                   placeholder="Note" aria-describedby="Detail">
-                <small id="helpId" class="text-muted">Help text</small>
+                @error('note')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="">Category</label>
@@ -107,12 +140,14 @@
                   <option value="{{$items->id}}" @if(isset($item) && $item->id_category=$items->id) selected
                     @endif>{{$items->name}}</option>
                   @endforeach
-
                 </select>
+                @error('category_id')
+                <div class="text-danger">
+                  {{$message}}
+                </div>
+                @enderror
               </div>
               {{-- ///////////////// --}}
-
-
               @csrf
               @method($method)
               <div class="form-group">
@@ -135,17 +170,14 @@
 
 
 <!-- summernote config -->
-
-<script>
-  $(document).ready(function(){
-
+                            <script>
+                              $(document).ready(function(){
                                 // Define function to open filemanager window
                                 var lfm = function(options, cb) {
                                 var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
                                 window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
                                 window.SetUrl = cb;
                                 };
-
                                 // Define LFM summernote button
                                 var LFMButton = function(context) {
                                 var ui = $.summernote.ui;
@@ -153,13 +185,11 @@
                                     contents: '<i class="note-icon-picture"></i> ',
                                     tooltip: 'Insert image with filemanager',
                                     click: function() {
-
                                     lfm({type: 'image', prefix: '/laravel-filemanager'}, function(lfmItems, path) {
                                         lfmItems.forEach(function (lfmItem) {
                                         context.invoke('insertImage', lfmItem.url);
                                         });
                                     });
-
                                     }
                                 });
                                 return button.render();
@@ -167,9 +197,8 @@
 
                                 // Initialize summernote with LFM button in the popover button group
                                 // Please note that you can add this button to any other button group you'd like
-                                $('#desc').summernote({
-                                
-                                })
+                                var markupStr = '{{$item->desc??old('desc')}}';
+                                $('#desc').summernote('code', markupStr);
                                 $('#lfm').filemanager('image');
                             });
 </script>

@@ -3,7 +3,7 @@
 <!-- Page Inner -->
 <div class="page-inner">
     <div class="page-title">
-        <h3 class="breadcrumb-header">Form Elements</h3>
+        <h3 class="breadcrumb-header">Form Department</h3>
         @if (session('msg'))
         <div class="col-12 alert alert-{{session('status')}}">
             {{session('msg')}}
@@ -15,15 +15,19 @@
             <div class="col-md-12">
                 <div class="panel panel-white">
                     <div class="panel-heading clearfix">
-                        <h4 class="panel-title">Form Elements</h4>
+                        <h4 class="panel-title">Form Department</h4>
                     </div>
                     <div class="panel-body">
                         <form action="{{$action}}" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name Department"
-                                    value="{{$item->name??old('name')}}">
-                                <small id="helpId" class="text-muted">Help text</small>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Name Department" value="{{$item->name??old('name')}}">
+                                @error('name')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <div class="col-md-5">
@@ -48,8 +52,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                @error('status')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
-                            
+
                             @csrf
                             @method($method)
                             <div class="form-group">
