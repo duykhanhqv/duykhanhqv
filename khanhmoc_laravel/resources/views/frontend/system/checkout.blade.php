@@ -6,10 +6,10 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="pages-title-text text-center">
-							<h2>Chcekout</h2>
+							<h2>Checkout</h2>
 							<ul class="text-left">
 								<li><a href="index.html">Home </a></li>
-								<li><span> // </span>Chcekout</li>
+								<li><span> // </span>Checkout</li>
 							</ul>
 						</div>
 					</div>
@@ -26,15 +26,35 @@
 					<div class="col-sm-6">
 						<div class="main-input single-cart-form padding60">
 							<div class="log-title">
-								<h3><strong>billing details</strong></h3>
+								<h3><strong>billing details and shipping</strong></h3>
 							</div>
 							<div class="custom-input">
 								<form action="mail.php" method="post">
 									<input type="text" name="name_ship" placeholder="Your name" />
+									@error('name_ship')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
 									<input type="text" name="mobile_ship" placeholder="Phone here" />
+									@error('mobile_ship')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
 									<input type="text" name="email_ship" placeholder="email" />
+									@error('email_ship')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
 									<div class="custom-mess">
 										<textarea rows="2" placeholder="Your address here" name="address_ship"></textarea>
+										@error('address_ship')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
 									</div>
 								</form>
 							</div>
@@ -56,12 +76,12 @@
 									<tbody>
 										<?php 
 										$sub_total =0;
-										if($carts==null){
+										if($cart==null){
 											echo 'Cart null';
 										}
 										else{
 										?>
-										@foreach ($carts as $item)
+										@foreach ($cart as $item)
 										<tr>
 											<th>{{$item['name']}} x {{$item['qty_order']}}</th>
 											<td>{{number_format($item['price']*$item['qty_order'])}}</td>

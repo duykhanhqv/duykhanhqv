@@ -121,10 +121,6 @@
 									<td>{{number_format($sub_total)}}</td>
 								</tr>
 								<tr>
-									<th>Shipping and Handing</th>
-									<td>0</td>
-								</tr>
-								<tr>
 									<th>including Vat</th>
 									<td>{{number_format($sub_total/10)}}</td>
 								</tr>
@@ -140,6 +136,11 @@
 								</tr>
 							</tfoot>
 						</table>
+						<div class="submit-text coupon">
+							 <div class="submit-text coupon">
+								<button type="submit"><a href="{{route('f.checkOut')}}">Check out</a> </button>
+							</div> </button>
+						</div>
 					</div>
 				</div>
 			</div>

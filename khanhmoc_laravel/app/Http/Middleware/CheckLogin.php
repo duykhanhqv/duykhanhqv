@@ -20,7 +20,7 @@ class CheckLogin
         if (Auth::check()) {
             return $next($request);
         } else {
-            return redirect("/login")->with(['msg' => 'Vui lòng đăng nhập']);;
+            return redirect("/login")->with(['msg' => 'please log in']);;
         }
     }
 }

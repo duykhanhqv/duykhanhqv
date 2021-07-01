@@ -47,6 +47,19 @@ class SystemController extends Controller
      */
     public function postRegister(Request $request)
     {
+        $request->validate([
+            'password' => ['required', 'min:5', 'max:255',],
+            'password_confirm' => ['required', 'min:5', 'max:255', 'same:password'],
+            ''
+        ], [
+            'password.min' => 'Password length must be between 5 and 255',
+            'password.max' =>  'Password length must be between 5 and 255',
+            'password.required' => 'Password already exists',
+            'password_confirm.min' => 'Password confirm length must be between 5 and 255',
+            'password_confirm.max' =>  'Password confirm length must be between 5 and 255',
+            'password_confirm.required' => 'Password confirm already exists',
+            'password_confirm.same' => 'Password confirm right same password ',
+        ]);
         $input = $request->all();
         if ($input['password'] === $input['password_confirm']) {
             $input['password'] = bcrypt($input['password']);
@@ -130,5 +143,10 @@ class SystemController extends Controller
             }
         }
         return redirect()->route('s.admin')->with(['msg' => 'Update password error', 'status' => 'danger']);
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('s.login')->with(['msg' => 'You logout susses', 'status' => 'warning']);
     }
 }

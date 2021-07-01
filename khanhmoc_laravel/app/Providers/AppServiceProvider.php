@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
          *
          * 
          */
-        $list_departments = Department::select('fs_department.id', 'fs_department.name')->where('fs_department.active', '1')->get();
+        $list_departments = Department::select('fs_department.id', 'fs_department.name')->where('active', '1')->where('status', 1)->get();
         // $cart = session('cart');
         // dd($cart);
         $data = [

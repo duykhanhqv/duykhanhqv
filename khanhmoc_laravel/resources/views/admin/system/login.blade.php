@@ -8,6 +8,11 @@
         <div class="row">
             <div class="col-sm-6 col-md-3 login-box">
                 <h4 class="login-title">Sign in to your account</h4>
+                @if (session('msg'))
+                        <div class="col-12 alert alert-{{session('status')}}">
+                            {{session('msg')}}
+                        </div>
+                        @endif
                 <form action="{{route('s.loginpost')}}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Email address</label>

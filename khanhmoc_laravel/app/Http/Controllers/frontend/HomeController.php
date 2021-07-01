@@ -56,6 +56,31 @@ class HomeController extends Controller
      */
     public function postRegister(Request $request)
     {
+        $request->validate([
+            'password' => ['required', 'min:5', 'max:255',],
+            'password_confirm' => ['required', 'min:5', 'max:255', 'same:password'],
+            'name' => ['required'],
+            'mobile' => ['required', 'numeric'],
+            'email' => ['required'],
+            'address' => ['required'],
+        ], [
+            'password.min' => 'Password length must be between 5 and 255',
+            'password.max' =>  'Password length must be between 5 and 255',
+            'password.required' => 'Password already exists',
+            'password_confirm.min' => 'Password confirm length must be between 5 and 255',
+            'password_confirm.max' =>  'Password confirm length must be between 5 and 255',
+            'password_confirm.required' => 'Password confirm already exists',
+            'password_confirm.same' => 'Password confirm right same password ',
+            'name.required' => 'Name already exists',
+            'mobile.required' => 'Mobile  already exists',
+            'mobile.numeric' => 'Mobile not Invalid',
+            'email.required' => 'Email already exists',
+            'address' => 'Address already exists',
+        ]);
+        $item = User::where('email', $request->email)->first();
+        if ($item) {
+            return redirect()->route('f.formLoginRegister')->with(['msg' => 'This e-mail is already taken', 'status' => 'danger']);
+        }
         $input = $request->all();
         if ($input['password'] === $input['password_confirm']) {
             $input['password'] = bcrypt($input['password']);
@@ -80,13 +105,27 @@ class HomeController extends Controller
      */
     public function postLogin(Request $request)
     {
+        $request->validate([
+            'password' => ['required', 'min:5', 'max:255',],
+            'email' => ['required'],
+
+        ], [
+            'password.min' => 'Password length must be between 5 and 255',
+            'password.max' =>  'Password length must be between 5 and 255',
+            'password.required' => 'Password already exists',
+            'email.required' => 'Email already exists',
+        ]);
+        $item = User::where('email', $request->email)->first();
+        if (!$item) {
+            return redirect()->route('f.formLoginRegister')->with(['msg' => 'Email or password incorrect', 'status' => 'danger']);
+        }
         $credentials = [
             'email' => $request->email,
             'password' => $request->password,
         ];
         if (Auth::attempt($credentials)) {
-            return view('f.home');
+            return redirect()->route('f.home')->with(['msg' => 'Login success', 'status' => 'success']);
         }
-        return view('f.loginRegister');
+        return redirect()->route('f.formLoginRegister')->with(['msg' => 'Login error', 'status' => 'danger']);
     }
 }

@@ -62,6 +62,7 @@ Route::post('/registerpost', [HomeController::class, 'postRegister'])->name('f.p
 Route::get('/loginadmin', [SystemController::class, 'login'])->name('s.login');
 Route::post('/loginadminpost', [SystemController::class, 'postLogin'])->name('s.loginpost');
 Route::get('/registeradmin', [SystemController::class, 'register'])->name('s.register');
+Route::get('/logout', [SystemController::class, 'logout'])->name('s.logout');
 Route::post('/registeradminpost', [SystemController::class, 'postRegister'])->name('s.registerpost');
 Route::get('/changepassword', [SystemController::class, 'changePassword'])->name('s.changePassword');
 Route::post('/changepassword', [SystemController::class, 'postChangePassword'])->name('s.postChangePassword');

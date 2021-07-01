@@ -2,6 +2,11 @@
 @section('content')
 <div id="page-load">
 <!-- slider-section-start -->
+@if (session('msg'))
+                        <div class="col-12 alert alert-{{session('status')}}">
+                            {{session('msg')}}
+                        </div>
+                        @endif
 <div class="main-slider-one slider-area">
     <div id="wrapper">
         <div class="slider-wrapper">

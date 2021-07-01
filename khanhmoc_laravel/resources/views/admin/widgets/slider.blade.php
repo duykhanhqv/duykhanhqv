@@ -9,11 +9,12 @@
             <ul class="accordion-menu">
                 <li>
                     <a href="javascript:void(0)">
-                        <i class="menu-icon icon-layers"></i><span>User</span><i class="accordion-icon fa fa-angle-left"></i>
+                        <i class="fa fa-user"></i><span> User</span><i class="accordion-icon fa fa-angle-left"></i>
                     </a>
                     <ul class="sub-menu">
                         <li><a href="">User name:{{Auth::user()->name}}</a></li>
                         <li><a href="{{route('s.changePassword')}}">Change password</a></li>
+                        <li><a href="{{route('s.logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
                     </ul>
                    
                     <a href=""></a>
@@ -47,7 +48,15 @@
                         <li><a href="{{route('categorys.create')}}">Add new category</a></li>
                     </ul>
                 </li>
-                
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="menu-icon icon-layers"></i><span>Department</span><i class="accordion-icon fa fa-angle-left"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="{{route('departments.index')}}">List department</a></li>
+                        <li><a href="{{route('departments.create')}}">Add new department</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
