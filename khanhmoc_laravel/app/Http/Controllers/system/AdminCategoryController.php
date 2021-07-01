@@ -124,7 +124,7 @@ class AdminCategoryController extends Controller
         //
         $item = Category::where('id', $id)->where('active', 1)->first();
         if (!$item) {
-            return redirect()->route('category.index')->with(['msg' => 'No has Category', 'status' => 'danger']);
+            return redirect()->route('categorys.index')->with(['msg' => 'No has Category', 'status' => 'danger']);
         }
         $request->validate([
             'name' => ['required', 'min:5', 'max:255'],
