@@ -50,7 +50,6 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/products_gird_ajax', [ProductController::class, 'productsGirdAjax'])->name('f.productsGirdAjax');
     Route::post('/products_quick_view', [ProductController::class, 'productsQuickView'])->name('f.productsQuickView');
     //admin system
-    Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
 
     Route::resource('/products', AdminProductController::class);
     Route::resource('/categorys', AdminCategoryController::class);
@@ -62,6 +61,8 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
     Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
 });
+
+
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
 Route::post('/registerpost', [HomeController::class, 'postRegister'])->name('f.postRegister');
@@ -77,3 +78,7 @@ Route::post('/changepassword', [SystemController::class, 'postChangePassword'])-
 Route::get('/test', function () {
     return view('admin.test');
 });
+
+
+
+Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');

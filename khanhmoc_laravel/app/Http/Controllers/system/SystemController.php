@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\system;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,8 +51,14 @@ class SystemController extends Controller
         $request->validate([
             'password' => ['required', 'min:5', 'max:255',],
             'password_confirm' => ['required', 'min:5', 'max:255', 'same:password'],
-            ''
+            'email' => ['required'],
+            'confirm' => ['required'],
+            'name' => ['required', 'min:5', 'max:255']
         ], [
+            'email.required' => 'Email not none',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'name.required' => 'Name already exists',
             'password.min' => 'Password length must be between 5 and 255',
             'password.max' =>  'Password length must be between 5 and 255',
             'password.required' => 'Password already exists',
@@ -59,20 +66,21 @@ class SystemController extends Controller
             'password_confirm.max' =>  'Password confirm length must be between 5 and 255',
             'password_confirm.required' => 'Password confirm already exists',
             'password_confirm.same' => 'Password confirm right same password ',
+            'confirm.required' => 'You need to agree to the terms before you can create an account'
         ]);
         $input = $request->all();
         if ($input['password'] === $input['password_confirm']) {
             $input['password'] = bcrypt($input['password']);
-            $item = User::create();
+            $item = Admin::create();
             $item->name = $input['name'];
             $item->email = $input['email'];
             $item->password = $input['password'];
             $item->created_at = now();
             if ($item->save()) {
-                return redirect()->route('s.login')->with($request->only('email', 'password'));
+                return redirect()->route('s.login')->with(['msg' => 'Register success', 'status' => 'success']);
             }
         }
-        return redirect()->route('s.register');
+        return redirect()->route('s.register')->with(['msg' => 'Register error', 'status' => 'danger']);
     }
     /**
      * check email password if true accept login
