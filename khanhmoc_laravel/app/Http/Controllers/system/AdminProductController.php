@@ -25,7 +25,6 @@ class AdminProductController extends Controller
          */
         // dd($user->id);
         $products = Product::where('active', 1)->orderBy('id', 'DESC')->paginate(10);
-        dd($this->authorize($products, 'view'));
         $data = [
             'products' => $products
         ];

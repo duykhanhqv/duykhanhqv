@@ -131,8 +131,8 @@
               <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image">
               <p class="mb-1 mt-3 font-weight-semibold">@if(Auth::guard('admin')->check())
                 Hello {{Auth::guard('admin')->user()->name}}
-            @elseif(Auth::guard('user')->check())
-                Hello {{Auth::guard('user')->user()->name}}
+            @elseif(Auth::guard('web')->check())
+                Hello {{Auth::guard('web')->user()->name}}
             @endif</p>
               <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
             </div>
