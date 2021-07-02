@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImg;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminProductController extends Controller
 {
@@ -22,7 +23,9 @@ class AdminProductController extends Controller
          * author: khanhmoc
          * 
          */
+        // dd($user->id);
         $products = Product::where('active', 1)->orderBy('id', 'DESC')->paginate(10);
+        dd($this->authorize($products, 'view'));
         $data = [
             'products' => $products
         ];
@@ -81,9 +84,9 @@ class AdminProductController extends Controller
             'qty.required' => 'Quantity  already exists',
             'qty.numeric' => 'Quantity not Valid',
             'note.required' => 'Note  already exists',
-            'url.required' =>'Image  already exists'
+            'url.required' => 'Image  already exists'
         ]);
-        
+
         $item = Product::create();
         $item->category_id = $request->category_id;
         $item->name = $request->name;
