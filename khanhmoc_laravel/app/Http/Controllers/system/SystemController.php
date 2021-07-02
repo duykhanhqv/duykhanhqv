@@ -94,10 +94,10 @@ class SystemController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('s.admin');
+        if (Auth::guard('admin')->attempt($credentials)) {
+            return redirect()->route('s.admin')->with(['msg' => 'Login success', 'status' => 'success']);;
         }
-        return view('s.login');
+        return redirect()->route('s.login')->with(['msg' => 'Login error', 'status' => 'danger']);
     }
     /**
      * get form change password

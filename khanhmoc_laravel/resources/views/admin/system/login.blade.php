@@ -12,11 +12,11 @@
                 {{session('msg')}}
             </div>
             @endif
-            <form action="#">
+            <form action="{{route('s.loginpost')}}" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="label">Email</label>
                 <div class="input-group">
-                  <input type="email" class="form-control" placeholder="email">
+                  <input type="email" class="form-control" placeholder="email" name="email">
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="mdi mdi-check-circle-outline"></i>
@@ -27,7 +27,7 @@
               <div class="form-group">
                 <label class="label">Password</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" placeholder="*********">
+                  <input type="password" class="form-control" placeholder="*********" name="password">
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <i class="mdi mdi-check-circle-outline"></i>
@@ -36,6 +36,7 @@
                 </div>
               </div>
               <div class="form-group">
+                @csrf
                 <button class="btn btn-primary submit-btn btn-block">Login</button>
               </div>
               <div class="form-group d-flex justify-content-between">
