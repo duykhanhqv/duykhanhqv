@@ -62,7 +62,7 @@
                                                 <a type="button" href=""
                                                     class="btn  btn-rounded btn-social-outline-facebook">
                                                     <button type="submit"
-                                                        onclick="return confirm('Bạn Có muón xoá hay không ?')">
+                                                        onclick="return confirm('Do you want to delete this ?')">
                                                         <i class="	fa fa-trash" style="font-size:25px"></i></button>
                                                 </a>
                                             </form>

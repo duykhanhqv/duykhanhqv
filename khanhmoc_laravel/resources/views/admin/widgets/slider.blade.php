@@ -57,6 +57,19 @@
                         <li><a href="{{route('departments.create')}}">Add new department</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="menu-icon icon-layers"></i><span>Order manager</span><i class="accordion-icon fa fa-angle-left"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="{{route('orders.index')}}">List order</a></li>
+                        <li><a href="{{route('orders.new')}}">New Order</a></li>
+                        <li><a href="{{route('orders.delivering')}}">Order delivering</a></li>
+                        <li><a href="{{route('orders.delived')}}">Order delived</a></li>
+                        <li><a href="{{route('orders.cancel')}}">Order Cancel</a></li>
+                    </ul>
+                </li>
+                
             </ul>
         </div>
     </div>
