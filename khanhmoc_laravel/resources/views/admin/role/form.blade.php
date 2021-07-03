@@ -15,7 +15,7 @@
                     <form action="{{$action}}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name Department"
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name Category"
                                 value="{{$item->name??old('name')}}">
                             @error('name')
                             <div class="text-danger">
@@ -45,14 +45,31 @@
                                         </div>
                                     </div>
                                 </div>
+                                @error('status')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
                             </div>
-                            @error('status')
-                            <div class="text-danger">
-                                {{$message}}
-                            </div>
-                            @enderror
                         </div>
-
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <label for="">Department</label>
+                                <select class="form-control" name="department_id" id="department_id">
+                                    <option>Choose</option>
+                                    @foreach ($departments as $items)
+                                    <option value="{{$items->id}}" @if(isset($item) && $item->id_department=$items->id)
+                                        selected
+                                        @endif>{{$items->name}}</option>
+                                    @endforeach
+                                </select>
+                                @error('department_id')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
                         @csrf
                         @method($method)
                         <div class="form-group">

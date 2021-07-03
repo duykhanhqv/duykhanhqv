@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Striped Table</h4>
-                    <p class="card-description"> <a href="{{route('categorys.create')}}" class="btn btn-success m-b-sm">
+                    <p class="card-description"> <a href="" class="btn btn-success m-b-sm">
                             Add new Category</a>
                         @if (session('msg'))
                         <div class="col-12 alert alert-{{session('status')}}">
@@ -20,13 +20,16 @@
                                 <th>#</th>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Status</th>
+                                <th>Email</th>
+                                <th>Admin</th>
+                                <th>Author</th>
+                                <th>User</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $temp=0 ?>
-                            @foreach ($categorys as $item)
+                            @foreach ($list_user as $item)
                             <tr>
                                 <th scope="row">{{$temp=$temp+1}}</th>
                                 <td>
@@ -36,24 +39,30 @@
                                     {{$item->name}}
                                 </td>
                                 <td>
-                                    @if ($item->status==1)
-                                    <button type="button" class="btn btn-primary btn-sm">
-                                        <i class="fa fa-check"></i>
-                                        Show</button>
-                                    @else
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-exclamation">Hide</i>
-                                    </button>
-                                    @endif
+                                    {{$item->email}}
                                 </td>
-                                <td><a href="{{route('categorys.edit',[$item->id])}}">
+                                <td>
+                                    <input type="checkbox" name="admin_role" {{$item->inRole('admin') ? 'checked' : ''}}
+                                        id="">
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="admin_role"
+                                        {{$item->inRole('author') ? 'checked' : ''}} id="">
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="admin_role" {{$item->inRole('user') ? 'checked' : ''}}
+                                        id="">
+
+                                </td>
+                                <td><a href="">
                                         <button type="button" class="btn btn-icons btn-inverse-primary">
                                             <i class="mdi mdi-wrench"></i>
                                         </button>
                                     </a>
-                                    <form action="{{route('categorys.destroy',[$item->id])}}" method="POST">
+                                    <form action="}" method="POST">
                                         @csrf
-                                        {{ method_field('DELETE') }}
+
                                         <button type="submit" class="btn btn-icons btn-inverse-danger"
                                             onclick="return confirm('Do you want to delete this?')">
                                             <i class="mdi mdi-delete-empty"></i>
@@ -64,11 +73,9 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $categorys->links() }}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

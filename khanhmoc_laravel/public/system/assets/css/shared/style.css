@@ -9838,3 +9838,10 @@ ul {
 /*-------------------------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+

@@ -9,6 +9,7 @@ use App\Http\Controllers\system\AdminCategoryController;
 use App\Http\Controllers\system\AdminDepartmentController;
 use App\Http\Controllers\system\AdminOrderController;
 use App\Http\Controllers\system\AdminProductController;
+use App\Http\Controllers\system\AdminRoleController;
 use App\Http\Controllers\system\SystemController;
 use App\Models\Product;
 
@@ -51,15 +52,7 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/products_quick_view', [ProductController::class, 'productsQuickView'])->name('f.productsQuickView');
     //admin system
 
-    Route::resource('/products', AdminProductController::class);
-    Route::resource('/categorys', AdminCategoryController::class);
-    Route::resource('/departments', AdminDepartmentController::class);
-    Route::resource('/orders', AdminOrderController::class);
-    Route::get('/orders_new', [AdminOrderController::class, 'orderNew'])->name('orders.new');
-    Route::get('/orders_confirm', [AdminOrderController::class, 'orderConfirm'])->name('orders.confirm');
-    Route::get('/orders_delivering', [AdminOrderController::class, 'orderDelivering'])->name('orders.delivering');
-    Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
-    Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
+
 });
 
 
@@ -79,6 +72,16 @@ Route::get('/test', function () {
     return view('admin.test');
 });
 
-
-
-Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
+Route::group(['middleware' => 'checkloginadmin'], function () {
+    Route::resource('/products', AdminProductController::class);
+    Route::resource('/categorys', AdminCategoryController::class);
+    Route::resource('/departments', AdminDepartmentController::class);
+    Route::resource('/orders', AdminOrderController::class);
+    Route::get('/orders_new', [AdminOrderController::class, 'orderNew'])->name('orders.new');
+    Route::get('/orders_confirm', [AdminOrderController::class, 'orderConfirm'])->name('orders.confirm');
+    Route::get('/orders_delivering', [AdminOrderController::class, 'orderDelivering'])->name('orders.delivering');
+    Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
+    Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
+    Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
+    Route::get('/role', [AdminRoleController::class, 'list'])->name('s.role');
+});

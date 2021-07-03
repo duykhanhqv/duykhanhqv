@@ -69,17 +69,14 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group d-flex justify-content-center">
-                <div class="form-check form-check-flat mt-0">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="confirm" checked> I agree to the terms </label>
-                    @error('confirm')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="confirm" id="" value="checkedValue" checked>
+                  I agree to the terms
+                </label> @error('confirm')
+                <div class="text-danger">
+                    {{$message}}
                 </div>
-              </div>
+                @enderror
               <div class="form-group">
                   @csrf
                 <button class="btn btn-primary submit-btn btn-block">Register</button>

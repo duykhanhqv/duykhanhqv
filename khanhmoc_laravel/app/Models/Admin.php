@@ -12,6 +12,8 @@ class Admin extends Authenticatable
 {
     use HasFactory, Notifiable;
     protected $table = 'fs_admin';
+    protected $primaryKey = 'id';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +43,15 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function roles()
+    {
+        return $this->belongsToMany(Roles::class, 'fs_division_role');
+    }
+    /**
+     * Checks user has role 
+     */
+    public function inRole(string $role)
+    {
+        return $this->roles()->where('name', $role)->count() == 1;
+    }
 }

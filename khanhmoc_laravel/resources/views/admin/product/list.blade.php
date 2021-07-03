@@ -60,7 +60,7 @@
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-icons btn-inverse-danger"
-                                            onclick="return confirm('Bạn Có muón xoá hay không ?')">
+                                            onclick="return confirm('Dou you want delete this?')">
                                             <i class="mdi mdi-delete-empty"></i>
                                         </button>
                                     </form>
