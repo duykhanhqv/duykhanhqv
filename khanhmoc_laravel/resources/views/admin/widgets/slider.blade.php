@@ -102,12 +102,22 @@
           </ul>
         </div>
       </li>
+      <?php 
+      ?>
+      
+      {{-- <li class="nav-item">
+        <a class="nav-link" href="{{route('s.role')}}">
+          <i class="menu-icon typcn typcn-document-text"></i>
+          <span class="menu-title">Roles</span>
+        </a>
+      </li> --}}
+      @if ($role->inRole('admin'))
       <li class="nav-item">
         <a class="nav-link" href="{{route('s.role')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
           <span class="menu-title">Roles</span>
         </a>
       </li>
-      
+      @endif
     </ul>
   </nav>

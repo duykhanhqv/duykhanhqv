@@ -15,4 +15,5 @@ class Roles extends Model
     {
         return $this->belongsToMany(Admin::class, 'fs_division_role');
     }
+    
 }

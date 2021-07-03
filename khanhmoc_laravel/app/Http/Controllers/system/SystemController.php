@@ -16,9 +16,17 @@ class SystemController extends Controller
      *
      * 
      */
+
     public function dashboard()
     {
-        return view('admin.system.home');
+        
+        $tam = Admin::where('id', Auth::guard('admin')->user()->id)->first();
+        $a = Auth::guard('admin')->user();
+        // dd($tam->inRole('user'));
+        $data = [
+            'tam' => $tam
+        ];
+        return view('admin.system.home', $data);
     }
     /**
      * get form login

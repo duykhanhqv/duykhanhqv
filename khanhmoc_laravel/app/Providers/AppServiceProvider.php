@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Admin;
 use App\Models\Department;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,17 +27,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         /**
-         * load department and category the first.
+         * load department and category the first.,
+         * add load role
          *
          * 
          */
-        $list_departments = Department::select('fs_department.id', 'fs_department.name')->where('active', '1')->where('status', 1)->get();
-        // $cart = session('cart');
-        // dd($cart);
-        $data = [
-            'list_departments' => $list_departments,
-            // 'cart' => $cart
-        ];
-        view()->share($data);
+
+        view()->composer('*', function ($view) {
+            $view->with('list_departments', Department::select('fs_department.id', 'fs_department.name')->where('active', '1')->where('status', 1)->get());
+            $view->with('role', Admin::where('id', Auth::guard('admin')->user()->id)->first());
+        });
     }
 }

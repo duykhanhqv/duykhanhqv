@@ -84,4 +84,5 @@ Route::group(['middleware' => 'checkloginadmin'], function () {
     Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
     Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
     Route::get('/role', [AdminRoleController::class, 'list'])->name('s.role');
+    Route::post('/role', [AdminRoleController::class, 'update'])->name('s.updateRole');
 });
