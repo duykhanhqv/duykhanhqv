@@ -7,7 +7,11 @@
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center">
       <ul class="navbar-nav">
-        <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
+        <li class="nav-item font-weight-semibold d-none d-lg-block">@if (session('msg'))
+          <div class="col-12 alert alert-{{session('status')}}">
+              {{session('msg')}}
+          </div>
+          @endif</p></li>
         <li class="nav-item dropdown language-dropdown">
           <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
             <div class="d-inline-flex mr-0 mr-md-3">
@@ -140,7 +144,7 @@
             <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
             <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
             <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-            <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+            <a class="dropdown-item" href="{{route('s.logout')}}">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
           </div>
         </li>
       </ul>

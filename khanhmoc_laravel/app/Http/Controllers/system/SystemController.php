@@ -19,14 +19,8 @@ class SystemController extends Controller
 
     public function dashboard()
     {
-        
-        $tam = Admin::where('id', Auth::guard('admin')->user()->id)->first();
-        $a = Auth::guard('admin')->user();
-        // dd($tam->inRole('user'));
-        $data = [
-            'tam' => $tam
-        ];
-        return view('admin.system.home', $data);
+
+        return view('admin.system.home',);
     }
     /**
      * get form login
@@ -162,7 +156,7 @@ class SystemController extends Controller
     }
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('admin')->logout();
         return redirect()->route('s.login')->with(['msg' => 'You logout susses', 'status' => 'warning']);
     }
 }

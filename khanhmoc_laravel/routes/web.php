@@ -33,7 +33,6 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::get('/detail_product={product_id}', [ProductController::class, 'detailProduct'])->name('f.detailProduct');
     Route::get('/cart', [CartController::class, 'getCart'])->name('f.cart');
     Route::get('/add_product_to_cart={product_id}', [CartController::class, 'addProductToCart'])->name('f.addProductToCart');
-    Route::get('/home', [HomeController::class, 'home'])->name('f.home');
     Route::get('/update_qty_up={product_id}', [CartController::class, 'updateQtyUp'])->name('f.updateQtyUp');
     Route::get('/update_qty_down={product_id}', [CartController::class, 'updateQtyDown'])->name('f.updateQtyDown');
     Route::post('/update', [CartController::class, 'updateCart'])->name('f.updateCart');
@@ -50,16 +49,13 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/products_list_ajax', [ProductController::class, 'productsListAjax'])->name('f.productsListAjax');
     Route::post('/products_gird_ajax', [ProductController::class, 'productsGirdAjax'])->name('f.productsGirdAjax');
     Route::post('/products_quick_view', [ProductController::class, 'productsQuickView'])->name('f.productsQuickView');
-    //admin system
-
-
+    Route::get('/home', [HomeController::class, 'home'])->name('f.home');
 });
 
 
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
 Route::post('/registerpost', [HomeController::class, 'postRegister'])->name('f.postRegister');
-
 Route::get('/loginadmin', [SystemController::class, 'login'])->name('s.login');
 Route::post('/loginadminpost', [SystemController::class, 'postLogin'])->name('s.loginpost');
 Route::get('/registeradmin', [SystemController::class, 'register'])->name('s.register');
@@ -67,22 +63,28 @@ Route::get('/logout', [SystemController::class, 'logout'])->name('s.logout');
 Route::post('/registeradminpost', [SystemController::class, 'postRegister'])->name('s.registerpost');
 Route::get('/changepassword', [SystemController::class, 'changePassword'])->name('s.changePassword');
 Route::post('/changepassword', [SystemController::class, 'postChangePassword'])->name('s.postChangePassword');
-
 Route::get('/test', function () {
     return view('admin.test');
 });
 
 Route::group(['middleware' => 'checkloginadmin'], function () {
-    Route::resource('/products', AdminProductController::class);
-    Route::resource('/categorys', AdminCategoryController::class);
-    Route::resource('/departments', AdminDepartmentController::class);
-    Route::resource('/orders', AdminOrderController::class);
-    Route::get('/orders_new', [AdminOrderController::class, 'orderNew'])->name('orders.new');
-    Route::get('/orders_confirm', [AdminOrderController::class, 'orderConfirm'])->name('orders.confirm');
-    Route::get('/orders_delivering', [AdminOrderController::class, 'orderDelivering'])->name('orders.delivering');
-    Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
-    Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
+    Route::group(['middleware' => 'roles_admin'], function () {
+        Route::get('/role', [AdminRoleController::class, 'list'])->name('s.role');
+        Route::post('/role', [AdminRoleController::class, 'update'])->name('s.updateRole');
+    });
+    Route::group(['middleware' => 'roles_product'], function () {
+        Route::resource('/products', AdminProductController::class);
+        Route::resource('/categorys', AdminCategoryController::class);
+        Route::resource('/departments', AdminDepartmentController::class);
+    });
+    Route::group(['middleware' => 'roles_order'], function () {
+        Route::resource('/orders', AdminOrderController::class);
+        Route::get('/orders_new', [AdminOrderController::class, 'orderNew'])->name('orders.new');
+        Route::get('/orders_confirm', [AdminOrderController::class, 'orderConfirm'])->name('orders.confirm');
+        Route::get('/orders_delivering', [AdminOrderController::class, 'orderDelivering'])->name('orders.delivering');
+        Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
+        Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
+    });
+
     Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
-    Route::get('/role', [AdminRoleController::class, 'list'])->name('s.role');
-    Route::post('/role', [AdminRoleController::class, 'update'])->name('s.updateRole');
 });

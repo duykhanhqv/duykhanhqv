@@ -19,4 +19,13 @@ class Product extends Model
     {
         return $this->hasOne('App\Models\Category');
     }
+    public function scopePublished($query)
+    {
+        return $query->where('published', true);
+    }
+
+    public function scopeUnpublished($query)
+    {
+        return $query->where('published', false);
+    }
 }

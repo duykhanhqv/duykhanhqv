@@ -7,24 +7,7 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      <li class="nav-product">
-        <a class="nav-link" data-toggle="collapse" href="#manager_product" aria-expanded="false" aria-controls="manager_product">
-          <i class="menu-icon typcn typcn-document-add"></i>
-          <span class="menu-title">Product</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="manager_product">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('products.index')}}"> List product </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('products.create')}}"> Add new product </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      
+      @if($role_product->inRole('product'))
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#manage_product" aria-expanded="false" aria-controls="manage_product">
           <i class="menu-icon typcn typcn-document-add"></i>
@@ -76,6 +59,8 @@
           </ul>
         </div>
       </li>
+      @endif
+      @if ($role_admin->inRole('order'))
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#manage_order" aria-expanded="false" aria-controls="manage_order">
           <i class="menu-icon typcn typcn-document-add"></i>
@@ -102,20 +87,12 @@
           </ul>
         </div>
       </li>
-      <?php 
-      ?>
-      
-      {{-- <li class="nav-item">
-        <a class="nav-link" href="{{route('s.role')}}">
-          <i class="menu-icon typcn typcn-document-text"></i>
-          <span class="menu-title">Roles</span>
-        </a>
-      </li> --}}
-      @if ($role->inRole('admin'))
+      @endif
+      @if ($role_admin->inRole('admin'))
       <li class="nav-item">
         <a class="nav-link" href="{{route('s.role')}}">
           <i class="menu-icon typcn typcn-document-text"></i>
-          <span class="menu-title">Roles</span>
+          <span class="menu-title">Roles and User</span>
         </a>
       </li>
       @endif

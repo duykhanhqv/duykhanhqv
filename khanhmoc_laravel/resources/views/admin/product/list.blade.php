@@ -9,11 +9,7 @@
                     <h4 class="card-title">Striped Table</h4>
                     <p class="card-description"> <a href="{{route('products.create')}}" class="btn btn-success m-b-sm">
                             Add new Product</a>
-                        @if (session('msg'))
-                        <div class="col-12 alert alert-{{session('status')}}">
-                            {{session('msg')}}
-                        </div>
-                        @endif</p>
+                        </p>
                     <table class="table table-striped">
                         <thead>
                             <tr>

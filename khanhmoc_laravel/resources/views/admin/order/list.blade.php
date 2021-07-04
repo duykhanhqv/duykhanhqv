@@ -8,11 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Striped Table</h4>
                     <p class="card-description">
-                        @if (session('msg'))
-                        <div class="col-12 alert alert-{{session('status')}}">
-                            {{session('msg')}}
-                        </div>
-                        @endif</p>
+                        </p>
                     <table class="table table-bordered">
                         <thead>
                             <tr>

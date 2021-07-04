@@ -50,6 +50,16 @@ class Admin extends Authenticatable
     /**
      * Checks user has role 
      */
+    public function hasAccess(array $permissions): bool
+    {
+        // check if the permission is available in any role
+        foreach ($this->roles as $role) {
+            if ($role->hasAccess($permissions)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public function inRole(string $role)
     {
         return $this->roles()->where('name', $role)->count() == 1;

@@ -7,11 +7,6 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Horizontal Two column</h4>
-                    @if (session('msg'))
-                    <div class="col-12 alert alert-{{session('status')}}">
-                        {{session('msg')}}
-                    </div>
-                    @endif</p>
                     <form action="{{$action}}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Name</label>

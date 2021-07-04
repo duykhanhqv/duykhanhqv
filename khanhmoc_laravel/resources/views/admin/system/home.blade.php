@@ -6,7 +6,10 @@
     <div class="row page-title-header">
       <div class="col-12">
         <div class="page-header">
+          @can('edit_profile')
           <h4 class="page-title">Dashboard</h4>
+
+          @endcan
           <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
             <ul class="quick-links">
               <li><a href="#">ICE Market data</a></li>

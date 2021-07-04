@@ -8,11 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Table Role</h4>
                     <p class="card-description"> 
-                        @if (session('msg'))
-                        <div class="col-12 alert alert-{{session('status')}}">
-                            {{session('msg')}}
-                        </div>
-                        @endif</p>
+                        </p>
                     <table class="table table-striped">
                         <thead class="thead-light">
                             <tr>
@@ -21,8 +17,8 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Admin</th>
-                                <th>Author</th>
-                                <th>User</th>
+                                <th>Product</th>
+                                <th>Order</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -48,11 +44,11 @@
 
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="author_role"
-                                        {{$item->inRole('author') ? 'checked' : ''}} id="">
+                                    <input type="checkbox" name="product_role"
+                                        {{$item->inRole('product') ? 'checked' : ''}} id="">
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="user_role" {{$item->inRole('user') ? 'checked' : ''}}
+                                    <input type="checkbox" name="order_role" {{$item->inRole('order') ? 'checked' : ''}}
                                         id="">
 
                                 </td>
