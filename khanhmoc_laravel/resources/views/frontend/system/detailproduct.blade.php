@@ -160,65 +160,53 @@
                                 consequat, purus felis vehicula felis, a dapibus enim lorem nec augue.</p>
                         </div>
                         <div class="info-reviews review-text tab-pane fade in active" id="reviews">
+                            
+                            @foreach ($product_detail->user as $item)
                             <div class="about-author">
                                 <div class="autohr-text">
                                     <img src="img/blog/author1.png" alt="" />
                                     <div class="author-des">
-                                        <h4><a href="#">Gregory Hernandez</a></h4>
+                                        <h4><a href="#">{{$item->name}}</a></h4>
                                         <span class="floatright ratting">
+                                            @if ($item->pivot->rating==1)
                                             <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star-half"></i>
                                             <i class="mdi mdi-star-outline"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            @elseif ($item->pivot->rating==2)
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            @elseif ($item->pivot->rating==3)
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            @elseif ($item->pivot->rating==4)
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                            @elseif ($item->pivot->rating==5)
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            @endif
                                         </span>
-                                        <span>27 Jun, 2016 at 2:30pm</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan
-                                            egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni
-                                            Praesent et messages in consectetur.</p>
+                                        <span>{{$item->pivot->created_at}}</span>
+                                        <p>{{$item->pivot->review}}</p>
                                     </div>
                                 </div>
                             </div>
                             <hr />
-                            <div class="about-author">
-                                <div class="autohr-text">
-                                    <img src="img/blog/author2.png" alt="" />
-                                    <div class="author-des">
-                                        <h4><a href="#">Gregory Hernandez</a></h4>
-                                        <span class="floatright ratting">
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star-half"></i>
-                                            <i class="mdi mdi-star-outline"></i>
-                                        </span>
-                                        <span>27 Jun, 2016 at 2:30pm</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan
-                                            egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni
-                                            Praesent et messages in consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr />
-                            <div class="about-author">
-                                <div class="autohr-text">
-                                    <img src="img/blog/author3.png" alt="" />
-                                    <div class="author-des">
-                                        <h4><a href="#">Gregory Hernandez</a></h4>
-                                        <span class="floatright ratting">
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star"></i>
-                                            <i class="mdi mdi-star-half"></i>
-                                            <i class="mdi mdi-star-outline"></i>
-                                        </span>
-                                        <span>27 Jun, 2016 at 2:30pm</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan
-                                            egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni
-                                            Praesent et messages in consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                             <div class="your-rating log-title">
                                 <h3>leave your review</h3>
                                 <h5>Your rating</h5>
@@ -472,4 +460,6 @@
 </div>
 <!-- quick view end -->
 @endforeach
+<script src="{{ asset('frontend/bootstrap.min.js')}}"></script>
+
 @endsection

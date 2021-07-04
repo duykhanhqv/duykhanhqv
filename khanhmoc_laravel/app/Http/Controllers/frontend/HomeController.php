@@ -39,10 +39,12 @@ class HomeController extends Controller
         $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
         $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
         $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->paginate(12);
+        $quick_view = Product::get();
         $data = [
             'feature_products' => $feature_products,
             'new_arrivals' => $new_arrivals,
             'best_seller_products' => $best_seller_products,
+            'quick_view' => $quick_view,
             'msg' => '',
             'cart' => $cart,
         ];
@@ -127,5 +129,17 @@ class HomeController extends Controller
             return redirect()->route('f.home')->with(['msg' => 'Login success', 'status' => 'success']);
         }
         return redirect()->route('f.formLoginRegister')->with(['msg' => 'Login error', 'status' => 'danger']);
+    }
+
+    /**
+     * custummer logout
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('f.formLoginRegister')->with(['msg' => 'You logout susses', 'status' => 'warning']);
     }
 }

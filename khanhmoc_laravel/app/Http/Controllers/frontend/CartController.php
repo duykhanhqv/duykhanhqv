@@ -105,7 +105,7 @@ class CartController extends Controller
             }
             session(['cart' => $cart]);
         }
-        return redirect('/home');
+        return redirect()->route('f.detailProduct', $product->id)->with(['msg' => 'Add success', 'status' => 'success']);
     }
     /**
      * add product update cart

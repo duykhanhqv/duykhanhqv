@@ -56,10 +56,12 @@ Route::group(['middleware' => 'checklogin'], function () {
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
 Route::post('/registerpost', [HomeController::class, 'postRegister'])->name('f.postRegister');
+Route::get('/logout', [HomeController::class, 'logout'])->name('f.logout');
+
 Route::get('/loginadmin', [SystemController::class, 'login'])->name('s.login');
 Route::post('/loginadminpost', [SystemController::class, 'postLogin'])->name('s.loginpost');
 Route::get('/registeradmin', [SystemController::class, 'register'])->name('s.register');
-Route::get('/logout', [SystemController::class, 'logout'])->name('s.logout');
+Route::get('/adminlogout', [SystemController::class, 'logout'])->name('s.logout');
 Route::post('/registeradminpost', [SystemController::class, 'postRegister'])->name('s.registerpost');
 Route::get('/changepassword', [SystemController::class, 'changePassword'])->name('s.changePassword');
 Route::post('/changepassword', [SystemController::class, 'postChangePassword'])->name('s.postChangePassword');
@@ -85,6 +87,7 @@ Route::group(['middleware' => 'checkloginadmin'], function () {
         Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
         Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
     });
+    Route::get('/changepassword', [SystemController::class, 'changePassword'])->name('s.changePassword');
 
     Route::get('/admin', [SystemController::class, 'dashboard'])->name('s.admin');
 });

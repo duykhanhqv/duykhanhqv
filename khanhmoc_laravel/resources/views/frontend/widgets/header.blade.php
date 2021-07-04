@@ -18,6 +18,7 @@
                                     <li><a href="my-account.html">@if (Auth::check())
                                             {{Auth::user()->name}}
                                             @endif</a></li>
+                                    <li><a href="{{route('f.logout')}}">Logout</a></li>
                                 </ul>
                             </li>
                             <li>

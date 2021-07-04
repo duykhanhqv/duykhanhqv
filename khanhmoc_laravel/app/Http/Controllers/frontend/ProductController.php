@@ -5,6 +5,8 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use App\Models\Product;
+use App\Models\RatingAndReview;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -18,13 +20,23 @@ class ProductController extends Controller
      */
     public function detailProduct($product_id)
     {
-        $product_detail = Product::where('id', $product_id)->first();
-        $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
+        $cart = session('cart');
 
+        $product_detail = Product::where('id', $product_id)->first();
+        // dd($product);
+        // foreach ($product->user as $order) {
+        //     dd($order->review);
+        // }
+        $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
+        // $ratings=RatingAndReview::where('product_id', $product_id);
+        $user = User::get();
         $data = [
             'product_detail' => $product_detail,
             'related_product' => $related_product,
-            'msg' => ''
+            'msg' => '',
+            'cart' => $cart,
+            'user' => $user,
+
         ];
         return view('frontend.system.detailproduct', $data);
     }
@@ -37,7 +49,8 @@ class ProductController extends Controller
     public function listtingProducts($category_id)
     {
         $cart = session('cart');
-        $list_products = Product::where('fs_product.category_id', $category_id)->paginate(12);
+        $list_products = Product::where('fs_product.id', 2)->first();
+        // dd($li)
         $departments = Department::get();
         $data = [
             'list_products' => $list_products,
@@ -46,6 +59,7 @@ class ProductController extends Controller
             'category_id' => $category_id
 
         ];
+        // dd($data);
         return view('frontend.system.listingproduct', $data);
     }
     /**

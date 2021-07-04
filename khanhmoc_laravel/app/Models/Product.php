@@ -19,13 +19,17 @@ class Product extends Model
     {
         return $this->hasOne('App\Models\Category');
     }
-    public function scopePublished($query)
+    public function user()
     {
-        return $query->where('published', true);
+        return $this->belongsToMany(User::class, 'fs_rating_review')->withPivot('review', 'user_id', 'created_at','rating');;
     }
+    // public function scopePublished($query)
+    // {
+    //     return $query->where('published', true);
+    // }
 
-    public function scopeUnpublished($query)
-    {
-        return $query->where('published', false);
-    }
+    // public function scopeUnpublished($query)
+    // {
+    //     return $query->where('published', false);
+    // }
 }

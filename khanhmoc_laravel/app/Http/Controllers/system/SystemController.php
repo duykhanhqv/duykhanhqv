@@ -109,7 +109,11 @@ class SystemController extends Controller
      */
     public function changePassword()
     {
-        return view('admin.system.changepassword');
+        $user = Admin::where('email', Auth::guard('admin')->user()->email)->first();
+        $data = [
+            'user' => $user
+        ];
+        return view('admin.system.changepassword', $data);
     }
     /**
      * change password 
@@ -124,12 +128,12 @@ class SystemController extends Controller
             'email' => $request->email,
             'password' => $request->old_password,
         ];
-        if (!Auth::attempt($credentials)) {
-            return redirect()->route('s.admin')->with(['msg' => 'Old password is not correct', 'status' => 'danger']);
+        if (!Auth::guard('admin')->attempt($credentials)) {
+            return redirect()->route('s.changePassword')->with(['msg' => 'Old password is not correct', 'status' => 'danger']);
         }
-        $item = User::where('email', $request->email)->where('active', 1)->first();
+        $item = Admin::where('email', $request->email)->first();
         if (!$item) {
-            return redirect()->route('s.admin')->with(['msg' => 'No has User', 'status' => 'danger']);
+            return redirect()->route('s.changePassword')->with(['msg' => 'No has User', 'status' => 'danger']);
         }
         $request->validate([
             'password' => ['required', 'min:5', 'max:255',],
@@ -149,10 +153,10 @@ class SystemController extends Controller
             $item->password = $input['password'];
             $item->updated_at = now();
             if ($item->save()) {
-                return redirect()->route('s.admin')->with(['msg' => 'Update password success', 'status' => 'success']);
+                return redirect()->route('s.changePassword')->with(['msg' => 'Update password success', 'status' => 'success']);
             }
         }
-        return redirect()->route('s.admin')->with(['msg' => 'Update password error', 'status' => 'danger']);
+        return redirect()->route('s.changePassword')->with(['msg' => 'Update password error', 'status' => 'danger']);
     }
     public function logout()
     {

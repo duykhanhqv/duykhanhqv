@@ -230,10 +230,12 @@
 																	<i class="mdi mdi-star-half"></i>
 																	<i class="mdi mdi-star-outline"></i>
 																</div>
-																<h5><del>$79.30</del>{{number_format($item->price)}}</h5>
+																<h5><del></del>{{number_format($item->price)}}</h5>
 																{{$item->desc}}
 																<div class="list-btn">
-																	<a href="#">add to cart</a>
+																	<a  class="addToCart"
+                                                    data-href="{{ route('f.addProductToCartAjax') }}"
+                                                    data-id="{{($item->id)}}">add to cart</a>
 																	<a href="#">wishlist</a>
 																	<a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
 																</div>

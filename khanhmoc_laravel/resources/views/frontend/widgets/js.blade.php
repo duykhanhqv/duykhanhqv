@@ -15,6 +15,7 @@
     <script src="{{asset('frontend/js/plugins.js')}}"></script>
     <!-- main js -->
     <script src="{{asset('frontend/js/main.js')}}"></script>
+    
 
 
 

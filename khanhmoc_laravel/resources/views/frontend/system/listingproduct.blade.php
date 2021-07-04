@@ -101,7 +101,8 @@
                                                 }?>" /></a>
 													<div class="actions-btn">
 														<a class="addToCart" data-href="{{ route('f.addProductToCartAjax') }}"
-														data-id="{{($item->id)}}"><i class="mdi mdi-cart"></i></a>														<a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
+														data-id="{{($item->id)}}"><i class="mdi mdi-cart"></i></a>
+														<a href="#" data-toggle="modal" data-target="#quick-view{{$item->id}}"><i class="mdi mdi-eye"></i></a>
 														<a href="#"><i class="mdi mdi-heart"></i></a>
 													</div>
 												</div>
@@ -151,7 +152,7 @@
 		<!-- product-grid-view content section end -->
         <!-- quick view start -->
 				@foreach ($list_products as $item)
-				<div class="product-details quick-view modal animated zoomInUp" id="quick-view{{($item->id)}}">
+				<div class="product-details quick-view modal animated zoomInUp" id="quick-view{{$item->id}}">
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12">
@@ -232,10 +233,12 @@
 																	<i class="mdi mdi-star-half"></i>
 																	<i class="mdi mdi-star-outline"></i>
 																</div>
-																<h5><del>$79.30</del>{{number_format($item->price)}}</h5>
+																<h5><del></del>{{number_format($item->price)}}</h5>
 																{{$item->desc}}
 																<div class="list-btn">
-																	<a href="#">add to cart</a>
+																	<a  class="addToCart"
+                                                    data-href="{{ route('f.addProductToCartAjax') }}"
+                                                    data-id="{{($item->id)}}">add to cart</a>
 																	<a href="#">wishlist</a>
 																	<a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
 																</div>
@@ -264,4 +267,6 @@
 				</div>
 				@endforeach
 				<!-- quick view end -->
+				<script src="{{ asset('frontend/bootstrap.min.js')}}"></script>
+				
 @endsection
