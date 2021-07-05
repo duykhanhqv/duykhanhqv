@@ -23,12 +23,7 @@ class ProductController extends Controller
         $cart = session('cart');
 
         $product_detail = Product::where('id', $product_id)->first();
-        // dd($product);
-        // foreach ($product->user as $order) {
-        //     dd($order->review);
-        // }
         $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
-        // $ratings=RatingAndReview::where('product_id', $product_id);
         $user = User::get();
         $data = [
             'product_detail' => $product_detail,
@@ -49,8 +44,7 @@ class ProductController extends Controller
     public function listtingProducts($category_id)
     {
         $cart = session('cart');
-        $list_products = Product::where('fs_product.id', 2)->first();
-        // dd($li)
+        $list_products = Product::where('fs_product.category_id', $category_id)->paginate(12);
         $departments = Department::get();
         $data = [
             'list_products' => $list_products,
@@ -147,6 +141,31 @@ class ProductController extends Controller
         $data = [
             'returnHTML' => $return_HTML,
             'msg' => 'success',
+            'status' => 'success'
+        ];
+        return response()->json($data, 200);
+    }
+    /**
+     * listting product use ajax
+     * author: khanhmoc
+     *
+     *
+     */
+    public function productsDetailAjax(Request $request)
+    {
+        $cart = session('cart');
+
+        $product_detail = Product::where('id', $request->id)->first();
+        $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
+        $data_render = [
+            'product_detail' => $product_detail,
+            'related_product' => $related_product,
+        ];
+        $return_HTML_Detail = view('frontend.ajax.detailproduct', $data_render)->render();
+        $data = [
+            'msg' => 'Detail product',
+            'cart' => $cart,
+            'returnHTML' => $return_HTML_Detail,
             'status' => 'success'
         ];
         return response()->json($data, 200);

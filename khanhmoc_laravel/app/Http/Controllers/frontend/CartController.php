@@ -25,6 +25,28 @@ class CartController extends Controller
         return view('frontend.system.cart', $data);
     }
     /**
+     * listting product use ajax
+     * author: khanhmoc
+     *
+     *
+     */
+    public function getCartAjax()
+    {
+        $cart = session('cart');
+        $data_render = [
+            'cart' => $cart,
+        ];
+        $return_HTML_Cart = view('frontend.ajax.cart', $data_render)->render();
+        $data = [
+            'msg' => 'Cart',
+            'cart' => $cart,
+            'returnHTML' => $return_HTML_Cart,
+            'status' => 'success'
+        ];
+        return response()->json($data, 200);
+
+    }
+    /**
      * add product to cart
      * author: khanhmoc
      *

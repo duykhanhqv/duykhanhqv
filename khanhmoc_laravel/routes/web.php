@@ -49,6 +49,9 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/products_list_ajax', [ProductController::class, 'productsListAjax'])->name('f.productsListAjax');
     Route::post('/products_gird_ajax', [ProductController::class, 'productsGirdAjax'])->name('f.productsGirdAjax');
     Route::post('/products_quick_view', [ProductController::class, 'productsQuickView'])->name('f.productsQuickView');
+    Route::post('/products_detail_ajax', [ProductController::class, 'productsDetailAjax'])->name('f.productsDetailAjax');
+    Route::post('/home_ajax', [HomeController::class, 'homeAjax'])->name('f.homeAjax');
+    Route::post('/cart_ajax', [CartController::class, 'getCartAjax'])->name('f.getCartAjax');
     Route::get('/home', [HomeController::class, 'home'])->name('f.home');
 });
 

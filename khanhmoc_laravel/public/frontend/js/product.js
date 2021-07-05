@@ -20,7 +20,6 @@ $(function () {
         $.post(url, { id: id })
             .done(function (data) {
                 if (data.status == 'success') {
-                    toastr.success(data.msg);
                     $('#page-load').html(data.htmllisting);
                 } else
                     toastr.warning(data.msg);
@@ -64,27 +63,42 @@ $(function () {
                     toastr.warning(data.msg);
             })
     })
+
     /**
-  * js get event quickview product and push data to controler
+  * js get event get page detail product and push data to controler
   * author: khanhmoc
   *
   * 
   */
-    $(document).on("click", ".productsQuickView", function () {
+     $(document).on("click", ".detailProduct", function () {
         var _that = $(this);
         var url = _that.data('href');
         var id = _that.data('id');
         $.post(url, { id: id })
             .done(function (data) {
                 if (data.status == 'success') {
-                    toastr.success(data.msg);
-                    $('#quick-view').html(data.returnHTML);
+                    // toastr.success(data.msg);
+                    $('#page-load').html(data.returnHTML);
                 } else
                     toastr.warning(data.msg);
             })
     })
-
-
-
-
+   /**
+  * js get event get page home and push data to controler
+  * author: khanhmoc
+  *
+  * 
+  */
+    $(document).on("click", ".homeAjax", function () {
+        var _that = $(this);
+        var url = _that.data('href');
+        $.post(url, {})
+            .done(function (data) {
+                if (data.status == 'success') {
+                    // toastr.success(data.msg);
+                    $('#page-load').html(data.returnHTML);
+                } else
+                    toastr.warning(data.msg);
+            })
+    })
 })

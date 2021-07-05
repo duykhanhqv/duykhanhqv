@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th7 03, 2021 lúc 08:07 AM
+-- Thời gian đã tạo: Th7 05, 2021 lúc 05:45 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -67,7 +67,7 @@ INSERT INTO `fs_admin` (`id`, `password`, `email`, `name`, `created_at`, `update
 (100, '$2y$10$01rb3mAuSNCIQfwvRsEe2.1iqwpAEcvWCbMetq3I2LETLQynDw3Xa', 'admin@gmail.com', 'Lê Văn Test', '0000-00-00', '0000-00-00'),
 (101, '$2y$10$01rb3mAuSNCIQfwvRsEe2.1iqwpAEcvWCbMetq3I2LETLQynDw3Xa', 'user@localhost.com', 'Le van User', '0000-00-00', '0000-00-00'),
 (113, '$2y$10$01rb3mAuSNCIQfwvRsEe2.1iqwpAEcvWCbMetq3I2LETLQynDw3Xa', 'mocmoc@gmail.com', 'Alex Chao', '2021-07-02', '2021-07-02'),
-(114, '$2y$10$.BTR2seP/ocQqkZSPL2Aa.sx3XbjZg9Sb8fDSSKW2mM3IUa/FaI6G', 'test@gmail.com', 'Chien Thang', '2021-07-03', '2021-07-03');
+(114, '$2y$10$Cf01cxNASr4dthQqrm2zEuTmdWsb8aPSIFJ/SvyWpHxAaKTeohnu6', 'test@gmail.com', 'Chien Thang', '2021-07-03', '2021-07-04');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ INSERT INTO `fs_category` (`id`, `department_id`, `name`, `order`, `active`, `st
 (62, 10, 'Hút bụi', 1, 1, 1, NULL, NULL),
 (63, 10, 'Bàn ủi', 1, 1, 1, NULL, NULL),
 (64, 10, 'Sấy tóc', 1, 1, 1, NULL, NULL),
-(65, 10, 'Ổ cắm', 1, 1, 1, NULL, NULL),
+(65, 10, 'Ổ cắm', 1, 0, 1, NULL, '2021-07-03'),
 (66, 10, 'Quạt', 1, 1, 1, NULL, NULL),
 (67, 10, 'Đèn', 1, 1, 1, NULL, NULL),
 (72, 12, 'Máy làm sữa đậu nành', 1, 0, 1, NULL, '2021-07-02'),
@@ -218,21 +218,21 @@ CREATE TABLE IF NOT EXISTS `fs_division_role` (
   `roles_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_admin` (`admin_id`,`roles_id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `fs_division_role`
 --
 
 INSERT INTO `fs_division_role` (`id`, `admin_id`, `roles_id`) VALUES
-(1, 114, 1),
-(2, 114, 2),
-(3, 114, 3),
-(4, 100, 1),
-(5, 100, 2),
-(6, 100, 3),
-(7, 100, 4),
-(8, 113, 2);
+(53, 114, 2),
+(54, 114, 4),
+(40, 100, 4),
+(48, 113, 3),
+(47, 113, 4),
+(38, 100, 2),
+(39, 100, 3),
+(46, 113, 2);
 
 -- --------------------------------------------------------
 
@@ -1359,43 +1359,6 @@ INSERT INTO `fs_product_img` (`id`, `product_id`, `url`, `alt`, `order`, `active
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `fs_product_rating`
---
-
-DROP TABLE IF EXISTS `fs_product_rating`;
-CREATE TABLE IF NOT EXISTS `fs_product_rating` (
-  `user_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `rating` int(11) NOT NULL,
-  `comment` text COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`user_id`,`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `fs_product_rating`
---
-
-INSERT INTO `fs_product_rating` (`user_id`, `product_id`, `rating`, `comment`, `created_at`, `updated_at`) VALUES
-(100, 473, 5, 'Tốt', '2021-04-01 14:31:58', '0000-00-00 00:00:00'),
-(100, 1, 5, 'Rất tốt', '2021-04-01 14:32:07', '0000-00-00 00:00:00'),
-(114, 473, 4, 'Rất tốt', '2021-04-02 14:32:11', '0000-00-00 00:00:00'),
-(114, 1, 4, 'Tạm', '2021-04-04 14:32:16', '0000-00-00 00:00:00'),
-(114, 2, 4, 'Tạm', '2021-04-04 14:32:24', '0000-00-00 00:00:00'),
-(100, 4, 3, 'dd', '2021-04-06 06:04:32', '2021-04-06 06:04:32'),
-(100, 470, 1, 'Xấu', '2021-04-06 06:31:05', '2021-04-06 06:31:05'),
-(100, 5, 4, 'Sản phẩ tốt quá', '2021-04-06 07:36:44', '2021-04-06 07:36:44'),
-(100, 6, 2, 'mm', '2021-04-06 07:38:42', '2021-04-06 07:38:42'),
-(100, 7, 4, 'mmmsajsnjahdjkhadjkakj', '2021-04-06 07:42:17', '2021-04-06 07:42:17'),
-(100, 8, 2, 'hjdhjakshdk', '2021-04-06 08:33:29', '2021-04-06 08:33:29'),
-(100, 9, 3, 'ttttttttttttttttt', '2021-04-06 08:50:45', '2021-04-06 08:50:45'),
-(100, 10, 4, '999', '2021-04-06 09:12:34', '2021-04-06 09:12:34'),
-(100, 11, 5, '5555', '2021-04-06 09:19:55', '2021-04-06 09:19:55');
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `fs_question`
 --
 
@@ -1419,6 +1382,33 @@ INSERT INTO `fs_question` (`id`, `content`, `order`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `fs_rating_review`
+--
+
+DROP TABLE IF EXISTS `fs_rating_review`;
+CREATE TABLE IF NOT EXISTS `fs_rating_review` (
+  `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `rating` int(11) DEFAULT NULL,
+  `review` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL,
+  PRIMARY KEY (`product_id`,`user_id`) USING BTREE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `fs_rating_review`
+--
+
+INSERT INTO `fs_rating_review` (`product_id`, `user_id`, `rating`, `review`, `created_at`, `updated_at`) VALUES
+(470, 100, 5, 'Good', '2021-07-01', '2021-07-02'),
+(470, 143, 4, 'Sample', '2021-07-01', '2021-07-02'),
+(2, 100, 5, 'Very good', '2021-07-01', '2021-07-01'),
+(2, 142, 4, 'very good product', '2021-07-01', '2021-07-01');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `fs_roles`
 --
 
@@ -1436,8 +1426,8 @@ CREATE TABLE IF NOT EXISTS `fs_roles` (
 INSERT INTO `fs_roles` (`id`, `name`) VALUES
 (1, 'admin_super'),
 (2, 'admin'),
-(3, 'author'),
-(4, 'user');
+(3, 'product'),
+(4, 'order');
 
 -- --------------------------------------------------------
 

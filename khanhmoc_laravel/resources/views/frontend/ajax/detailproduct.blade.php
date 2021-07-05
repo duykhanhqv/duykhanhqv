@@ -1,5 +1,3 @@
-@extends('frontend.master')
-@section('content')
 <!-- pages-title-start -->
 <div class="pages-title section-padding">
     <div class="container">
@@ -326,7 +324,7 @@
                         </div>
                     </div>
                     <div class="product-dsc">
-                        <p><a href="{{route('f.detailProduct',[$item->id])}}">{{$item->name}}</a></p>
+                        <p><a  data-href="{{route('f.productsDetailAjax')}}" data-id="{{($item->id)}}" class="detailProduct">{{$item->name}}</a></p>
                         <span>{{number_format($item->price)}}</span>
                     </div>
                 </div>
@@ -419,63 +417,63 @@
                                                 <span>Summer men’s fashion</span>
                                                 <div class="ratting floatright">
                                                     @php
-                                                    $temp=0;
-                                                    $average=0;
-                                                    $star=0;
-                                                    $count=0;
-                                                    @endphp
-                                                    @foreach ($item->user as $key)
-                                                    @php
-                                                    $star=$star+$key->pivot->rating;
-                                                    $count+=1;
-                                                    @endphp
-                                                    @endforeach
-                                                    @if ($count==0)
-                                                    @else
-                                                    @php
-                                                    $average=floor($star/$count);
-                                                    @endphp
-                                                    @endif
-                                                    <p>( {{$count}} Rating )</p>
-                                                    @if ($average==1)
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    @elseif ($average==2)
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    @elseif ($average==3)
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    @elseif ($average==4)
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    @elseif ($average==5)
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    <i class="mdi mdi-star"></i>
-                                                    @elseif ($average==0)
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    <i class="mdi mdi-star-outline"></i>
-                                                    @endif
-                                                    @php
-                                                    @endphp
+												$temp=0;
+												$average=0;
+												$star=0;
+												$count=0;
+												@endphp
+												@foreach ($item->user as $key)
+												@php
+												$star=$star+$key->pivot->rating;
+												$count+=1;
+												@endphp
+												@endforeach
+												@if ($count==0)
+												@else
+												@php
+												$average=floor($star/$count);
+												@endphp
+												@endif
+                                                <p>( {{$count}} Rating )</p>
+												@if ($average==1)
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												@elseif ($average==2)
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												@elseif ($average==3)
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												@elseif ($average==4)
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star-outline"></i>
+												@elseif ($average==5)
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												<i class="mdi mdi-star"></i>
+												@elseif ($average==0)
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												<i class="mdi mdi-star-outline"></i>
+												@endif
+												@php
+												@endphp
                                                 </div>
                                                 <h5><del></del> {{number_format($item->price)}}</h5>
                                                 {{$item->desc}}
@@ -512,6 +510,3 @@
 </div>
 <!-- quick view end -->
 @endforeach
-<script src="{{ asset('frontend/bootstrap.min.js')}}"></script>
-
-@endsection

@@ -51,6 +51,34 @@ class HomeController extends Controller
         return view('frontend.system.home', $data);
     }
     /**
+     * listting product use ajax
+     * author: khanhmoc
+     *
+     *
+     */
+    public function homeAjax()
+    {
+        $cart = session('cart');
+        $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
+        $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
+        $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->paginate(12);
+        $quick_view = Product::get();
+        $data_render = [
+            'feature_products' => $feature_products,
+            'new_arrivals' => $new_arrivals,
+            'best_seller_products' => $best_seller_products,
+            'quick_view' => $quick_view,
+        ];
+        $return_HTML_Home = view('frontend.ajax.home', $data_render)->render();
+        $data = [
+            'msg' => 'Home',
+            'cart' => $cart,
+            'returnHTML' => $return_HTML_Home,
+            'status' => 'success'
+        ];
+        return response()->json($data, 200);
+    }
+    /**
      * register user custummer buy product
      * author: khanhmoc
      *

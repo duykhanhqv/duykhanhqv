@@ -1,6 +1,3 @@
-@extends('frontend.master')
-@section('content')
-<div id="page-load">
     <!-- slider-section-start -->
     @if (session('msg'))
     <div class="col-12 alert alert-{{session('status')}}">
@@ -504,6 +501,7 @@
                                                 <h3>{{($item->name)}}</h3>
                                                 <span></span>
                                                 <div class="ratting floatright">
+                                                    <p>( 27 Rating )</p>
                                                     @php
 												$temp=0;
 												$average=0;
@@ -598,7 +596,3 @@
     <!-- quick view end -->
     
     @endforeach
-</div>
-<script src="{{ asset('frontend/bootstrap.min.js')}}"></script>
-
-@endsection

@@ -25,7 +25,7 @@
                                 <a href="#"><i class="mdi mdi-settings"></i></a>
                                 <ul>
                                     <li><a href="my-account.html">My account</a></li>
-                                    <li><a href="{{route('f.cart')}}">My cart</a></li>
+                                    <li><a class="cartAjax" data-href="{{route('f.getCartAjax')}}">My cart</a></li>
                                     <li><a href="{{route('f.checkOut')}}">Checkout</a></li>
                                 </ul>
                             </li>
@@ -53,7 +53,8 @@
                     <div class="mainmenu">
                         <nav>
                             <ul>
-                                <li><a href="{{route('f.home')}}">Home</a>
+                                {{-- <li><a href="{{route('f.home')}}">Home</a> --}}
+                                    <li><a class="homeAjax" data-href="{{route('f.homeAjax')}}">Home</a>
                                 </li>
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="magamenu">

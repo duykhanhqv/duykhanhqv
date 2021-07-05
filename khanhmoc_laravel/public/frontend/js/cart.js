@@ -85,6 +85,26 @@ $(function () {
                     $('#cart').html(data.htmlcart);
             })
     })
+        /**
+     * js get event down and push data to controler
+     * author: khanhmoc
+     *
+     * 
+     */
+         $(document).on("click", ".cartAjax", function () {
+            var _that = $(this);
+            var url = _that.data('href');
+            $.post(url, { })
+                .done(function (data) {
+                    if (data.status == 'success') {
+                        // toastr.success(data.msg);
+                        $('#page-load').html(data.returnHTML);
+                    } else
+                        toastr.warning(data.msg);
+                        $('#page-load').html(data.returnHTML);
+                })
+        })
+    
 
 
 })
