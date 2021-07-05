@@ -122,7 +122,7 @@
 												$star=0;
 												$count=0;
 												@endphp
-												@foreach ($item->user as $key)
+												@foreach ($item->Rating as $key)
 												@php
 												$star=$star+$key->pivot->rating;
 												$count+=1;
@@ -301,7 +301,7 @@
 												$star=0;
 												$count=0;
 												@endphp
-												@foreach ($item->user as $key)
+												@foreach ($item->Rating as $key)
 												@php
 												$star=$star+$key->pivot->rating;
 												$count+=1;

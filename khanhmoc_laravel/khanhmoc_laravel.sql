@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th7 05, 2021 lúc 05:45 AM
+-- Thời gian đã tạo: Th7 05, 2021 lúc 05:18 PM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -1387,13 +1387,13 @@ INSERT INTO `fs_question` (`id`, `content`, `order`, `active`) VALUES
 
 DROP TABLE IF EXISTS `fs_rating_review`;
 CREATE TABLE IF NOT EXISTS `fs_rating_review` (
-  `product_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `rating` int(11) DEFAULT NULL,
-  `review` text COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` date NOT NULL,
-  `updated_at` date NOT NULL,
-  PRIMARY KEY (`product_id`,`user_id`) USING BTREE
+  `review` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` date NOT NULL DEFAULT current_timestamp(),
+  `updated_at` date NOT NULL DEFAULT current_timestamp(),
+  UNIQUE KEY `product_id` (`product_id`,`user_id`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -1401,10 +1401,9 @@ CREATE TABLE IF NOT EXISTS `fs_rating_review` (
 --
 
 INSERT INTO `fs_rating_review` (`product_id`, `user_id`, `rating`, `review`, `created_at`, `updated_at`) VALUES
-(470, 100, 5, 'Good', '2021-07-01', '2021-07-02'),
-(470, 143, 4, 'Sample', '2021-07-01', '2021-07-02'),
 (2, 100, 5, 'Very good', '2021-07-01', '2021-07-01'),
-(2, 142, 4, 'very good product', '2021-07-01', '2021-07-01');
+(2, 142, 4, 'very good product', '2021-07-01', '2021-07-01'),
+(470, 100, 4, 'aSsS', '2021-07-05', '2021-07-05');
 
 -- --------------------------------------------------------
 

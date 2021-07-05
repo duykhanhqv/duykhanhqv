@@ -87,7 +87,7 @@
                                 $star=0;
                                 $count=0;
                                 @endphp
-                                @foreach ($product_detail->user as $key)
+                                @foreach ($product_detail->Rating as $key)
                                 @php
                                 $star=$star+$key->pivot->rating;
                                 $count+=1;
@@ -211,7 +211,7 @@
                         </div>
                         <div class="info-reviews review-text tab-pane fade in active" id="reviews">
                             
-                            @foreach ($product_detail->user as $item)
+                            @foreach ($product_detail->Rating as $item)
                             <div class="about-author">
                                 <div class="autohr-text">
                                     <img src="img/blog/author1.png" alt="" />
@@ -474,7 +474,7 @@
 												$star=0;
 												$count=0;
 												@endphp
-												@foreach ($item->user as $key)
+												@foreach ($item->Rating as $key)
 												@php
 												$star=$star+$key->pivot->rating;
 												$count+=1;

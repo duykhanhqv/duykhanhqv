@@ -44,7 +44,6 @@ class CartController extends Controller
             'status' => 'success'
         ];
         return response()->json($data, 200);
-
     }
     /**
      * add product to cart
@@ -92,42 +91,25 @@ class CartController extends Controller
      *
      * 
      */
+
     public function addManyProductsToCart(Request $request)
     {
-        foreach ($request->product as $id => $qty) {
-            $product = Product::where(['id' => $id])->first();
-            if (!$product)
-                return view('frontend.system.home');
-            if (!Auth::check()) {
-                $data = [
-                    'msg' => 'You need to login before making a purchase'
-                ];
-                return view('frontend.system.register', $data);
-            }
-            $cart = session('cart');
-            if (isset($cart[$product->id])) {
-                if ($product->qty >= ($cart[$product->id]['qty_order'] + $qty)) {
-                    $cart[$product->id]['qty_order']++;
-                } else {
-                    return view('frontend.system.register', ['msg' => 'Sold product']);
-                }
-            } else {
-                if ($product->qty >= $qty) {
-
-                    $cart[$product->id] = [
-                        'id' => $product->id,
-                        'name' => $product->name,
-                        'price' => $product->price,
-                        'qty_order' => $qty,
-                        'product_img' => $product->ProductImgs
-                    ];
-                } else {
-                    return view('frontend.system.register', ['msg' => 'Sold product']);
-                }
-            }
-            session(['cart' => $cart]);
+        $product = Product::where(['id' => $request->product_id])->first();
+        $cart = session('cart');
+        if (isset($cart[$product->id])) {
+            $cart[$product->id]['qty_order'] = $cart[$product->id]['qty_order'] + $request->qty;
+        } else {
+            $cart[$product->id] = [
+                'id' => $product->id,
+                'name' => $product->name,
+                'price' => $product->price,
+                'qty_order' => $request->qty,
+                'product_img' => $product->ProductImgs
+            ];
         }
-        return redirect()->route('f.detailProduct', $product->id)->with(['msg' => 'Add success', 'status' => 'success']);
+        session(['cart' => $cart]);
+
+        return redirect()->route('f.detailProduct', $product->id);
     }
     /**
      * add product update cart

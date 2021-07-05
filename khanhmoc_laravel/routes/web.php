@@ -53,9 +53,10 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/home_ajax', [HomeController::class, 'homeAjax'])->name('f.homeAjax');
     Route::post('/cart_ajax', [CartController::class, 'getCartAjax'])->name('f.getCartAjax');
     Route::get('/home', [HomeController::class, 'home'])->name('f.home');
+    Route::post('/rating', [ProductController::class, 'postRatingReview'])->name('f.postRatingReview');
 });
 
-
+Route::get('/testajax', [ProductController::class, 'testajax'])->name('f.test');
 Route::post('/loginpost', [HomeController::class, 'postLogin'])->name('f.postLogin');
 Route::get('/login', [HomeController::class, 'formLoginRegister'])->name('f.formLoginRegister');
 Route::post('/registerpost', [HomeController::class, 'postRegister'])->name('f.postRegister');

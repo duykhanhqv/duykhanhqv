@@ -19,7 +19,7 @@ class Product extends Model
     {
         return $this->hasOne('App\Models\Category');
     }
-    public function user()
+    public function Rating()
     {
         return $this->belongsToMany(User::class, 'fs_rating_review')->withPivot('review', 'user_id', 'created_at', 'rating');;
     }

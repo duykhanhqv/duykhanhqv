@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\RatingAndReview;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -169,5 +170,43 @@ class ProductController extends Controller
             'status' => 'success'
         ];
         return response()->json($data, 200);
+    }
+    /**
+     * add rating and review
+     * author: khanhmoc
+     *
+     *
+     */
+    public function postRatingReview(Request $request)
+    {
+
+        $request->validate([
+            'star' => ['required', 'numeric'],
+            'review' => ['required'],
+        ], [
+            'star.required' => 'Star already exists',
+            'star.numeric' => 'Star not Invalid',
+            'review.required' => 'Status already exists',
+        ]);
+
+        $product = RatingAndReview::where('product_id', $request->id)->where('user_id', Auth::user()->id)->get();
+        $temp = count($product);
+        if ($temp == 0) {
+            $item = new RatingAndReview();
+            $item->product_id = $request->id;
+            $item->rating = $request->star + 1;
+            $item->user_id = Auth::user()->id;
+            $item->review = $request->review;
+            $item->created_at = now();
+            $item->updated_at = now();
+            if ($item->save()) {
+                return redirect()->route('f.detailProduct', $request->id)->with(['msg' => 'Rating success', 'status' => 'susses',]);
+                # code...
+            } else {
+                return redirect()->route('f.detailProduct', $request->id)->with(['msg' => 'Rating error', 'status' => 'danger']);
+            }
+        } else {
+            return redirect()->route('f.detailProduct', $request->id)->with(['msg' => 'You only rate 1 product 1 time', 'status' => 'danger']);
+        }
     }
 }

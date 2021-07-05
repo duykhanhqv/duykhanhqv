@@ -7,6 +7,11 @@
             <div class="col-xs-12">
                 <div class="pages-title-text text-center">
                     <h2>{{$product_detail->name}}</h2>
+                    @if (session('msg'))
+          <div class="col-12 alert alert-{{session('status')}}">
+              {{session('msg')}}
+          </div>
+          @endif
                     <ul class="text-left">
                         <li><a href="index.html">Home </a></li>
                         <li><span> // </span><a href="shop.html">shop </a></li>
@@ -89,7 +94,7 @@
                                 $star=0;
                                 $count=0;
                                 @endphp
-                                @foreach ($product_detail->user as $key)
+                                @foreach ($product_detail->Rating as $key)
                                 @php
                                 $star=$star+$key->pivot->rating;
                                 $count+=1;
@@ -147,20 +152,22 @@
 
                             <div class="all-choose">
                                 <br>
-                                <form action="{{route('f.addManyProductsToCart')}}" method="POST" id="">
+                                <form action="{{route('f.addManyProductsToCart')}}" method="POST" >
                                     <div class="s-shoose">
                                         <h5>qty</h5>
                                         <div class="plus-minus">
+                                            <input name="product_id" type="text" value="{{$product_detail->id}}" style="display:none" class="bar" >
                                             <a class="dec qtybutton">-</a>
-                                            <input type="text" value="01" name="product[{{$product_detail->id}}]"  class="plus-minus-box">
+                                            <input type="text" value="01" name="qty"
+                                                class="plus-minus-box">
                                             <a class="inc qtybutton">+</a>
                                         </div>
                                     </div>
                                     <div class="s-shoose">
                                         <div class="plus-minus">
-                                           @csrf
-                                                <input type="submit" value="add to cart">
-                                          
+                                            @csrf
+                                            <input type="submit" value="add to cart">
+
                                         </div>
                                     </div>
                                 </form>
@@ -212,8 +219,8 @@
                                 consequat, purus felis vehicula felis, a dapibus enim lorem nec augue.</p>
                         </div>
                         <div class="info-reviews review-text tab-pane fade in active" id="reviews">
-                            
-                            @foreach ($product_detail->user as $item)
+
+                            @foreach ($product_detail->Rating as $item)
                             <div class="about-author">
                                 <div class="autohr-text">
                                     <img src="img/blog/author1.png" alt="" />
@@ -263,74 +270,63 @@
                                 <h3>leave your review</h3>
                                 <h5>Your rating</h5>
                                 <div class="rating clearfix">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="mdi mdi-star-outline"></i>
-                                            </a>
-                                            <span>|</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                            </a>
-                                            <span>|</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                            </a>
-                                            <span>|</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                            </a>
-                                            <span>|</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                                <i class="mdi mdi-star-outline"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <i class="fa fa-star fa-2x" data-index="0"></i>
+                                    <i class="fa fa-star fa-2x" data-index="1"></i>
+                                    <i class="fa fa-star fa-2x" data-index="2"></i>
+                                    <i class="fa fa-star fa-2x" data-index="3"></i>
+                                    <i class="fa fa-star fa-2x" data-index="4"></i>
                                 </div>
+                                <script>
+                                    var ratedIndex = -1;
+                        $(document).ready(function () {
+                            resetStarColors();
+                            if (localStorage.getItem('ratedIndex') != null) {
+                                setStars(parseInt(localStorage.getItem('ratedIndex')));
+                            }
+                            $('.fa-star').on('click', function () {
+                                ratedIndex = parseInt($(this).data('index'));
+                                localStorage.setItem('ratedIndex', ratedIndex);
+                                $('#star').val(localStorage.getItem('ratedIndex'));
+                            });
+                            $('.fa-star').mouseover(function () {
+                                resetStarColors();
+                                var currentIndex = parseInt($(this).data('index'));
+                                setStars(currentIndex);
+                            });
+                            $('.fa-star').mouseleave(function () {
+                                resetStarColors();
+                                if (ratedIndex != -1)
+                                    setStars(ratedIndex);
+                            });
+                        });
+                        function setStars(max) {
+                            for (var i=0; i <= max; i++)
+                                $('.fa-star:eq('+i+')').css('color', 'red');
+                        }
+                        function resetStarColors() {
+                            $('.fa-star').css('color', 'gray');
+                        }
+                    </script>
                             </div>
                             <div class="custom-input">
-                                <form action="mail.php" method="post">
+                                <form action="{{ route('f.postRatingReview')}}" method="post" enctype="multipart/form-data">
+                                    <input type="hidden"  id="star" name="star" value="">
+                                    <input type="hidden" name="id" value="{{$product_detail->id}}">
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="input-mail">
-                                                <input type="text" name="name" placeholder="Your Name" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="input-mail">
-                                                <input type="text" name="email" placeholder="Your Email" />
-                                            </div>
-                                        </div>
                                         <div class="col-xs-12">
                                             <div class="custom-mess">
-                                                <textarea name="message" placeholder="Your Review" rows="2"></textarea>
+                                                <textarea name="review" placeholder="Your Review" rows="2"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-xs-12">
                                             <div class="submit-text">
+                                                @csrf
                                                 <button type="submit">submit review</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                         <div class="info-reviews tags tab-pane fade in" id="tags">
@@ -476,7 +472,7 @@
                                                     $star=0;
                                                     $count=0;
                                                     @endphp
-                                                    @foreach ($item->user as $key)
+                                                    @foreach ($item->Rating as $key)
                                                     @php
                                                     $star=$star+$key->pivot->rating;
                                                     $count+=1;
