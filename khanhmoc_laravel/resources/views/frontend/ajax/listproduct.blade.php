@@ -20,7 +20,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="list-text">
                         <h3><a href="{{route('f.detailProduct',[$item->id])}}">{{$item->name}}</a></h3>
-                        <span>Summer men’s fashion</span>
+                        <span></span>
                         <div class="ratting floatright">
                             @php
 												$temp=0;

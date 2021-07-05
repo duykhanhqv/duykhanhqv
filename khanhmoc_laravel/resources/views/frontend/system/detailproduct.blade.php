@@ -81,14 +81,66 @@
                     <div class="quick-right">
                         <div class="list-text">
                             <h3>{{$product_detail->name}}</h3>
-                            <span>Summer men’s fashion</span>
+                            <span></span>
                             <div class="ratting floatright">
-                                <p>( 27 Rating )</p>
+                                @php
+                                $temp=0;
+                                $average=0;
+                                $star=0;
+                                $count=0;
+                                @endphp
+                                @foreach ($product_detail->user as $key)
+                                @php
+                                $star=$star+$key->pivot->rating;
+                                $count+=1;
+                                @endphp
+                                @endforeach
+                                @if ($count==0)
+                                @else
+                                @php
+                                $average=floor($star/$count);
+                                @endphp
+                                @endif
+                                <p>( {{$count}} Rating )</p>
+                                @if ($average==1)
                                 <i class="mdi mdi-star"></i>
-                                <i class="mdi mdi-star"></i>
-                                <i class="mdi mdi-star"></i>
-                                <i class="mdi mdi-star-half"></i>
                                 <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                @elseif ($average==2)
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                @elseif ($average==3)
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                @elseif ($average==4)
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                @elseif ($average==5)
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                <i class="mdi mdi-star"></i>
+                                @elseif ($average==0)
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                <i class="mdi mdi-star-outline"></i>
+                                @endif
+                                @php
+                                @endphp
                             </div>
                             <h5><del></del> {{number_format($product_detail->price)}}</h5>
                             {{$product_detail->desc}}
@@ -416,7 +468,7 @@
                                         <div class="quick-right">
                                             <div class="list-text">
                                                 <h3>{{$item->name}}</h3>
-                                                <span>Summer men’s fashion</span>
+                                                <span></span>
                                                 <div class="ratting floatright">
                                                     @php
                                                     $temp=0;

@@ -21,7 +21,7 @@ class Product extends Model
     }
     public function user()
     {
-        return $this->belongsToMany(User::class, 'fs_rating_review')->withPivot('review', 'user_id', 'created_at','rating');;
+        return $this->belongsToMany(User::class, 'fs_rating_review')->withPivot('review', 'user_id', 'created_at', 'rating');;
     }
     // public function scopePublished($query)
     // {
