@@ -53,31 +53,23 @@
 
                                 </td>
                                 <td>
-                                    {{-- <a href="">
-                                        <button type="button" class="btn btn-icons btn-inverse-primary">
-                                            <i class="mdi mdi-wrench"></i>
-                                        </button>
-                                    </a>
-                                    <form action="}" method="POST">
-                                        @csrf
-
-                                        <button type="submit" class="btn btn-icons btn-inverse-danger"
-                                            onclick="return confirm('Do you want to delete this?')">
-                                            <i class="mdi mdi-delete-empty"></i>
-                                        </button>
-                                    </form> --}}
                                     @csrf
-                                    <button type="submit" class="btn btn-icons btn-inverse-danger"
-                                            >
-                                            <i class="mdi mdi-add-empty"></i>
+                                    <button type="submit" class="btn btn-icons btn-inverse-primary">
+                                            <i class="mdi mdi-check"></i>
                                         </button>
+                                        
+                                        <a href="{{route('s.editRole',[$item->id])}}">
+                                            <button type="button" class="btn btn-icons btn-inverse-danger">
+                                                <i class="mdi mdi-wrench"></i>
+                                            </button>
+                                        </a>
                                 </td>
                             </tr>
                         </form>
                             @endforeach
                         </tbody>
                     </table>
-                    {{$user->links() }}
+                    {{$list_user->links() }}
                 </div>
             </div>
         </div>

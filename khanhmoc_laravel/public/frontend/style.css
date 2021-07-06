@@ -306,7 +306,7 @@ header .logo ,.cart-itmes{line-height: 150px;}
 .middel-top .center {
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
-	line-height: 75px;
+	line-height: 50px;
 	width: 60%;
 }
 .middel-top .center button {

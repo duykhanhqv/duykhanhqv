@@ -50,4 +50,55 @@ class AdminRoleController extends Controller
             return redirect()->back()->with(['msg' => 'Add role susses',  'status' => 'success']);
         }
     }
+    /*
+     edit user    
+
+    */
+    public function edit($id)
+    {
+        //
+        // dd($id);
+        $item = Admin::where('id', $id)->first();
+        if (!$item)
+            return redirect()->route('s.roles')->with(['msg' => 'None Order in list', 'status' => 'danger']);
+        $data = [
+            'action' => route('s.updateInfoRole', $id),
+            'item' => $item,
+            'method' => 'PUT',
+        ];
+        return view('admin.role.form', $data);
+    }
+    /*
+     edit user    
+    */
+    public function updateInfoRole(Request $request, $id)
+    {
+        //
+        $item = Admin::where('id', $id)->first();
+        if (!$item) {
+            return redirect()->route('s.role')->with(['msg' => 'No has this User', 'status' => 'danger']);
+        }
+        $request->validate([
+            'password' => ['required', 'min:5', 'max:255',],
+            'email' => ['required'],
+            'name' => ['required', 'min:5', 'max:255']
+        ], [
+            'email.required' => 'Email not none',
+            'name.min' => 'Name length must be between 5 and 255',
+            'name.max' =>  'Name length must be between 5 and 255',
+            'name.required' => 'Name already exists',
+            'password.min' => 'Password length must be between 5 and 255',
+            'password.max' =>  'Password length must be between 5 and 255',
+            'password.required' => 'Password already exists',
+        ]);
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        $item->password = $input['password'];
+        $item->email = $input['email'];
+        $item->updated_at = now();
+        if ($item->save()) {
+            return redirect()->route('s.role')->with(['msg' => 'Update success', 'status' => 'success']);
+        }
+        return redirect()->route('s.role')->with(['msg' => 'Update wordp error', 'status' => 'danger']);
+    }
 }

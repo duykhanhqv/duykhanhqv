@@ -54,6 +54,8 @@ Route::group(['middleware' => 'checklogin'], function () {
     Route::post('/cart_ajax', [CartController::class, 'getCartAjax'])->name('f.getCartAjax');
     Route::get('/home', [HomeController::class, 'home'])->name('f.home');
     Route::post('/rating', [ProductController::class, 'postRatingReview'])->name('f.postRatingReview');
+    Route::post('/search', [ProductController::class, 'searchProduct'])->name('f.searchProduct');
+    Route::get('/searchAutoComplement', [ProductController::class, 'searchAutoComplement'])->name('f.searchAutoComplement');
 });
 
 Route::get('/testajax', [ProductController::class, 'testajax'])->name('f.test');
@@ -77,6 +79,8 @@ Route::group(['middleware' => 'checkloginadmin'], function () {
     Route::group(['middleware' => 'roles_admin'], function () {
         Route::get('/role', [AdminRoleController::class, 'list'])->name('s.role');
         Route::post('/role', [AdminRoleController::class, 'update'])->name('s.updateRole');
+        Route::get('/role/edit/{id}', [AdminRoleController::class, 'edit'])->name('s.editRole');
+        Route::put('/role/{id}', [AdminRoleController::class, 'updateInfoRole'])->name('s.updateInfoRole');
     });
     Route::group(['middleware' => 'roles_product'], function () {
         Route::resource('/products', AdminProductController::class);
@@ -90,6 +94,7 @@ Route::group(['middleware' => 'checkloginadmin'], function () {
         Route::get('/orders_delivering', [AdminOrderController::class, 'orderDelivering'])->name('orders.delivering');
         Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
         Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
+        Route::put('/order_revove', [AdminOrderController::class, 'orderRemove'])->name('order.moc');
     });
     Route::get('/changepassword', [SystemController::class, 'changePassword'])->name('s.changePassword');
 

@@ -30,11 +30,25 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="right floatright">
-                            <form action="#" method="get">
+                        <div class="center floatleft">
+                            <form action="{{route('f.searchProduct')}}" method="post">
+                                @csrf
                                 <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                                <input type="text" placeholder="Search within these results..." />
+                                <input type="text" name="keyword" id="keyword" placeholder="Search within these results..." />
                             </form>
+                            {{-- <script type="text/javascript">
+                                var path = "{{ route('f.searchAutoComplement') }}";
+                                $('#keyword').typeahead({
+                                    source:  function (query, process) {
+                                        // alert(query);
+                                    return $.get(path, { query: query }, function (data) {
+                                            return process(data);
+                                           
+                                            // $('#search_ajax').html(data.returnHTML);
+                                        });
+                                    }
+                                });
+                            </script> --}}
                         </div>
                     </div>
                 </div>
@@ -54,7 +68,7 @@
                         <nav>
                             <ul>
                                 {{-- <li><a href="{{route('f.home')}}">Home</a> --}}
-                                    <li><a class="homeAjax" data-href="{{route('f.homeAjax')}}">Home</a>
+                                <li><a class="homeAjax" data-href="{{route('f.homeAjax')}}">Home</a>
                                 </li>
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="magamenu">

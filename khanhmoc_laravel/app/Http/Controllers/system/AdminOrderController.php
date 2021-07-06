@@ -4,6 +4,8 @@ namespace App\Http\Controllers\system;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminOrderController extends Controller
@@ -69,10 +71,14 @@ class AdminOrderController extends Controller
         $item = Order::where('id', $id)->first();
         if (!$item)
             return redirect()->route('order.index')->with(['msg' => 'None Order in list', 'status' => 'danger']);
+        $detail = OrderDetail::where('order_id', $id)->get();
+        $product = Product::get();
         $data = [
             'action' => route('orders.update', $id),
             'item' => $item,
             'method' => 'PUT',
+            'product' => $product,
+            'detail' => $detail
 
         ];
         return view('admin.order.form', $data);
@@ -215,5 +221,20 @@ class AdminOrderController extends Controller
             'orders' => $orders
         ];
         return view('admin.order.list', $data);
+    }
+    /**
+     * Display a listing order delived of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function orderRemove(Request $request)
+    {
+        //
+        dd('moc');
+        // $orders = OrderDetail::where('order_id', $request->order_id)->where('product_id', $request->product_id)->first();
+        // $data = [
+        //     'orders' => $orders
+        // ];
+        // return view('admin.order.list', $data);
     }
 }

@@ -7,10 +7,10 @@
                 <div class="pages-title-text text-center">
                     <h2>{{$product_detail->name}}</h2>
                     @if (session('msg'))
-          <div class="col-12 alert alert-{{session('status')}}">
-              {{session('msg')}}
-          </div>
-          @endif
+                    <div class="col-12 alert alert-{{session('status')}}">
+                        {{session('msg')}}
+                    </div>
+                    @endif
                     <ul class="text-left">
                         <li><a href="index.html">Home </a></li>
                         <li><span> // </span><a href="shop.html">shop </a></li>
@@ -151,14 +151,14 @@
 
                             <div class="all-choose">
                                 <br>
-                                <form action="{{route('f.addManyProductsToCart')}}" method="POST" >
+                                <form action="{{route('f.addManyProductsToCart')}}" method="POST">
                                     <div class="s-shoose">
                                         <h5>qty</h5>
                                         <div class="plus-minus">
-                                            <input name="product_id" type="text" value="{{$product_detail->id}}" style="display:none" class="bar" >
+                                            <input name="product_id" type="text" value="{{$product_detail->id}}"
+                                                style="display:none" class="bar">
                                             <a class="dec qtybutton">-</a>
-                                            <input type="text" value="01" name="qty"
-                                                class="plus-minus-box">
+                                            <input type="text" value="01" name="qty" class="plus-minus-box">
                                             <a class="inc qtybutton">+</a>
                                         </div>
                                     </div>
@@ -305,11 +305,12 @@
                         function resetStarColors() {
                             $('.fa-star').css('color', 'gray');
                         }
-                    </script>
+                                </script>
                             </div>
                             <div class="custom-input">
-                                <form action="{{ route('f.postRatingReview')}}" method="post" enctype="multipart/form-data">
-                                    <input type="hidden"  id="star" name="star" value="">
+                                <form action="{{ route('f.postRatingReview')}}" method="post"
+                                    enctype="multipart/form-data">
+                                    <input type="hidden" id="star" name="star" value="">
                                     <input type="hidden" name="id" value="{{$product_detail->id}}">
                                     <div class="row">
                                         <div class="col-xs-12">
@@ -525,7 +526,12 @@
                                                     @endphp
                                                 </div>
                                                 <h5><del></del> {{number_format($item->price)}}</h5>
-                                                {{$item->desc}}
+                                                <div>
+                                                    <?php echo $item->desc ?>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                </div>
 
                                                 <div class="list-btn">
                                                     <a href="#">add to cart</a>

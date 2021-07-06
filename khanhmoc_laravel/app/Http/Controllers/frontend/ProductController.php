@@ -26,12 +26,15 @@ class ProductController extends Controller
         $product_detail = Product::where('id', $product_id)->first();
         $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
         $user = User::get();
+        $quick_view = Product::get();
         $data = [
             'product_detail' => $product_detail,
             'related_product' => $related_product,
             'msg' => '',
             'cart' => $cart,
             'user' => $user,
+            'quick_view' => $quick_view,
+
 
         ];
         return view('frontend.system.detailproduct', $data);
@@ -135,6 +138,7 @@ class ProductController extends Controller
         $cart = session('cart');
         $product_detail = Product::where('id', $request->id)->first();
         // dd($product_detail->id);
+        $quick_view = Product::get();
         $data_render = [
             'product_detail' => $product_detail
         ];
@@ -142,7 +146,9 @@ class ProductController extends Controller
         $data = [
             'returnHTML' => $return_HTML,
             'msg' => 'success',
-            'status' => 'success'
+            'status' => 'success',
+            'quick_view' => $quick_view,
+
         ];
         return response()->json($data, 200);
     }
@@ -163,6 +169,7 @@ class ProductController extends Controller
             'product_detail' => $product_detail,
             'related_product' => $related_product,
             'quick_view' => $quick_view,
+
         ];
         $return_HTML_Detail = view('frontend.ajax.detailproduct', $data_render)->render();
         $data = [
@@ -210,5 +217,41 @@ class ProductController extends Controller
         } else {
             return redirect()->route('f.detailProduct', $request->id)->with(['msg' => 'You only rate 1 product 1 time', 'status' => 'danger']);
         }
+    }
+    /**
+     * search product
+     * author: khanhmoc
+     *
+     *
+     */
+    public function searchProduct(Request $request)
+    {
+
+
+        $cart = session('cart');
+        $query = $request->keyword;
+        $search = Product::where('name', 'like', '%' . $query . '%')->orwhere('desc', 'like', '%' . $query . '%')->where('active', 1)->where('status', 1)->where('qty', '>', '0')->paginate(12);
+        $departments = Department::get();
+        // dd($search);
+        $data = [
+            'list_products' => $search,
+            'departments' => $departments,
+            'cart' => $cart,
+            'search' => $query
+        ];
+
+        return view('frontend.system.search', $data);
+    }
+    /**
+     * search product
+     * author: khanhmoc
+     *
+     *
+     */
+    public function searchAutoComplement(Request $request)
+    {
+        $query = $request->keyword;
+        $data = Product::where('name', 'like', '%' . $query . '%')->orwhere('desc', 'like', '%' . $query . '%')->where('active', 1)->where('status', 1)->where('qty', '>', '0')->get();
+        return response()->json($data);
     }
 }

@@ -9,6 +9,7 @@
                 </div>
                 <div class="panel-body">
                     <form action="{{$action}}" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Name ship</label>
@@ -32,6 +33,7 @@
                                 </div>
                                 @enderror
                             </div>
+                        </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -100,6 +102,33 @@
                             </div>
                             @enderror
                         </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th> # </th>
+                                    <th> ID </th>
+                                    <th> Name </th>
+                                    <th> price</th>
+                                    <th>Qty </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $temp=0 ?>
+                                @foreach ($detail as $item)
+                                <tr>
+                                    <td>{{$temp=$temp+1}} </td>
+                                    <td> {{$item->product_id}}</td>
+                                    <td>
+                                        {{$item->Product->name}}
+                                    </td>
+                                    <td>{{$item->price}}</td>
+                                    <td>{{$item->qty}}</td>
+                                   
+    
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                 </div>
                 @csrf
                 @method($method)

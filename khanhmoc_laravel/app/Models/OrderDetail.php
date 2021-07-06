@@ -11,10 +11,10 @@ class OrderDetail extends Model
     protected $table = 'fs_order_detail';
     public function Orders()
     {
-        return $this->hasOne('\App\Models\Order', 'id', 'id_order');
+        return $this->hasOne('\App\Models\Order');
     }
     public function Product()
     {
-        return $this->hasOne('\App\Models\Product', 'id', 'id_product');
+        return $this->belongsTo('\App\Models\Product');
     }
 }
