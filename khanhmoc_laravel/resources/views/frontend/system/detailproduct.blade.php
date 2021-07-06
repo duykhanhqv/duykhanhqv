@@ -386,7 +386,7 @@
 </section>
 <!-- related-products section end -->
 <!-- quick view start -->
-@foreach ($related_product as $item)
+@foreach ($quick_view as $item)
 <div class="product-details quick-view modal animated zoomInUp" id="quick-view{{$item->id}}">
     <div class="container">
         <div class="row">

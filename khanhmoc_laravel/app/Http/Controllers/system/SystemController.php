@@ -19,8 +19,7 @@ class SystemController extends Controller
 
     public function dashboard()
     {
-
-        return view('admin.system.home',);
+        return view('admin.system.home');
     }
     /**
      * get form login

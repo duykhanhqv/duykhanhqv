@@ -44,12 +44,15 @@ class HomeController extends Controller
             'feature_products' => $feature_products,
             'new_arrivals' => $new_arrivals,
             'best_seller_products' => $best_seller_products,
-            'quick_view' => $quick_view,
             'msg' => '',
             'cart' => $cart,
+            'quick_view' => $quick_view,
+
         ];
         return view('frontend.system.home', $data);
     }
+
+
     /**
      * listting product use ajax
      * author: khanhmoc

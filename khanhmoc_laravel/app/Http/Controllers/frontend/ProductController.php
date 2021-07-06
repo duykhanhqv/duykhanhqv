@@ -158,9 +158,11 @@ class ProductController extends Controller
 
         $product_detail = Product::where('id', $request->id)->first();
         $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
+        $quick_view = Product::get();
         $data_render = [
             'product_detail' => $product_detail,
             'related_product' => $related_product,
+            'quick_view' => $quick_view,
         ];
         $return_HTML_Detail = view('frontend.ajax.detailproduct', $data_render)->render();
         $data = [
