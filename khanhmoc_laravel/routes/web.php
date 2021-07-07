@@ -94,7 +94,8 @@ Route::group(['middleware' => 'checkloginadmin'], function () {
         Route::get('/orders_delivering', [AdminOrderController::class, 'orderDelivering'])->name('orders.delivering');
         Route::get('/orders_delived', [AdminOrderController::class, 'orderDelived'])->name('orders.delived');
         Route::get('/orders_cancel', [AdminOrderController::class, 'orderCancel'])->name('orders.cancel');
-        Route::put('/order_revove', [AdminOrderController::class, 'orderRemove'])->name('order.moc');
+        // Route::post('/order_change', [AdminOrderController::class, 'Change'])->name('order.change');
+        Route::post('/order_remove_product', [AdminOrderController::class, 'remove_product'])->name('order.remove_product');
     });
     Route::get('/changepassword', [SystemController::class, 'changePassword'])->name('s.changePassword');
 

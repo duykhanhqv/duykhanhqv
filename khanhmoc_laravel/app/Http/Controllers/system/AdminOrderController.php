@@ -67,19 +67,11 @@ class AdminOrderController extends Controller
      */
     public function edit($id)
     {
-        //
-        $item = Order::where('id', $id)->first();
-        if (!$item)
-            return redirect()->route('order.index')->with(['msg' => 'None Order in list', 'status' => 'danger']);
-        $detail = OrderDetail::where('order_id', $id)->get();
-        $product = Product::get();
+        $detail = OrderDetail::where('order_id', $id)->where('status', '!=', '0')->get();
         $data = [
             'action' => route('orders.update', $id),
-            'item' => $item,
             'method' => 'PUT',
-            'product' => $product,
             'detail' => $detail
-
         ];
         return view('admin.order.form', $data);
     }
@@ -120,6 +112,15 @@ class AdminOrderController extends Controller
         $item->email = $request->email_ship;
         $item->address = $request->address_ship;
         $item->status = $request->status;
+        if ($item->status == 4) {
+            $id_product = OrderDetail::where('order_id', $request->order_id)->get();
+            foreach ($id_product as $key) {
+                // dd($key->product_id);
+                $product = Product::where('id', $key->product_id)->first();
+                $product->qty = $product->qty + $key->qty;
+                $product->save();
+            }
+        }
         if ($item->save()) {
             return redirect()->route('orders.index')->with(['msg' => 'Update success', 'status' => 'success']);
         } else {
@@ -223,18 +224,30 @@ class AdminOrderController extends Controller
         return view('admin.order.list', $data);
     }
     /**
-     * Display a listing order delived of the resource.
+     * Remove product in order
      *
      * @return \Illuminate\Http\Response
      */
-    public function orderRemove(Request $request)
+    public function remove_product(Request $request)
     {
         //
-        dd('moc');
-        // $orders = OrderDetail::where('order_id', $request->order_id)->where('product_id', $request->product_id)->first();
-        // $data = [
-        //     'orders' => $orders
-        // ];
-        // return view('admin.order.list', $data);
+        $item = OrderDetail::where('order_id', $request->order_id)->where('product_id', $request->product_id)->first();
+
+
+
+        $item->status = 0;
+        // dd($item->status);
+        if (!$item)
+            return redirect()->route('orders.edit', $request->order_id)->with(['msg' => 'None product in list', 'status' => 'danger']);
+        $item->status = 0;
+        if ($item->save()) {
+            $product = Product::where('id',  $request->product_id)->first();
+            $product->qty = $product->qty + $item->qty;
+            if ($product->save()) {
+                return redirect()->route('orders.edit', $request->order_id)->with(['msg' => 'Remove product success', 'status' => 'success']);
+            }
+        } else {
+            return redirect()->route('orders.edit', $request->order_id)->with(['msg' => 'Remove product error', 'status' => 'danger']);
+        }
     }
 }

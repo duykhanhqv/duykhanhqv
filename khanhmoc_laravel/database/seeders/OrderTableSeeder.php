@@ -20,7 +20,7 @@ class OrderTableSeeder extends Seeder
         //
         $user = User::inRandomOrder()->limit(1)->get();
         $faker = Faker::create('vi_VN');
-        foreach (range(1, 10) as $value) {
+        foreach (range(1, 30) as $value) {
             DB::table('fs_order')->insert([
                 'user_id' => $user[0]->id,
                 'created_at' => $faker->dateTimeBetween('2021-01-01', '2021-03-01'),

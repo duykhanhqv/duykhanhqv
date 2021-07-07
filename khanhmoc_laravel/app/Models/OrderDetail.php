@@ -9,9 +9,10 @@ class OrderDetail extends Model
 {
     use HasFactory;
     protected $table = 'fs_order_detail';
-    public function Orders()
+    protected $primaryKey = 'id';
+    public function Order()
     {
-        return $this->hasOne('\App\Models\Order');
+        return $this->belongsTo('\App\Models\Order');
     }
     public function Product()
     {
