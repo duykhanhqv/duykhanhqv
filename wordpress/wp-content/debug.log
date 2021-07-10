@@ -1,0 +1,739 @@
+[10-Jul-2021 02:20:52 UTC] PHP Warning:  Use of undefined constant primary_menu - assumed 'primary_menu' (this will throw an Error in a future version of PHP) in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:20:52 UTC] PHP Stack trace:
+[10-Jul-2021 02:20:52 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:20:52 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:20:52 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:20:52 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:20:52 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:20:52 UTC] PHP Stack trace:
+[10-Jul-2021 02:20:52 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:20:52 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:20:52 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:20:52 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:20:58 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:20:58 UTC] PHP Stack trace:
+[10-Jul-2021 02:20:58 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:20:58 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:20:58 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:20:58 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:20:59 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:20:59 UTC] PHP Stack trace:
+[10-Jul-2021 02:20:59 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:20:59 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:20:59 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:20:59 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:00 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:21:00 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:00 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:00 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:00 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:00 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:00 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:21:00 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:00 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:00 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:00 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:00 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:00 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:21:00 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:00 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:00 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:00 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:00 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:00 UTC] PHP Notice:  Undefined variable: location in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 2
+[10-Jul-2021 02:21:00 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:00 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:00 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:00 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:00 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:52 UTC] PHP Warning:  Illegal offset type in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:21:52 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:52 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:52 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:52 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:52 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:53 UTC] PHP Warning:  Illegal offset type in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:21:53 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:53 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:53 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:53 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:53 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:53 UTC] PHP Warning:  Illegal offset type in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:21:53 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:53 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:53 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:53 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:53 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:21:53 UTC] PHP Warning:  Illegal offset type in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:21:53 UTC] PHP Stack trace:
+[10-Jul-2021 02:21:53 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:21:53 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:21:53 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:21:53 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:23:34 UTC] PHP Warning:  print_r() expects at least 1 parameter, 0 given in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:23:34 UTC] PHP Stack trace:
+[10-Jul-2021 02:23:34 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:23:34 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:23:34 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:23:34 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:23:34 UTC] PHP   5. print_r() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php:3
+[10-Jul-2021 02:23:35 UTC] PHP Warning:  print_r() expects at least 1 parameter, 0 given in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:23:35 UTC] PHP Stack trace:
+[10-Jul-2021 02:23:35 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:23:35 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:23:35 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:23:35 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:23:35 UTC] PHP   5. print_r() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php:3
+[10-Jul-2021 02:23:35 UTC] PHP Warning:  print_r() expects at least 1 parameter, 0 given in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:23:35 UTC] PHP Stack trace:
+[10-Jul-2021 02:23:35 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:23:35 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:23:35 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:23:35 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:23:35 UTC] PHP   5. print_r() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php:3
+[10-Jul-2021 02:23:35 UTC] PHP Warning:  print_r() expects at least 1 parameter, 0 given in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 3
+[10-Jul-2021 02:23:35 UTC] PHP Stack trace:
+[10-Jul-2021 02:23:35 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 02:23:35 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 02:23:35 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 02:23:35 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 02:23:35 UTC] PHP   5. print_r() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php:3
+[10-Jul-2021 02:30:23 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 5
+[10-Jul-2021 02:30:24 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 5
+[10-Jul-2021 06:04:01 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:01 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:01 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:01 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:01 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:01 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:01 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:01 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:01 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:01 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:01 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:01 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:01 UTC] PHP Notice:  Undefined property: WP_Error::$term_id in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 8
+[10-Jul-2021 06:04:01 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:01 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:01 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:01 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:01 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:43 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:43 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:43 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:43 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:43 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:43 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:43 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:43 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:43 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:43 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:43 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:43 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:43 UTC] PHP Notice:  Undefined property: WP_Error::$term_id in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 8
+[10-Jul-2021 06:04:43 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:43 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:43 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:43 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:43 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:43 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:43 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:43 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:43 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:43 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:43 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:43 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:43 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:43 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:43 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:43 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:43 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:43 UTC] PHP Notice:  Undefined property: WP_Error::$term_id in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 8
+[10-Jul-2021 06:04:43 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:43 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:43 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:43 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:43 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined property: WP_Error::$term_id in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 8
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined property: WP_Error::$term_id in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 8
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 7
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:04:44 UTC] PHP Notice:  Undefined property: WP_Error::$term_id in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 8
+[10-Jul-2021 06:04:44 UTC] PHP Stack trace:
+[10-Jul-2021 06:04:44 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:04:44 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:04:44 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:04:44 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:08:49 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 9
+[10-Jul-2021 06:08:49 UTC] PHP Stack trace:
+[10-Jul-2021 06:08:49 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:08:49 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:08:49 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:08:49 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:08:49 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 9
+[10-Jul-2021 06:08:49 UTC] PHP Stack trace:
+[10-Jul-2021 06:08:49 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:08:49 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:08:49 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:08:49 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:08:49 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 9
+[10-Jul-2021 06:08:49 UTC] PHP Stack trace:
+[10-Jul-2021 06:08:49 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:08:49 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:08:49 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:08:49 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:08:49 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 9
+[10-Jul-2021 06:08:49 UTC] PHP Stack trace:
+[10-Jul-2021 06:08:49 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:08:49 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:08:49 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:08:49 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:03 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:03 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:03 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:03 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:03 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:03 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:03 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:03 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:03 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:03 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:03 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:03 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:03 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:03 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:03 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:03 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:03 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:03 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:03 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:03 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:03 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:03 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:03 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:03 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:04 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:04 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:04 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:04 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:04 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:04 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Undefined variable: row in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:05 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:32 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:32 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:32 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:32 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:32 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:32 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:32 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:32 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:32 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:32 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:32 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:32 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:32 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:32 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:32 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:32 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:32 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:32 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:32 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:32 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:32 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:32 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:32 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:32 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:33 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:33 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:33 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:33 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:33 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:33 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:33 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:33 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:33 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:33 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:33 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:33 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:33 UTC] PHP Notice:  Trying to get property 'url' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:33 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:33 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:33 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:33 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:33 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:09:33 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:09:33 UTC] PHP Stack trace:
+[10-Jul-2021 06:09:33 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:09:33 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:09:33 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:09:33 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:19 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:10:19 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:19 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:19 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:19 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:19 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:19 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:10:19 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:19 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:19 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:19 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:19 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:20 UTC] PHP Notice:  Trying to get property 'title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 10
+[10-Jul-2021 06:10:20 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:20 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:20 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:20 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:20 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:47 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:10:47 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:47 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:47 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:47 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:47 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:48 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:10:48 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:48 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:48 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:48 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:48 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:48 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:10:48 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:48 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:48 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:48 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:48 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:10:48 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:10:48 UTC] PHP Stack trace:
+[10-Jul-2021 06:10:48 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:10:48 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:10:48 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:10:48 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:11:18 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:11:18 UTC] PHP Stack trace:
+[10-Jul-2021 06:11:18 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:11:18 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:11:18 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:11:18 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:11:19 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:11:19 UTC] PHP Stack trace:
+[10-Jul-2021 06:11:19 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:11:19 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:11:19 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:11:19 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:11:19 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:11:19 UTC] PHP Stack trace:
+[10-Jul-2021 06:11:19 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:11:19 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:11:19 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:11:19 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:11:19 UTC] PHP Notice:  Trying to get property 'post_title' of non-object in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 11
+[10-Jul-2021 06:11:19 UTC] PHP Stack trace:
+[10-Jul-2021 06:11:19 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:11:19 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:11:19 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:11:19 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:16:19 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:16:19 UTC] PHP Stack trace:
+[10-Jul-2021 06:16:19 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:16:19 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:16:19 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:16:19 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:16:20 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:16:20 UTC] PHP Stack trace:
+[10-Jul-2021 06:16:20 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:16:20 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:16:20 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:16:20 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:16:20 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:16:20 UTC] PHP Stack trace:
+[10-Jul-2021 06:16:20 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:16:20 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:16:20 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:16:20 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:16:20 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:16:20 UTC] PHP Stack trace:
+[10-Jul-2021 06:16:20 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:16:20 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:16:20 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:16:20 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:05 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:18:05 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:05 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:05 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:05 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:05 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:07 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:18:07 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:07 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:07 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:07 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:07 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:07 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:18:07 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:07 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:07 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:07 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:07 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:07 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 34
+[10-Jul-2021 06:18:07 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:07 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:07 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:07 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:07 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:14 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 23
+[10-Jul-2021 06:18:14 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:14 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:14 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:14 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:14 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:15 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 23
+[10-Jul-2021 06:18:15 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:15 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:15 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:15 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:15 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:15 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 23
+[10-Jul-2021 06:18:15 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:15 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:15 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:15 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:15 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:15 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 23
+[10-Jul-2021 06:18:15 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:15 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:15 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:15 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:15 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:15 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 23
+[10-Jul-2021 06:18:15 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:15 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:15 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:15 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:15 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:18:16 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 23
+[10-Jul-2021 06:18:16 UTC] PHP Stack trace:
+[10-Jul-2021 06:18:16 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:18:16 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:18:16 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:18:16 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:19:46 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 22
+[10-Jul-2021 06:19:46 UTC] PHP Stack trace:
+[10-Jul-2021 06:19:46 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:19:46 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:19:46 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:19:46 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:19:46 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 22
+[10-Jul-2021 06:19:46 UTC] PHP Stack trace:
+[10-Jul-2021 06:19:46 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:19:46 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:19:46 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:19:46 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:19:46 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 22
+[10-Jul-2021 06:19:46 UTC] PHP Stack trace:
+[10-Jul-2021 06:19:46 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:19:46 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:19:46 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:19:46 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:19:46 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 22
+[10-Jul-2021 06:19:46 UTC] PHP Stack trace:
+[10-Jul-2021 06:19:46 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:19:46 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:19:46 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:19:46 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:20:37 UTC] PHP Notice:  Undefined variable: temp in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 22
+[10-Jul-2021 06:20:37 UTC] PHP Stack trace:
+[10-Jul-2021 06:20:37 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:20:37 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:20:37 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:20:37 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:34:14 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 29
+[10-Jul-2021 06:34:15 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 29
+[10-Jul-2021 06:34:15 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 29
+[10-Jul-2021 06:53:31 UTC] PHP Notice:  Undefined variable: position in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 6
+[10-Jul-2021 06:53:31 UTC] PHP Stack trace:
+[10-Jul-2021 06:53:31 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:53:31 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:53:31 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:53:31 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 06:53:31 UTC] PHP Notice:  Undefined index:  in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\page-test.php on line 6
+[10-Jul-2021 06:53:31 UTC] PHP Stack trace:
+[10-Jul-2021 06:53:31 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 06:53:31 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 06:53:31 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 06:53:31 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 07:39:41 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\functions.php on line 77
+[10-Jul-2021 13:59:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wp_get_attachement_image_src() in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\sidebar.php:11
+Stack trace:
+#0 C:\wamp64\www\project\wordpress\wp-includes\template.php(730): require_once()
+#1 C:\wamp64\www\project\wordpress\wp-includes\template.php(676): load_template('C:\\wamp64\\www\\p...', true, Array)
+#2 C:\wamp64\www\project\wordpress\wp-includes\general-template.php(136): locate_template(Array, true, true, Array)
+#3 C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\front-page.php(29): get_sidebar()
+#4 C:\wamp64\www\project\wordpress\wp-includes\template-loader.php(106): include('C:\\wamp64\\www\\p...')
+#5 C:\wamp64\www\project\wordpress\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\project\wordpress\index.php(17): require('C:\\wamp64\\www\\p...')
+#7 {main}
+  thrown in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\sidebar.php on line 11
+[10-Jul-2021 14:01:55 UTC] PHP Notice:  Undefined variable: logo in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\sidebar.php on line 15
+[10-Jul-2021 14:01:55 UTC] PHP Stack trace:
+[10-Jul-2021 14:01:55 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[10-Jul-2021 14:01:55 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[10-Jul-2021 14:01:55 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[10-Jul-2021 14:01:55 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[10-Jul-2021 14:01:55 UTC] PHP   5. get_sidebar() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\front-page.php:29
+[10-Jul-2021 14:01:55 UTC] PHP   6. locate_template() C:\wamp64\www\project\wordpress\wp-includes\general-template.php:136
+[10-Jul-2021 14:01:55 UTC] PHP   7. load_template() C:\wamp64\www\project\wordpress\wp-includes\template.php:676
+[10-Jul-2021 14:01:55 UTC] PHP   8. require_once() C:\wamp64\www\project\wordpress\wp-includes\template.php:730
