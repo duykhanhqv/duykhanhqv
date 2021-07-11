@@ -737,3 +737,40 @@ Stack trace:
 [10-Jul-2021 14:01:55 UTC] PHP   6. locate_template() C:\wamp64\www\project\wordpress\wp-includes\general-template.php:136
 [10-Jul-2021 14:01:55 UTC] PHP   7. load_template() C:\wamp64\www\project\wordpress\wp-includes\template.php:676
 [10-Jul-2021 14:01:55 UTC] PHP   8. require_once() C:\wamp64\www\project\wordpress\wp-includes\template.php:730
+[11-Jul-2021 01:54:32 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\template-parts\content-article.php on line 2
+[11-Jul-2021 03:21:28 UTC] PHP Notice:  Array to string conversion in C:\wamp64\www\project\wordpress\wp-includes\comment-template.php on line 1542
+[11-Jul-2021 03:21:28 UTC] PHP Stack trace:
+[11-Jul-2021 03:21:28 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[11-Jul-2021 03:21:28 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[11-Jul-2021 03:21:28 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[11-Jul-2021 03:21:28 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[11-Jul-2021 03:21:28 UTC] PHP   5. get_template_part() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\single.php:38
+[11-Jul-2021 03:21:28 UTC] PHP   6. locate_template() C:\wamp64\www\project\wordpress\wp-includes\general-template.php:204
+[11-Jul-2021 03:21:28 UTC] PHP   7. load_template() C:\wamp64\www\project\wordpress\wp-includes\template.php:676
+[11-Jul-2021 03:21:28 UTC] PHP   8. require() C:\wamp64\www\project\wordpress\wp-includes\template.php:732
+[11-Jul-2021 03:21:28 UTC] PHP   9. comments_template() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\template-parts\content-article.php:190
+[11-Jul-2021 03:21:28 UTC] PHP Notice:  Array to string conversion in C:\wamp64\www\project\wordpress\wp-includes\comment-template.php on line 1555
+[11-Jul-2021 03:21:28 UTC] PHP Stack trace:
+[11-Jul-2021 03:21:28 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[11-Jul-2021 03:21:28 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[11-Jul-2021 03:21:28 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[11-Jul-2021 03:21:28 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[11-Jul-2021 03:21:28 UTC] PHP   5. get_template_part() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\single.php:38
+[11-Jul-2021 03:21:28 UTC] PHP   6. locate_template() C:\wamp64\www\project\wordpress\wp-includes\general-template.php:204
+[11-Jul-2021 03:21:28 UTC] PHP   7. load_template() C:\wamp64\www\project\wordpress\wp-includes\template.php:676
+[11-Jul-2021 03:21:28 UTC] PHP   8. require() C:\wamp64\www\project\wordpress\wp-includes\template.php:732
+[11-Jul-2021 03:21:28 UTC] PHP   9. comments_template() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\template-parts\content-article.php:190
+[11-Jul-2021 03:21:28 UTC] PHP Deprecated:  Theme without comments.php is <strong>deprecated</strong> since version 3.0.0 with no alternative available. Please include a comments.php template in your theme. in C:\wamp64\www\project\wordpress\wp-includes\functions.php on line 5061
+[11-Jul-2021 03:21:28 UTC] PHP Stack trace:
+[11-Jul-2021 03:21:28 UTC] PHP   1. {main}() C:\wamp64\www\project\wordpress\index.php:0
+[11-Jul-2021 03:21:28 UTC] PHP   2. require() C:\wamp64\www\project\wordpress\index.php:17
+[11-Jul-2021 03:21:28 UTC] PHP   3. require_once() C:\wamp64\www\project\wordpress\wp-blog-header.php:19
+[11-Jul-2021 03:21:28 UTC] PHP   4. include() C:\wamp64\www\project\wordpress\wp-includes\template-loader.php:106
+[11-Jul-2021 03:21:28 UTC] PHP   5. get_template_part() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\single.php:38
+[11-Jul-2021 03:21:28 UTC] PHP   6. locate_template() C:\wamp64\www\project\wordpress\wp-includes\general-template.php:204
+[11-Jul-2021 03:21:28 UTC] PHP   7. load_template() C:\wamp64\www\project\wordpress\wp-includes\template.php:676
+[11-Jul-2021 03:21:28 UTC] PHP   8. require() C:\wamp64\www\project\wordpress\wp-includes\template.php:732
+[11-Jul-2021 03:21:28 UTC] PHP   9. comments_template() C:\wamp64\www\project\wordpress\wp-content\themes\mocmoc\template-parts\content-article.php:190
+[11-Jul-2021 03:21:28 UTC] PHP  10. require() C:\wamp64\www\project\wordpress\wp-includes\comment-template.php:1558
+[11-Jul-2021 03:21:28 UTC] PHP  11. _deprecated_file() C:\wamp64\www\project\wordpress\wp-includes\theme-compat\comments.php:15
+[11-Jul-2021 03:21:28 UTC] PHP  12. trigger_error() C:\wamp64\www\project\wordpress\wp-includes\functions.php:5061

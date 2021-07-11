@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cấu hình cơ bản cho WordPress
  *
@@ -20,19 +21,19 @@
 
 // ** Thiết lập MySQL - Bạn có thể lấy các thông tin này từ host/server ** //
 /** Tên database MySQL */
-define( 'DB_NAME', 'khanhmoc_wordpress' );
+define('DB_NAME', 'khanhmoc_wordpress');
 
 /** Username của database */
-define( 'DB_USER', 'root' );
+define('DB_USER', 'root');
 
 /** Mật khẩu của database */
-define( 'DB_PASSWORD', '' );
+define('DB_PASSWORD', '');
 
 /** Hostname của database */
-define( 'DB_HOST', 'localhost' );
+define('DB_HOST', 'localhost');
 
 /** Database charset sử dụng để tạo bảng database. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define('DB_CHARSET', 'utf8mb4');
 
 /** Kiểu database collate. Đừng thay đổi nếu không hiểu rõ. */
 define('DB_COLLATE', '');
@@ -48,14 +49,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '_a%@mfOO,C$b|gh+1-vlo#<_G9fgE e(c_j?9lxE&RDUFOrvT9hcM:8NGN3N-8uC' );
-define( 'SECURE_AUTH_KEY',  '#7MeI^UI~:cZbMCi0b.4jQhz^iZ^3Zf(6.Wy;DJV1j4e>WX=OrA*p`]4o*9ei5o7' );
-define( 'LOGGED_IN_KEY',    'B<.5!|i3lo^brY<YI0k]ScUG!-Vyt|VhHi)QwQK@i,qM$zf`F|^%hkAiMH:o<UI?' );
-define( 'NONCE_KEY',        'E03TN=h=CZ=0crBj50j/3cOi.*PwM]2U@0oamtXpC?k6~TyRJmT|H67p8?NqY}%D' );
-define( 'AUTH_SALT',        'F5dR+RA5BpR$I[)P~6+M4Y!s4)+aS-7k,<h5B?aK~wG:x&DX6ABd;8(FSlnCYEy5' );
-define( 'SECURE_AUTH_SALT', '*7l<g<<hC^: )<tzDKuj[KwHU02hxQmt}.^*w6_@*Z^h6|Cs,MAEP&yq8d}s)ApG' );
-define( 'LOGGED_IN_SALT',   'h?}]h=T2kb3+qqhv8XW*g/b^Sw&`R^cJFkY8LT{-EZ,RS0rRpc.;m@|I)YW,_%9|' );
-define( 'NONCE_SALT',       'LIffOhR3~iFyD*}T*(<1)H.yHqBSGU=&%Rs$D]hYiXb#D3@W,ngCzQE,>&-O~9v6' );
+define('AUTH_KEY',         '_a%@mfOO,C$b|gh+1-vlo#<_G9fgE e(c_j?9lxE&RDUFOrvT9hcM:8NGN3N-8uC');
+define('SECURE_AUTH_KEY',  '#7MeI^UI~:cZbMCi0b.4jQhz^iZ^3Zf(6.Wy;DJV1j4e>WX=OrA*p`]4o*9ei5o7');
+define('LOGGED_IN_KEY',    'B<.5!|i3lo^brY<YI0k]ScUG!-Vyt|VhHi)QwQK@i,qM$zf`F|^%hkAiMH:o<UI?');
+define('NONCE_KEY',        'E03TN=h=CZ=0crBj50j/3cOi.*PwM]2U@0oamtXpC?k6~TyRJmT|H67p8?NqY}%D');
+define('AUTH_SALT',        'F5dR+RA5BpR$I[)P~6+M4Y!s4)+aS-7k,<h5B?aK~wG:x&DX6ABd;8(FSlnCYEy5');
+define('SECURE_AUTH_SALT', '*7l<g<<hC^: )<tzDKuj[KwHU02hxQmt}.^*w6_@*Z^h6|Cs,MAEP&yq8d}s)ApG');
+define('LOGGED_IN_SALT',   'h?}]h=T2kb3+qqhv8XW*g/b^Sw&`R^cJFkY8LT{-EZ,RS0rRpc.;m@|I)YW,_%9|');
+define('NONCE_SALT',       'LIffOhR3~iFyD*}T*(<1)H.yHqBSGU=&%Rs$D]hYiXb#D3@W,ngCzQE,>&-O~9v6');
 
 /**#@-*/
 
@@ -78,12 +79,10 @@ $table_prefix = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
-define( 'WP_DEBUG_DISPLAY', true );
-define( 'WP_DEBUG_LOG', true );
 /* Đó là tất cả thiết lập, ngưng sửa từ phần này trở xuống. Chúc bạn viết blog vui vẻ. */
 
 /** Đường dẫn tuyệt đối đến thư mục cài đặt WordPress. */
-if ( !defined('ABSPATH') )
+if (!defined('ABSPATH'))
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Thiết lập biến và include file. */

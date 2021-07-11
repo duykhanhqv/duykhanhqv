@@ -164,3 +164,9 @@
 <div class="dmtop">Scroll to Top</div>
 
 </div><!-- end wrapper -->
+<?php
+wp_footer();
+?>
+</body>
+
+</html>
