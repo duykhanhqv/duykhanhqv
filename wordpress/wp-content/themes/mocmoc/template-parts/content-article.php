@@ -3,19 +3,22 @@
         <div class="page-wrapper">
             <div class="blog-title-area">
                 <ol class="breadcrumb hidden-xs-down">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="<?= get_home_url() ?>">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                    <li class="breadcrumb-item active">The golden rules you need to know for a positive life
+                    <li class="breadcrumb-item active"><?php the_title(); ?>
                     </li>
                 </ol>
 
-                <span class="color-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>
-
-                <h3>The golden rules you need to know for a positive life</h3>
+                <span class="color-aqua"><a href="blog-category-01.html" title="">
+                        <?php $category = get_the_category();
+                        echo $category[1]->cat_name;
+                        ?>
+                    </a></span>
+                <h3><?php the_title(); ?></h3>
 
                 <div class="blog-meta big-meta">
                     <small><a href="single.html" title=""><?php the_date('d F,Y') ?></a></small>
-                    <small><a href="blog-author.html" title="">by Jessica</a></small>
+                    <small><a href="blog-author.html" title="">by <?php the_author() ?></a></small>
                     <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
                 </div><!-- end meta -->
 
@@ -35,8 +38,8 @@
                 <div class="tag-cloud-single">
                     <span>Tags</span>
                     <?php
-                            the_tags('<small>', '</small><small></small>', '</small>');
-                            ?>
+                    the_tags('<small>', '</small><small></small>', '</small>');
+                    ?>
                 </div><!-- end meta -->
 
                 <div class="post-sharing">

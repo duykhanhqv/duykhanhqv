@@ -35,7 +35,7 @@
         <div class="collapse top-search" id="collapseExample">
             <div class="card card-block">
                 <div class="newsletter-widget text-center">
-                    <?php get_search_form() ?>
+                    <?php get_search_form(); ?>
                 </div><!-- end newsletter -->
             </div>
         </div><!-- end top-search -->
