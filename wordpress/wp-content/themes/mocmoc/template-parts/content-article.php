@@ -4,16 +4,21 @@
             <div class="blog-title-area">
                 <ol class="breadcrumb hidden-xs-down">
                     <li class="breadcrumb-item"><a href="<?= get_home_url() ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                    <?php $categories = get_the_category();
+                    if (!empty($categories)) {
+                        echo '<li class="breadcrumb-item"><a href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a></li>';
+                    }
+                    ?>
                     <li class="breadcrumb-item active"><?php the_title(); ?>
                     </li>
                 </ol>
-
-                <span class="color-aqua"><a href="blog-category-01.html" title="">
-                        <?php $category = get_the_category();
-                        echo $category[1]->cat_name;
-                        ?>
-                    </a></span>
+                <?php $categories = get_the_category();
+                if (!empty($categories)) {
+                    echo '<span class="color-aqua"><a href="' . esc_url(get_category_link($categories[0]->term_id)) . '" title="">
+                        ' . esc_html($categories[0]->name) . '
+                    </a></span>';
+                }
+                ?>
                 <h3><?php the_title(); ?></h3>
 
                 <div class="blog-meta big-meta">
@@ -41,7 +46,6 @@
                     the_tags('<small>', '</small><small></small>', '</small>');
                     ?>
                 </div><!-- end meta -->
-
                 <div class="post-sharing">
                     <ul class="list-inline">
                         <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i>

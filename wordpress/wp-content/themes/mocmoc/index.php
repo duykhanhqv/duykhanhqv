@@ -60,9 +60,11 @@ get_sidebar();
                 <div class="sidebar">
                     <div class="widget">
                         <h2 class="widget-title">Search</h2>
-                        <form class="form-inline search-form">
+                        <form class="form-inline search-form" id="searchform" method="get"
+                            action="<?php echo esc_url(home_url('/')); ?>">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search on the site">
+                                <input type="text" class="form-control" placeholder="Search on the site" name="s"
+                                    value="<?php echo get_search_query(); ?>">
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                         </form>
@@ -75,7 +77,8 @@ get_sidebar();
                                 <a href="single.html"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
-                                        <img src="upload/blog_square_01.jpg" alt="" class="img-fluid float-left">
+                                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_01.jpg"
+                                            alt="" class="img-fluid float-left">
                                         <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
                                         <small>12 Jan, 2016</small>
                                     </div>
@@ -84,7 +87,8 @@ get_sidebar();
                                 <a href="single.html"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
-                                        <img src="upload/blog_square_02.jpg" alt="" class="img-fluid float-left">
+                                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_02.jpg"
+                                            alt="" class="img-fluid float-left">
                                         <h5 class="mb-1">Let's make an introduction for creative life</h5>
                                         <small>11 Jan, 2016</small>
                                     </div>
@@ -93,7 +97,8 @@ get_sidebar();
                                 <a href="single.html"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 last-item justify-content-between">
-                                        <img src="upload/blog_square_03.jpg" alt="" class="img-fluid float-left">
+                                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_03.jpg"
+                                            alt="" class="img-fluid float-left">
                                         <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
                                         <small>07 Jan, 2016</small>
                                     </div>
@@ -106,7 +111,8 @@ get_sidebar();
                         <h2 class="widget-title">Advertising</h2>
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="upload/banner_03.jpg" alt="" class="img-fluid">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/banner_03.jpg" alt=""
+                                    class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
@@ -114,29 +120,40 @@ get_sidebar();
                     <div class="widget">
                         <h2 class="widget-title">Instagram Feed</h2>
                         <div class="instagram-wrapper clearfix">
-                            <a class="" href="#"><img src="upload/insta_01.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_02.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_03.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_04.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_05.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_06.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_07.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_08.jpeg" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="upload/insta_09.jpeg" alt="" class="img-fluid"></a>
+                            <a class="" href="#"><img
+                                    src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_01.jpeg" alt=""
+                                    class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_02.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_03.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_04.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_05.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_06.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_07.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_08.jpeg"
+                                    alt="" class="img-fluid"></a>
+                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_09.jpeg"
+                                    alt="" class="img-fluid"></a>
                         </div><!-- end Instagram wrapper -->
                     </div><!-- end widget -->
 
                     <div class="widget">
                         <h2 class="widget-title">Popular Categories</h2>
                         <div class="link-widget">
+
                             <ul>
-                                <li><a href="#">Fahsion <span>(21)</span></a></li>
-                                <li><a href="#">Lifestyle <span>(15)</span></a></li>
-                                <li><a href="#">Art & Design <span>(31)</span></a></li>
-                                <li><a href="#">Health Beauty <span>(22)</span></a></li>
-                                <li><a href="#">Clothing <span>(66)</span></a></li>
-                                <li><a href="#">Entertaintment <span>(11)</span></a></li>
-                                <li><a href="#">Food & Drink <span>(87)</span></a></li>
+                                <?php
+                                $categories = get_categories();
+                                foreach ($categories as $category) {
+                                    echo '<li><a href="' . get_category_link($category->term_id) . '">' .
+                                        $category->name . ' <span>(' . $category->count . ')</span></a></li>';
+                                }
+                                ?>
                             </ul>
                         </div><!-- end link-widget -->
                     </div><!-- end widget -->

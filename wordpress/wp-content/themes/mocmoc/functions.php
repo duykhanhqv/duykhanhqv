@@ -20,13 +20,19 @@ add_action('wp_enqueue_scripts', 'mocmoc_register_styles');
 function mocmoc_register_styles()
 {
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', array(), 'v4.0.0', 'all');
-    wp_enqueue_style('front-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.7.0', 'all');
+    wp_enqueue_style(
+        'front-awesome',
+        get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css',
+        array(),
+        '4.7.0',
+        'all'
+    );
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('reponseve', get_template_directory_uri() . '/assets/css/responsive.css', array(), '1.0', 'all');
     wp_enqueue_style('color', get_template_directory_uri() . '/assets/css/colors.css', array(), '1.0', 'all');
 }
 /*
-Register  javascript
+Register javascript
 */
 function mocmoc_register_javascripts()
 {
@@ -94,7 +100,7 @@ function mocmoc_showmenu($position, $bootstraptype = false)
         <ul class="dropdown-menu" aria-labelledby="dropdown' . $row->ID . '">';
                     foreach ($menu_items as $sub) {
                         if ($sub->menu_item_parent == $parent_id) {
-                            $temp .= '<li><a class="dropdown-item" href="blog-author.html">' . $sub->title . '</a></li>';
+                            $temp .= '<li><a class="dropdown-item" href="' . $sub->url . '">' . $sub->title . '</a></li>';
                         }
                     }
                     $temp .= '</ul>
@@ -117,4 +123,7 @@ function mocmoc_showmenu($position, $bootstraptype = false)
     }
     echo $temp;
 }
+/*
+ register feature image post
+ */
 add_theme_support('post-thumbnails');

@@ -38,21 +38,25 @@
 <div class="custombox clearfix">
     <?php if (comments_open()) {
         comment_form(array(
-            'class_form' => '',
-            'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-            'title_reply_after' => '</h2>'
+            'fields' => apply_filters(
+                'comment_form_default_fields',
+                array(
+                    'author' => '<input type="text" class="form-control" placeholder="Your name" id="author" name="author" value="' .
+                        esc_attr($commenter['comment_author']) . '">',
+                    'email'  => '<input type="text" class="form-control" placeholder="Email address" id="email" name="email" value="' . esc_attr($commenter['comment_author_email']) .
+                        '" >',
+                    'url'    => '<input type="text" class="form-control" placeholder="Website" id="url" name="url" value="' . esc_attr($commenter['comment_author_url']) . '">
+                    </div>
+                    </div>
+                </div>'
+                )
+            ),
+            'comment_field' => '<textarea class="form-control" placeholder="Your comment" id="comment" name="comment"></textarea>',
+            'comment_notes_after' => '',
+            'title_reply' => '<h4 class="small-title">Leave a Reply</h4> <div class="row">
+            <div class="col-lg-12">
+               <div class="form-wrapper">'
         ));
     } ?>
-    <!-- <h4 class="small-title">Leave a Reply</h4>
-    <div class="row">
-        <div class="col-lg-12">
-            <form class="form-wrapper">
-                <input type="text" class="form-control" placeholder="Your name">
-                <input type="text" class="form-control" placeholder="Email address">
-                <input type="text" class="form-control" placeholder="Website">
-                <textarea class="form-control" placeholder="Your comment"></textarea>
-                <button type="submit" class="btn btn-primary">Submit Comment</button>
-            </form>
-        </div>
-    </div> -->
+
 </div>
