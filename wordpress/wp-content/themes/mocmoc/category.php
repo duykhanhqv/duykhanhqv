@@ -6,15 +6,29 @@ get_sidebar();
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2><i class="fa fa-shopping-bag bg-red"></i> Food & Drink <small
-                        class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small>
+                <h2><?php
+                    echo single_cat_title('', false);
+
+                    ?>
+
+                    <small class="hidden-xs-down hidden-sm-down"><?php
+                                                                    $term_description = term_description();
+                                                                    if (!empty($term_description)) :
+                                                                        echo "<br>";
+                                                                        echo "<br>";
+                                                                        echo  $term_description;
+                                                                    endif;
+                                                                    ?>
+                    </small>
                 </h2>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                    <li class="breadcrumb-item active">Food</li>
+                    <li class="breadcrumb-item"><a href="<?= get_home_url() ?>">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Category</a></li>
+
+                    <li class="breadcrumb-item active"><a
+                            href="<?= get_home_url() ?>"><?php echo single_tag_title('', false); ?></a></li>
                 </ol>
             </div>
         </div>

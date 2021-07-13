@@ -127,3 +127,49 @@ function mocmoc_showmenu($position, $bootstraptype = false)
  register feature image post
  */
 add_theme_support('post-thumbnails');
+/*
+custom list comment
+*/
+function custom_comments($comment, $args, $depth)
+{
+    $GLOBALS['comment'] = $comment;
+?>
+<div class="media">
+    <a class="media-left" href="#">
+        <img src="<?php printf(__('%s'), get_avatar_url($comment->comment_ID)) ?>" alt="" class="rounded-circle">
+    </a>
+    <div class="media-body">
+
+        <h4 class="media-heading user_name"><?php printf(__('%s'), get_comment_author_link()) ?>
+            <small><?php printf(__('%s on %s'), get_comment_time(), get_comment_date()) ?></small>
+        </h4>
+
+        <?php if ($comment->comment_approved == '0') : ?>
+        <em>
+            <php _e('Your comment is awaiting moderation.') ?>
+        </em><br />
+        <?php endif; ?>
+
+        <?php comment_text(); ?>
+
+        <a href="#" class="btn btn-primary btn-sm">Reply</a>
+    </div>
+</div>
+<?php
+}
+/*
+set view post
+*/
+function set_post_views($postID)
+{
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    if ($count == '') {
+        $count = 0;
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, '1');
+    } else {
+        $count++;
+        update_post_meta($postID, $countKey, $count);
+    }
+}

@@ -24,7 +24,12 @@
                 <div class="blog-meta big-meta">
                     <small><a href="single.html" title=""><?php the_date('d F,Y') ?></a></small>
                     <small><a href="blog-author.html" title="">by <?php the_author() ?></a></small>
-                    <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
+                    <small><a href="#" title=""><i class="fa fa-eye"></i> <?php
+                                                                            $post_views_count = get_post_meta(get_the_ID(), 'post_views_count', true);
+                                                                            if (!empty($post_views_count)) {
+                                                                                echo $post_views_count;
+                                                                            }
+                                                                            ?></a></small>
                 </div><!-- end meta -->
 
                 <div class="post-sharing">
@@ -254,42 +259,17 @@
                     </div><!-- end banner-img -->
                 </div><!-- end banner -->
             </div><!-- end widget -->
-
-            <div class="widget">
-                <h2 class="widget-title">Instagram Feed</h2>
-                <div class="instagram-wrapper clearfix">
-                    <a class="" href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_01.jpeg"
-                            alt="" class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_02.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_03.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_04.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_05.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_06.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_07.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_08.jpeg" alt=""
-                            class="img-fluid"></a>
-                    <a href="#"><img src="<?= get_template_directory_uri() ?>/assets/upload/insta_09.jpeg" alt=""
-                            class="img-fluid"></a>
-                </div><!-- end Instagram wrapper -->
-            </div><!-- end widget -->
-
             <div class="widget">
                 <h2 class="widget-title">Popular Categories</h2>
                 <div class="link-widget">
                     <ul>
-                        <li><a href="#">Fahsion <span>(21)</span></a></li>
-                        <li><a href="#">Lifestyle <span>(15)</span></a></li>
-                        <li><a href="#">Art & Design <span>(31)</span></a></li>
-                        <li><a href="#">Health Beauty <span>(22)</span></a></li>
-                        <li><a href="#">Clothing <span>(66)</span></a></li>
-                        <li><a href="#">Entertaintment <span>(11)</span></a></li>
-                        <li><a href="#">Food & Drink <span>(87)</span></a></li>
+                        <?php
+                        $categories = get_categories();
+                        foreach ($categories as $category) {
+                            echo '<li><a href="' . get_category_link($category->term_id) . '">' .
+                                $category->name . ' <span>(' . $category->count . ')</span></a></li>';
+                        }
+                        ?>
                     </ul>
                 </div><!-- end link-widget -->
             </div><!-- end widget -->

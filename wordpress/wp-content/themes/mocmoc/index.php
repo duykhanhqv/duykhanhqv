@@ -116,32 +116,6 @@ get_sidebar();
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
-
-                    <div class="widget">
-                        <h2 class="widget-title">Instagram Feed</h2>
-                        <div class="instagram-wrapper clearfix">
-                            <a class="" href="#"><img
-                                    src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_01.jpeg" alt=""
-                                    class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_02.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_03.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_04.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_05.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_06.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_07.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_08.jpeg"
-                                    alt="" class="img-fluid"></a>
-                            <a href="#"><img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/insta_09.jpeg"
-                                    alt="" class="img-fluid"></a>
-                        </div><!-- end Instagram wrapper -->
-                    </div><!-- end widget -->
-
                     <div class="widget">
                         <h2 class="widget-title">Popular Categories</h2>
                         <div class="link-widget">

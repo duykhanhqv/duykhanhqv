@@ -6,6 +6,7 @@ get_sidebar();
     <div class="container">
         <?php
         if (have_posts()) {
+            set_post_views(get_the_ID());
             while (have_posts()) {
                 the_post();
                 get_template_part('template-parts/content', 'article');
