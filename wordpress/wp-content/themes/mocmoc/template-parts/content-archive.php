@@ -4,7 +4,7 @@
         <div class="post-media">
             <a href="<?php the_permalink(); ?>" title="">
 
-                <img width="210px" height="210px" src="<?= the_post_thumbnail_url() ?>" alt="" class="img-fluid">
+                <img src="<?= the_post_thumbnail_url() ?>" alt="" class="img-fluid">
                 <div class="hovereffect"></div>
             </a>
         </div><!-- end media -->

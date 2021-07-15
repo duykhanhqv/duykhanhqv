@@ -27,12 +27,14 @@ get_sidebar();
                 <div class="page-wrapper">
                     <div class="blog-list clearfix">
                         <?php
-                        if (have_posts()) {
-                            while (have_posts()) {
-                                the_post();
+                        $query = new WP_Query(array('post_type' => 'any'));
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
                                 get_template_part('template-parts/content', 'archive');
                             }
                         }
+                        wp_reset_postdata();
                         ?>
                         <hr class="invis">
                     </div><!-- end blog-list -->
@@ -74,35 +76,25 @@ get_sidebar();
                         <h2 class="widget-title">Recent Posts</h2>
                         <div class="blog-list-widget">
                             <div class="list-group">
-                                <a href="single.html"
-                                    class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 justify-content-between">
-                                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_01.jpg"
-                                            alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                        <small>12 Jan, 2016</small>
-                                    </div>
-                                </a>
+                                <h2>Recent Posts</h2>
+                                <ul>
+                                    <?php
+                                    $recent_args = array(
+                                        "posts_per_page" => 3,
+                                        "orderby"        => "date",
+                                        "order"          => "DESC"
+                                    );
 
-                                <a href="single.html"
-                                    class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 justify-content-between">
-                                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_02.jpg"
-                                            alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                        <small>11 Jan, 2016</small>
-                                    </div>
-                                </a>
-
-                                <a href="single.html"
-                                    class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 last-item justify-content-between">
-                                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_03.jpg"
-                                            alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                        <small>07 Jan, 2016</small>
-                                    </div>
-                                </a>
+                                    $recent_posts = new WP_Query($recent_args);
+                                    if ($recent_posts->have_posts()) {
+                                        while ($recent_posts->have_posts()) {
+                                            $recent_posts->the_post();
+                                            get_template_part('template-parts/content', 'recentpost');
+                                        }
+                                    }
+                                    wp_reset_postdata();
+                                    ?>
+                                </ul>
                             </div>
                         </div><!-- end blog-list -->
                     </div><!-- end widget -->

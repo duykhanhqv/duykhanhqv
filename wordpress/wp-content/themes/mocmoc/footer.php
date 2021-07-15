@@ -6,35 +6,9 @@
                     <h2 class="widget-title">Recent Posts</h2>
                     <div class="blog-list-widget">
                         <div class="list-group">
-                            <a href="single.html"
-                                class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="w-100 justify-content-between">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_01.jpg"
-                                        alt="" class="img-fluid float-left">
-                                    <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                    <small>12 Jan, 2016</small>
-                                </div>
-                            </a>
-
-                            <a href="single.html"
-                                class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="w-100 justify-content-between">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_02.jpg"
-                                        alt="" class="img-fluid float-left">
-                                    <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                    <small>11 Jan, 2016</small>
-                                </div>
-                            </a>
-
-                            <a href="single.html"
-                                class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="w-100 last-item justify-content-between">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_03.jpg"
-                                        alt="" class="img-fluid float-left">
-                                    <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                    <small>07 Jan, 2016</small>
-                                </div>
-                            </a>
+                            <?php
+                            mocmoc_get_recent_posts();
+                            ?>
                         </div>
                     </div><!-- end blog-list -->
                 </div><!-- end widget -->
@@ -45,53 +19,9 @@
                     <h2 class="widget-title">Popular Posts</h2>
                     <div class="blog-list-widget">
                         <div class="list-group">
-                            <a href="single.html"
-                                class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="w-100 justify-content-between">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_04.jpg"
-                                        alt="" class="img-fluid float-left">
-                                    <h5 class="mb-1">Banana-chip chocolate cake recipe with customs</h5>
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                </div>
-                            </a>
-
-                            <a href="single.html"
-                                class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="w-100 justify-content-between">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_07.jpg"
-                                        alt="" class="img-fluid float-left">
-                                    <h5 class="mb-1">10 practical ways to choose organic vegetables</h5>
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                </div>
-                            </a>
-
-                            <a href="single.html"
-                                class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="w-100 last-item justify-content-between">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_06.jpg"
-                                        alt="" class="img-fluid float-left">
-                                    <h5 class="mb-1">We are making homemade ravioli, nice and good</h5>
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                </div>
-                            </a>
+                            <?php
+                            mocmoc_get_popular_posts();
+                            ?>
                         </div>
                     </div><!-- end blog-list -->
                 </div><!-- end widget -->

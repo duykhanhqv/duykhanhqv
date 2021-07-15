@@ -6,10 +6,7 @@ author: khanh moc
 */
 function dd($var)
 {
-    echo '<pre>';
     var_dump($var);
-    echo '</pre>';
-    die();
 }
 
 /*
@@ -51,6 +48,10 @@ function mocmoc_theme_support()
     add_theme_support('title-tag');
     // add dynamic logo support
     add_theme_support('custom-logo');
+    /*
+    register feature image post
+    */
+    add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'mocmoc_theme_support');
 /*
@@ -123,14 +124,11 @@ function mocmoc_showmenu($position, $bootstraptype = false)
     }
     echo $temp;
 }
-/*
- register feature image post
- */
-add_theme_support('post-thumbnails');
+
 /*
 custom list comment
 */
-function custom_comments($comment, $args, $depth)
+function mocmoc_custom_comments($comment, $args, $depth)
 {
     $GLOBALS['comment'] = $comment;
 ?>
@@ -160,7 +158,7 @@ function custom_comments($comment, $args, $depth)
 /*
 set view post
 */
-function set_post_views($postID)
+function mocmoc_set_post_views($postID)
 {
     $countKey = 'post_views_count';
     $count = get_post_meta($postID, $countKey, true);
@@ -171,5 +169,66 @@ function set_post_views($postID)
     } else {
         $count++;
         update_post_meta($postID, $countKey, $count);
+    }
+}
+/*
+get recent post 
+
+*/
+function mocmoc_get_recent_posts()
+{
+    $args = array(
+        'posts_per_page' => 3,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part('template-parts/content', 'recentpost');
+        }
+    }
+    wp_reset_postdata();
+}
+/*
+get recent post except post has ID
+
+*/
+function mocmoc_get_recent_post($postID)
+{
+    $args = array(
+        'post_type' => 'post',
+        'post__not_in' => array($postID),
+        'posts_per_page' => 3,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part('template-parts/content', 'recentpost');
+        }
+    }
+    wp_reset_postdata();
+}
+/*
+get popular post
+*/
+function mocmoc_get_popular_posts()
+{
+    $args = array(
+        'posts_per_page' => 3,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC',
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part('template-parts/content', 'popularpost');
+        }
     }
 }

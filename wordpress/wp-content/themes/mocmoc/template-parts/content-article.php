@@ -19,7 +19,10 @@
                     </a></span>';
                 }
                 ?>
-                <h3><?php the_title(); ?></h3>
+                <h3><?php
+                    the_title();
+                    ?>
+                </h3>
 
                 <div class="blog-meta big-meta">
                     <small><a href="single.html" title=""><?php the_date('d F,Y') ?></a></small>
@@ -43,7 +46,9 @@
                     </ul>
                 </div><!-- end post-sharing -->
             </div><!-- end title -->
-            <?php the_content(); ?>
+            <?php
+            the_content();
+            ?>
             <div class="blog-title-area">
                 <div class="tag-cloud-single">
                     <span>Tags</span>
@@ -217,35 +222,9 @@
                 <h2 class="widget-title">Recent Posts</h2>
                 <div class="blog-list-widget">
                     <div class="list-group">
-                        <a href="single.html"
-                            class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="w-100 justify-content-between">
-                                <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_01.jpg" alt=""
-                                    class="img-fluid float-left">
-                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                <small>12 Jan, 2016</small>
-                            </div>
-                        </a>
-
-                        <a href="single.html"
-                            class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="w-100 justify-content-between">
-                                <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_02.jpg" alt=""
-                                    class="img-fluid float-left">
-                                <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                <small>11 Jan, 2016</small>
-                            </div>
-                        </a>
-
-                        <a href="single.html"
-                            class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="w-100 last-item justify-content-between">
-                                <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_03.jpg" alt=""
-                                    class="img-fluid float-left">
-                                <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                <small>07 Jan, 2016</small>
-                            </div>
-                        </a>
+                        <?php
+                        mocmoc_get_recent_post(get_the_ID());
+                        ?>
                     </div>
                 </div><!-- end blog-list -->
             </div><!-- end widget -->
