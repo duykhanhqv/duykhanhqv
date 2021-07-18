@@ -22,3 +22,4 @@
         <small><a href="blog-author.html" title="">by <?php the_author() ?></a></small>
     </div><!-- end meta -->
 </div><!-- end blog-box -->
+<hr class="invis">

@@ -5,152 +5,60 @@ get_sidebar();
 ?>
 <?php
 
-get_template_part('template-parts/content', 'slider');
+get_template_part('template-parts/except/content', 'slider');
 
 ?>
-
 <section class="section">
     <div class="container">
         <div class="row">
+            <?php $categories = get_categories();
+            $category = get_category_by_slug('cong-nghe');
+            if ($category) {
+            ?>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
-                    <h3 class="color-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></h3>
+                    <h3 class="color-aqua"><a href="<?= get_category_link($category->term_id)  ?>" title="">Công
+                            nghệ</a></h3>
                 </div><!-- end title -->
 
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_05.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta big-meta">
-                                <h4><a href="single.html" title="">The golden rules you need to know for a positive
-                                        life</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                    pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh,
-                                    maximus ac felis nec, maximus tempor odio.</p>
-                                <small><a href="blog-category-01.html" title="">Lifestyle</a></small>
-                                <small><a href="single.html" title="">24 July, 2017</a></small>
-                                <small><a href="blog-author.html" title="">by Amanda</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                        <?php
+                            $args = array(
+                                'category_name' => 'cong-nghe',
+                                'posts_per_page' => 2,
+                                'order' => 'DESC',
+                                'order_by' => 'date'
 
-                        <hr class="invis">
+                            );
 
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_06.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta big-meta">
-                                <h4><a href="single.html" title="">I have a desert visit this summer</a></h4>
-                                <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                    pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh,
-                                    maximus ac felis nec, maximus tempor odio.</p>
-                                <small><a href="blog-category-01.html" title="">Lifestyle</a></small>
-                                <small><a href="single.html" title="">22 July, 2017</a></small>
-                                <small><a href="blog-author.html" title="">by Martines</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                            $query = new WP_Query($args);
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                                    get_template_part('template-parts/except/content', 'technology');
+                                }
+                            } ?>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end col -->
+            <?php
+            } ?>
 
+            <?php if (get_post_type_archive_link('magazine') != false) { ?>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
-                    <h3 class="color-pink"><a href="blog-category-01.html" title="">Fashion</a></h3>
+                    <h3 class="color-pink"><a href=" <?= get_post_type_archive_link('magazine') ?>"
+                            title="">Magazine</a>
+                    </h3>
                 </div><!-- end title -->
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_01.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">What is your favorite leather jacket color</a></h4>
-                                <small><a href="blog-category-01.html" title="">Fashion</a></small>
-                                <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_02.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">Is summer, have you bought a cane</a></h4>
-                                <small><a href="blog-category-01.html" title="">Fashion</a></small>
-                                <small><a href="blog-category-01.html" title="">11 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_03.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">This year's fashionable long beard</a></h4>
-                                <small><a href="blog-category-01.html" title="">Fashion</a>, <a
-                                        href="blog-category-01.html" title="">Man</a></small>
-                                <small><a href="blog-category-01.html" title="">08 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
-                        <hr class="invis">
-
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_04.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">How to be more cool with clothing</a></h4>
-                                <small><a href="blog-category-01.html" title="">Fashion</a>, <a
-                                        href="blog-category-01.html" title="">Style</a></small>
-                                <small><a href="blog-category-01.html" title="">04 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end col -->
+                    <?php
+                        get_template_part('template-parts/except/content', 'magazine');
+                        ?>
+                </div>
+            </div><!-- end row -->
+            <?php } ?>
         </div><!-- end row -->
 
         <hr class="invis1">
@@ -159,7 +67,7 @@ get_template_part('template-parts/content', 'slider');
             <div class="col-lg-10 offset-lg-1">
                 <div class="banner-spot clearfix">
                     <div class="banner-img">
-                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/banner_01.jpg" alt=""
+                        <img src="<?= get_template_directory_uri() ?>/assets/upload/banner_01.jpg" alt=""
                             class="img-fluid">
                     </div><!-- end banner-img -->
                 </div><!-- end banner -->
@@ -179,7 +87,7 @@ get_template_part('template-parts/content', 'slider');
                         <div class="col-md-4">
                             <div class="post-media">
                                 <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_01.jpg"
+                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_01.jpg"
                                         alt="" class="img-fluid">
                                     <div class="hovereffect"></div>
                                 </a>
@@ -204,7 +112,7 @@ get_template_part('template-parts/content', 'slider');
                         <div class="col-md-4">
                             <div class="post-media">
                                 <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_02.jpg"
+                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_02.jpg"
                                         alt="" class="img-fluid">
                                     <div class="hovereffect"></div>
                                 </a>
@@ -229,7 +137,7 @@ get_template_part('template-parts/content', 'slider');
                         <div class="col-md-4">
                             <div class="post-media">
                                 <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_03.jpg"
+                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_03.jpg"
                                         alt="" class="img-fluid">
                                     <div class="hovereffect"></div>
                                 </a>
@@ -259,7 +167,7 @@ get_template_part('template-parts/content', 'slider');
                         <div class="col-md-4">
                             <div class="post-media">
                                 <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_05.jpg"
+                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_05.jpg"
                                         alt="" class="img-fluid">
                                     <div class="hovereffect"></div>
                                 </a>
@@ -283,7 +191,7 @@ get_template_part('template-parts/content', 'slider');
                         <div class="col-md-4">
                             <div class="post-media">
                                 <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_06.jpg"
+                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_06.jpg"
                                         alt="" class="img-fluid">
                                     <div class="hovereffect"></div>
                                 </a>
@@ -307,7 +215,7 @@ get_template_part('template-parts/content', 'slider');
                         <div class="col-md-4">
                             <div class="post-media">
                                 <a href="single.html" title="">
-                                    <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_square_07.jpg"
+                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_07.jpg"
                                         alt="" class="img-fluid">
                                     <div class="hovereffect"></div>
                                 </a>
@@ -335,7 +243,7 @@ get_template_part('template-parts/content', 'slider');
                 <div class="blog-box">
                     <div class="post-media">
                         <a href="single.html" title="">
-                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_10.jpg" alt=""
+                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_10.jpg" alt=""
                                 class="img-fluid">
                             <div class="hovereffect">
                                 <span class="videohover"></span>
@@ -354,7 +262,7 @@ get_template_part('template-parts/content', 'slider');
                 <div class="blog-box">
                     <div class="post-media">
                         <a href="single.html" title="">
-                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_11.jpg" alt=""
+                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_11.jpg" alt=""
                                 class="img-fluid">
                             <div class="hovereffect">
                                 <span class="videohover"></span>
@@ -373,7 +281,7 @@ get_template_part('template-parts/content', 'slider');
                 <div class="blog-box">
                     <div class="post-media">
                         <a href="single.html" title="">
-                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_12.jpg" alt=""
+                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_12.jpg" alt=""
                                 class="img-fluid">
                             <div class="hovereffect">
                                 <span class="videohover"></span>
@@ -396,7 +304,7 @@ get_template_part('template-parts/content', 'slider');
                 <div class="blog-box">
                     <div class="post-media">
                         <a href="single.html" title="">
-                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_07.jpg" alt=""
+                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_07.jpg" alt=""
                                 class="img-fluid">
                             <div class="hovereffect">
                                 <span></span>
@@ -415,7 +323,7 @@ get_template_part('template-parts/content', 'slider');
                 <div class="blog-box">
                     <div class="post-media">
                         <a href="single.html" title="">
-                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_08.jpg" alt=""
+                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_08.jpg" alt=""
                                 class="img-fluid">
                             <div class="hovereffect">
                                 <span></span>
@@ -434,7 +342,7 @@ get_template_part('template-parts/content', 'slider');
                 <div class="blog-box">
                     <div class="post-media">
                         <a href="single.html" title="">
-                            <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/blog_09.jpg" alt=""
+                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_09.jpg" alt=""
                                 class="img-fluid">
                             <div class="hovereffect">
                                 <span></span>
@@ -456,7 +364,7 @@ get_template_part('template-parts/content', 'slider');
             <div class="col-lg-10 offset-lg-1">
                 <div class="banner-spot clearfix">
                     <div class="banner-img">
-                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/banner_02.jpg" alt=""
+                        <img src="<?= get_template_directory_uri() ?>/assets/upload/banner_02.jpg" alt=""
                             class="img-fluid">
                     </div><!-- end banner-img -->
                 </div><!-- end banner -->

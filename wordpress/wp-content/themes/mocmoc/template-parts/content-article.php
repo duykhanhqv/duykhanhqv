@@ -84,36 +84,41 @@
             <div class="custombox prevnextpost clearfix">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="blog-list-widget">
-                            <div class="list-group">
-                                <a href="single.html"
-                                    class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 justify-content-between text-right">
-                                        <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_02.jpg"
-                                            alt="" class="img-fluid float-right">
-                                        <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                        <small>Prev Post</small>
+                        <?php $prev_post = get_adjacent_post(false, '', false);
+                        if (!empty($prev_post)) {
+                            echo '
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="' . get_permalink($prev_post->ID) . '"
+                                            class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between text-right">
+                                                <img src="' . get_the_post_thumbnail_url($prev_post->ID) . '"
+                                                    alt="" class="img-fluid float-right">
+                                            <h5 class="mb-1">' . $prev_post->post_title . '</h5>
+                                            <small>Prev Post</small>
+                                        </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                        </div>
+                                </div>';
+                        } ?>
                     </div><!-- end col -->
-
                     <div class="col-lg-6">
-                        <div class="blog-list-widget">
+                        <?php $prev_post = get_adjacent_post(false, '', true);
+                        if (!empty($prev_post)) {
+                            echo '<div class="blog-list-widget">
                             <div class="list-group">
-                                <a href="single.html"
+                                <a href="' . get_permalink($prev_post->ID) . '"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
-                                        <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_03.jpg"
-                                            alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Let's make an introduction to the glorious world of
-                                            history</h5>
-                                        <small>Next Post</small>
-                                    </div>
+                                        <img src="' . get_the_post_thumbnail_url($prev_post->ID) . '" alt=""
+                                    class="img-fluid float-left">
+                                    <h5 class="mb-1">' . $prev_post->post_title . '</h5>
+                                    <small>Next Post</small>
+                                </div>
                                 </a>
                             </div>
-                        </div>
+                        </div>';
+                        } ?>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end author-box -->
@@ -155,51 +160,31 @@
             </div><!-- end author-box -->
 
             <hr class="invis1">
+            <?php $tags = wp_get_post_tags($post->ID);
 
+            if ($tags[0]->count > 2) { ?>
             <div class="custombox clearfix">
                 <h4 class="small-title">You may also like</h4>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/menu_06.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span class=""></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">We are guests of ABC Design Studio</a>
-                                </h4>
-                                <small><a href="blog-category-01.html" title="">Trends</a></small>
-                                <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-6">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/menu_07.jpg" alt=""
-                                        class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span class=""></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="single.html" title="">Nostalgia at work with family</a></h4>
-                                <small><a href="blog-category-01.html" title="">News</a></small>
-                                <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
+                    <?php
+                        $first_tag = $tags[0]->term_id;
+                        $args = array(
+                            'tag__in' => array($first_tag),
+                            'post__not_in' => array($post->ID),
+                            'posts_per_page' => 2,
+                        );
+                        $query = new WP_Query($args);
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                get_template_part('template-parts/single/content', 'maybe-like');
+                            }
+                        }
+                        wp_reset_postdata();
+                        ?>
                 </div><!-- end row -->
             </div><!-- end custom-box -->
-
+            <?php } ?>
             <hr class="invis1">
             <?php comments_template(); ?>
 
@@ -210,9 +195,11 @@
         <div class="sidebar">
             <div class="widget">
                 <h2 class="widget-title">Search</h2>
-                <form class="form-inline search-form">
+                <form class="form-inline search-form" id="searchform" method="get"
+                    action="<?php echo esc_url(home_url('/')); ?>">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search on the site">
+                        <input type="text" class="form-control" placeholder="Search on the site" name="s"
+                            value="<?php echo get_search_query(); ?>">
                     </div>
                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                 </form>
@@ -222,9 +209,27 @@
                 <h2 class="widget-title">Recent Posts</h2>
                 <div class="blog-list-widget">
                     <div class="list-group">
-                        <?php
-                        mocmoc_get_recent_post(get_the_ID());
-                        ?>
+                        <h2>Recent Posts</h2>
+                        <ul>
+                            <?php
+                            $recent_args = array(
+                                "posts_per_page" => 3,
+                                "orderby"        => "date",
+                                "order"          => "DESC",
+                                'post__not_in' => array($post->ID),
+
+                            );
+
+                            $recent_posts = new WP_Query($recent_args);
+                            if ($recent_posts->have_posts()) {
+                                while ($recent_posts->have_posts()) {
+                                    $recent_posts->the_post();
+                                    get_template_part('template-parts/content', 'recentpost');
+                                }
+                            }
+                            wp_reset_postdata();
+                            ?>
+                        </ul>
                     </div>
                 </div><!-- end blog-list -->
             </div><!-- end widget -->
@@ -233,7 +238,7 @@
                 <h2 class="widget-title">Advertising</h2>
                 <div class="banner-spot clearfix">
                     <div class="banner-img">
-                        <img src="<?= get_template_directory_uri() ?>/assets/upload/banner_03.jpg" alt=""
+                        <img src="<?= get_stylesheet_directory_uri() ?>/assets/upload/banner_03.jpg" alt=""
                             class="img-fluid">
                     </div><!-- end banner-img -->
                 </div><!-- end banner -->
@@ -241,6 +246,7 @@
             <div class="widget">
                 <h2 class="widget-title">Popular Categories</h2>
                 <div class="link-widget">
+
                     <ul>
                         <?php
                         $categories = get_categories();
@@ -252,7 +258,6 @@
                     </ul>
                 </div><!-- end link-widget -->
             </div><!-- end widget -->
-
         </div><!-- end sidebar -->
     </div><!-- end col -->
 </div><!-- end row -->
