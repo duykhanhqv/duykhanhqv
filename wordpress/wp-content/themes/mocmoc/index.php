@@ -9,7 +9,11 @@ get_sidebar();
                 <div class="page-wrapper">
                     <div class="blog-list clearfix">
                         <?php
-                        $query = new WP_Query(array('post_type' => 'any'));
+                        $query = new WP_Query(array(
+                            'post_type' => 'any',
+                            'posts_per_page' => 5,
+                            'paged' => (get_query_var('paged') ? get_query_var('paged') : 1)
+                        ));
                         if ($query->have_posts()) {
                             while ($query->have_posts()) {
                                 $query->the_post();
@@ -27,14 +31,13 @@ get_sidebar();
                 <div class="row">
                     <div class="col-md-12">
                         <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-start">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item">
                                     <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
+                                </li> -->
+                            <?php echo mocmoc_pagination() ?>
                         </nav>
                     </div><!-- end col -->
                 </div><!-- end row -->
