@@ -3,16 +3,16 @@ get_header();
 get_sidebar();
 ?>
 <?php
-    get_template_part('template-parts/except/content', 'slider');
+get_template_part('template-parts/except/content', 'slider');
 
-    ?>
+?>
 <section class="section">
     <div class="container">
         <div class="row">
             <?php $categories = get_categories();
-                $category = get_category_by_slug('cong-nghe');
-                if ($category) {
-                ?>
+            $category = get_category_by_slug('cong-nghe');
+            if ($category) {
+            ?>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
                     <h3 class="color-aqua"><a href="<?= get_category_link($category->term_id)  ?>" title="">Công
@@ -22,26 +22,28 @@ get_sidebar();
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <?php
-                                $args = array(
-                                    'category_name' => 'cong-nghe',
-                                    'posts_per_page' => 2,
-                                    'order' => 'DESC',
-                                    'order_by' => 'date'
+                            $args = array(
+                                'category_name' => 'cong-nghe',
+                                'posts_per_page' => 2,
+                                'order' => 'DESC',
+                                'order_by' => 'date'
 
-                                );
+                            );
 
-                                $query = new WP_Query($args);
-                                if ($query->have_posts()) {
-                                    while ($query->have_posts()) {
-                                        $query->the_post();
-                                        get_template_part('template-parts/except/content', 'technology');
-                                    }
-                                } ?>
+                            $query = new WP_Query($args);
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                                    get_template_part('template-parts/except/content', 'technology');
+                                }
+                            }
+                            wp_reset_query();
+                            ?>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end col -->
             <?php
-                } ?>
+            } ?>
 
             <?php if (get_post_type_archive_link('magazine') != false) { ?>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -52,8 +54,8 @@ get_sidebar();
                 </div><!-- end title -->
                 <div class="row">
                     <?php
-                            get_template_part('template-parts/except/content', 'magazine');
-                            ?>
+                        get_template_part('template-parts/except/content', 'magazine');
+                        ?>
                 </div>
             </div><!-- end row -->
             <?php } ?>
@@ -78,281 +80,104 @@ get_sidebar();
             <div class="col-lg-9">
                 <div class="blog-list clearfix">
                     <div class="section-title">
-                        <h3 class="color-green"><a href="blog-category-01.html" title="">Travel</a></h3>
+                        <?php $category = get_category_by_slug('du-lich'); ?>
+                        <h3 class="color-green"><a href="<?= get_category_link($category->term_id) ?>" title="">Du
+                                Lịch</a>
+                        </h3>
                     </div><!-- end title -->
 
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_01.jpg"
-                                        alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
-
-                        <div class="blog-meta big-meta col-md-8">
-                            <h4><a href="single.html" title="">5 Beautiful buildings you need to visit without dying</a>
-                            </h4>
-                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus
-                                ac felis nec, maximus tempor odio.</p>
-                            <small><a href="blog-category-01.html" title="">Travel</a></small>
-                            <small><a href="single.html" title="">21 July, 2017</a></small>
-                            <small><a href="blog-author.html" title="">by Boby</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
+                    <?php
+                    $args = array(
+                        'category_name' => 'du-lich',
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'posts_per_page' => 3
+                    );
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) {
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                            get_template_part('template-parts/content', 'archive');
+                        }
+                    }
+                    wp_reset_query();
+                    ?>
 
                     <hr class="invis">
 
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_02.jpg"
-                                        alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
-
-                        <div class="blog-meta big-meta col-md-8">
-                            <h4><a href="single.html" title="">Let's make an introduction to the glorious world of
-                                    history</a></h4>
-                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus
-                                ac felis nec, maximus tempor odio.</p>
-                            <small><a href="blog-category-01.html" title="">Travel</a></small>
-                            <small><a href="single.html" title="">20 July, 2017</a></small>
-                            <small><a href="blog-author.html" title="">by Samanta</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
-
-                    <hr class="invis">
-
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_03.jpg"
-                                        alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
-
-                        <div class="blog-meta big-meta col-md-8">
-                            <h4><a href="single.html" title="">Did you see the most beautiful sea in the world?</a></h4>
-                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus
-                                ac felis nec, maximus tempor odio.</p>
-                            <small><a href="blog-category-01.html" title="">Travel</a></small>
-                            <small><a href="single.html" title="">19 July, 2017</a></small>
-                            <small><a href="blog-author.html" title="">by Jackie</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
                 </div><!-- end blog-list -->
 
                 <hr class="invis">
 
                 <div class="blog-list clearfix">
                     <div class="section-title">
-                        <h3 class="color-red"><a href="blog-category-01.html" title="">Food</a></h3>
+                        <?php $thethao = get_category_by_slug('the-thao') ?>
+                        <h3 class="color-red"><a href="<?= get_category_link($thethao) ?>" title="">Thể thao</a></h3>
                     </div><!-- end title -->
+                    <?php
+                    $args = array(
+                        'category_name' => 'the-thao',
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'posts_per_page' => 3
+                    );
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) {
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                            get_template_part('template-parts/content', 'archive');
+                        }
+                    }
+                    wp_reset_query();
+                    ?>
 
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_05.jpg"
-                                        alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
-
-                        <div class="blog-meta big-meta col-md-8">
-                            <h4><a href="single.html" title="">Banana-chip chocolate cake recipe</a></h4>
-                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus
-                                ac felis nec, maximus tempor odio.</p>
-                            <small><a href="blog-category-01.html" title="">Food</a></small>
-                            <small><a href="single.html" title="">11 July, 2017</a></small>
-                            <small><a href="blog-author.html" title="">by Matilda</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
-
-                    <hr class="invis">
-
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_06.jpg"
-                                        alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
-
-                        <div class="blog-meta big-meta col-md-8">
-                            <h4><a href="single.html" title="">10 practical ways to choose organic vegetables</a></h4>
-                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus
-                                ac felis nec, maximus tempor odio.</p>
-                            <small><a href="blog-category-01.html" title="">Food</a></small>
-                            <small><a href="single.html" title="">10 July, 2017</a></small>
-                            <small><a href="blog-author.html" title="">by Matilda</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
-
-                    <hr class="invis">
-
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="single.html" title="">
-                                    <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_square_07.jpg"
-                                        alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
-
-                        <div class="blog-meta big-meta col-md-8">
-                            <h4><a href="single.html" title="">We are making homemade ravioli</a></h4>
-                            <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et
-                                pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus
-                                ac felis nec, maximus tempor odio.</p>
-                            <small><a href="blog-category-01.html" title="">Food</a></small>
-                            <small><a href="single.html" title="">09 July, 2017</a></small>
-                            <small><a href="blog-author.html" title="">by Matilda</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
                 </div><!-- end blog-list -->
             </div><!-- end col -->
 
             <div class="col-lg-3">
                 <div class="section-title">
-                    <h3 class="color-yellow"><a href="blog-category-01.html" title="">Vlogs</a></h3>
+                    <?php $khoahoc = get_category_by_slug('khoa-hoc') ?>
+                    <h3 class="color-yellow"><a href="<?= get_category_link($khoahoc) ?>" title="">Khoa học</a></h3>
                 </div><!-- end title -->
-
-                <div class="blog-box">
-                    <div class="post-media">
-                        <a href="single.html" title="">
-                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_10.jpg" alt=""
-                                class="img-fluid">
-                            <div class="hovereffect">
-                                <span class="videohover"></span>
-                            </div><!-- end hover -->
-                        </a>
-                    </div><!-- end media -->
-                    <div class="blog-meta">
-                        <h4><a href="single.html" title="">We are guests of ABC Design Studio - Vlog</a></h4>
-                        <small><a href="blog-category-01.html" title="">Videos</a></small>
-                        <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
-                    </div><!-- end meta -->
-                </div><!-- end blog-box -->
-
-                <hr class="invis">
-
-                <div class="blog-box">
-                    <div class="post-media">
-                        <a href="single.html" title="">
-                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_11.jpg" alt=""
-                                class="img-fluid">
-                            <div class="hovereffect">
-                                <span class="videohover"></span>
-                            </div><!-- end hover -->
-                        </a>
-                    </div><!-- end media -->
-                    <div class="blog-meta">
-                        <h4><a href="single.html" title="">Nostalgia at work</a></h4>
-                        <small><a href="blog-category-01.html" title="">Videos</a></small>
-                        <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-                    </div><!-- end meta -->
-                </div><!-- end blog-box -->
-
-                <hr class="invis">
-
-                <div class="blog-box">
-                    <div class="post-media">
-                        <a href="single.html" title="">
-                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_12.jpg" alt=""
-                                class="img-fluid">
-                            <div class="hovereffect">
-                                <span class="videohover"></span>
-                            </div><!-- end hover -->
-                        </a>
-                    </div><!-- end media -->
-                    <div class="blog-meta">
-                        <h4><a href="single.html" title="">How to become a good vlogger</a></h4>
-                        <small><a href="blog-category-01.html" title="">Beauty</a></small>
-                        <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-                    </div><!-- end meta -->
-                </div><!-- end blog-box -->
-
+                <?php
+                $args = array(
+                    'category_name' => 'khoa-hoc',
+                    'order_by' => 'date',
+                    'order' => 'DESC',
+                    'posts_per_page' => 3
+                );
+                $query = new WP_Query($args);
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        get_template_part('template-parts/content', 'archive-mini');
+                    }
+                }
+                wp_reset_query();
+                ?>
                 <hr class="invis">
 
                 <div class="section-title">
-                    <h3 class="color-grey"><a href="blog-category-01.html" title="">Health</a></h3>
+                    <?php $xahoi = get_category_by_slug('xa-hoi') ?>
+                    <h3 class="color-yellow"><a href="<?= get_category_link($xahoi) ?>" title="">Xã hội</a></h3>
                 </div><!-- end title -->
 
-                <div class="blog-box">
-                    <div class="post-media">
-                        <a href="single.html" title="">
-                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_07.jpg" alt=""
-                                class="img-fluid">
-                            <div class="hovereffect">
-                                <span></span>
-                            </div><!-- end hover -->
-                        </a>
-                    </div><!-- end media -->
-                    <div class="blog-meta">
-                        <h4><a href="single.html" title="">Opened the doors of the Istanbul spa center</a></h4>
-                        <small><a href="blog-category-01.html" title="">Spa</a></small>
-                        <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
-                    </div><!-- end meta -->
-                </div><!-- end blog-box -->
-
-                <hr class="invis">
-
-                <div class="blog-box">
-                    <div class="post-media">
-                        <a href="single.html" title="">
-                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_08.jpg" alt=""
-                                class="img-fluid">
-                            <div class="hovereffect">
-                                <span></span>
-                            </div><!-- end hover -->
-                        </a>
-                    </div><!-- end media -->
-                    <div class="blog-meta">
-                        <h4><a href="single.html" title="">2017 trends in health tourism</a></h4>
-                        <small><a href="blog-category-01.html" title="">Health</a></small>
-                        <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-                    </div><!-- end meta -->
-                </div><!-- end blog-box -->
-
-                <hr class="invis">
-
-                <div class="blog-box">
-                    <div class="post-media">
-                        <a href="single.html" title="">
-                            <img src="<?= get_template_directory_uri() ?>/assets/upload/blog_09.jpg" alt=""
-                                class="img-fluid">
-                            <div class="hovereffect">
-                                <span></span>
-                            </div><!-- end hover -->
-                        </a>
-                    </div><!-- end media -->
-                    <div class="blog-meta">
-                        <h4><a href="single.html" title="">Experience the effects of miraculous stones</a></h4>
-                        <small><a href="blog-category-01.html" title="">Beauty</a></small>
-                        <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-                    </div><!-- end meta -->
-                </div><!-- end blog-box -->
+                <?php
+                $args = array(
+                    'category_name' => 'xa-hoi',
+                    'order_by' => 'date',
+                    'order' => 'DESC',
+                    'posts_per_page' => 3
+                );
+                $query = new WP_Query($args);
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        get_template_part('template-parts/content', 'archive-mini');
+                    }
+                }
+                wp_reset_query();
+                ?>
             </div><!-- end col -->
         </div><!-- end row -->
 
