@@ -27,8 +27,9 @@
             echo '<small><a href="' . esc_url(get_category_link($categories[0]->term_id)) . '" title="">' . esc_html($categories[0]->name) . '</a></small>';
         }
         ?> <small><a href="" title=""><?php echo get_the_date(); ?></a></small>
-        <small><a href="blog-author.html" title="">by <?php the_author() ?></a></small>
-        <small><a href="blog-author.html" title=""><i class="fa fa-eye"></i> <?php
+        <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title="">by
+                <?php the_author() ?></a></small>
+        <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title=""><i class="fa fa-eye"></i> <?php
                                                                                 $post_views_count = get_post_meta(get_the_ID(), 'post_views_count', true);
                                                                                 if (!empty($post_views_count)) {
                                                                                     echo $post_views_count;

@@ -27,7 +27,7 @@
                                         title=""><?php echo $categories[0]->cat_name; ?></a></span>
                                 <h4><a href="<?= the_permalink() ?>" title=""><?= the_title() ?></a></h4>
                                 <small><a href="single.html" title=""><?= get_the_date('j F, Y') ?></a></small>
-                                <small><a href="<?= the_ID()?>" title="">by
+                                <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title="">by
                                         <?= get_the_author() ?></a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -48,7 +48,8 @@
                                         title=""><?php echo $categories[0]->cat_name; ?></a></span>
                                 <h4><a href="<?= the_permalink() ?>" title=""><?= the_title() ?></a></h4>
                                 <small><a href="single.html" title=""><?= get_the_date('j F, Y') ?></a></small>
-                                <small><a href="blog-author.html" title="">by <?= get_the_author() ?></a></small>
+                                <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title="">by
+                                        <?= get_the_author() ?></a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
                     </div><!-- end shadow -->
@@ -102,7 +103,8 @@
                                         title=""><?php echo $categories[0]->cat_name; ?></a></span>
                                 <h4><a href="<?= the_permalink() ?>" title=""><?= the_title() ?></a></h4>
                                 <small><a href="single.html" title=""><?= get_the_date('j F, Y') ?></a></small>
-                                <small><a href="blog-author.html" title="">by <?= get_the_author() ?></a></small>
+                                <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title="">by
+                                        <?= get_the_author() ?></a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
                     </div><!-- end shadow -->

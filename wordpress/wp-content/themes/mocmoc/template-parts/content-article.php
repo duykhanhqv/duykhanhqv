@@ -26,7 +26,8 @@
 
                 <div class="blog-meta big-meta">
                     <small><a href="single.html" title=""><?php the_date('d F,Y') ?></a></small>
-                    <small><a href="blog-author.html" title="">by <?php the_author() ?></a></small>
+                    <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title="">by
+                            <?php the_author() ?></a></small>
                     <small><a href="#" title=""><i class="fa fa-eye"></i> <?php
                                                                             $post_views_count = get_post_meta(get_the_ID(), 'post_views_count', true);
                                                                             if (!empty($post_views_count)) {

@@ -10,7 +10,7 @@ get_sidebar();
                     <div class="blog-list clearfix">
                         <?php
                         $query = new WP_Query(array(
-                            'post_type' => 'any',
+                            'post_type' => array('post', 'emagazine'),
                             'posts_per_page' => 5,
                             'paged' => (get_query_var('paged') ? get_query_var('paged') : 1)
                         ));
@@ -97,8 +97,10 @@ get_sidebar();
                                 <?php
                                 $categories = get_categories();
                                 foreach ($categories as $category) {
-                                    echo '<li><a href="' . get_category_link($category->term_id) . '">' .
-                                        $category->name . ' <span>(' . $category->count . ')</span></a></li>';
+                                    if ($category->category_parent == 0) {
+                                        echo '<li><a href="' . get_category_link($category->term_id) . '">' .
+                                            $category->name . ' <span>(' . $category->count . ')</span></a></li>';
+                                    }
                                 }
                                 ?>
                             </ul>

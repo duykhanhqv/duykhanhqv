@@ -35,8 +35,10 @@
                             <?php
                             $categories = get_categories();
                             foreach ($categories as $category) {
-                                echo '<li><a href="' . get_category_link($category->term_id) . '">' .
-                                    $category->name . ' <span>(' . $category->count . ')</span></a></li>';
+                                if ($category->category_parent == 0) {
+                                    echo '<li><a href="' . get_category_link($category->term_id) . '">' .
+                                        $category->name . ' <span>(' . $category->count . ')</span></a></li>';
+                                }
                             }
                             ?>
                         </ul>

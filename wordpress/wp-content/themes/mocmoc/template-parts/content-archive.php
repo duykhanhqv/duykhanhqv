@@ -19,7 +19,8 @@
         }
         ?>
         <small><a href="" title=""><?php echo get_the_date(); ?></a></small>
-        <small><a href="blog-author.html" title="">by <?php the_author() ?></a></small>
+        <small><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" title="">by
+                <?php the_author() ?></a></small>
     </div><!-- end meta -->
 </div><!-- end blog-box -->
 <hr class="invis">
