@@ -262,8 +262,8 @@ function mocmoc_pagination()
         'format' => '',
         'total' => $wp_query->max_num_pages,
         'current' => $current,
-        'prev_text' => __("<<"),
-        'next_text' => __(">>"),
+        'prev_text' => __("Previous"),
+        'next_text' => __("Next"),
         'type' => 'plain',
     );
     $paginates = paginate_links($pagination);
@@ -273,8 +273,19 @@ function mocmoc_pagination()
     if (!empty($wp_query->query_vars['s']))
         $pagination['add_args'] = array('s' => get_query_var('s'));
     if ($paginates) {
-        echo "<ul class='pagination justify-content-start'>";
         echo $paginates;
-        echo "</ul>";
+    }
+}
+
+
+
+/* login */
+
+function mocmoc_checklogin()
+{
+    if (is_user_logged_in()) {
+        return true;
+    } else {
+        return false;
     }
 }

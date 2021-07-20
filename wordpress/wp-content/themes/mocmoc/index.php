@@ -31,13 +31,9 @@ get_sidebar();
                 <div class="row">
                     <div class="col-md-12">
                         <nav aria-label="Page navigation">
-                            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li> -->
-                            <?php echo mocmoc_pagination() ?>
+                            <ul class="pagination justify-content-start">
+                                <?php echo mocmoc_pagination() ?>
+                            </ul>
                         </nav>
                     </div><!-- end col -->
                 </div><!-- end row -->

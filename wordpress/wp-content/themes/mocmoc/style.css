@@ -1703,3 +1703,21 @@ hr.invis3 {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
+/* */
+.page-numbers {
+  background-color: #edeff2 !important;
+  border: 0 dashed #e2e2e2;
+  border-radius: 0;
+  color: #a3a5a8 !important;
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  margin-left: 6px;
+  padding: 0.8rem 0.8rem;
+  position: relative;
+  text-transform: capitalize;
+}
+.page-numbers.current,
+a.page-numbers:hover {
+	background: #f9f9f9;
+}

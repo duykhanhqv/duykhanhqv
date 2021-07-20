@@ -1,20 +1,18 @@
 <?php
 get_header();
 get_sidebar();
-
 ?>
 <?php
+    get_template_part('template-parts/except/content', 'slider');
 
-get_template_part('template-parts/except/content', 'slider');
-
-?>
+    ?>
 <section class="section">
     <div class="container">
         <div class="row">
             <?php $categories = get_categories();
-            $category = get_category_by_slug('cong-nghe');
-            if ($category) {
-            ?>
+                $category = get_category_by_slug('cong-nghe');
+                if ($category) {
+                ?>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
                     <h3 class="color-aqua"><a href="<?= get_category_link($category->term_id)  ?>" title="">Công
@@ -24,26 +22,26 @@ get_template_part('template-parts/except/content', 'slider');
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <?php
-                            $args = array(
-                                'category_name' => 'cong-nghe',
-                                'posts_per_page' => 2,
-                                'order' => 'DESC',
-                                'order_by' => 'date'
+                                $args = array(
+                                    'category_name' => 'cong-nghe',
+                                    'posts_per_page' => 2,
+                                    'order' => 'DESC',
+                                    'order_by' => 'date'
 
-                            );
+                                );
 
-                            $query = new WP_Query($args);
-                            if ($query->have_posts()) {
-                                while ($query->have_posts()) {
-                                    $query->the_post();
-                                    get_template_part('template-parts/except/content', 'technology');
-                                }
-                            } ?>
+                                $query = new WP_Query($args);
+                                if ($query->have_posts()) {
+                                    while ($query->have_posts()) {
+                                        $query->the_post();
+                                        get_template_part('template-parts/except/content', 'technology');
+                                    }
+                                } ?>
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end col -->
             <?php
-            } ?>
+                } ?>
 
             <?php if (get_post_type_archive_link('magazine') != false) { ?>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -54,8 +52,8 @@ get_template_part('template-parts/except/content', 'slider');
                 </div><!-- end title -->
                 <div class="row">
                     <?php
-                        get_template_part('template-parts/except/content', 'magazine');
-                        ?>
+                            get_template_part('template-parts/except/content', 'magazine');
+                            ?>
                 </div>
             </div><!-- end row -->
             <?php } ?>
@@ -373,5 +371,4 @@ get_template_part('template-parts/except/content', 'slider');
     </div><!-- end container -->
 </section>
 <?php
-
 get_footer();

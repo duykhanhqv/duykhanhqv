@@ -34,6 +34,7 @@ get_sidebar();
                                 get_template_part('template-parts/content', 'archive-magazine');
                             }
                         }
+                        wp_reset_query();
                         ?>
 
                     </div><!-- end blog-custom-build -->
@@ -45,12 +46,7 @@ get_sidebar();
                     <div class="col-md-12">
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-start">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
+                                <?php echo mocmoc_pagination() ?>
                             </ul>
                         </nav>
                     </div><!-- end col -->
