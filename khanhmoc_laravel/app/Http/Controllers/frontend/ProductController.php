@@ -22,11 +22,23 @@ class ProductController extends Controller
     public function detailProduct($product_id)
     {
         $cart = session('cart');
-
         $product_detail = Product::where('id', $product_id)->first();
         $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
         $user = User::get();
         $quick_view = Product::get();
+        $views = session('views');
+        if (isset($views[$product_detail->id])) {
+        } else {
+            $views[$product_detail->id] = [
+                'id_user' => Auth::user()->id,
+                'id_product' => $product_detail->id,
+                'view' => 1
+            ];
+            session()->put(['views' => $views]);
+            $item = Product::find($product_id);
+            $item->view = $item->view + 1;
+            $item->save();
+        }
         $data = [
             'product_detail' => $product_detail,
             'related_product' => $related_product,
@@ -165,6 +177,19 @@ class ProductController extends Controller
         $product_detail = Product::where('id', $request->id)->first();
         $related_product = Product::where('category_id', $product_detail->category_id)->paginate(4);
         $quick_view = Product::get();
+        $views = session('views');
+        if (isset($views[$product_detail->id])) {
+        } else {
+            $views[$product_detail->id] = [
+                'id_user' => Auth::user()->id,
+                'id_product' => $product_detail->id,
+                'view' => 1
+            ];
+            session()->put(['views' => $views]);
+            $item = Product::find($request->id);
+            $item->view = $item->view + 1;
+            $item->save();
+        }
         $data_render = [
             'product_detail' => $product_detail,
             'related_product' => $related_product,

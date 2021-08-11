@@ -5,18 +5,18 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
+                    <h4 class="card-title"></h4>
                     <p class="card-description"> <a href="{{route('categorys.create')}}" class="btn btn-success m-b-sm">
-                            Add new Category</a>
+                            @lang('Add new department')</a>
                         </p>
                     <table class="table table-bordered">
                         <thead class="thead-light">
                             <tr>
                                 <th>#</th>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>@lang('Name')</th>
+                                <th>@lang('Status')</th>
+                                <th>@lang('Action')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,10 +34,10 @@
                                     @if ($item->status==1)
                                     <button type="button" class="btn btn-primary btn-sm">
                                         <i class="fa fa-check"></i>
-                                        Show</button>
+                                        @lang('Present')</button>
                                     @else
                                     <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-exclamation">Hide</i>
+                                        <i class="fa fa-exclamation">@lang('Hide')</i>
                                     </button>
                                     @endif
                                 </td>

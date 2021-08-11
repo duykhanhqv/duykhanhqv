@@ -19,7 +19,7 @@
             }
         }
         ?>
-        {{$sub_items}} items : <strong>{{number_format($sub_total)}}</strong>
+        {{$sub_items}} @lang('sản phẩm') : <strong>{{number_format($sub_total)}}</strong>
     </a>
     <div class="cartdrop">
         <?php 
@@ -41,7 +41,7 @@
                 <a href="#">
                     <h5>{{$item['name']}}</h5>
                 </a>
-                <span>quantity: {{$item['qty_order']}}</span>
+                <span>@lang('quantity') {{$item['qty_order']}}</span>
                 <strong>{{number_format($item['price']*$item['qty_order'])}}</strong>
             </div>
         </div>
@@ -49,9 +49,9 @@
         @endforeach
         <?php }?>
         <div class="total">
-            <span>total :<strong>{{number_format($sub_total)}}</strong></span>
+            <span>@lang('total') :<strong>{{number_format($sub_total)}}</strong></span>
         </div>
-        <a class="goto" href="{{route('f.cart')}}">go to cart</a>
-        <a class="out-menu" href="checkout.html">Check out</a>
+        <a class="goto" href="{{route('f.cart')}}">@lang('go to cart')</a>
+        <a class="out-menu" href="checkout.html">@lang('Check out')</a>
     </div>
 </div>

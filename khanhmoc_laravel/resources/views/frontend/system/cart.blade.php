@@ -8,8 +8,8 @@
 				<div class="pages-title-text text-center">
 					<h2>Cart</h2>
 					<ul class="text-left">
-						<li><a href="index.html">Home </a></li>
-						<li><span> // </span>Cart</li>
+						<li><a href="index.html">@lang('Home') </a></li>
+						<li><span> // </span>@lang('Cart')</li>
 						<li><span> // </span>
 						</li>
 					</ul>
@@ -28,11 +28,11 @@
 					<table class="wishlist-table text-center">
 						<thead>
 							<tr>
-								<th>Product</th>
-								<th>Price</th>
-								<th>quantity</th>
-								<th>Total Price</th>
-								<th>Remove</th>
+								<th>@lang('Product')</th>
+								<th>@lang('Price')</th>
+								<th>@lang('Quantity')</th>
+								<th>@lang('Total Price')</th>
+								<th>@lang('Remove')</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -95,14 +95,14 @@
 			<div class="col-sm-6">
 				<div class="single-cart-form padding60">
 					<div class="log-title">
-						<h3><strong>coupon discount</strong></h3>
+						<h3><strong>@lang('coupon discount')</strong></h3>
 					</div>
 					<div class="cart-form-text custom-input">
-						<p>Enter your coupon code if you have one!</p>
+						<p>@lang('Enter your coupon code if you have one!')</p>
 						<form action="mail.php" method="post">
 							<input type="text" name="subject" placeholder="Enter your code here..." />
 							<div class="submit-text coupon">
-								<button type="submit">apply coupon </button>
+								<button type="submit">@lang('apply coupon') </button>
 							</div>
 						</form>
 					</div>
@@ -111,23 +111,23 @@
 			<div class="col-sm-6">
 				<div class="single-cart-form padding60">
 					<div class="log-title">
-						<h3><strong>payment details</strong></h3>
+						<h3><strong>@lang('payment details')</strong></h3>
 					</div>
 					<div class="cart-form-text pay-details table-responsive">
 						<table>
 							<tbody>
 								<tr>
-									<th>Cart Subtotal</th>
+									<th>@lang('Cart Subtotal')</th>
 									<td>{{number_format($sub_total)}}</td>
 								</tr>
 								<tr>
-									<th>including Vat</th>
+									<th>@lang('including Vat')</th>
 									<td>{{number_format($sub_total/10)}}</td>
 								</tr>
 							</tbody>
 							<tfoot>
 								<tr>
-									<th class="tfoot-padd">Order total</th>
+									<th class="tfoot-padd">@lang('Order total')</th>
 									<?php
                                             $vat=$sub_total/10;
                                             $order_total=$vat+$sub_total;
@@ -138,7 +138,7 @@
 						</table>
 						<div class="submit-text coupon">
 							 <div class="submit-text coupon">
-								<button type="submit"><a href="{{route('f.checkOut')}}">Check out</a> </button>
+								<button type="submit"><a href="{{route('f.checkOut')}}">@lang('Check out')</a> </button>
 							</div> </button>
 						</div>
 					</div>

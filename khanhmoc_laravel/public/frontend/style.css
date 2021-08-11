@@ -607,6 +607,7 @@ header.header-one {
 .single-product {
 	background: #fff none repeat scroll 0 0;
 	transition: all 0.4s ease 0s;
+
 }
 .single-product:hover {
     box-shadow: 0 0 5px 0 rgba(25, 25, 25, 0.3);

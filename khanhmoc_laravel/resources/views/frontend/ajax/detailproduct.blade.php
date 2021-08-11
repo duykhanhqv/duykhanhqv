@@ -12,8 +12,8 @@
                     </div>
                     @endif
                     <ul class="text-left">
-                        <li><a href="index.html">Home </a></li>
-                        <li><span> // </span><a href="shop.html">shop </a></li>
+                        <li><a href="index.html">@lang('Home') </a></li>
+                        <li><span> // </span><a href="shop.html">@lang('shop') </a></li>
                         <li><span> // </span>{{$product_detail->name}}</li>
                     </ul>
                 </div>
@@ -105,7 +105,7 @@
                                 $average=floor($star/$count);
                                 @endphp
                                 @endif
-                                <p>( {{$count}} Rating )</p>
+                                <p>( {{$count}} @lang('Rating') )</p>
                                 @if ($average==1)
                                 <i class="mdi mdi-star"></i>
                                 <i class="mdi mdi-star-outline"></i>
@@ -153,7 +153,7 @@
                                 <br>
                                 <form action="{{route('f.addManyProductsToCart')}}" method="POST">
                                     <div class="s-shoose">
-                                        <h5>qty</h5>
+                                        <h5>@lang('qty')</h5>
                                         <div class="plus-minus">
                                             <input name="product_id" type="text" value="{{$product_detail->id}}"
                                                 style="display:none" class="bar">
@@ -197,9 +197,9 @@
             <div class="col-xs-12">
                 <div class="reviews padding60 margin-top">
                     <ul class="reviews-tab clearfix">
-                        <li><a data-toggle="tab" href="#moreinfo">more info</a></li>
-                        <li class="active"><a data-toggle="tab" href="#reviews">Reviews</a></li>
-                        <li><a data-toggle="tab" href="#tags">tags</a></li>
+                        <li><a data-toggle="tab" href="#moreinfo">@lang('more info')</a></li>
+                        <li class="active"><a data-toggle="tab" href="#reviews">@lang('Reviews')</a></li>
+                        <li><a data-toggle="tab" href="#tags">@lang('tags')</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="info-reviews moreinfo tab-pane fade in" id="moreinfo">
@@ -266,8 +266,8 @@
                             <hr />
                             @endforeach
                             <div class="your-rating log-title">
-                                <h3>leave your review</h3>
-                                <h5>Your rating</h5>
+                                <h3>@lang('leave your review')</h3>
+                                <h5>@lang('Your rating')</h5>
                                 <div class="rating clearfix">
                                     <i class="fa fa-star fa-2x" data-index="0"></i>
                                     <i class="fa fa-star fa-2x" data-index="1"></i>
@@ -321,7 +321,7 @@
                                         <div class="col-xs-12">
                                             <div class="submit-text">
                                                 @csrf
-                                                <button type="submit">submit review</button>
+                                                <button type="submit">@lang('submit review')</button>
                                             </div>
                                         </div>
                                     </div>
@@ -351,7 +351,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="section-title text-center">
-                    <h2>related Products</h2>
+                    <h2>@lang('related Products')</h2>
                 </div>
             </div>
         </div>

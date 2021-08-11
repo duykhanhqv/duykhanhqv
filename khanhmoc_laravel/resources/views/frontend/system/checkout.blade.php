@@ -1,138 +1,141 @@
 @extends('frontend.master')
 @section('content')
-            <!-- pages-title-start -->
-		<div class="pages-title section-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="pages-title-text text-center">
-							<h2>Checkout</h2>
-							<ul class="text-left">
-								<li><a href="index.html">Home </a></li>
-								<li><span> // </span>Checkout</li>
-							</ul>
-						</div>
-					</div>
+<!-- pages-title-start -->
+<div class="pages-title section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="pages-title-text text-center">
+					<h2>@lang('Checkout')</h2>
+					<ul class="text-left">
+						<li><a href="index.html">@lang('Home') </a></li>
+						<li><span> // </span>@lang('Checkout')</li>
+					</ul>
 				</div>
 			</div>
 		</div>
-		<!-- pages-title-end -->
-		<!-- Checkout content section start -->
-		<section class="pages checkout section-padding">
-			<form action="{{ route('f.createBill')}}" method="post" enctype="multipart/form-data">
-				@csrf
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="main-input single-cart-form padding60">
-							<div class="log-title">
-								<h3><strong>billing details and shipping</strong></h3>
-							</div>
-							<div class="custom-input">
-								<form action="mail.php" method="post">
-									<input type="text" name="name_ship" placeholder="Your name" />
-									@error('name_ship')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-									<input type="text" name="mobile_ship" placeholder="Phone here" />
-									@error('mobile_ship')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-									<input type="text" name="email_ship" placeholder="email" />
-									@error('email_ship')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-									<div class="custom-mess">
-										<textarea rows="2" placeholder="Your address here" name="address_ship"></textarea>
-										@error('address_ship')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
+	</div>
+</div>
+<!-- pages-title-end -->
+<!-- Checkout content section start -->
+<section class="pages checkout section-padding">
+	<form action="{{ route('f.createBill')}}" method="post" enctype="multipart/form-data">
+		@csrf
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="main-input single-cart-form padding60">
+						<div class="log-title">
+							<h3><strong>@lang('billing details and shipping')</strong></h3>
+						</div>
+						<div class="custom-input">
+							<form action="mail.php" method="post">
+								<input type="text" name="name_ship" placeholder="@lang('Your name').." />
+								@error('name_ship')
+								<div class="text-danger">
+									{{$message}}
+								</div>
+								@enderror
+								<input type="text" name="mobile_ship" placeholder="@lang('Phone here')" />
+								@error('mobile_ship')
+								<div class="text-danger">
+									{{$message}}
+								</div>
+								@enderror
+								<input type="text" name="email_ship" placeholder="@lang('email')" />
+								@error('email_ship')
+								<div class="text-danger">
+									{{$message}}
+								</div>
+								@enderror
+								<div class="custom-mess">
+									<textarea rows="2" placeholder="@lang('Your address here')"
+										name="address_ship"></textarea>
+									@error('address_ship')
+									<div class="text-danger">
+										{{$message}}
 									</div>
-								</form>
-							</div>
+									@enderror
+								</div>
+							</form>
 						</div>
 					</div>
-					<div class="col-sm-6">
-						<div class="main-input single-cart-form padding60">
-							<div class="log-title">
-								<h3><strong>ship to different address</strong></h3>
-							</div>
-							<div class="cart-form-text pay-details table-responsive">
-								<table>
-									<thead>
-										<tr>
-											<th>Product</th>
-											<td>Total</td>
-										</tr>
-									</thead>
-									<tbody>
-										<?php 
+				</div>
+				<div class="col-sm-6">
+					<div class="main-input single-cart-form padding60">
+						<div class="log-title">
+							<h3><strong>@lang('ship to different address')</strong></h3>
+						</div>
+						<div class="cart-form-text pay-details table-responsive">
+							<table>
+								<thead>
+									<tr>
+										<th>@lang('Product')</th>
+										<td>@lang('Total')</td>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
 										$sub_total =0;
 										if($cart==null){
 											echo 'Cart null';
 										}
 										else{
 										?>
-										@foreach ($cart as $item)
-										<tr>
-											<th>{{$item['name']}} x {{$item['qty_order']}}</th>
-											<td>{{number_format($item['price']*$item['qty_order'])}}</td>
-										</tr>
-										<?php 
+									@foreach ($cart as $item)
+									<tr>
+										<th>{{$item['name']}} x {{$item['qty_order']}}</th>
+										<td>{{number_format($item['price']*$item['qty_order'])}}</td>
+									</tr>
+									<?php 
 										$temp=0;
 										$temp=$item['qty_order']*$item['price'];
 										$sub_total =$sub_total+$temp;
 										?>
-										@endforeach
-										<?php }?>
-										
-										
-										<tr>
-											<th>Cart Subtotal</th>
-											<td>{{number_format($sub_total)}}</td>
-										</tr>
-										<tr>
-											<th>Shipping and Handing</th>
-											<td>0</td>
-										</tr>
-										
-										<tr>
-											<th>Vat</th>
-											<td>{{number_format($sub_total/10)}}</td>
-										</tr>
-										<?php
+									@endforeach
+									<?php }?>
+
+
+									<tr>
+										<th>@lang('Cart Subtotal')</th>
+										<td>{{number_format($sub_total)}}</td>
+									</tr>
+									<tr>
+										<th>@lang('Shipping and Handing')</th>
+										<td>0</td>
+									</tr>
+
+									<tr>
+										<th>Vat</th>
+										<td>{{number_format($sub_total/10)}}</td>
+									</tr>
+									<?php
 										$vat=$sub_total/10;
 										$order_total=$vat+$sub_total;
 										?>
-									</tbody>
-									<tfoot>
-										<tr>
-											<th>Order total</th>
-											<td>{{number_format($order_total)}}</td>
-										</tr>
-										<tr>
-											
-											<td><div class="submit-text" color="green">
-												<input type="submit" value="Place order">
-											</div></td>
-											
-										</tr>
-									</tfoot>
-									
-								</table>
-							</div>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>@lang('Order total')</th>
+										<td>{{number_format($order_total)}}</td>
+									</tr>
+									<tr>
+
+										<td>
+											<div class="submit-text" color="green">
+												<input type="submit" value="@lang('Place order')">
+											</div>
+										</td>
+
+									</tr>
+								</tfoot>
+
+							</table>
 						</div>
 					</div>
 				</div>
-				{{-- <div class="row margin-top">
+			</div>
+			{{-- <div class="row margin-top">
 					<div class="col-xs-12 col-sm-6">
 						<div class="padding60">
 							<div class="log-title">
@@ -229,8 +232,8 @@
 						</div>
 					</div>
 				</div> --}}
-			</div>
-		</form>
-		</section>
-		<!-- Checkout content section end -->
+		</div>
+	</form>
+</section>
+<!-- Checkout content section end -->
 @endsection

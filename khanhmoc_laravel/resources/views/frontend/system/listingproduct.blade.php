@@ -6,10 +6,10 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="pages-title-text text-center">
-					<h2>Product Grid View</h2>
+					<h2>@lang('Product Grid View')</h2>
 					<ul class="text-left">
-						<li><a href="index.html">Home </a></li>
-						<li><span> // </span>Shop</li>
+						<li><a href="index.html">@lang('Home') </a></li>
+						<li><span> // </span>@lang('Product')</li>
 					</ul>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 				<div class="sidebar left-sidebar">
 					<div class="s-side-text">
 						<div class="sidebar-title clearfix">
-							<h4 class="floatleft">Categories</h4>
+							<h4 class="floatleft">@lang('Categories')</h4>
 							<h5 class="floatright"><a href="#">All</a></h5>
 						</div>
 						<div class="categories left-right-p">
@@ -55,7 +55,7 @@
 					</div>
 					<div class="s-side-text">
 						<div class="sidebar-title">
-							<h4>price</h4>
+							<h4>@lang('Price')</h4>
 						</div>
 						<div class="range-slider clearfix">
 							<form action="#" method="get">
@@ -84,7 +84,7 @@
 										</ul>
 									</li>
 									<li class="sort-by floatright">
-										Showing 1-9 of 89 Results
+										@lang('Showing 1-9 of 89 Results')
 									</li>
 								</ul>
 							</div>
@@ -298,64 +298,64 @@
 												<span></span>
 												<div class="ratting floatright">
 													@php
-												$temp=0;
-												$average=0;
-												$star=0;
-												$count=0;
-												@endphp
-												@foreach ($item->Rating as $key)
-												@php
-												$star=$star+$key->pivot->rating;
-												$count+=1;
-												@endphp
-												@endforeach
-												@if ($count==0)
-												@else
-												@php
-												$average=floor($star/$count);
-												@endphp
-												@endif
-												<p>( {{$count}} Rating )</p>
+													$temp=0;
+													$average=0;
+													$star=0;
+													$count=0;
+													@endphp
+													@foreach ($item->Rating as $key)
+													@php
+													$star=$star+$key->pivot->rating;
+													$count+=1;
+													@endphp
+													@endforeach
+													@if ($count==0)
+													@else
+													@php
+													$average=floor($star/$count);
+													@endphp
+													@endif
+													<p>( {{$count}} @lang('Rating') )</p>
 
-												@if ($average==1)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==2)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==3)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==4)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==5)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												@elseif ($average==0)
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@endif
-												@php
-												@endphp
+													@if ($average==1)
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													@elseif ($average==2)
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													@elseif ($average==3)
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													@elseif ($average==4)
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star-outline"></i>
+													@elseif ($average==5)
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													<i class="mdi mdi-star"></i>
+													@elseif ($average==0)
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													<i class="mdi mdi-star-outline"></i>
+													@endif
+													@php
+													@endphp
 												</div>
 												<h5><del></del>{{number_format($item->price)}}</h5>
 												<div>
@@ -367,8 +367,8 @@
 												<div class="list-btn">
 													<a class="addToCart"
 														data-href="{{ route('f.addProductToCartAjax') }}"
-														data-id="{{($item->id)}}">add to cart</a>
-													<a href="#">wishlist</a>
+														data-id="{{($item->id)}}">@lang('add to cart')</a>
+													<a href="#">@lang('wishlist')</a>
 													<a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
 												</div>
 												<div class="share-tag clearfix">

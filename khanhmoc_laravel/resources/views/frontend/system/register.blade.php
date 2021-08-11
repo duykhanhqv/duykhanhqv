@@ -6,15 +6,15 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="pages-title-text text-center">
-                    <h2>Register</h2>
+                    <h2>@lang('Register')</h2>
                     @if (session('msg'))
-                        <div class="col-12 alert alert-{{session('status')}}">
-                            {{session('msg')}}
-                        </div>
-                        @endif
+                    <div class="col-12 alert alert-{{session('status')}}">
+                        {{session('msg')}}
+                    </div>
+                    @endif
                     <ul class="text-left">
-                        <li><a href="index.html">Home </a></li>
-                        <li><span> // </span>Register// {{$msg}} </li>
+                        <li><a href="index.html"@lang('Home') </a></li>
+                        <li><span> // </span>@lang('Register') {{$msg}} </li>
                     </ul>
                 </div>
             </div>
@@ -29,11 +29,11 @@
             <div class="col-sm-6">
                 <div class="main-input padding60">
                     <div class="log-title">
-                        <h3><strong>registered customers</strong></h3>
+                        <h3><strong>@lang('registered customers')</strong></h3>
                     </div>
                     <div class="login-text">
                         <div class="custom-input">
-                            <p>If you have an account with us, Please log in!</p>
+                            <p>@lang('If you have an account with us, Please log in!')</p>
                             <form action="{{route('f.postLogin')}}" method="post">
                                 <input type="text" name="email" placeholder="Email" />
                                 @error('email')
@@ -47,9 +47,9 @@
                                     {{$message}}
                                 </div>
                                 @enderror
-                                <a class="forget" href="#">Forget your password?</a>
+                                <a class="forget" href="#">@lang('Forget your password?')</a>
                                 @csrf
-                                <input type="submit" value="Login"  />
+                                <input type="submit" value="Login" />
                             </form>
                         </div>
                     </div>
@@ -58,55 +58,55 @@
             <div class="col-sm-6">
                 <div class="main-input padding60 new-customer">
                     <div class="log-title">
-                        <h3><strong>new customers</strong></h3>
+                        <h3><strong>@lang('new customers')</strong></h3>
                     </div>
                     <div class="custom-input">
                         <form action="{{route('f.postRegister')}}" method="POST">
-                            <input type="text" name="name" placeholder="Name here.." />
+                            <input type="text" name="name" placeholder="@lang('Name here..')" />
                             @error('name')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            <input type="text" name="email" placeholder="Email Address.." />
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <input type="text" name="email" placeholder="@lang('Email Address').." />
                             @error('email')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            <input type="text" name="mobile" placeholder="Phone Number.." />
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <input type="text" name="mobile" placeholder="@lang('Phone Number')" />
                             @error('mobile')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            <input type="text" name="address" placeholder="Address.." />
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <input type="text" name="address" placeholder="@lang('Address')" />
                             @error('address')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            <input type="password" name="password" placeholder="Password" />
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <input type="password" name="password" placeholder="@lang('Password')" />
                             @error('password')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
-                            <input type="password" name="password_confirm" placeholder="Password Confirm" />
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <input type="password" name="password_confirm" placeholder="@lang('Password Confirm')" />
                             @error('password_confirm')
-                                <div class="text-danger">
-                                    {{$message}}
-                                </div>
-                                @enderror
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                            @enderror
 
                             {{-- <label class="first-child">
                                 <input type="radio" name="rememberme" value="forever">
                                 Sign up for our newsletter!
                             </label> --}}
                             @csrf
-                            <input type="submit" value="Submit"/>
+                            <input type="submit" value="Submit" />
 
-                            
+
                         </form>
                     </div>
                 </div>
@@ -241,7 +241,8 @@
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>Return Exchange</a></li>
+                                    <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>Return Exchange</a>
+                                    </li>
                                     <li><a href="#"><i class="mdi mdi-menu-right"></i>Fast Delivery</a></li>
                                     <li><a href="#"><i class="mdi mdi-menu-right"></i>Online Shopping</a></li>
                                     <li><a href="#"><i class="mdi mdi-menu-right"></i>Shipping Guide</a></li>

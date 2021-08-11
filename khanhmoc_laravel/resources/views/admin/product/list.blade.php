@@ -6,21 +6,21 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
+                    <h4 class="card-title">@lang('List product')</h4>
                     <p class="card-description"> <a href="{{route('products.create')}}" class="btn btn-success m-b-sm">
-                            Add new Product</a>
+                            @lang('Add new product')</a>
                         </p>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>ID</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Qty</th>
-                                <th>Status</th>
-                                <td>Action</td>
+                                <th>@lang('Image')</th>
+                                <th>@lang('Name')</th>
+                                <th>@lang('Price')</th>
+                                <th>@lang('Qty')</th>
+                                <th>@lang('Status')</th>
+                                <td>@lang('Action')</td>
                             </tr>
                         </thead>
                         <tbody>

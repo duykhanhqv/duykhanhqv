@@ -21,6 +21,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\CheckLanguage::class,
+        \Illuminate\Session\Middleware\StartSession::class, // Init session
+
     ];
 
     /**
@@ -67,6 +70,7 @@ class Kernel extends HttpKernel
         'roles_admin' => \App\Http\Middleware\CheckPermission::class,
         'roles_product' => \App\Http\Middleware\CheckProductPremission::class,
         'roles_order' => \App\Http\Middleware\CheckOrderPremission::class,
+        'language' => \App\Http\Middleware\CheckLanguage::class,
 
     ];
 }

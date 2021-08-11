@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-title text-center">
-                        <h2>Featured Products</h2>
+                        <h2>@lang('Featured Products')</h2>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,8 @@
                                         </div>
                                     </div>
                                     <div class="product-dsc">
-                                        <p><a data-href="{{route('f.productsDetailAjax')}}" data-id="{{($item->id)}}" class="detailProduct">{{$item->name}}</a></p>
+                                        <p><a data-href="{{route('f.productsDetailAjax')}}" data-id="{{($item->id)}}"
+                                                class="detailProduct">{{$item->name}}</a></p>
                                         <span>{{number_format($item->price)}}</span>
                                     </div>
                                 </div>
@@ -151,9 +152,10 @@
                     <div class="section-title text-center">
                         <div class="product-tab nav nav-tabs">
                             <ul>
-                                <li class="active"><a data-toggle="tab" href="#arrival">New Arrival <span>/</span></a>
+                                <li class="active"><a data-toggle="tab" href="#arrival">@lang('New Arrival')
+                                        <span>/</span></a>
                                 </li>
-                                <li><a data-toggle="tab" href="#best">Best Seller</a></li>
+                                <li><a data-toggle="tab" href="#best">@lang('Best Seller')</a></li>
                             </ul>
                         </div>
                     </div>
@@ -191,7 +193,9 @@
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a data-href="{{route('f.productsDetailAjax')}}" data-id="{{($item->id)}}" class="detailProduct">{{$item->name}}</a>
+                                                <p><a data-href="{{route('f.productsDetailAjax')}}"
+                                                        data-id="{{($item->id)}}"
+                                                        class="detailProduct">{{$item->name}}</a>
                                                 </p>
                                                 <span>{{number_format($item->price)}}</span>
                                             </div>
@@ -240,7 +244,9 @@
                                                 </div>
                                             </div>
                                             <div class="product-dsc">
-                                                <p><a data-href="{{route('f.productsDetailAjax')}}" data-id="{{($item->id)}}" class="detailProduct">{{$item->name}}</a>
+                                                <p><a data-href="{{route('f.productsDetailAjax')}}"
+                                                        data-id="{{($item->id)}}"
+                                                        class="detailProduct">{{$item->name}}</a>
                                                 </p>
                                                 <span>{{number_format($item->price)}}</span>
                                             </div>
@@ -265,7 +271,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-title text-center">
-                        <h2>Our Service</h2>
+                        <h2>@lang('Our Service')</h2>
                     </div>
                 </div>
             </div>
@@ -273,22 +279,22 @@
                 <div class="col-sm-4">
                     <div class="service-text">
                         <i class="mdi mdi-truck"></i>
-                        <h4>home delivery</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is <br /> not simply random text.</p>
+                        <h4>@lang('home delivery')</h4>
+                        <p>@lang('You just need to stay at home and choose, we will <br /> have the staff deliver to your place')</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="service-text">
                         <i class="mdi mdi-lock"></i>
-                        <h4>PAYMENT SECURED</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is <br /> not simply random text.</p>
+                        <h4>@lang('PAYMENT SECURED')</h4>
+                        <p> @lang('We use the most secure platforms that make your payments <br /> convenient and safe')</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="service-text">
                         <i class="mdi mdi-rotate-left"></i>
-                        <h4>30 days money back</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is <br /> not simply random text.</p>
+                        <h4>@lang('30 days money back')</h4>
+                        <p>@lang('Within 30 days, if there is any defect in the product,<br /> you will be able to return it for free')</p>
                     </div>
                 </div>
             </div>
@@ -429,164 +435,184 @@
     </section>
     <!-- blog section end -->
     <!-- quick view start -->
-@foreach ($quick_view as $item)
-<div class="product-details quick-view modal animated zoomInUp" id="quick-view{{$item->id}}">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="d-table">
-                    <div class="d-tablecell">
-                        <div class="modal-dialog">
-                            <div class="main-view modal-content">
-                                <div class="modal-footer" data-dismiss="modal">
-                                    <span>x</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-5 col-md-4">
-                                        <div class="quick-image">
-                                            <div class="single-quick-image text-center">
-                                                <div class="list-img">
-                                                    <div class="product-img tab-content">
-                                                        <div class="simpleLens-container tab-pane fade in" id="q-sin-1">
-                                                            <div class="pro-type">
-                                                                <span>new</span>
-                                                            </div>
-                                                            <a class="simpleLens-image" data-lens-image="frontend/img/product/<?php foreach($item->ProductImgs as $key)
+    @foreach ($quick_view as $item)
+    <div class="product-details quick-view modal animated zoomInUp" id="quick-view{{$item->id}}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="d-table">
+                        <div class="d-tablecell">
+                            <div class="modal-dialog">
+                                <div class="main-view modal-content">
+                                    <div class="modal-footer" data-dismiss="modal">
+                                        <span>x</span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-5 col-md-4">
+                                            <div class="quick-image">
+                                                <div class="single-quick-image text-center">
+                                                    <div class="list-img">
+                                                        <div class="product-img tab-content">
+                                                            <div class="simpleLens-container tab-pane fade in"
+                                                                id="q-sin-1">
+                                                                <div class="pro-type">
+                                                                    <span>new</span>
+                                                                </div>
+                                                                <a class="simpleLens-image" data-lens-image="frontend/img/product/<?php foreach($item->ProductImgs as $key)
                                                                 echo $key->url;
                                                             ?>" href="#"><img src="frontend/img/product/<?php foreach($item->ProductImgs as $key)
                                                                 echo $key->url;
                                                             ?>" alt="<?php foreach($item->ProductImgs as $key)
                                                         echo $key->alt;
                                                     ?>" class="simpleLens-big-image"></a>
-                                                        </div>
-                                                        <div class="simpleLens-container tab-pane active fade in" id="q-sin-2" >
-                                                            <div class="pro-type sell">
-                                                                <span>sell</span>
                                                             </div>
-                                                            <a class="simpleLens-image" data-lens-image="frontend/img/product/<?php foreach($item->ProductImgs as $key)
+                                                            <div class="simpleLens-container tab-pane active fade in"
+                                                                id="q-sin-2">
+                                                                <div class="pro-type sell">
+                                                                    <span>sell</span>
+                                                                </div>
+                                                                <a class="simpleLens-image" data-lens-image="frontend/img/product/<?php foreach($item->ProductImgs as $key)
                                                                 echo $key->url;
                                                             ?>" href="#"><img src="frontend/img/product/<?php foreach($item->ProductImgs as $key)
                                                                 echo $key->url;
                                                             ?>" alt="" class="simpleLens-big-image"></a>
-                                                        </div>
-                                                        <div class="simpleLens-container tab-pane fade in" id="q-sin-3">
-                                                            <div class="pro-type">
-                                                                <span>-15%</span>
                                                             </div>
-                                                            <a class="simpleLens-image" data-lens-image="img/products/z3.jpg" href="#"><img src="img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
-                                                        </div>
-                                                        <div class="simpleLens-container tab-pane fade in" id="q-sin-4">
-                                                            <div class="pro-type">
-                                                                <span>new</span>
+                                                            <div class="simpleLens-container tab-pane fade in"
+                                                                id="q-sin-3">
+                                                                <div class="pro-type">
+                                                                    <span>-15%</span>
+                                                                </div>
+                                                                <a class="simpleLens-image"
+                                                                    data-lens-image="img/products/z3.jpg" href="#"><img
+                                                                        src="img/products/z3.jpg" alt=""
+                                                                        class="simpleLens-big-image"></a>
                                                             </div>
-                                                            <a class="simpleLens-image" data-lens-image="img/products/z4.jpg" href="#"><img src="img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
+                                                            <div class="simpleLens-container tab-pane fade in"
+                                                                id="q-sin-4">
+                                                                <div class="pro-type">
+                                                                    <span>new</span>
+                                                                </div>
+                                                                <a class="simpleLens-image"
+                                                                    data-lens-image="img/products/z4.jpg" href="#"><img
+                                                                        src="img/products/z4.jpg" alt=""
+                                                                        class="simpleLens-big-image"></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="quick-thumb">
-                                                <ul class="product-slider">
-                                                    <li><a data-toggle="tab" href="#q-sin-1"> <img src="frontend/img/product/<?php foreach($item->ProductImgs as $key)
+                                                <div class="quick-thumb">
+                                                    <ul class="product-slider">
+                                                        <li><a data-toggle="tab" href="#q-sin-1"> <img src="frontend/img/product/<?php foreach($item->ProductImgs as $key)
                                                         echo $key->url;
                                                     ?>" alt="<?php foreach($item->ProductImgs as $key)
                                                         echo $key->alt;
                                                     ?>" /> </a></li>
-                                                    <li class="active"><a data-toggle="tab" href="#q-sin-2"> <img src="img/products/s2.jpg" alt="small image" /> </a></li>
-                                                    <li><a data-toggle="tab" href="#q-sin-3"> <img src="img/products/s3.jpg" alt="small image" /> </a></li>
-                                                    <li><a data-toggle="tab" href="#q-sin-4"> <img src="img/products/s4.jpg" alt="small image" /> </a></li>
-                                                </ul>
-                                            </div>
-                                        </div>						
-                                    </div>
-                                    <div class="col-xs-12 col-sm-7 col-md-8">
-                                        <div class="quick-right">
-                                            <div class="list-text">
-                                                <h3>{{($item->name)}}</h3>
-                                                <span></span>
-                                                <div class="ratting floatright">
-                                                    @php
-												$temp=0;
-												$average=0;
-												$star=0;
-												$count=0;
-												@endphp
-												@foreach ($item->Rating as $key)
-												@php
-												$star=$star+$key->pivot->rating;
-												$count+=1;
-												@endphp
-												@endforeach
-												@if ($count==0)
-												@else
-												@php
-												$average=floor($star/$count);
-												@endphp
-												@endif
-                                                <p>( {{$count}} Rating )</p>
-												@if ($average==1)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==2)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==3)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==4)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@elseif ($average==5)
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												<i class="mdi mdi-star"></i>
-												@elseif ($average==0)
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												<i class="mdi mdi-star-outline"></i>
-												@endif
-												@php
-												@endphp
-                                                </div>
-                                                <h5><del></del>{{number_format($item->price)}}</h5>
-                                                <div>
-                                                    <?php echo $item->desc ?>
-                                                    <br>
-                                                    <br>
-                                                    <br>
-                                                </div>
-                                                <div class="list-btn">
-                                                    <a  class="addToCart"
-                                                    data-href="{{ route('f.addProductToCartAjax') }}"
-                                                    data-id="{{($item->id)}}">add to cart</a>
-                                                    <a href="#">wishlist</a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
-                                                </div>
-                                                <div class="share-tag clearfix">
-                                                    <ul class="blog-share floatleft">
-                                                        <li><h5>share </h5></li>
-                                                        <li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
-                                                        <li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
-                                                        <li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
-                                                        <li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+                                                        <li class="active"><a data-toggle="tab" href="#q-sin-2"> <img
+                                                                    src="img/products/s2.jpg" alt="small image" /> </a>
+                                                        </li>
+                                                        <li><a data-toggle="tab" href="#q-sin-3"> <img
+                                                                    src="img/products/s3.jpg" alt="small image" /> </a>
+                                                        </li>
+                                                        <li><a data-toggle="tab" href="#q-sin-4"> <img
+                                                                    src="img/products/s4.jpg" alt="small image" /> </a>
+                                                        </li>
                                                     </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-7 col-md-8">
+                                            <div class="quick-right">
+                                                <div class="list-text">
+                                                    <h3>{{($item->name)}}</h3>
+                                                    <span></span>
+                                                    <div class="ratting floatright">
+                                                        @php
+                                                        $temp=0;
+                                                        $average=0;
+                                                        $star=0;
+                                                        $count=0;
+                                                        @endphp
+                                                        @foreach ($item->Rating as $key)
+                                                        @php
+                                                        $star=$star+$key->pivot->rating;
+                                                        $count+=1;
+                                                        @endphp
+                                                        @endforeach
+                                                        @if ($count==0)
+                                                        @else
+                                                        @php
+                                                        $average=floor($star/$count);
+                                                        @endphp
+                                                        @endif
+                                                        <p>( {{$count}} @lang('Rating') )</p>
+                                                        @if ($average==1)
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        @elseif ($average==2)
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        @elseif ($average==3)
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        @elseif ($average==4)
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        @elseif ($average==5)
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        <i class="mdi mdi-star"></i>
+                                                        @elseif ($average==0)
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        <i class="mdi mdi-star-outline"></i>
+                                                        @endif
+                                                        @php
+                                                        @endphp
+                                                    </div>
+                                                    <h5><del></del>{{number_format($item->price)}}</h5>
+                                                    <div>
+                                                        <?php echo $item->desc ?>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                    <div class="list-btn">
+                                                        <a class="addToCart"
+                                                            data-href="{{ route('f.addProductToCartAjax') }}"
+                                                            data-id="{{($item->id)}}">@lang('add to cart')</a>
+                                                        <a href="#">@lang('wishlist')</a>
+                                                        <a href="#" data-toggle="modal"
+                                                            data-target="#quick-view">zoom</a>
+                                                    </div>
+                                                    <div class="share-tag clearfix">
+                                                        <ul class="blog-share floatleft">
+                                                            <li>
+                                                                <h5>share </h5>
+                                                            </li>
+                                                            <li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
+                                                            <li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
+                                                            <li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
+                                                            <li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
+                                                            <li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
+                                                            <li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -599,9 +625,8 @@
             </div>
         </div>
     </div>
-</div>
     <!-- quick view end -->
-    
+
     @endforeach
 </div>
 <script src="{{ asset('frontend/bootstrap.min.js')}}"></script>

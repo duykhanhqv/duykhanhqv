@@ -5,16 +5,16 @@
         <div class="col-md-12">
             <div class="panel panel-white">
                 <div class="panel-heading clearfix">
-                    <h4 class="panel-title">Form Order</h4>
+                    <h4 class="panel-title">@lang('Form Order')</h4>
                 </div>
                 <div class="panel-body">
                     <form action="{{$action}}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Name ship</label>
+                                <label for="">@lang('Name ship')</label>
                                 <input type="text" class="form-control" id="name_ship" name="name_ship"
-                                    placeholder="Name Ship" value="{{$detail['0']->Order->name}}">
+                                    placeholder="@lang('Name ship')" value="{{$detail['0']->Order->name}}">
                                 @error('name_ship')
                                 <div class="text-danger">
                                     {{$message}}
@@ -24,9 +24,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Mobile ship</label>
+                                <label for="">@lang('Mobile ship')</label>
                                 <input type="text" class="form-control" id="mobile_ship" name="mobile_ship"
-                                    placeholder="Mobile Ship" value="{{$detail['0']->Order->mobile??old('mobile_ship')}}">
+                                    placeholder="@lang('Mobile ship')" value="{{$detail['0']->Order->mobile??old('mobile_ship')}}">
                                 @error('mobile_ship')
                                 <div class="text-danger">
                                     {{$message}}
@@ -37,9 +37,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Email ship</label>
+                                <label for="">@lang('Email ship')</label>
                                 <input type="text" class="form-control" id="email_ship" name="email_ship"
-                                    placeholder="Email Ship" value="{{$detail['0']->Order->email??old('email_ship')}}">
+                                    placeholder="@lang('Email ship')" value="{{$detail['0']->Order->email??old('email_ship')}}">
                                 @error('email_ship')
                                 <div class="text-danger">
                                     {{$message}}
@@ -56,29 +56,29 @@
                                     <option value="{{$detail['0']->Order->status}}" @if(isset($detail['0']->Order->status)) selected
                                         @endif>
                                         @if ($detail['0']->Order->status==0)
-                                        New Order
+                                        @lang('New order')
                                         @elseif ($detail['0']->Order->status==1)
-                                        Confirmed
+                                        @lang('Confirmed')
                                         @elseif ($detail['0']->Order->status==2)
-                                        Delivering
+                                        @lang('Delivering')
                                         @elseif ($detail['0']->Order->status==3)
-                                        Delived
+                                        @lang('Delived')
                                         @elseif ($detail['0']->Order->status==4)
-                                        Cancel
+                                        @lang('Cancel')
                                         @endif
                                     </option>
                                     @for ($i = 0; $i <= $count; $i++) 
                                         <option value="{{$i}}">
                                             @if ($i==0)
-                                            New Order
+                                            @lang('New order')
                                             @elseif ($i==1)
-                                            Confirmed
+                                            @lang('Confirmed')
                                             @elseif ($i==2)
-                                            Delivering
+                                            @lang('Delivering')
                                             @elseif ($i==3)
-                                            Delived
+                                            @lang('Delived')
                                             @elseif ($i==4)
-                                            Cancel
+                                            @lang('Cancel')
                                             @endif
                                         </option>
                                         
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="">Address ship</label>
+                            <label for="">@lang('Address ship')</label>
                             <textarea class="form-control" name="address_ship" id="address_ship"
                                 rows="3"> {{$detail['0']->Order->address??old('address_ship')}} </textarea>
                             @error('address_ship')
@@ -107,7 +107,7 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <input type="hidden" name="order_id" value="{{$detail['0']->Order->id}}">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">@lang('Update')</button>
 
                     </div>
                 </div>
@@ -117,10 +117,10 @@
                         <tr>
                             <th> # </th>
                             <th> ID </th>
-                            <th> Name </th>
-                            <th> price</th>
-                            <th>Qty </th>
-                            <th>Action </th>
+                            <th> @lang('Name') </th>
+                            <th> @lang('Price')</th>
+                            <th>@lang('qty') </th>
+                            <th>@lang('Action') </th>
                         </tr>
                     </thead>
                     <tbody>

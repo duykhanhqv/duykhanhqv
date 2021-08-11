@@ -7,7 +7,7 @@
       <div class="col-12">
         <div class="page-header">
           @can('edit_profile')
-          <h4 class="page-title">Dashboard</h4>
+          <h4 class="page-title">@lang('Dashboard')</h4>
 
           @endcan
           <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">

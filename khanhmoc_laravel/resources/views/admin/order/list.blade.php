@@ -6,7 +6,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
+                    <h4 class="card-title">@lang('List Order')</h4>
                     <p class="card-description">
                         </p>
                     <table class="table table-bordered">
@@ -14,11 +14,11 @@
                             <tr>
                                 <th> # </th>
                                 <th> ID </th>
-                                <th> Name Customer</th>
-                                <th> Email</th>
-                                <th>Mobile </th>
-                                <th>Status </th>
-                                <th> Action</th>
+                                <th> @lang('Name')</th>
+                                <th> @lang('Email')</th>
+                                <th>@lang('Mobile') </th>
+                                <th>@lang('Status') </th>
+                                <th> @lang('Status')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,22 +35,22 @@
 
                                 <td>@if ($item->status==0)
                                     <button type="button" class="btn btn-success">
-                                        New Order</button>
+                                        @lang('New order')</button>
                                     @elseif ($item->status==1)
                                     <button type="button" class="btn btn-info">
-                                        <i></i>confirmed
+                                        <i></i>@lang('Confirmed')
                                     </button>
                                     @elseif ($item->status==2)
                                     <button type="button" class="btn btn-warning">
-                                        <i></i>delivering
+                                        <i></i>@lang('Delivering')
                                     </button>
                                     @elseif ($item->status==3)
                                     <button type="button" class="btn btn-primary">
-                                        <i></i>delived
+                                        <i></i>@lang('Delived')
                                     </button>
                                     @elseif ($item->status==4)
                                     <button type="button" class="btn btn-danger">
-                                        <i></i>Cancel
+                                        <i></i>@lang('Cancel')
                                     </button>
                                     @endif </td>
                                 <td><a href="{{route('orders.edit',[$item->id])}}">

@@ -6,11 +6,11 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Horizontal Two column</h4>
+                    <h4 class="card-title"></h4>
                     <form action="{{$action}}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Name Department"
+                            <label for="">@lang('Name')</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="@lang('Name Department')"
                                 value="{{$item->name??old('name')}}">
                             @error('name')
                             <div class="text-danger">
@@ -21,13 +21,13 @@
                         <div class="form-group">
                             <div class="col-md-5">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Trạng thái</label>
+                                    <label class="col-sm-3 col-form-label">@lang('Status')</label>
                                     <div class="col-sm-4">
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input type="radio" class="form-check-input" name="status"
                                                     id="membershipRadios1" @if(isset($item) && $item->status!=1)
-                                                checked @endif value="0" checked=""> Ẩn <i
+                                                checked @endif value="0" checked=""> @lang('Hide') <i
                                                     class="input-helper"></i></label>
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@
                                             <label class="form-check-label">
                                                 <input type="radio" class="form-check-input" name="status"
                                                     id="membershipRadios2" @if(isset($item) && $item->status==1)
-                                                checked @endif value="1"> Hiện <i class="input-helper"></i></label>
+                                                checked @endif value="1"> @lang('Present') <i class="input-helper"></i></label>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                         @method($method)
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">@lang('Submit')</button>
                             </div>
                         </div>
                     </form>

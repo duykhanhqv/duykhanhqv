@@ -6,19 +6,19 @@
     <div class="col-12 grid-margin">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Horizontal Two column</h4>
+          <h4 class="card-title">@lang('Form product')</h4>
           <form action="{{$action}}" method="post" enctype="multipart/form-data">
-            <p class="card-description"> Personal info </p>
+            <p class="card-description">  </p>
             <div class="row">
               <div class="col-md-12">
                 <div class="panel panel-white">
                   <div class="panel-heading clearfix">
-                    <h4 class="panel-title">Form Product</h4>
+                    <h4 class="panel-title">@lang('Form product')</h4>
                   </div>
                   <div class="panel-body">
                     <div class="form-group">
-                      <label for="">Name</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name Product"
+                      <label for="">@lang('Name')</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="@lang('Name Product')"
                         value="{{$item->name??old('name')}}">
                       @error('name')
                       <div class="text-danger">
@@ -27,8 +27,8 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="">Price</label>
-                      <input type="number" class="form-control" id="price" name="price" placeholder="price"
+                      <label for="">@lang('Price')</label>
+                      <input type="number" class="form-control" id="price" name="price" placeholder="@lang('Price')"
                         value="{{$item->price??old('price')}}">
                       @error('price')
                       <div class="text-danger">
@@ -40,9 +40,9 @@
                     <div class="form-group">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="">Qty</label>
+                          <label for="">@lang('Qty')</label>
                           <input type="number" class="form-control" class="col-md-5" id="qty" name="qty"
-                            placeholder="Qty" value="{{$item->qty??old('qty')}}">
+                            placeholder="@lang('Qty')" value="{{$item->qty??old('qty')}}">
                           @error('qty')
                           <div class="text-danger">
                             {{$message}}
@@ -51,13 +51,13 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label>Trạng thái</label>
+                          <label>@lang('Status')</label>
                           <div>
                             <div class="form-check">
                               <label class="form-check-label">
                                 <input type="radio" class="form-check-input" name="status" id="membershipRadios1"
                                   @if(isset($item) && $item->status!=1)
-                                checked @endif value="0" checked=""> Ẩn <i class="input-helper"></i></label>
+                                checked @endif value="0" checked=""> @lang('Hide') <i class="input-helper"></i></label>
                             </div>
                           </div>
                           <div>
@@ -65,7 +65,7 @@
                               <label class="form-check-label">
                                 <input type="radio" class="form-check-input" name="status" id="membershipRadios2"
                                   @if(isset($item) && $item->status==1)
-                                checked @endif value="1"> Hiện <i class="input-helper"></i></label>
+                                checked @endif value="1"> @lang('Present') <i class="input-helper"></i></label>
                             </div>
                           </div>
                           @error('status')
@@ -100,7 +100,7 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="">Description</label>
+                      <label for="">@lang('Description')</label>
                       <textarea class="form-control" name="desc" id="desc" rows="7"></textarea>
                       @error('desc')
                       <div class="text-danger">
@@ -109,8 +109,8 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="">Detail</label>
-                      <input type="text" name="detail" id="detail" class="form-control" placeholder="Detail"
+                      <label for="">@lang('Detail')</label>
+                      <input type="text" name="detail" id="detail" class="form-control" placeholder="@lang('Detail')"
                         aria-describedby="Detail" value="{{$item->detail??old('detail')}}">
                       @error('detail')
                       <div class="text-danger">
@@ -119,9 +119,9 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="">Note</label>
+                      <label for="">@lang('Note')</label>
                       <input type="text" name="note" id="note" class="form-control" value="{{$item->note??old('note')}}"
-                        placeholder="Note" aria-describedby="Detail">
+                        placeholder="@lang('Note')" aria-describedby="Detail">
                       @error('note')
                       <div class="text-danger">
                         {{$message}}
@@ -129,7 +129,7 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="">Category</label>
+                      <label for="">@lang('Category')</label>
                       <select class="form-control" name="category_id" id="category_id">
                         <option>Choose</option>
                         @foreach ($categorys as $items)
@@ -148,7 +148,7 @@
                     @method($method)
                     <div class="form-group">
                       <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">@lang('Submit')</button>
                       </div>
                     </div>
                   </div>

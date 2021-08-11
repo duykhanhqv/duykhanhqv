@@ -7,11 +7,38 @@ use App\Models\Department;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class HomeController extends Controller
 {
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function changeLanguage(Request $request)
+    {
+        App::setLocale($request->language);
+        session()->put('language', $request->language);
+        // return view('frontend.language');
+        return redirect()->back();
+    }
+    public function lang()
+    {
+        return view('frontend.language');
+    }
+    // public function translate($lang = "vi")
+    // {
+    //     // dd($language);
+    //     if (in_array($lang, $this->langs)) {
+
+    //         session(['lang' => $lang]);
+    //     }
+    //     return back();
+    // }
     /**
      * get page login and register
      * author: khanhmoc

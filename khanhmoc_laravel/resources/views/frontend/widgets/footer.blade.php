@@ -49,7 +49,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-3">
                             <div class="single-text">
                                 <div class="footer-title">
-                                    <h4>Contact us</h4>
+                                    <h4>@lang('Contact us')</h4>
                                 </div>
                                 <div class="footer-text">
                                     <ul>
@@ -75,16 +75,16 @@
                         <div class="col-xs-12 col-sm-3 col-md-2 wide-mobile">
                             <div class="single-text">
                                 <div class="footer-title">
-                                    <h4>my account</h4>
+                                    <h4>@lang('my account')</h4>
                                 </div>
                                 <div class="footer-menu">
                                     <ul>
-                                        <li><a href="login.html"><i class="mdi mdi-menu-right"></i>My Account</a></li>
-                                        <li><a href="wishlist.html"><i class="mdi mdi-menu-right"></i>My Wishlist</a></li>
-                                        <li><a href="cart.html"><i class="mdi mdi-menu-right"></i>My Cart</a></li>
-                                        <li><a href="login.html"><i class="mdi mdi-menu-right"></i>Sign In</a></li>
-                                        <li><a href="checkout.html"><i class="mdi mdi-menu-right"></i>Check out</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Track My Orde</a></li>
+                                        <li><a href="login.html"><i class="mdi mdi-menu-right"></i>@lang('My account')</a></li>
+                                        <li><a href="wishlist.html"><i class="mdi mdi-menu-right"></i>@lang('My Wishlist')</a></li>
+                                        <li><a href="cart.html"><i class="mdi mdi-menu-right"></i>@lang('My Cart')</a></li>
+                                        <li><a href="login.html"><i class="mdi mdi-menu-right"></i>@lang('Sign In')</a></li>
+                                        <li><a href="checkout.html"><i class="mdi mdi-menu-right"></i>@lang('Check out')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Track My Order</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -92,16 +92,16 @@
                         <div class="col-xs-12 col-sm-3 col-md-2 wide-mobile">
                             <div class="single-text">
                                 <div class="footer-title">
-                                    <h4>shipping</h4>
+                                    <h4>@lang('shipping')</h4>
                                 </div>
                                 <div class="footer-menu">
                                     <ul>
-                                        <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>New Products</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Top Sellers</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Manufactirers</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Suppliers</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Specials</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Availability</a></li>
+                                        <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>@lang('New Products')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Top Sellers')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Manufactirers')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Suppliers')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Specials')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Availability')</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -109,16 +109,16 @@
                         <div class="col-xs-12 col-sm-6 col-md-2 r-margin-top wide-mobile">
                             <div class="single-text">
                                 <div class="footer-title">
-                                    <h4>Information</h4>
+                                    <h4>@lang('Information')</h4>
                                 </div>
                                 <div class="footer-menu">
                                     <ul>
-                                        <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>Return Exchange</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Fast Delivery</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Online Shopping</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Shipping Guide</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Turm Of Use</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>Home Delivery</a></li>
+                                        <li><a href="contact.html"><i class="mdi mdi-menu-right"></i>@lang('Return Exchange')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Fast Delivery')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Online Shopping')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Shipping Guide')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Turm Of Use')</a></li>
+                                        <li><a href="#"><i class="mdi mdi-menu-right"></i>@lang('Home Delivery')</a></li>
                                     </ul>
                                 </div>
                             </div>

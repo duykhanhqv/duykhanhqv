@@ -13,20 +13,25 @@
                             <li>
                                 <a href="#"><i class="mdi mdi-account"></i></a>
                                 <ul>
-                                    <li><a href="{{route('f.formLoginRegister')}}">Login</a></li>
-                                    <li><a href="{{route('f.formLoginRegister')}}">Registar</a></li>
+                                    <li><a href="{{route('f.formLoginRegister')}}">@lang('Login')</a></li>
+                                    <li><a href="{{route('f.formLoginRegister')}}">@lang('Register')</a></li>
                                     <li><a href="my-account.html">@if (Auth::check())
                                             {{Auth::user()->name}}
                                             @endif</a></li>
-                                    <li><a href="{{route('f.logout')}}">Logout</a></li>
+                                    <li><a href="{{route('f.logout')}}">@lang('Logout')</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#"><i class="mdi mdi-settings"></i></a>
                                 <ul>
-                                    <li><a href="my-account.html">My account</a></li>
-                                    <li><a class="cartAjax" data-href="{{route('f.getCartAjax')}}">My cart</a></li>
-                                    <li><a href="{{route('f.checkOut')}}">Checkout</a></li>
+
+
+                                    <li><a href="{{route('f.changeLanguage',['en'])}}"">English</a></li>
+                                    <li><a href=" {{route('f.changeLanguage', ['vi'])}}">Vietnam</a></li>
+
+                                    <li><a class="cartAjax" data-href="{{route('f.getCartAjax')}}">@lang('My cart')</a>
+                                    </li>
+                                    <li><a href="{{route('f.checkOut')}}">@lang('Checkout')</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -34,20 +39,21 @@
                             <form action="{{route('f.searchProduct')}}" method="post">
                                 @csrf
                                 <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                                <input type="text" name="keyword" id="keyword" placeholder="Search within these results..." />
+                                <input type="text" name="keyword" id="keyword"
+                                    placeholder="Search within these results..." />
                             </form>
                             {{-- <script type="text/javascript">
                                 var path = "{{ route('f.searchAutoComplement') }}";
-                                $('#keyword').typeahead({
-                                    source:  function (query, process) {
-                                        // alert(query);
-                                    return $.get(path, { query: query }, function (data) {
-                                            return process(data);
-                                           
-                                            // $('#search_ajax').html(data.returnHTML);
-                                        });
-                                    }
-                                });
+                            $('#keyword').typeahead({
+                            source: function (query, process) {
+                            // alert(query);
+                            return $.get(path, { query: query }, function (data) {
+                            return process(data);
+
+                            // $('#search_ajax').html(data.returnHTML);
+                            });
+                            }
+                            });
                             </script> --}}
                         </div>
                     </div>
@@ -68,9 +74,9 @@
                         <nav>
                             <ul>
                                 {{-- <li><a href="{{route('f.home')}}">Home</a> --}}
-                                <li><a class="homeAjax" data-href="{{route('f.homeAjax')}}">Home</a>
+                                <li><a class="homeAjax" data-href="{{route('f.homeAjax')}}">@lang('Home')</a>
                                 </li>
-                                <li><a href="shop.html">Shop</a>
+                                <li><a href="shop.html">@lang('Product')</a>
                                     <ul class="magamenu">
                                         <li class="banner">
                                         </li>
@@ -95,7 +101,7 @@
                                 </li>
                             </ul>
                             </li>
-                            <li><a href="#">Pages</a>
+                            <li><a href="#">@lang('Page')</a>
                                 <ul class="dropdown">
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
@@ -106,15 +112,15 @@
                                     <li><a href="error-404.html">404 page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="blog.html">Blog</a>
+                            <li><a href="blog.html">@lang('Blog')</a>
                                 <ul class="dropdown">
                                     <li><a href="blog-style-1.html">Blog Style One</a></li>
                                     <li><a href="blog-style-2.html">Blog Style Two</a></li>
                                     <li><a href="single-blog.html">Single Blog</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="about.html">@lang('About')</a></li>
+                            <li><a href="contact.html">@lang('Contact')</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -170,7 +176,7 @@
                                             <li><a href="error-404.html">404 page</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">Blog</a>
+                                    <li><a href="blog.html"><?php echo session('language') ?></a>
                                         <ul>
                                             <li><a href="blog-style-1.html">Blog Style One</a></li>
                                             <li><a href="blog-style-2.html">Blog Style Two</a></li>
@@ -206,7 +212,7 @@
                             }
                         }
                         ?>
-                        {{$sub_items}} items : <strong>{{number_format($sub_total)}}</strong>
+                        {{$sub_items}} @lang('items') : <strong>{{number_format($sub_total)}}</strong>
                     </a>
                     <div class="cartdrop">
                         <?php 
@@ -228,7 +234,7 @@
                                 <a href="#">
                                     <h5>{{$item['name']}}</h5>
                                 </a>
-                                <span>quantity: {{$item['qty_order']}}</span>
+                                <span>@lang('quantity') {{$item['qty_order']}}</span>
                                 <strong>{{number_format($item['price']*$item['qty_order'])}}</strong>
                             </div>
                         </div>
@@ -236,10 +242,10 @@
                         @endforeach
                         <?php }?>
                         <div class="total">
-                            <span>total :<strong>{{number_format($sub_total)}}</strong></span>
+                            <span>@lang('total') :<strong>{{number_format($sub_total)}}</strong></span>
                         </div>
-                        <a class="goto" href="{{route('f.cart')}}">go to cart</a>
-                        <a class="out-menu" href="checkout.html">Check out</a>
+                        <a class="goto" href="{{route('f.cart')}}">@lang('My cart')</a>
+                        <a class="out-menu" href="checkout.html">@lang('Checkout')</a>
                     </div>
                 </div>
             </div>
