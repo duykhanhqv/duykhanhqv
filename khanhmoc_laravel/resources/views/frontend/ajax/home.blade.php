@@ -578,7 +578,7 @@
                                                 </div>
                                                 <h5><del></del>{{number_format($item->price)}}</h5>
                                                 <div>
-                                                    <?php echo $item->desc ?>
+                                                    <?php echo $item->description ?>
                                                     <br>
                                                     <br>
                                                     <br>

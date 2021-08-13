@@ -88,10 +88,12 @@
                                                 @foreach ($item->Categorys as $item2)
                                                 {{-- <li><a
                                                         href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a>
-                                        </li> --}}
+                                        </li> --}}@if ($item2->active!=0)
                                         <li><a class="listProductAjax" data-href="{{route('f.listtingProductsAjax')}}"
-                                                data-id="{{$item2->id}}">{{$item2->name}}</a>
-                                        </li>
+                                            data-id="{{$item2->id}}">{{$item2->name}}</a>
+                                    </li>
+                                        @endif
+                                        
                                         @endforeach
                                     </ul>
                                     @endforeach

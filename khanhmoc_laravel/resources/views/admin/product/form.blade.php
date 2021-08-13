@@ -101,7 +101,7 @@
                     </div>
                     <div class="form-group">
                       <label for="">@lang('Description')</label>
-                      <textarea class="form-control" name="desc" id="desc" rows="7"></textarea>
+                      <textarea class="form-control" name="desc" id="desc" rows="7">{{$item->detail??old('description')}}</textarea>
                       @error('desc')
                       <div class="text-danger">
                         {{$message}}
@@ -187,7 +187,7 @@
 
     // Initialize summernote with LFM button in the popover button group
     // Please note that you can add this button to any other button group you'd like
-    var markupStr = '{{$item->desc??old('desc')}}';
+    var markupStr = '{{$item->description??old('desc')}}';
     $('#desc').summernote('desc');
     $('#lfm').filemanager('image');
 });

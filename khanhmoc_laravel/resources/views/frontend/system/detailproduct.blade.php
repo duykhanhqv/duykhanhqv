@@ -148,7 +148,7 @@
                                 @endphp
                             </div>
                             <h5><del></del> {{number_format($product_detail->price)}}</h5>
-                            {{$product_detail->desc}}
+                            {{$product_detail->description}}
 
                             <div class="all-choose">
                                 <br>
@@ -528,7 +528,7 @@
                                                 </div>
                                                 <h5><del></del> {{number_format($item->price)}}</h5>
                                                 <div>
-                                                    <?php echo $item->desc ?>
+                                                    <?php echo $item->description ?>
                                                     <br>
                                                     <br>
                                                     <br>

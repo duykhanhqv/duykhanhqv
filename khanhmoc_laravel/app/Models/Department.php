@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
-class Department extends Model
+class Department extends Model implements TranslatableContract
 {
-    use HasFactory;
+    use Translatable;
     protected $table = 'fs_department';
-    protected $primaryKey = 'id';
+    public $translatedAttributes = ['name'];
+    public $timestamps = false;
+
     public function Categorys()
     {
         return $this->hasMany('App\Models\Category');

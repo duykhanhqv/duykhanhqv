@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
-class Product extends Model
+class Product extends Model implements TranslatableContract
 {
-    use HasFactory;
+    use Translatable;
     protected $table = 'fs_product';
     public $timestamps = false;
-    protected $primaryKey = 'id';
+    public $translatedAttributes = ['name', 'description', 'detail'];
     public function ProductImgs()
     {
         return $this->hasMany('App\Models\ProductImg');

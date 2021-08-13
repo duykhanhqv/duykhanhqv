@@ -54,7 +54,7 @@
                                 <select class="form-control" name="department_id" id="department_id">
                                     <option>Choose</option>
                                     @foreach ($departments as $items)
-                                    <option value="{{$items->id}}" @if(isset($item) && $item->id_department=$items->id)
+                                    <option value="{{$items->id}}" @if(isset($item) && $item->department_id==$items->id)
                                         selected
                                         @endif>{{$items->name}}</option>
                                     @endforeach

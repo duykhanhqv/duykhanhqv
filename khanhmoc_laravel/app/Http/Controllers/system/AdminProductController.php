@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImg;
+use App\Models\Test;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -90,7 +91,7 @@ class AdminProductController extends Controller
         $item->category_id = $request->category_id;
         $item->name = $request->name;
         $item->price = $request->price;
-        $item->desc = $request->desc;
+        $item->description = $request->desc;
         $item->detail = $request->detail;
         $item->created_at = now();
         $item->updated_at = now();
@@ -165,7 +166,7 @@ class AdminProductController extends Controller
         $item->category_id = $request->category_id;
         $item->name = $request->name;
         $item->price = $request->price;
-        $item->desc = $request->desc;
+        $item->description = $request->desc;
         $item->detail = $request->detail;
         $item->updated_at = now();
         $item->qty = $request->qty;
@@ -205,4 +206,6 @@ class AdminProductController extends Controller
             return redirect()->route('products.index')->with(['msg' => 'Destroy error', 'status' => 'danger']);
         }
     }
+
+
 }

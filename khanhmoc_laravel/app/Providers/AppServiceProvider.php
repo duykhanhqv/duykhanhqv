@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
          */
 
         view()->composer('*', function ($view) {
-            $view->with('list_departments', Department::select('fs_department.id', 'fs_department.name')->where('active', '1')->where('status', 1)->get());
+            $view->with('list_departments', Department::select('fs_department.id')->where('active', '1')->where('status', 1)->get());
             if (Auth::guard('admin')->user()) {
                 $view->with('role_admin', Admin::where('id', Auth::guard('admin')->user()->id)->first());
                 $view->with('role_order', Admin::where('id', Auth::guard('admin')->user()->id)->first());

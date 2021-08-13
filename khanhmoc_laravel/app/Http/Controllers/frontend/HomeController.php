@@ -5,10 +5,13 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use App\Models\Product;
+use App\Models\Post;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Post as GlobalPost;
 use Session;
 
 class HomeController extends Controller
@@ -199,5 +202,20 @@ class HomeController extends Controller
     {
         Auth::logout();
         return redirect()->route('f.formLoginRegister')->with(['msg' => 'You logout susses', 'status' => 'warning']);
+    }
+    /**
+     * test translate lag
+     * author: khanhmoc
+     *
+     * 
+     */
+    public function testtranslate()
+    {
+        $aa = Post::where('id', 1)->get();
+        $data = [
+            'msg' => '',
+            'post' => $aa
+        ];
+        return view('frontend.test', $data);
     }
 }

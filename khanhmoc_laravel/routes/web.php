@@ -73,6 +73,10 @@ Route::group(['middleware' => 'language'], function () {
             Route::resource('/products', AdminProductController::class);
             Route::resource('/categorys', AdminCategoryController::class);
             Route::resource('/departments', AdminDepartmentController::class);
+            Route::get('/listtranslate', [AdminProductController::class, 'testTranslate']);
+            Route::get('/testtt', [AdminProductController::class, 'testtt']);
+
+            Route::put('/listtranslate_edit/{id}', [AdminProductController::class, 'editTranslate'])->name('s.edittranslate');
         });
         Route::group(['middleware' => 'roles_order'], function () {
             Route::resource('/orders', AdminOrderController::class);
@@ -106,4 +110,5 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/test', function () {
         return view('admin.test');
     });
+    Route::get('/aaa', [HomeController::class, 'testtranslate'])->name('f.test');
 });
