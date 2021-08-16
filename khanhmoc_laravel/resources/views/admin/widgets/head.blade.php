@@ -23,6 +23,7 @@
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{ asset('system/assets/images/favicon.ico')}}" />
 
+    <script src="{{asset('system/assets/ckeditor/ckeditor.js')}}"></script>
 
     {{-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet"> --}}
     {{-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>

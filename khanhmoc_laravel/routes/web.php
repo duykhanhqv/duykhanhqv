@@ -112,3 +112,8 @@ Route::group(['middleware' => 'language'], function () {
     });
     Route::get('/aaa', [HomeController::class, 'testtranslate'])->name('f.test');
 });
+Route::group(['prefix' => 'laravel-filemanager', 'middleware'], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+Route::post('ckeditor/image_upload', [AdminProductController::class, 'upload'])->name('upload');
+// Route::post('ckeditor/image_load', [AdminProductController::class, 'load'])->name('load');

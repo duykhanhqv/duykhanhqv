@@ -8,7 +8,7 @@
         <div class="card-body">
           <h4 class="card-title">@lang('Form product')</h4>
           <form action="{{$action}}" method="post" enctype="multipart/form-data">
-            <p class="card-description">  </p>
+            <p class="card-description"> </p>
             <div class="row">
               <div class="col-md-12">
                 <div class="panel panel-white">
@@ -26,6 +26,9 @@
                       </div>
                       @enderror
                     </div>
+
+
+
                     <div class="form-group">
                       <label for="">@lang('Price')</label>
                       <input type="number" class="form-control" id="price" name="price" placeholder="@lang('Price')"
@@ -99,15 +102,33 @@
                       </div>
                       @enderror
                     </div>
-                    <div class="form-group">
-                      <label for="">@lang('Description')</label>
-                      <textarea class="form-control" name="desc" id="desc" rows="7">{{$item->detail??old('description')}}</textarea>
-                      @error('desc')
-                      <div class="text-danger">
-                        {{$message}}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h1 style="text-align: center;">@lang('Description')
+                        </h1>
+                        <div class="col-md-12">
+                          <textarea name="desc"
+                            id="desc"> <?php echo $item->description??old('description') ?></textarea>
+                        </div>
                       </div>
-                      @enderror
                     </div>
+                    {{-- <script>
+                      CKEDITOR.replace( 'desc', {
+                          filebrowserImageUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                          filebrowserUploadMethod: 'form'
+                      });
+                    </script> --}}
+                    <script>
+                      var options = {
+                        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+                        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+                        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+                        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+                      };
+                    </script>
+                    <script>
+                      CKEDITOR.replace('desc', options);
+                      </script>
                     <div class="form-group">
                       <label for="">@lang('Detail')</label>
                       <input type="text" name="detail" id="detail" class="form-control" placeholder="@lang('Detail')"
@@ -160,37 +181,6 @@
     </div>
   </div>
 </div>
-<script>
-  $(document).ready(function(){
-    // Define function to open filemanager window
-    var lfm = function(options, cb) {
-    var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
-    window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
-    window.SetUrl = cb;
-    };
-    // Define LFM summernote button
-    var LFMButton = function(context) {
-    var ui = $.summernote.ui;
-    var button = ui.button({
-        contents: '<i class="note-icon-picture"></i> ',
-        tooltip: 'Insert image with filemanager',
-        click: function() {
-        lfm({type: 'image', prefix: '/laravel-filemanager'}, function(lfmItems, path) {
-            lfmItems.forEach(function (lfmItem) {
-            context.invoke('insertImage', lfmItem.url);
-            });
-        });
-        }
-    });
-    return button.render();
-    };
 
-    // Initialize summernote with LFM button in the popover button group
-    // Please note that you can add this button to any other button group you'd like
-    var markupStr = '{{$item->description??old('desc')}}';
-    $('#desc').summernote('desc');
-    $('#lfm').filemanager('image');
-});
-</script>
 @endsection
 <!-- Page Inner -->

@@ -18,4 +18,5 @@
     <link rel="stylesheet" href="{{asset('system/assets/css/shared/style.css')}}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('system/assets/images/favicon.ico')}}" />
+    
   </head>
