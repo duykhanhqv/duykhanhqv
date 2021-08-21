@@ -97,12 +97,7 @@
                         </div>
                       </div>
                     </div>
-                    {{-- <script>
-                      CKEDITOR.replace( 'desc', {
-                          filebrowserImageUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-                    filebrowserUploadMethod: 'form'
-                    });
-                    </script> --}}
+            
                     <script>
                       var options = {
                         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

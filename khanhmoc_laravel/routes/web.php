@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ProductController as ApiProductController;
 use App\Http\Controllers\frontend\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomeController;
@@ -28,8 +29,6 @@ use App\Models\Product;
 Route::get('/q', function () {
     return view('welcome');
 });
-
-
 
 
 Route::group(['middleware' => 'language'], function () {

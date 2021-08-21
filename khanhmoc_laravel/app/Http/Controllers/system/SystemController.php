@@ -91,13 +91,18 @@ class SystemController extends Controller
      */
     public function postLogin(Request $request)
     {
+
         $credentials = [
             'email' => $request->email,
             'password' => $request->password,
         ];
+        // dd(Auth::guard('admin'));
         if (Auth::guard('admin')->attempt($credentials)) {
+            // dd('aaaaa');
             return redirect()->route('s.admin')->with(['msg' => 'Login success', 'status' => 'success']);;
         }
+        // dd('bbbb');
+
         return redirect()->route('s.login')->with(['msg' => 'Login error', 'status' => 'danger']);
     }
     /**
