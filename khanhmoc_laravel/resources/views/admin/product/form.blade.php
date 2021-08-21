@@ -26,9 +26,6 @@
                       </div>
                       @enderror
                     </div>
-
-
-
                     <div class="form-group">
                       <label for="">@lang('Price')</label>
                       <input type="number" class="form-control" id="price" name="price" placeholder="@lang('Price')"
@@ -79,29 +76,17 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-group" class="col-sm-12">
-                      <label for="">IMG</label>
-                      <div class="input-group">
-                        <span class="input-group-btn">
-                          <a id="lfm" data-input="url" data-preview="holder" class="btn btn-primary">
-                            <i class="fa fa-picture-o"></i> Choose
-                          </a>
-                        </span>
-                        <input id="url" class="form-control" type="text" name="url" value="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
-                                              echo($key->url);
-                                          }}?>">
-                        <img width="100px" height="100px" src="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
-                                              echo($key->url);
-                                          }}?>" alt="<?php if(isset($item)){ foreach ($item->ProductImgs as $key) {
-                                              echo($key->alt);
-                                          }}?>">
-                      </div>
-                      @error('url')
-                      <div class="text-danger">
-                        {{$message}}
-                      </div>
-                      @enderror
+
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                          <i class="fa fa-picture-o"></i> Choose
+                        </a>
+                      </span>
+                      <input id="thumbnail" class="form-control" type="text" name="url">
                     </div>
+                    <img id="holder" style="margin-top:15px;max-height:100px;">
+
                     <div class="row">
                       <div class="col-md-12">
                         <h1 style="text-align: center;">@lang('Description')
@@ -115,8 +100,8 @@
                     {{-- <script>
                       CKEDITOR.replace( 'desc', {
                           filebrowserImageUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-                          filebrowserUploadMethod: 'form'
-                      });
+                    filebrowserUploadMethod: 'form'
+                    });
                     </script> --}}
                     <script>
                       var options = {
@@ -128,7 +113,7 @@
                     </script>
                     <script>
                       CKEDITOR.replace('desc', options);
-                      </script>
+                    </script>
                     <div class="form-group">
                       <label for="">@lang('Detail')</label>
                       <input type="text" name="detail" id="detail" class="form-control" placeholder="@lang('Detail')"
@@ -181,6 +166,50 @@
     </div>
   </div>
 </div>
+<script>
+  (function( $ ){
 
+$.fn.filemanager = function(type, options) {
+type = type || 'file';
+
+this.on('click', function(e) {
+var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+var target_input = $('#' + $(this).data('input'));
+var target_preview = $('#' + $(this).data('preview'));
+window.open(route_prefix + '?type=' + type, 'FileManager', 'width=900,height=600');
+window.SetUrl = function (items) {
+var file_path = items.map(function (item) {
+return item.url;
+}).join(',');
+
+// set the value of the desired input to image url
+target_input.val('').val(file_path).trigger('change');
+
+// clear previous preview
+target_preview.html('');
+
+// set or change the preview image src
+items.forEach(function (item) {
+target_preview.append(
+$('<img>').css('height', '5rem').attr('src', item.thumb_url)
+);
+});
+
+// trigger change event
+target_preview.trigger('change');
+};
+return false;
+});
+}
+
+})(jQuery);
+
+</script>
+<script>
+  $('#lfm').filemanager('image');
+
+
+
+</script>
 @endsection
 <!-- Page Inner -->
