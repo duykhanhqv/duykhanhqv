@@ -18,9 +18,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 Route::resource('products', ProductController::class);
+Route::get('products_top_view', [ProductController::class, 'topView']);
+Route::get('products_top_price', [ProductController::class, 'topPrice']);
+
 Route::resource('departments', DepartmentController::class);
 Route::resource('admins', AdminController::class);
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+    Route::post('/login', [AdminController::class, 'login']);
+    Route::post('/register', [AdminController::class, 'register']);
+    Route::post('/logout', [AdminController::class, 'logout']);
+    Route::post('/refresh', [AdminController::class, 'refresh']);
+    Route::get('/user-profile', [AdminController::class, 'userProfile']);
+});

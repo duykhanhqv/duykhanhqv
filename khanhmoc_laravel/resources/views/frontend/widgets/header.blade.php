@@ -15,8 +15,8 @@
                                 <ul>
                                     <li><a href="{{route('f.formLoginRegister')}}">@lang('Login')</a></li>
                                     <li><a href="{{route('f.formLoginRegister')}}">@lang('Register')</a></li>
-                                    <li><a href="my-account.html">@if (Auth::check())
-                                            {{Auth::user()->name}}
+                                    <li><a href="my-account.html">@if ( Auth::guard('client')->check())
+                                            {{Auth::guard('client')->user()->name}}
                                             @endif</a></li>
                                     <li><a href="{{route('f.logout')}}">@lang('Logout')</a></li>
                                 </ul>
@@ -90,10 +90,10 @@
                                                         href="{{route('f.listProduct',[$item2->id])}}">{{$item2->name}}</a>
                                         </li> --}}@if ($item2->active!=0)
                                         <li><a class="listProductAjax" data-href="{{route('f.listtingProductsAjax')}}"
-                                            data-id="{{$item2->id}}">{{$item2->name}}</a>
-                                    </li>
+                                                data-id="{{$item2->id}}">{{$item2->name}}</a>
+                                        </li>
                                         @endif
-                                        
+
                                         @endforeach
                                     </ul>
                                     @endforeach

@@ -13,7 +13,7 @@
                     </div>
                     @endif
                     <ul class="text-left">
-                        <li><a href="index.html"@lang('Home') </a></li>
+                        <li><a href="index.html"> @lang('Home')</a></li>
                         <li><span> // </span>@lang('Register') {{$msg}} </li>
                     </ul>
                 </div>
@@ -123,11 +123,11 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="barnd-bg">
-                        <a href="#"><img src="img/brand/1.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/2.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/3.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/4.png" alt="Brand Logo" /></a>
-                        <a href="#"><img src="img/brand/5.png" alt="Brand Logo" /></a>
+                        <a href="#"><img src="frontend/img/brand/1.png" alt="Brand Logo" /></a>
+                        <a href="#"><img src="frontend/img/brand/2.png" alt="Brand Logo" /></a>
+                        <a href="#"><img src="frontend/img/brand/3.png" alt="Brand Logo" /></a>
+                        <a href="#"><img src="frontend/img/brand/4.png" alt="Brand Logo" /></a>
+                        <a href="#"><img src="frontend/img/brand/5.png" alt="Brand Logo" /></a>
                     </div>
                 </div>
             </div>
@@ -259,12 +259,12 @@
                             </div>
                             <div class="clearfix instagram">
                                 <ul>
-                                    <li><a href="#"><img src="img/footer/in1.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in2.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in3.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in4.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in5.png" alt="Instagram" /></a></li>
-                                    <li><a href="#"><img src="img/footer/in6.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="frontend/img/footer/in1.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="frontend/img/footer/in2.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="frontend/img/footer/in3.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="frontend/img/footer/in4.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="frontend/img/footer/in5.png" alt="Instagram" /></a></li>
+                                    <li><a href="#"><img src="frontend/img/footer/in6.png" alt="Instagram" /></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                     <p>&copy; Sellshop 2016. All Rights Reserved.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
-                    <a href="#"><img src="img/footer/payment.png" alt="" /></a>
+                    <a href="#"><img src="frontend/img/footer/payment.png" alt="" /></a>
                 </div>
             </div>
         </div>

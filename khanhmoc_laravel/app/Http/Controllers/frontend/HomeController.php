@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Department;
 use App\Models\Product;
 use App\Models\Post;
 
@@ -11,8 +10,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use Post as GlobalPost;
-use Session;
 
 class HomeController extends Controller
 {
@@ -33,15 +30,6 @@ class HomeController extends Controller
     {
         return view('frontend.language');
     }
-    // public function translate($lang = "vi")
-    // {
-    //     // dd($language);
-    //     if (in_array($lang, $this->langs)) {
-
-    //         session(['lang' => $lang]);
-    //     }
-    //     return back();
-    // }
     /**
      * get page login and register
      * author: khanhmoc
@@ -186,7 +174,7 @@ class HomeController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('client')->attempt($credentials)) {
             return redirect()->route('f.home')->with(['msg' => 'Login success', 'status' => 'success']);
         }
         return redirect()->route('f.formLoginRegister')->with(['msg' => 'Login error', 'status' => 'danger']);
@@ -200,7 +188,7 @@ class HomeController extends Controller
      */
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('client')->logout();
         return redirect()->route('f.formLoginRegister')->with(['msg' => 'You logout susses', 'status' => 'warning']);
     }
     /**

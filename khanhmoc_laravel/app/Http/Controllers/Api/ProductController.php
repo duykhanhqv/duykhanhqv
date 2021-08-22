@@ -63,4 +63,22 @@ class ProductController extends Controller
     {
         //
     }
+    /**
+     * get list product top 10 view
+     * author: khanhmoc
+     * 
+     */
+    public function topView()
+    {
+        return Product::orderBy('view', 'DESC')->limit(10)->get();
+    }
+    /**
+     * get list product top 10 view
+     * author: khanhmoc
+     * 
+     */
+    public function topPrice()
+    {
+        return Product::orderBy('price', 'DESC')->limit(10)->get();
+    }
 }

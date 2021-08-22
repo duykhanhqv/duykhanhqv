@@ -96,7 +96,6 @@ class SystemController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-        // dd(Auth::guard('admin'));
         if (Auth::guard('admin')->attempt($credentials)) {
             // dd('aaaaa');
             return redirect()->route('s.admin')->with(['msg' => 'Login success', 'status' => 'success']);;

@@ -17,10 +17,10 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()) {
+        if (Auth::guard('client')->check()) {
             return $next($request);
         } else {
-            return redirect("/login")->with(['msg' => 'please log in', 'status' =>'danger']);;
+            return redirect("/login")->with(['msg' => 'please log in', 'status' => 'danger']);;
         }
     }
 }
