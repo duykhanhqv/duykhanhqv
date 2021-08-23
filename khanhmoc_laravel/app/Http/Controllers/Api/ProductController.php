@@ -5,9 +5,19 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Validator;
 
 class ProductController extends Controller
 {
+    /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -63,14 +73,16 @@ class ProductController extends Controller
     {
         //
     }
+
     /**
      * get list product top 10 view
      * author: khanhmoc
      * 
      */
-    public function topView()
+
+    public function topView($limit)
     {
-        return Product::orderBy('view', 'DESC')->limit(10)->get();
+        return Product::orderBy('view', 'DESC')->limit($limit)->get();
     }
     /**
      * get list product top 10 view
@@ -80,5 +92,22 @@ class ProductController extends Controller
     public function topPrice()
     {
         return Product::orderBy('price', 'DESC')->limit(10)->get();
+    }
+    /**
+     * get list product top 10 view
+     * author: khanhmoc
+     * 
+     */
+    public function priceBetween(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'from' => 'required|numeric',
+            'to' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+        return Product::whereBetween('price', [$request->from, $request->to])->limit(10)->get();
     }
 }

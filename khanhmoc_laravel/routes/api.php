@@ -21,11 +21,7 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::resource('products', ProductController::class);
-Route::get('products_top_view', [ProductController::class, 'topView']);
-Route::get('products_top_price', [ProductController::class, 'topPrice']);
 
-Route::resource('departments', DepartmentController::class);
 Route::resource('admins', AdminController::class);
 Route::group([
     'middleware' => 'api',
@@ -37,4 +33,10 @@ Route::group([
     Route::post('/logout', [AdminController::class, 'logout']);
     Route::post('/refresh', [AdminController::class, 'refresh']);
     Route::get('/user-profile', [AdminController::class, 'userProfile']);
+    Route::get('products_top_view/{limit}', [ProductController::class, 'topView']);
+    Route::get('products_top_price', [ProductController::class, 'topPrice']);
+    Route::post('products_between', [ProductController::class, 'priceBetween']);
+
+    Route::resource('products', ProductController::class);
+    Route::resource('departments', DepartmentController::class);
 });
