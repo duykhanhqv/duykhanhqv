@@ -55,7 +55,7 @@
 					</div>
 					<div class="s-side-text">
 						<div class="sidebar-title">
-							<h4>@lang('Price')</h4>
+							<h4>price</h4>
 						</div>
 						<div class="range-slider clearfix">
 							<form action="#" method="get">
@@ -84,7 +84,8 @@
 										</ul>
 									</li>
 									<li class="sort-by floatright">
-										@lang('Showing 1-9 of 89 Results')
+										@lang('Showing 1-9 of '){{($countResult)}} {{'result'}}
+
 									</li>
 								</ul>
 							</div>
@@ -189,19 +190,9 @@
 						<div class="col-sm-12">
 							<div class="pagnation-ul">
 								<ul>
-									{{-- {{ $list_products->from() }} --}}
+									{{ $list_products->links('pagination::custom', ['foo' => 'bar'])}}
 								</ul>
-								<ul class="clearfix">
-									<li><a href="#"><i class="mdi mdi-menu-left"></i></a></li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li><a href="#">...</a></li>
-									<li><a href="#">10</a></li>
-									<li><a href="#"><i class="mdi mdi-menu-right"></i></a></li>
-								</ul>
+								
 							</div>
 						</div>
 					</div>

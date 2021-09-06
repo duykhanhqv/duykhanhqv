@@ -54,9 +54,9 @@ class HomeController extends Controller
     public function home()
     {
         $cart = session('cart');
-        $feature_products = Product::orderByRaw('fs_product.view DESC')->paginate(8);
-        $new_arrivals = Product::orderByRaw('fs_product.id DESC')->paginate(12);
-        $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->paginate(12);
+        $feature_products = Product::orderByRaw('fs_product.view DESC')->where('active', '!=', 0)->paginate(8);
+        $new_arrivals = Product::orderByRaw('fs_product.id DESC')->where('active', '!=', 0)->paginate(12);
+        $best_seller_products = Product::orderByRaw('fs_product.qty DESC')->where('active', '!=', 0)->paginate(12);
         $quick_view = Product::get();
         $data = [
             'feature_products' => $feature_products,

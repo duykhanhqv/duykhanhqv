@@ -54,7 +54,7 @@ class OrderController extends Controller
             return redirect()->route('f.home')->with(['msg' => 'Cart null']);
         }
         $order = Order::create();
-        $order->user_id = Auth::user()->id;
+        $order->user_id = Auth::guard('client')->user()->id;
         $order->created_at = now();
         $order->name = $request->name_ship;
         $order->address = $request->address_ship;

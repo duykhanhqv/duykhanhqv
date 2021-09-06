@@ -33,4 +33,8 @@ class Product extends Model implements TranslatableContract
     // {
     //     return $query->where('published', false);
     // }
+    public function ProductTransltions()
+    {
+        return $this->hasMany('App\Models\ProductTransltion');
+    }
 }

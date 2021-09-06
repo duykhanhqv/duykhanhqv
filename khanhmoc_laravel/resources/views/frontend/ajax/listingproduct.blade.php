@@ -82,7 +82,7 @@
 										</ul>
 									</li>
 									<li class="sort-by floatright">
-										@lang('Showing 1-9 of 89 Results')
+										@lang('Showing 1-9 of '){{($countResult)}} {{'result'}}
 									</li>
 								</ul>
 							</div>
@@ -188,18 +188,7 @@
 						<div class="col-sm-12">
 							<div class="pagnation-ul">
 								<ul>
-									{{-- {{ $list_products->from() }} --}}
-								</ul>
-								<ul class="clearfix">
-									<li><a href="#"><i class="mdi mdi-menu-left"></i></a></li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li><a href="#">...</a></li>
-									<li><a href="#">10</a></li>
-									<li><a href="#"><i class="mdi mdi-menu-right"></i></a></li>
+									{{ $list_products->links('pagination::custom', ['foo' => 'bar'])}}
 								</ul>
 							</div>
 						</div>

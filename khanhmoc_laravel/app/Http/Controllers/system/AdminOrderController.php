@@ -157,7 +157,7 @@ class AdminOrderController extends Controller
         //
 
 
-        $orders = Order::where('status', 0)->paginate(10);
+        $orders = Order::where('status', 0)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'orders' => $orders
         ];
@@ -173,7 +173,7 @@ class AdminOrderController extends Controller
         //
 
 
-        $orders = Order::where('status', 1)->paginate(10);
+        $orders = Order::where('status', 1)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'orders' => $orders
         ];
@@ -187,7 +187,7 @@ class AdminOrderController extends Controller
     public function orderDelivering()
     {
         //
-        $orders = Order::where('status', 2)->paginate(10);
+        $orders = Order::where('status', 2)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'orders' => $orders
         ];
@@ -203,7 +203,7 @@ class AdminOrderController extends Controller
         //
 
 
-        $orders = Order::where('status', 3)->paginate(10);
+        $orders = Order::where('status', 3)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'orders' => $orders
         ];
@@ -217,7 +217,7 @@ class AdminOrderController extends Controller
     public function orderCancel()
     {
         //
-        $orders = Order::where('status', 4)->paginate(10);
+        $orders = Order::where('status', 4)->orderBy('id', 'DESC')->paginate(10);
         $data = [
             'orders' => $orders
         ];

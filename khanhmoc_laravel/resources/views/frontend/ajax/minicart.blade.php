@@ -19,7 +19,7 @@
             }
         }
         ?>
-        {{$sub_items}} @lang('sản phẩm') : <strong>{{number_format($sub_total)}}</strong>
+        {{$sub_items}} @lang('items') : <strong>{{number_format($sub_total)}}</strong>
     </a>
     <div class="cartdrop">
         <?php 

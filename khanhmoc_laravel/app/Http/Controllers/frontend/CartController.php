@@ -56,7 +56,7 @@ class CartController extends Controller
         $product = Product::where(['id' => $id])->first();
         if (!$product)
             return view('frontend.system.home');
-        if (!Auth::check()) {
+        if (!Auth::guard('client')->check()) {
             $data = [
                 'msg' => 'You need to login before making a purchase'
             ];
@@ -123,7 +123,7 @@ class CartController extends Controller
             $product = Product::where(['id' => $id])->first();
             if (!$product)
                 return view('frontend.system.home');
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
@@ -157,7 +157,7 @@ class CartController extends Controller
         $product = Product::where(['id' => $request->id])->first();
         if (!$product)
             return view('frontend.system.home');
-        if (!Auth::check()) {
+        if (!Auth::guard('client')->check()) {
             $data = [
                 'msg' => 'You need to login before making a purchase',
                 'status' => 'danger'
@@ -218,7 +218,7 @@ class CartController extends Controller
         if (!$product) {
             return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
         } else {
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
@@ -254,7 +254,7 @@ class CartController extends Controller
         if (!$product) {
             return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
         } else {
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
@@ -290,7 +290,7 @@ class CartController extends Controller
         if (!$product) {
             return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
         } else {
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
@@ -329,7 +329,7 @@ class CartController extends Controller
         if (!$product) {
             return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
         } else {
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
@@ -378,7 +378,7 @@ class CartController extends Controller
         if (!$product) {
             return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
         } else {
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
@@ -427,7 +427,7 @@ class CartController extends Controller
         if (!$product) {
             return view('frontend.system.home')->with(['msg' => 'Product template sold out']);
         } else {
-            if (!Auth::check()) {
+            if (!Auth::guard('client')->check()) {
                 $data = [
                     'msg' => 'You need to login before making a purchase'
                 ];
